@@ -41,6 +41,7 @@
     }
 
 html {
+  font-family: "Cormorant", serif;
   scroll-behavior: smooth;      /* optional for smooth scrolling */
   scroll-padding-top: 70px;     /* height of your navbar */
 }
