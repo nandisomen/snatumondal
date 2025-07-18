@@ -1,0 +1,818 @@
+  @import url('https://fonts.googleapis.com/css2?family=Libertinus+Mono&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+    :root {
+      --bg-color: #f9f6ef;
+      --text-color: #222;
+      --accent-color: #4b0082;
+      --link-color: #007acc;
+      --nav-bg: #ffffff;
+      --card-bg: #ffffff;
+      --card-shadow: rgba(0, 0, 0, 0.1);
+    }
+    body {
+      font-family: "Cormorant", serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      scroll-behavior: smooth;
+    }
+    
+    nav {
+      background: var(--nav-bg);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: 500;
+    }
+
+html {
+  scroll-behavior: smooth;      /* optional for smooth scrolling */
+  scroll-padding-top: 70px;     /* height of your navbar */
+}
+ a{
+  text-decoration: none !important;
+ }
+    .main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem;
+    }
+    .section-title {
+      font-size: 2rem;
+      margin: 3rem 0 1rem;
+      font-weight: bold;
+    }
+
+
+    /* nav bar  */
+    /* Hover effect for nav links */
+.navbar-nav .nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #0d6efd; /* Bootstrap primary color on hover */
+}
+
+/* Optional underline on hover */
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #0d6efd;
+  transition: width 0.3s ease;
+}
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+.navbar .nav-link:focus,
+.navbar .dropdown-toggle:focus {
+  outline: none;        /* Remove default outline */
+  box-shadow: none;     /* Remove Bootstrap's focus shadow */
+}
+
+
+.navbar .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 140px;
+  margin-top: 0;
+  border-radius: 0.5rem;
+  /* box-shadow: 0 4px 10px rgba(0,0,0,0.1); */
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.navbar .dropdown:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  z-index: 1000;
+}
+
+.navbar .dropdown-menu .dropdown-item:hover {
+  background-color: transparent;
+  color: #007bff;
+}
+
+
+
+/* nav bar end */
+
+    /* Intro */
+    .intro {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 4rem;
+    }
+    .intro img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .intro .details {
+      flex: 1;
+    }
+    .intro h1 {
+      font-size: 2.5rem;
+      color: var(--accent-color);
+    }
+    .intro h3 {
+      margin: 0.5rem 0;
+      font-weight: normal;
+    }
+    .intro .icons a {
+      margin-right: 10px;
+      color: var(--accent-color);
+      font-size: 1.3rem;
+    }
+    .about p { max-width: 900px; line-height: 1.6; }
+    .two-cols {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4rem;
+      margin-top: 1rem;
+    }
+    .two-cols ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .two-cols li::before {
+      content: "\2022";
+      color: var(--accent-color);
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+    div.Research-intrest{
+      font-family: "Libertinus Mono", monospace;
+      font-size: 1rem;
+      
+    }
+    ul.no-bullets {
+      list-style: none !important;    /* removes bullets */
+      padding-left: 0 !important;     /* removes left indent */
+      margin: 0 !important;           /* removes default margin */
+    }
+    ul.no-bullets li {
+      list-style-type: none !important; /* extra safety */
+    }
+
+    iframe, video {
+      width: 100%;
+      max-width: 800px;
+      margin-top: 2rem;
+      border-radius: 8px;
+    }
+
+    /* new exprinces */
+    /* General card styling */
+.custom-experience-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 850px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.custom-experience-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+}
+
+/* Title and subtitle */
+.custom-experience-card .title {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+
+.custom-experience-card .institution {
+  font-weight: 500;
+  color: #4a4a4a;
+}
+
+.custom-experience-card .duration {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* Body text */
+.custom-experience-card p {
+  margin-top: 15px;
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Links inside */
+.custom-experience-card a {
+  color: #3366cc;
+  text-decoration: none;
+}
+
+.custom-experience-card a:hover {
+  text-decoration: underline;
+}
+
+/* List style */
+.custom-experience-card ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.custom-experience-card ul li {
+  margin-bottom: 5px;
+  color: #222;
+}
+
+    /*  */
+    .experience {
+      padding: 2rem 0;
+    }
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      position: relative;
+      margin-left: 2rem;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--accent-color);
+    }
+    .timeline-card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      box-shadow: 0 2px 5px var(--card-shadow);
+      margin-left: 1.5rem;
+    }
+    .timeline-card h4 {
+      margin-bottom: 0.3rem;
+    }
+    .timeline-card small {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: gray;
+    }
+    .timeline-card ul {
+      padding-left: 1.2rem;
+    }
+
+/*exprience end  */
+
+/* start video card  */
+
+.video-card {
+  align-self: flex-end;
+  max-height: 500px;
+  max-width: 400px; 
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+.video-player {
+  width: 100%;     /* limit height without cropping */
+  height: 255px;            /* keep aspect ratio */
+  object-fit: contain;     /* show whole video without crop */
+  background: #000;  
+}
+
+.video-content {
+  padding: 15px;
+}
+
+.video-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.video-description {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* button */
+/* Centered and styled button */
+.cool-btn {
+  margin-left: 100px;
+  /* background: linear-gradient(45deg, #0d6dfdcf, #6610f2); */
+  background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
+}
+
+/* Hover animation: lift + shadow */
+.cool-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Shine effect on hover */
+.cool-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: skewX(-25deg);
+}
+
+.cool-btn:hover::before {
+  animation: shine 0.75s forwards;
+}
+
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+
+
+/* end vido card */
+
+/* Briefings specific card styles */
+.briefing-card {
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+}
+
+/* Image styling */
+.briefing-img {
+  width: 100%;
+  height: 180px;           /* adjust size */
+  object-fit: cover;       /* no distortion */
+  display: block;
+}
+
+/* Body styling */
+.briefing-body {
+  padding: 12px 16px;
+}
+
+.briefing-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Hover effects */
+.briefing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+.briefing-card:hover .briefing-title {
+  color: #0d6efd; /* bootstrap primary color */
+  text-decoration: underline;
+}
+
+/* end Briefings specific card styles */
+
+
+
+
+/* newww analysis */
+.card {
+  position: relative; /* important for absolute children */
+  overflow: hidden;
+}
+.card-body{
+  display: flex; 
+  flex-direction: column;
+  min-height: 160px;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  margin-top: 10px;
+  padding-bottom: 2.5rem;
+  
+}
+.card-title{
+  margin-top: 0;         /* remove any top gap */
+  padding-top: 0;        /* remove the 10% padding */
+  font-family: 'Merriweather', 'Times New Roman', serif;
+  font-size: 1rem;
+  text-align: center;
+}
+.info-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+  font-family: 'Merriweather', 'Times New Roman', serif; 
+}
+.modal-body{
+  font-family: 'Merriweather', 'Times New Roman', serif; 
+}
+
+/* Hover effect */
+.info-card:hover {
+  transform: translateY(-8px);           /* Lift card up */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15); /* Soft shadow */
+  border-color: #0d6efd;                /* Optional border highlight */
+}
+/* Active effect (when pressing/clicking) */
+.info-card:active {
+  transform: scale(0.98);               /* Slight shrink for feedback */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Tighter shadow */
+  border-color: #0a58ca;                /* Darker border while active */
+}
+
+.view-details {
+  position: absolute;
+  bottom: 10px;          /* stick near bottom of card body */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(51, 0, 255, 0.511); /* subtle background */
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* not clickable */
+}
+
+.card:hover .view-details {
+  display: block;
+  opacity: 1;
+}
+
+.modal-content{
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.69);
+}
+.modal-header{
+ background-color: #B6B09F;
+ color: #F2F2F2;
+}
+#modalContent {
+  font-size: .85rem;
+  line-height: 2;
+  font-family: 'Merriweather', 'Times New Roman', serif;
+  text-align: justify;
+  text-justify: inter-word;
+  background-color: #F2F2F2;
+  
+}
+.modal-title {
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+ 
+}
+
+
+
+
+/* analysis end */
+
+    /* Projects */
+    .projects-box hr{
+      border: 3px solid #00105f;
+      background-color: #222;
+      color: #222;
+    }
+    .projects-box
+    .filters { margin-bottom: 1rem; }
+    .filters button {
+      background: #4b0082;
+      color: white;
+      border: none;
+      padding: 0.4rem 1rem;
+      margin-right: 0.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .project-card {
+      background: var(--card-bg);
+      box-shadow: 0 2px 5px var(--card-shadow);
+      border-radius: 8px;
+      padding: 1rem;
+    }
+    .project-card img {
+      max-width: 100%;
+      border-radius: 4px;
+    }
+    .project-card h4 {
+      margin-top: 0.5rem;
+    }
+
+
+    /* new talk */
+  .list-group-item {
+  border: none;
+  border-left: 4px solid #0d6efd;
+  margin-bottom: 0.75rem;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.list-group-item h5 {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+/* css for box */
+.list-group-item {        
+  border: none !important;          /* remove border */
+  background: #ffffff;            /* clean white background */
+  border-radius: 8px;             /* rounded corners */
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;            /* spacing between items */
+  /* box-shadow: 0 2px 2px rgba(0,0,0,0.1);  */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.content-box {
+  border: none !important; /* override old border */
+}
+
+/* Hover animation */
+.list-group-item:hover {
+  transform: translateY(-5px); /* lift effect */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* stronger shadow on hover */
+}
+
+/* anchor boxx */
+.anchor-box {
+  display: block;                 /* make <a> behave like a block */
+  text-decoration: none;          /* remove underline */
+  color: inherit;                 /* inherit text color */
+}
+
+.content-box {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.anchor-box:hover .content-box {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+
+/* anchor box */
+
+/* new talk end */
+    
+
+
+
+
+    /*  publication */
+/* Heading style */
+.pub-heading {
+  font-size: 2rem;
+  font-weight: 500;
+  font-family: 'Merriweather', serif;
+  color: #222;
+}
+
+/* Card styling */
+.pub-heading {
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: 'Merriweather', serif;
+  color: #222;
+}
+
+/* Make whole card clickable */
+.pub-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.pub-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* decrease card width */
+  margin: 0 auto 1.5rem; /* center it and keep spacing */
+  transform: scale(0.9); /* slightly shrink the whole card */
+}
+.pub-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(255, 0, 0, 0.25);
+  border: 1px solid rgba(18, 0, 179, 0.777);
+}
+
+.pub-card-body {
+  padding: 15px 20px;
+}
+
+.pub-authors {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+  color: #555;
+}
+.pub-date {
+  font-size: 0.8rem;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.pub-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 300px; /* limit image height */
+  object-fit: cover; /* keep aspect ratio, crop if needed */
+}
+
+.pub-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-family: 'Merriweather', serif;
+}
+
+.pub-subtitle {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* Cool button */
+.pub-btn {
+  display: inline-block;
+  padding: 8px 14px;
+  background: #0d6efd;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+.pub-btn:hover {
+  background: #084298;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+
+
+
+    /* end  publication */
+
+
+
+
+   /* rescent publication */
+
+   /* Scoped styling only for #conference-section */
+#conference-section {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #222;
+}
+
+#conference-section h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+/* Each row is treated as a publication item */
+#conference-section .row {
+  border-bottom: 1px solid #eee;
+  padding: 1rem 0;
+  background: #fafafa;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#conference-section .row:hover {
+  transform: translateY(-4px);
+  background-color: #f0f8ff;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* Anchor link styling inside h5 */
+#conference-section h5 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  margin-bottom: 0.3rem;
+}
+
+#conference-section .pub-link {
+  display: inline-block;
+  color: #3b2ba0;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+
+#conference-section .pub-link:hover {
+  color: #1d0f6c;
+}
+
+
+/* Make the date text slightly lighter */
+#conference-section span {
+  font-weight: 500;
+  color: #555;
+}
+
+
+/* rescent publication end  */
+
+
+    /* Contact */
+    .contact-info i {
+      margin-right: 0.5rem;
+      color: var(--accent-color);
+    }
+
+    /* for footer */
+
+    footer a:hover {
+  text-decoration: underline;
+  color: #66ccff;
+}
+
