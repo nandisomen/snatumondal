@@ -588,6 +588,7 @@ section:nth-of-type(even) {
     /* new talk */
   .list-group-item {
   border: none;
+    border-radius:5px;
   border-left: 4px solid #0d6efd;
   margin-bottom: 0.75rem;
   background: #f8f9fa;
