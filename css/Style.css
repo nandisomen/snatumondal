@@ -587,8 +587,7 @@ section:nth-of-type(even) {
 
     /* new talk */
   .list-group-item {
-  border: none;
-    border-radius:5px;
+  /*border: none;*/
   border-left: 4px solid #0d6efd;
   margin-bottom: 0.75rem;
   background: #f8f9fa;
@@ -602,7 +601,7 @@ section:nth-of-type(even) {
 
 /* css for box */
 .list-group-item {        
-  border: none !important;          /* remove border */
+/*  border: none !important; */         /* remove border */
   background: #ffffff;            /* clean white background */
   border-radius: 8px;             /* rounded corners */
   padding: 1rem 1.25rem;
