@@ -1,47 +1,45 @@
-  @import url('https://fonts.googleapis.com/css2?family=Libertinus+Mono&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Libertinus+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
+:root {
+  --bg-color: #f9f6ef;
+  --text-color: #222;
+  --accent-color: #4b0082;
+  --link-color: #007acc;
+  --nav-bg: #ffffff;
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+}
+body {
+  font-family: "Cormorant", serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  scroll-behavior: smooth;
+}
+section {
+  width: 100%;
+}
 
-    :root {
-      --bg-color: #f9f6ef;
-      --text-color: #222;
-      --accent-color: #4b0082;
-      --link-color: #007acc;
-      --nav-bg: #ffffff;
-      --card-bg: #ffffff;
-      --card-shadow: rgba(0, 0, 0, 0.1);
-    }
-    body {
-      font-family: "Cormorant", serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      scroll-behavior: smooth;
-    }
-    section{
-      width: 100%;
-    }
-
-    nav {
-      background: var(--nav-bg);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #ddd;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    nav .nav-links {
-      display: flex;
-      gap: 1.5rem;
-    }
-    nav a {
-      text-decoration: none;
-      color: var(--text-color);
-      font-weight: 500;
-    }
+nav {
+  background: var(--nav-bg);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+nav .nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+}
 
 html {
   scroll-behavior: smooth;      /* optional for smooth scrolling */
@@ -59,7 +57,7 @@ html {
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 40px;   /* optional */
-  padding-bottom: 40px; optional
+  padding-bottom: 40px; /* optional */
   }
   .section-title {
     font-size: 2rem;
