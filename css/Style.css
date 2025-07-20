@@ -48,6 +48,13 @@ html {
  a{
   text-decoration: none !important;
  }
+ section:nth-of-type(odd) {
+  background-color: #F2F2F0; /* white or light */
+}
+
+section:nth-of-type(even) {
+  background-color: #DDD6CE; /* light grey */
+}
     .main {
       max-width: 1200px;
       margin: auto;
