@@ -60,33 +60,40 @@
   </div>
 </nav>
 
+<main>
 
-
-  <div class="main ">
     <!--intro section  -->
-      <section class="intro justify-content-lg-center" >
-      <img src="Image/dp.jpg" alt="Dr. Santu Mondal">
-      <div class="details">
-        <h1>Santu Mondal</h1>
-        <h3>Experimental Physicist · CERN · ATLAS Collaboration</h3>
-        <div class="icons">
-          <a href="mailto:santu.mondal@cern.ch"><i class="fas fa-envelope"></i></a>
-          <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
-          <a href="https://github.com/"><i class="fab fa-github"></i></a>
-          <a href="https://orcid.org/"><i class="fab fa-orcid"></i></a>
-        </div>
+<section class="intro">
+  <div class="container">
+    <div class="row align-items-center text-center text-md-start">
+    <!-- Image column -->
+    <div class="col-12 col-md-3 mb-4 mb-md-0 d-flex justify-content-center">
+      <img src="Image/dp.jpg" class="img-fluid rounded-circle" alt="Dr. Santu Mondal" style="max-width:180px;">
+    </div>
+
+    <!-- Details column -->
+    <div class="col-12 col-md-9 details">
+      <h1 class="fw-bold">Santu Mondal</h1>
+      <h3 class="h5 text-muted mb-3">
+        Experimental Physicist · CERN · ATLAS Collaboration
+      </h3>
+      <div class="d-flex justify-content-center justify-content-md-start gap-3 icons">
+        <a href="mailto:santu.mondal@cern.ch" class="fs-4"><i class="fas fa-envelope"></i></a>
+        <a href="https://twitter.com/" class=" fs-4"><i class="fab fa-twitter"></i></a>
+        <a href="https://github.com/" class="fs-4"><i class="fab fa-github"></i></a>
+        <a href="https://orcid.org/" class=" fs-4"><i class="fab fa-orcid"></i></a>
       </div>
-      
-    </section>
-    <div class="details justify-content-end" data-aos="zoom-in-up">
+    </div>
+  </div>
+  <div class="details justify-content-end mt-4 ps-md-5" data-aos="zoom-in-up">
         
-        <h2 class="section-title pl-6" >Particle physics. Top quarks. ATLAS.</h2>
+    <h2 class="section-title pl-6" >Particle physics. Top quarks. ATLAS.</h2>
       <p>I am a physicist at CERN and Czech Technical University in Prague, working within the ATLAS experiment. I focus on top-quark production in high-energy proton–proton and heavy-ion collisions, contributing to cross-section measurements, statistical analysis, and calibration frameworks for b-jet tagging.</p>
       </div>
 
-    <section class="about align-content-center" class="searchable" data-aos="zoom-in-up">
-      
-      <div class="two-cols justify-content-center ">
+  </div>
+    <div class="about align-content-center container">
+         <div class="two-cols justify-content-center ">
         <div>
           <h3>Education</h3>
           <dl>
@@ -110,16 +117,69 @@
           </div>
         </div>
       </div>
-      
-    </section>
+
+      </div>
+  
+</section>
+
+
+    <!--  outreach -->
+  <section id = "outreach" calss="outreach">
+
+    <div class="container">
+       
+    <h1> Outreach</h1>
+  <div class="row g-4 container-fluid outreach-video-mainDiv">
+    <div class= "col-12 col-md-2"></div>
+    <!-- Video 1 -->
+    <div class="col-12 col-md-5">
+      <div class="video-card">
+        <iframe class="video-player"
+          scrolling="no"
+          src="https://videos.cern.ch/video/ATLAS-VIDEO-2023-035-001?autoplay=1&loop=1&muted=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen>
+          Your browser does not support the video tag.
+        </iframe>
+        <div class="video-content">
+          <h3 class="video-title text-center">On Top of Heavy Ions | ATLAS Results Explained</h3>
+          <p class="video-description text-center">
+            Produced an outreach video to promote ATLAS's results on top-quark production in heavy-ion collisions, aimed at a broader audience.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Video 2 -->
+    <div class="col-12 col-md-5">
+      <div class="video-card">
+        <video class="video-player" controlsList="nodownload" autoplay muted controls loop playsinline">
+          <source src="Image/video2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-content">
+          <h3 class="video-title text-center">ATLAS observes top quarks in lead-lead collisions</h3>
+          <p class="video-description text-center">
+            Produced an outreach video to promote ATLAS's results on top-quark production in heavy-ion collisions, aimed at a broader audience.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+ 
+
+
+  </section>
+
+
+
     <!-- exprience -->
 
-    <section class="experience" class="searchable" data-aos="fade-up">
-      <h2 class="section-title">Experience</h2>
+    <section class="experience" >
+      <div class="container" data-aos="fade-up">
+        <h1 class="section-title">Experience</h1>
       <div class="timeline">
         <!-- satrt for new box copy and edit this -->
         <!-- 1st card -->
-        <div class="custom-experience-card" data-aos="fade-up">
+        <div class="custom-experience-card container-fluid" data-aos="fade-up">
       <div class="d-flex align-items-start">
         <img src="Image/CERN_logo.svg.png" alt="UofG Logo" style="width:60px; height:auto; margin-right:15px;">
         <div>
@@ -202,20 +262,22 @@
         <li>Acting as ATLAS Trigger online expert and online release coordinator</li>
       </ul>
     </div>
-
-
-            
             
           </div>
+      </div>
+      
     </section>
+
 
 
     <!--  -->
 
+
  <!-- new analysis -->
 
-<section id="projects" class="projects-box" data-aos="fade-up" style="scroll-margin-top:100px;">
-  <h2 class="section-title mb-3">Physics analysis experience</h2>
+<section id="projects" class="projects-box"  style="scroll-margin-top:100px;">
+  <div class="container" data-aos="fade-up">
+    <h1 class="section-title mb-3">Physics analysis experience</h1>
   <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
     <!-- start for new box copy and edit this -->
     <div class="col">
@@ -273,20 +335,21 @@
     <!-- card-4  -->
     <div class="col">
       <div class="card info-card" data-bs-toggle="modal" data-bs-target="#detailModal">
-        <img src="Image/analysis4.jpeg" class="card-img-top" alt="...">
+        <img src="Image/analysis4.jpeg" class="card-img-top img-fluid" alt="...">
         <div class="card-body">
           <h5 class="card-title text-center">
             ATLAS Flavour tagging
           </h5>
           <h6 class="text-center view-details">View Details</h6>
           <p class="card-text d-none">
-            Using $165\ \text{nb}^{-1}$ of $p$+Pb data at $\sqrt{s} = 8.16$ TeV from 2016, the lepton+jets and dilepton channels were analyzed. Each channel and its combination achieved a significance above five standard deviations. The top‑quark pair production cross section was found to be $\sigma_{t\bar{t}} = 58.1 \pm 2.0\ \text{(stat.)}\ ^{+4.8}_{-4.4}\ \text{(syst.)}\ \text{nb}$, with a total uncertainty of 9%, making it the most precise $t\bar{t}$ cross‑section measurement in nuclear collisions to date. The nuclear modification factor was determined to be $R_{pA} = 1.090 \pm 0.039\ \text{(stat.)}\ ^{+0.094}_{-0.087}\ \text{(syst.)}$.
+            Using $165\ \text{nb}^{-1}$ of $p$+Pb data at $\sqrt{sNN} = 8.16$ TeV from 2016, the lepton+jets and dilepton channels were analyzed. Each channel and its combination achieved a significance above five standard deviations. The top‑quark pair production cross section was found to be $\sigma_{t\bar{t}} = 58.1 \pm 2.0\ \text{(stat.)}\ ^{+4.8}_{-4.4}\ \text{(syst.)}\ \text{nb}$, with a total uncertainty of 9%, making it the most precise $t\bar{t}$ cross‑section measurement in nuclear collisions to date. The nuclear modification factor was determined to be $R_{pA} = 1.090 \pm 0.039\ \text{(stat.)}\ ^{+0.094}_{-0.087}\ \text{(syst.)}$.
           </p>
         </div>
       </div>
       <!-- <a class="btn btn-primary w-100 mt-3 rounded-md shadow-md hover-effect" href="#" role="button">Full Artical</a> -->
     </div>
     <!-- Add more cards as needed -->
+  </div>
   </div>
 </section>
 
@@ -329,61 +392,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <!--  -->
 
-<!--  outreach -->
-  <section id = "outreach" class="mt-5">
-
-    
-  <section class="container my-4">
-    <h1> Outreach</h1>
-  <div class="row g-4 container-fluid outreach-video-mainDiv">
-    <div class= "col-12 col-md-2"></div>
-    <!-- Video 1 -->
-    <div class="col-12 col-md-5">
-      <div class="video-card">
-        <iframe
-          scrolling="no"
-          src="https://videos.cern.ch/video/ATLAS-VIDEO-2023-035-001?autoplay=1&loop=1&muted=1" width="560" height="315" frameborder="0" allow="autoplay; fullscreen" allowfullscreen>
-          Your browser does not support the video tag.
-        </iframe>
-        <div class="video-content">
-          <h3 class="video-title text-center">On Top of Heavy Ions | ATLAS Results Explained</h3>
-          <p class="video-description text-center">
-            Produced an outreach video to promote ATLAS's results on top-quark production in heavy-ion collisions, aimed at a broader audience.
-          </p>
-          <a href="https://videos.cern.ch/record/2298651" class="btn cool-btn mt-3">🎬 View Full Video</a>
-        </div>
-      </div>
-    </div>
-    <!-- Video 2 -->
-    <div class="col-12 col-md-5">
-      <div class="video-card">
-        <video class="video-player" autoplay muted controls loop playsinline height="255px"">
-          <source src="Image/video2.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <div class="video-content">
-          <h3 class="video-title text-center">ATLAS observes top quarks in lead-lead collisions</h3>
-          <p class="video-description text-center">
-            Produced an outreach video to promote ATLAS's results on top-quark production in heavy-ion collisions, aimed at a broader audience.
-          </p>
-          <a href="https://www.threads.com/@atlasexperiment/post/DDujLYiChR9" class="btn cool-btn mt-3 text-center align-self-center">🎥 Watch Now</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 
-  </section>
 
   <!-- Briefings -->
- <section class="container my-4 briefings-section">
-  <h1 class="mb-4">Briefings</h1>
+ <section class="briefings-section">
+  <div class="container" data-aos="fade-up">
+    <h1 class="mb-4">Briefings</h1>
 
   <div class="row justify-content-center g-4">
 
     <!-- Card 1 -->
-    <div class="col-10 col-md-6 col-lg-4" data-aos="fade-right">
+    <div class="col-10 col-md-6 col-lg-4">
       <a href="https://home.cern/news/news/physics/atlas-observes-top-quarks-lead-lead-collisions"
          class="text-decoration-none text-dark">
         <div class="briefing-card mx-auto">
@@ -398,7 +418,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 
     <!-- Card 2 -->
-    <div class="col-10 col-md-6 col-lg-4" data-aos="fade-left">
+    <div class="col-10 col-md-6 col-lg-4" >
       <a href="https://atlas.cern/Updates/Briefing/HI-Top-Observation"
          class="text-decoration-none text-dark">
         <div class="briefing-card mx-auto">
@@ -413,17 +433,20 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 
   </div>
+  </div>
 </section>
 
 
   <!-- befing end -->
 
-   <br><br>
+  
 
    <!-- new talk section -->
-  <section class="container my-5" id="talks">
-  <h2 class="mb-4">Recent & Upcoming Talks</h2>
-  <div class="mx-lg-5">
+    <section id="talks">
+      <div class="container">
+          
+        <h2 class="mb-4">Recent & Upcoming Talks</h2>
+        <div class="mx-lg-5">
           <!-- Plenary Talks -->
       <h4 class="mt-4 mb-3" id = "plenary" >Plenary Talks</h4>
       <hr>
@@ -493,16 +516,15 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
   </div>
 
+      </div>
+    </section>
   
-</section>
-
-
-
    <!-- end talk section -->
 
 
    <!-- new publication -->
-<section class="container my-5" id="publications" data-aos="fade-up">
+    <section id="publications">
+      <div class="container">
   <div class="row" >
     <h2 class="pub-heading" data-aos="fade-up">Featured Publications</h2>
     <!-- Left Heading Section -->
@@ -577,16 +599,20 @@ document.addEventListener('DOMContentLoaded', function() {
       </a>
     </div>
   </div>
-</section>
+
+      </div>
+    </section>
+
 
 
 
    <!-- end new publication -->
 
     <!-- start Recent Publications -->
-<section class="container my-5" id="conference-section" data-aos="fade-up">
+     <section id ="conference-section">
+      <div class="container">
 
-  <h3 class="text-center mb-4">Recent Publications</h3>
+  <h3 class="mb-4">Recent Publications</h3>
 
   <div class="row mb-4">
     <div class="col-md-9">
@@ -658,12 +684,58 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   </div>
 
-</section>
+      </div>
+     </section>
+
+     
+
 
       <!-- end Recent Publications -->
 
 
-  </div>
+      <!-- start gallery -->
+<section id="gallery">
+      <div class="container">
+        
+  <h2 class="pub-heading">Gallery</h2>
+  <div class="carousel-container">
+
+    <!-- Big Image Section -->
+<div class="big-image-wrapper">
+  <!-- default image (first one) -->
+  <img id="bigImage" src="Image/analisis.jpg" alt="Analysis Session">
+</div>
+
+<!-- Caption Section -->
+<div class="big-image-caption" id="bigImageCaption">
+  Analysis Session
+</div>
+
+
+    <!-- Thumbnails -->
+     <div class="carousel-thumbnails-wrapper mt-2">
+      <div class="carousel-thumbnails d-flex justify-content-center" id="thumbnailsContainer">
+        <div class="thumb-item"><img src="Image/analisis.jpg" alt="Slide 1" data-caption="Analysis Session"></div>
+        <div class="thumb-item"><img src="Image/analysis4.jpeg" alt="Slide 2" data-caption="Team Collaboration"></div>
+        <div class="thumb-item"><img src="Image/brefing1.png" alt="Slide 3" data-caption="Briefing"></div>
+        <div class="thumb-item"><img src="Image/brefing2.jpg" alt="Slide 4" data-caption="Conference"></div>
+        <div class="thumb-item"><img src="Image/dp.jpg" alt="Slide 5" data-caption="Profile Picture"></div>
+        <div class="thumb-item"><img src="Image/brefing1.png" alt="Slide 3" data-caption="Briefing"></div>
+        <div class="thumb-item"><img src="Image/dp.jpg" alt="Slide 5" data-caption="Profile Picture"></div>
+</div>
+     </div>
+    
+      </div>
+     </section>
+ 
+      
+      <!-- gallery end -->
+
+</main>
+
+
+
+
    <!-- footer section -->
     <section id="contact">
         <footer class="bg-dark text-light pt-5 pb-4 mt-5">
@@ -701,7 +773,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   </div>
 </footer>
-    </section>
+  
      
 
 
@@ -773,6 +845,33 @@ document.addEventListener("DOMContentLoaded", function(){
     }
   });
 </script>
+
+
+<!-- start script for gallery  -->
+<script>
+  const bigImage = document.getElementById('bigImage');
+  const bigCaption = document.getElementById('bigImageCaption');
+
+  document.querySelectorAll('.thumb-item img').forEach((thumb, index) => {
+    thumb.addEventListener('click', () => {
+      // Change main image
+      bigImage.src = thumb.src;
+      bigImage.alt = thumb.alt;
+
+      // Change caption
+      const captionText = thumb.dataset.caption || thumb.alt || '';
+      bigCaption.textContent = captionText;
+
+      // Active highlight
+      document.querySelectorAll('.thumb-item img').forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+    });
+  });
+</script>
+
+
+
+<!-- end script for gallery  -->
 
 </body>
 </html>
