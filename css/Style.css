@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Libertinus+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Source+Sans+Pro&display=swap');
+
 :root {
   --bg-color: #f9f6ef;
   --text-color: #222;
@@ -18,6 +20,12 @@ body {
 }
 section {
   width: 100%;
+}
+
+main .section-title {
+    
+  font-weight: 600 !important;
+  letter-spacing: .3rem;
 }
 
 nav {
@@ -152,6 +160,10 @@ section:nth-of-type(even) {
       color: var(--accent-color);
       font-size: 1.3rem;
     }
+    .wos-icon {
+  fill: var(--accent-color);
+}
+
     .about p { max-width: 900px; line-height: 1.6; }
     .two-cols {
       display: flex;
@@ -357,6 +369,7 @@ section:nth-of-type(even) {
 }
 .card img{
   height: 200px;
+  object-fit: contain;
 }
 .card-body{
   display: flex; 
@@ -405,11 +418,12 @@ section:nth-of-type(even) {
   bottom: 10px;          /* stick near bottom of card body */
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(51, 0, 255, 0.511); /* subtle background */
+  background: rgb(0, 43, 173); /* subtle background */
   color: #fff;
   padding: 6px 12px;
   border-radius: 4px;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
+  font-weight: lighter;
   display: none;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -480,6 +494,7 @@ section:nth-of-type(even) {
     .project-card img {
       max-width: 100%;
       border-radius: 4px;
+      
     }
     .project-card h4 {
       margin-top: 0.5rem;
@@ -587,7 +602,7 @@ section:nth-of-type(even) {
 
     /* new talk */
   .list-group-item {
-  /*border: none;*/
+  border: none;
   border-left: 4px solid #0d6efd;
   margin-bottom: 0.75rem;
   background: #f8f9fa;
@@ -601,12 +616,12 @@ section:nth-of-type(even) {
 
 /* css for box */
 .list-group-item {        
-/*  border: none !important; */         /* remove border */
+  border: none !important;          /* remove border */
   background: #ffffff;            /* clean white background */
-  border-radius: 8px;             /* rounded corners */
+  border-radius: 8px !important;             /* rounded corners */
   padding: 1rem 1.25rem;
   margin-bottom: 1rem;            /* spacing between items */
-  /* box-shadow: 0 2px 2px rgba(0,0,0,0.1);  */
+  box-shadow: 0 2px 2px rgba(0,0,0,0.1); 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .content-box {
@@ -645,7 +660,13 @@ section:nth-of-type(even) {
 
 /* new talk end */
     
-
+#talks h5{
+  font-size: 1rem;
+}
+#talks p{
+  font-size: small;
+  margin-bottom: 5px;
+}
 
 
 
@@ -752,14 +773,17 @@ section:nth-of-type(even) {
 
 
 
-   /* rescent publication */
+   /* recent publication */
 
    /* Scoped styling only for #conference-section */
 #conference-section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   color: #222;
 }
-
+#conference-section .row{
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+}
 #conference-section h3 {
   font-size: 2rem;
   font-weight: 600;
@@ -768,18 +792,20 @@ section:nth-of-type(even) {
 
 /* Each row is treated as a publication item */
 #conference-section .row {
+  width: 90%;
   border-bottom: 1px solid #eee;
   padding: 1rem 0;
   background: #fafafa;
   border-radius: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-  margin-left: 0;
-  margin-right: 0;
+   
+  margin-left:auto;
+  margin-right: auto;
 }
 
 #conference-section .row:hover {
   transform: translateY(-4px);
-  background-color: #f0f8ff;
+  /* background-color: #f0f8ff; */
   box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
@@ -794,7 +820,7 @@ section:nth-of-type(even) {
 
 #conference-section .pub-link {
   display: inline-block;
-  color: #3b2ba0;
+  color: #000000;
   text-decoration: none;
   position: relative;
   transition: color 0.3s ease;
@@ -802,7 +828,7 @@ section:nth-of-type(even) {
 
 
 #conference-section .pub-link:hover {
-  color: #1d0f6c;
+  color: #1e51fa;
 }
 
 
@@ -846,7 +872,7 @@ section:nth-of-type(even) {
 
 .big-image-caption {
   text-align: center;
-  margin-top: 8px;
+  margin-top: 5px;
   font-size: 1rem;
   font-weight: 500;
   color: #333;
