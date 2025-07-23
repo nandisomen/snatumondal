@@ -80,11 +80,11 @@ html {
 }
 
     section:nth-of-type(even) {
-  background-color: #f0ead6	; /* white or light */
+  background-color: #f6f5f8	; /* white or light */
 }
 
 section:nth-of-type(odd) {
-  background-color: #f2f4f8; /* light grey */
+  background-color: #fefefe; /* light grey */
 }
 
 
