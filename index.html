@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Santu Mondal | CERN Physicist</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- font awesome cdn link -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- style sheet or my css file  -->
   <link rel="stylesheet" href="css/Style.css">
   <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
 
@@ -25,7 +27,7 @@
 <body>
   
 <!--NAV BAR -->
- <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+ <nav class=" navbar navbar-light navbar-expand-lg sticky-top ">
   <div class="container">
     <!-- Brand -->
     <a class="navbar-brand fw-bold" href="#">RNDr. Santu Mondal, Ph.D.</a>
@@ -62,7 +64,7 @@
 <main>
 
     <!--intro section  -->
-<section class="intro">
+<section class="intro pt-4">
   <div class="container">
     <div class="row align-items-center text-center text-md-start">
     <!-- Image column -->
@@ -86,7 +88,7 @@
       </div>
     </div>
   </div>
-  <div class="details justify-content-end mt-4 ps-md-5" data-aos="zoom-in-up">
+  <div class="details justify-content-end mt-4 ps-md-5 full-details">
         
     <h2 class=" pl-6" >Particle physics. Top quarks. ATLAS.</h2>
       <p>I am a physicist at CERN and Czech Technical University in Prague, working within the ATLAS experiment. I focus on top-quark production in high-energy proton–proton and heavy-ion collisions, contributing to cross-section measurements, statistical analysis, and calibration frameworks for b-jet tagging.</p>
@@ -95,26 +97,29 @@
   </div>
     <div class="about align-content-center container">
          <div class="two-cols justify-content-center ">
-        <div>
+        <div class ="education">
           <h3>Education</h3>
-          <dl>
-            <dt><i class="fa-solid fa-graduation-cap"></i> PhD in Experimental High-Energy Physics ,2024 </dt>
-            <dd class = "pl-4">Czech Technical University in Prague</dd>
-            <dd class = "pl-4"> Silesian University in Opava</dd>
-            <dt><i class="fa-solid fa-graduation-cap"></i> MASTER’S DEGREE iN PHYSiCS, 2016</dt>
-            <dd class = "pl-4">Indian Institute of Technology Bombay (IITB)</dd>
-            <dt><i class="fa-solid fa-graduation-cap"></i> BACHELOR’S DEGREE iN PHYSiCS , 2014</dt>
-            <dd class = "pl-4">Burdwan University</dd>
+          <dl class="px-3">
+            <dt><i class="fa-solid fa-graduation-cap"></i> PhD in Experimental High-Energy Physics </dt>
+              <dd class="mx-4 pl-4">
+                  Silesian University in Opava &<br>
+                  Czech Technical University in Prague, CZ
+              </dd>
+
+            <dt><i class="fa-solid fa-graduation-cap"></i> Master’s Degree in Physics</dt>
+            <dd class = "mx-4 pl-4">Indian Institute of Technology Bombay (IITB), IN</dd>
+            <dt><i class="fa-solid fa-graduation-cap"></i> Bachelor’s Degree in Physics</dt>
+            <dd class = "mx-4 pl-4 ">Burdwan University, IN</dd>
           </dl>
         </div>
         <div>
           <h3>Research Interests</h3>
-          <div class="Research-intrest">
+          <div class="Research-intrest px-3">
             <p class="py-0">Top-Quark Physics</p>
             <p class="py-0">Heavy-Ion Collisions</p>
-            <p class="py-0">Signal–Background Discrimination</p>
             <p class="py-0">Flavour Tagging Calibration</p>
-            <p class="py-0">Profile Likelihood & TRExFitter</p>
+            <p class="py-0">Precision Measurements with Statistical Tools</p>
+            <p class="py-0">Jet Substructure Analysis (current focus)</p>
           </div>
         </div>
       </div>
@@ -130,48 +135,60 @@
 
 
     <!--  outreach -->
-  <section id = "outreach" calss="outreach">
-    <div class="container">
-       
-    <h1 class="section-title" > Outreach</h1>
-  <div class="row g-4 container-fluid outreach-video-mainDiv">
-    <div class= "col-12 col-md-2"></div>
-    <!-- Video 1 -->
-    <div class="col-12 col-md-5">
-      <div class="video-card">
-        <iframe class="video-player"
-          scrolling="no"
-          src="https://videos.cern.ch/video/ATLAS-VIDEO-2023-035-001?autoplay=1&loop=1&muted=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen>
-          Your browser does not support the video tag.
-        </iframe>
-        <div class="video-content">
-          <h3 class="video-title text-center">On Top of Heavy Ions | ATLAS Results Explained</h3>
-          <p class="video-description text-center">
-            Produced an outreach video to promote ATLAS's results on top-quark production in heavy-ion collisions, aimed at a broader audience.
-          </p>
+  <section id="outreach" class="outreach" data-aos="fade-up">
+  <div class="container">
+    <h1 class="section-title">Outreach</h1>
+    <div class="row g-4 justify-content-center outreach-video-mainDiv mt-1">
+      <!-- Video 1 -->
+      <div class="col-10 col-md-5 d-flex justify-content-center">
+        <div class="video-card">
+          <iframe class="video-player"
+            scrolling="no"
+            src="https://videos.cern.ch/video/ATLAS-VIDEO-2023-035-001?autoplay=1&loop=1&muted=1"
+            frameborder="0" allow="autoplay; fullscreen" allowfullscreen>
+          </iframe>
+          <div class="video-content">
+            <h3 class="video-title text-center">On Top of Heavy Ions | ATLAS Results Explained</h3>
+            <p class="video-description text-center">
+              Produced an outreach video to promote ATLAS's results on top-quark production in heavy-ion collisions, aimed at a broader audience.
+            </p>
+            <div class="video-icons text-center">
+              <a href=""><img src="Image/LogoOutline-Black.svg" alt="CERN Logo" style="width:22px;height:auto;"></a>
+              <a href="https://youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+              <a href="https://x.com/" target="_blank"><i class="fab fa-x-twitter"></i></a>
+              <a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+              <a href="https://www.threads.net/" target="_blank"><i class="fab fa-threads"></i></a>
+              <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- Video 2 -->
-    <div class="col-12 col-md-5">
-      <div class="video-card">
-        <video class="video-player" controlsList="nodownload" autoplay muted controls loop playsinline">
-          <source src="Image/video2.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <div class="video-content">
-          <h3 class="video-title text-center">ATLAS observes top quarks in lead-lead collisions</h3>
-          <p class="video-description text-center">
-            Produced an outreach video to promote ATLAS's results on top-quark production in heavy-ion collisions, aimed at a broader audience.
-          </p>
+      <!-- Video 2 -->
+      <div class="col-10 col-md-5 d-flex justify-content-center">
+        <div class="video-card">
+          <video class="video-player" controlsList="nodownload" autoplay muted controls loop playsinline>
+            <source src="Image/video2.mp4" type="video/mp4">
+          </video>
+          <div class="video-content">
+            <h3 class="video-title text-center">ATLAS observes top quarks in lead-lead collisions</h3>
+            <p class="video-description text-center">
+              Produced an outreach video to promote ATLAS's results on top-quark production in heavy-ion collisions, aimed at a broader audience.
+            </p>
+            <div class="video-icons text-center">
+              <a href=""><img src="Image/LogoOutline-Black.svg" alt="CERN Logo" style="width:22px;height:auto;"></a>
+              <a href="https://youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+              <a href="https://x.com/" target="_blank"><i class="fab fa-x-twitter"></i></a>
+              <a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+              <a href="https://www.threads.net/" target="_blank"><i class="fab fa-threads"></i></a>
+              <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-    </div>
- 
+</section>
 
-  </section>
 
 
 
@@ -182,7 +199,7 @@
         <h1 class="section-title">Experience</h1>
         <!-- satrt for new box copy and edit this -->
         <!-- 1st card -->
-        <div class="custom-experience-card container-fluid" data-aos="fade-up">
+        <div class="custom-experience-card container-fluid"  >
       <div class="d-flex align-items-start">
         <img src="Image/CERN_logo.svg.png" alt="UofG Logo" style="width:60px; height:auto; margin-right:15px;">
         <div>
@@ -191,7 +208,6 @@
           <p class="duration">April 2024 – Present Glasgow (UK)</p>
         </div>
       </div>
-
       <p>
         I led the legacy $t\\bar{t}Z$ ATLAS measurement and contributed to the first measurement of the $t\\bar{t}$ spin
         density matrix with the full Run 2 dataset; for both analyses, I developed an extensive Effective Field
@@ -211,7 +227,7 @@
 
     <!-- end for new box copy and edit this -->
     <!-- 2nd card -->
-    <div class="custom-experience-card" data-aos="fade-up">
+    <div class="custom-experience-card" >
       <div class="d-flex align-items-start">
         <img src="YOUR_LOGO_URL_HERE" alt="UofG Logo" style="width:60px; height:auto; margin-right:15px;">
         <div>
@@ -239,7 +255,7 @@
     </div>
 
     <!-- 3rdd card -->
-    <div class="custom-experience-card" data-aos="fade-up">
+    <div class="custom-experience-card">
       <div class="d-flex align-items-start">
         <img src="Image/Logo_CTU.png" alt="UofG Logo" style="width:60px; height:auto; margin-right:15px;">
         <div>
@@ -410,7 +426,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <!-- Card 1 -->
     <div class="col-10 col-md-6 col-lg-4">
-      <a href="https://home.cern/news/news/physics/atlas-observes-top-quarks-lead-lead-collisions"
+      <a href="https://atlas.cern/Updates/Briefing/Observation-Top-PbPb"
          class="text-decoration-none text-dark">
         <div class="briefing-card mx-auto">
           <img src="Image/brefing1.png" class="briefing-img" alt="Card 1 image">
@@ -564,7 +580,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- Right Cards Section -->
     <div class="col-12 col-md-7">
       <!-- Card 1 -->
-      <a href="https://doi.org/10.1103/PhysRevLett.134.142301" target="_blank" class="pub-card-link" data-aos="fade-up">
+
         <div class="pub-card shadow-sm">
           <div class="pub-card-body">
             <p class="pub-authors">
@@ -579,13 +595,12 @@ document.addEventListener('DOMContentLoaded', function() {
             <p class="pub-subtitle">
               The first observation of quantum entanglement at high energies in quarks!
             </p>
-            <button class="pub-btn">Read Full Paper</button>
+            <a href="https://doi.org/10.1103/PhysRevLett.134.142301" target="_blank" class="pub-card-link"> <button class="pub-btn">Read Full Paper</button></a>
+           
           </div>
         </div>
-      </a>
 
       <!-- Card 2 -->
-      <a href="https://link.springer.com/article/10.1007/JHEP11(2024)101" target="_blank" class="pub-card-link" data-aos="fade-up" data-aos-delay="100">
         <div class="pub-card shadow-sm">
           <div class="pub-card-body">
             <p class="pub-authors">
@@ -600,13 +615,12 @@ document.addEventListener('DOMContentLoaded', function() {
             <p class="pub-subtitle">
               More exciting high‑energy physics details!
             </p>
-            <button class="pub-btn">Read Full Paper</button>
+            <a href="https://link.springer.com/article/10.1007/JHEP11(2024)101" target="_blank" class="pub-card-link" > <button class="pub-btn">Read Full Paper</button></a>
           </div>
         </div>
-      </a>
 
       <!-- Card 3 -->
-      <a href=" https://10.1140/epjc/s10052-023-11699-1" target="_blank" class="pub-card-link" data-aos="fade-up" data-aos-delay="200">
+      
         <div class="pub-card shadow-sm">
           <div class="pub-card-body">
             <p class="pub-authors">
@@ -622,10 +636,9 @@ document.addEventListener('DOMContentLoaded', function() {
             <p class="pub-subtitle">
               Contributed to the development of the pseudo‑continuous data‑based calibration
             </p>
-            <button class="pub-btn">Read Full Paper</button>
+            <a href=" https://10.1140/epjc/s10052-023-11699-1" target="_blank" class="pub-card-link"> <button class="pub-btn">Read Full Paper</button></a>
           </div>
         </div>
-      </a>
     </div>
   </div>
 
@@ -642,76 +655,55 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="container">
 
   <h1 class=" section-title">Recent Publications</h1>
-
-  <div class="row mb-4">
-    <div class="col-md-11">
-      <h5 >
-        <a href="https://doi.org/10.5506/APhysPolBSupp.18.1-A32" class="pub-link ">
-          Recent ATLAS results relevant for PDFs at low and high x, saturation in both <i>pp</i> and HI collisions
+    <div class="mx-lg-5">
+       <div class="list-group mb-4 mx-lg-3">
+        <a href="https://doi.org/10.5506/APhysPolBSupp.18.1-A32" class="anchor-box">
+          <div class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+              <h5>Recent ATLAS results relevant for PDFs at low and high x, saturation in both <i>pp</i> and HI collisions</h5>
+              <p class="mb-0">Diffraction and Low-x</p>
+            </div>
+            <div class="year"><strong>2024</strong></div>
+          </div>
         </a>
-      </h5>
-      <p class=" small mb-1">Diffraction and Low-x</p>
-    </div>
-    <div class="col-md-1 text-md-end">
-      <span>2024</span>
-    </div>
-  </div>
-
-  <div class="row mb-4">
-    <div class="col-md-11">
-      <h5>
-        <a href="https://doi.org/10.22323/1.476.0637" class="pub-link">
-          Observation of top‑quark pair production in <i>p</i>+Pb collisions in the ATLAS experiment
+        <a href="https://doi.org/10.22323/1.476.0637" class="anchor-box">
+          <div class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+              <h5>Observation of top‑quark pair production in <i>p</i>+Pb collisions in the ATLAS experiment</h5>
+              <p class="mb-0">International Conference on High Energy Physics (ICHEP)</p>
+            </div>
+            <div class="year"><strong>2024</strong></div>
+          </div>
         </a>
-      </h5>
-      <p class=" small mb-1">International Conference on High Energy Physics (ICHEP)</p>
-    </div>
-    <div class="col-md-1 text-md-end">
-      <span>2024</span>
-    </div>
-  </div>
-
-  <div class="row mb-4">
-    <div class="col-md-11">
-      <h5>
-        <a href="https://inspirehep.net/literature/2702726" class="pub-link">
-          Observation of <i>tt</i> production in lepton+jets and dilepton channels in <i>p</i>+Pb collisions at √s<sub>NN</sub> = 8.16 TeV with the ATLAS detector
+        <a href="https://inspirehep.net/literature/2702726" class="anchor-box">
+          <div class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+              <h5>Observation of <i>tt</i> production in lepton+jets and dilepton channels in <i>p</i>+Pb collisions at √s<sub>NN</sub> = 8.16 TeV with the ATLAS detector</h5>
+              <p class="mb-0">Quark Matter</p>
+            </div>
+            <div class="year"><strong>2023</strong></div>
+          </div>
         </a>
-      </h5>
-      <p class="small mb-1">Quark Matter</p>
-    </div>
-    <div class="col-md-1 text-md-end">
-      <span>2023</span>
-    </div>
-  </div>
-
-  <div class="row mb-4">
-    <div class="col-md-11">
-      <h5>
-        <a href="https://pos.sissa.it/390/100" class="pub-link">
-          Tau-lepton Fake‑Rate determination for the <i>t t̄ H</i> coupling measurement using the ATLAS detector at the LHC
+        <a href="https://pos.sissa.it/390/100" class="anchor-box">
+          <div class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+              <h5>Tau-lepton Fake‑Rate determination for the <i>t t̄ H</i> coupling measurement using the ATLAS detector at the LHC</h5>
+              <p class="mb-0">International Conference on High Energy Physics (ICHEP)</p>
+            </div>
+            <div class="year"><strong>2020</strong></div>
+          </div>
         </a>
-      </h5>
-      <p class=" small mb-1">International Conference on High Energy Physics (ICHEP)</p>
-    </div>
-    <div class="col-md-1 text-md-end">
-      <span>2020</span>
-    </div>
-  </div>
-
-  <div class="row mb-4">
-    <div class="col-md-11">
-      <h5>
-        <a href="https://inspirehep.net/literature/1759582" class="pub-link">
-          Analysis of <i>t t̄ H</i> and <i>t t̄ W</i> production in multilepton final states with the ATLAS detector
+        <a href="https://inspirehep.net/literature/1759582" class="anchor-box">
+          <div class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+              <h5>Analysis of <i>t t̄ H</i> and <i>t t̄ W</i> production in multilepton final states with the ATLAS detector</h5>
+              <p class="mb-0">12th International Workshop on Top Quark Physics</p>
+            </div>
+            <div class="year"><strong>2019</strong></div>
+          </div>
         </a>
-      </h5>
-      <p class=" small  mb-1">12th International Workshop on Top Quark Physics</p>
+      </div>
     </div>
-    <div class="col-md-1 text-md-end">
-      <span>2019</span>
-    </div>
-  </div>
 
   
 
@@ -737,7 +729,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 
     <!-- Caption Section -->
-    <div class="big-image-caption" id="bigImageCaption">
+    <div class="big-image-caption mx-auto" id="bigImageCaption">
       Analysis Session
     </div>
 
@@ -825,7 +817,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <script src="js/aos.js"></script>
 <script>
   AOS.init({
-    duration: 1500,   // animation duration
+    duration: 1000,   // animation duration
     once: false        // animation happens only once when scrolling
   });
 </script>
