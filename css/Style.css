@@ -11,6 +11,7 @@
   --nav-bg: #ffffff;
   --card-bg: #ffffff;
   --card-shadow: rgba(0, 0, 0, 0.1);
+  --box-color:#fffafa;
 }
 body {
   font-family: "Cormorant", serif;
@@ -78,12 +79,12 @@ html {
   }
 }
 
-    section:nth-of-type(odd) {
-  background-color: #F2F2F0; /* white or light */
+    section:nth-of-type(even) {
+  background-color: #f0ead6	; /* white or light */
 }
 
-section:nth-of-type(even) {
-  background-color: #DDD6CE; /* light grey */
+section:nth-of-type(odd) {
+  background-color: #f2f4f8; /* light grey */
 }
 
 
@@ -207,7 +208,7 @@ section:nth-of-type(even) {
     /* new exprinces */
     /* General card styling */
 .custom-experience-card {
-  background: #fff;
+  background: var(--box-color );
   border-radius: 10px;
   padding: 20px;
   margin: 20px auto;
@@ -370,13 +371,18 @@ section:nth-of-type(even) {
 
 
 /* newww analysis */
+#projects .card{
+background : var(--box-color);
+}
 .card {
   position: relative; /* important for absolute children */
   overflow: hidden;
+  
 }
 .card img{
   height: 200px;
   object-fit: contain;
+  
 }
 .card-body{
   display: flex; 
@@ -501,42 +507,6 @@ section:nth-of-type(even) {
 
 /* analysis end */
 
-    /* Projects */
-    .projects-box hr{
-      border: 3px solid #00105f;
-      background-color: #222;
-      color: #222;
-    }
-    .projects-box
-    .filters { margin-bottom: 1rem; }
-    .filters button {
-      background: #4b0082;
-      color: white;
-      border: none;
-      padding: 0.4rem 1rem;
-      margin-right: 0.5rem;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-    .project-card {
-      background: var(--card-bg);
-      box-shadow: 0 2px 5px var(--card-shadow);
-      border-radius: 8px;
-      padding: 1rem;
-    }
-    .project-card img {
-      max-width: 100%;
-      border-radius: 4px;
-      
-    }
-    .project-card h4 {
-      margin-top: 0.5rem;
-    }
 
     /* start outreach  */
 
@@ -549,7 +519,7 @@ section:nth-of-type(even) {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-  background: #fff;
+  background: var(--box-color);
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -591,7 +561,7 @@ section:nth-of-type(even) {
   max-width: 350px;
   border-radius: 12px;
   overflow: hidden;
-  background: #fff;
+  background: var(--box-color);
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
@@ -639,14 +609,17 @@ section:nth-of-type(even) {
 
 
     /* new talk */
-  .list-group-item {
+  .list-group .list-group-item{
+    background: var(--box-color);
+  }
+  /* .list-group-item {
   border: none;
   border-left: 4px solid #0d6efd;
   margin-bottom: 0.75rem;
-  background: #f8f9fa;
+  background: var(--box-color);
   padding: 1rem;
   border-radius: 0.5rem;
-}
+} */
 .list-group-item h5 {
   font-weight: 600;
   margin-bottom: 0.25rem;
@@ -742,7 +715,7 @@ section:nth-of-type(even) {
 }
 
 .pub-card {
-  background: #fff;
+  background: var(--box-color);
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -826,10 +799,6 @@ section:nth-of-type(even) {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   color: #222;
 }
-#conference-section .row{
-  padding-top: 5px !important;
-  padding-bottom: 5px !important;
-}
 #conference-section h3 {
   font-size: 2rem;
   font-weight: 600;
@@ -839,9 +808,11 @@ section:nth-of-type(even) {
 /* Each row is treated as a publication item */
 #conference-section .row {
   width: 90%;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
   border-bottom: 1px solid #eee;
   padding: 1rem 0;
-  background: #fafafa;
+  background: var(--box-color);
   border-radius: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
    
@@ -1051,4 +1022,6 @@ section:nth-of-type(even) {
   color: #66ccff;
 }
 
+
+/* new rescent */
 
