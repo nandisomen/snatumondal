@@ -45,12 +45,12 @@
         
         <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown"id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a href="#talk" class="nav-link"id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Talks
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
             <li><a class="dropdown-item" href="#plenary">Plenary Talk</a></li>
-            <li><a class="dropdown-item" href="#talks">Invited Talks</a></li>
+            <li><a class="dropdown-item" href="#invited">Invited Talks</a></li>
             <li><a class="dropdown-item" href="#posters">Posters</a></li>
           </ul>
         </li>
@@ -119,7 +119,7 @@
             <p class="py-0">Heavy-Ion Collisions</p>
             <p class="py-0">Flavour Tagging Calibration</p>
             <p class="py-0">Precision Measurements with Statistical Tools</p>
-            <p class="py-0">Jet Substructure Analysis (current focus)</p>
+            <p class="py-0">Jet Substructure Analysis</p>
           </div>
         </div>
       </div>
@@ -135,8 +135,8 @@
 
 
     <!--  outreach -->
-  <section id="outreach" class="outreach" data-aos="fade-up">
-  <div class="container">
+  <section id="outreach" class="outreach" >
+  <div class="container" data-aos="fade-up">
     <h1 class="section-title">Outreach</h1>
     <div class="row g-4 justify-content-center outreach-video-mainDiv mt-1">
       <!-- Video 1 -->
@@ -294,7 +294,7 @@
 
  <!-- Physics Analysis Experience-->
 
-<section id="projects" class="projects-box"  style="scroll-margin-top:100px;">
+<section id="projects" class="projects-box" >
   <div class="container" data-aos="fade-up">
     <h1 class="section-title">Physics Analysis Experience</h1>
   <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
@@ -307,7 +307,7 @@
             Observation of top‑quark pair production in lead‑lead collisions
           </h5>
           <p class="card-text d-none">
-            The combined 2015 and 2018 Pb‑Pb collision data at $\sqrt{s_{NN}} = 5.02$ TeV are used to study $t\bar{t}$ production, with top quarks reconstructed in the $e\mu$ dilepton channel. This analysis, utilising a total integrated luminosity of $1.9\ \mathrm{fb}^{-1}$, marks the first observation of $t\bar{t}$ production in Pb‑Pb collisions with the ATLAS experiment. The measured cross‑section is $\sigma_{t\bar{t}} = 3.6^{+1.0}_{-0.9}\ \text{(stat.)}\ ^{+0.8}_{-0.5}\ \text{(syst.)}\ \mu\text{b}$. This result highlights the ATLAS detector’s ability to probe rare processes in heavy‑ion collisions, offering new insights into the interaction between the top quark and the quark‑gluon plasma.
+              This ATLAS analysis achieved the first observation of top-quark pair (<em>tt̄</em>) production in Pb–Pb collisions, using 1.9 nb⁻¹ of Run-2 data. Top quarks, decaying before QGP formation, serve as unique probes of initial-state dynamics and high-Q² nPDFs. The analysis focused on the dilepton final state. A 5.0σ discovery-level significance was achieved, with a cross-section of 3.6 μb and 31% total uncertainty, in agreement with nPDF-based predictions. Applicant optimised the signal region, implemented the profile-likelihood multi-fit analysis, extracted the signal strength for the cross-section measurement, and integrated theoretical inputs into the analysis. This result establishes the foundation for precision top-quark measurements in heavy-ion collisions. The results were featured on <a href="https://phys.org/news/2024-11-atlas-quarks-leadlead-collisions.html" target="_blank" rel="noopener noreferrer">Phys.org</a>, <a href="https://doi.org/10.1038/d41586-025-01075-2" target="_blank" rel="noopener noreferrer">Nature.com</a>, and <a href="https://physicsworld.com/a/quark-pairs-at-atlas-could-shed-light-on-the-early-universe/" target="_blank" rel="noopener noreferrer">IOP Physics World</a>. Published as a <em>Phys. Rev. Lett. Editors’ Suggestion</em> (PRL 134, 142301), supported by the Czech Technical University in Prague.
           </p>
           <h6 class="text-center view-details">Read More</h6>
         </div>
@@ -429,7 +429,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <a href="https://atlas.cern/Updates/Briefing/Observation-Top-PbPb"
          class="text-decoration-none text-dark">
         <div class="briefing-card mx-auto">
-          <img src="Image/brefing1.png" class="briefing-img" alt="Card 1 image">
+          <img src="Image/Briefing-1-Pb-Pb_16-9.jpeg" class="briefing-img" alt="Card 1 image">
           <div class="briefing-body">
             <h6 class="briefing-title text-decoration-none">
               ATLAS observes top quarks in lead‑lead collisions
@@ -444,7 +444,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <a href="https://atlas.cern/Updates/Briefing/HI-Top-Observation"
          class="text-decoration-none text-dark">
         <div class="briefing-card mx-auto">
-          <img src="Image/brefing2.jpg" class="briefing-img" alt="Card 2 image">
+          <img src="Image/Briefings-2-p-Pb_16-9.jpeg" class="briefing-img" alt="Card 2 image">
           <div class="briefing-body">
             <h6 class="briefing-title text-decoration-none">
               ATLAS observes top quarks in proton‑lead collisions
@@ -463,7 +463,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   
 
-   <!-- new talk section -->
+   <!-- start Recent & Upcoming Talks -->
     <section id="talks">
   <div class="container" data-aos="fade-up">
     <h1 class="section-title">Recent &amp; Upcoming Talks</h1>
@@ -473,7 +473,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <h4 class="mt-4 mb-3" id="plenary">Plenary Talks</h4>
       <hr>
       <div class="list-group mb-4 mx-lg-3">
-        <a href="https://example.com" class="anchor-box">
+        <a href="https://indico.cern.ch/event/1354173/contributions/6103804/" class="anchor-box">
           <div class="list-group-item d-flex justify-content-between align-items-center">
             <div>
               <h5>Recent ATLAS results relevant for PDFs at low and high x, saturation in both pp and HI collisions</h5>
@@ -482,7 +482,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="year"><strong>2024</strong></div>
           </div>
         </a>
-        <a href="https://example.com" class="anchor-box">
+        <a href="https://indico.cern.ch/event/1161009/timetable/#25-top-production-in-heavy-ion" class="anchor-box">
           <div class="list-group-item d-flex justify-content-between align-items-center">
             <div>
               <h5>Top production in Heavy Ion (PbPb and $p$Pb) collisions</h5>
@@ -497,16 +497,25 @@ document.addEventListener('DOMContentLoaded', function() {
       <h4 class="mt-4 mb-3" id="invited">Invited Talks</h4>
       <hr>
       <div class="list-group mb-4 mx-lg-3">
-        <a href="https://example.com" class="anchor-box">
+        <a href="https://indico.cern.ch/event/1380777/contributions/5944814/ class="anchor-box">
           <div class="list-group-item d-flex justify-content-between align-items-center">
             <div>
               <h5>Towards the observation of top‑quark pair production in proton‑lead collisions at 8.16 TeV</h5>
               <p class="mb-0"><strong>Event:</strong> CZ+SK HEP Workshop — <em>Czech Republic – Slovakia</em></p>
             </div>
-            <div class="year"><strong>2023, 2024</strong></div>
+            <div class="year"><strong>2024</strong></div>
           </div>
         </a>
-        <a href="https://example.com" class="anchor-box">
+        <a href="https://indico.cern.ch/event/1245771/contributions/5459469/" class="anchor-box">
+          <div class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+              <h5>Towards the observation of top‑quark pair production in proton‑lead collisions at 8.16 TeV</h5>
+              <p class="mb-0"><strong>Event:</strong> CZ+SK HEP Workshop — <em>Czech Republic – Slovakia</em></p>
+            </div>
+            <div class="year"><strong>2023</strong></div>
+          </div>
+        </a>
+        <a href="https://indico.cern.ch/event/1139676/contributions/5048957/" class="anchor-box">
           <div class="list-group-item d-flex justify-content-between align-items-center">
             <div>
               <h5>TRExFitter: A framework for binned template profile likelihood fits in ATLAS</h5>
@@ -515,6 +524,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="year"><strong>2022</strong></div>
           </div>
         </a>
+        <!-- 5 -->
         <a href="https://example.com" class="anchor-box">
           <div class="list-group-item d-flex justify-content-between align-items-center">
             <div>
@@ -524,7 +534,16 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="year"><strong>2022</strong></div>
           </div>
         </a>
-        <a href="https://example.com" class="anchor-box">
+        <a href="https://www.utef.cvut.cz/seminars/2022-03-01/observation-of-top-quark-pair-production-in-proton-lead-collisions-in-atlas-detector" class="anchor-box">
+          <div class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+              <h5>Observation of top-quark pair production in proton-lead collisions in ATLAS detector</h5>
+              <p class="mb-0"><strong>Event:</strong> ATLAS top workshop — <em>Instituto de Física Corpuscular (IFIC), Valencia, Spain</em></p>
+            </div>
+            <div class="year"><strong>2022</strong></div>
+          </div>
+        </a>
+        <a href="https://indico.cern.ch/event/796754/?view=standard#17-fake-rate-determination-for" class="anchor-box">
           <div class="list-group-item d-flex justify-content-between align-items-center">
             <div>
               <h5>Fake‑Rate Determination for the $t\bar tH$ Coupling Measurement with a Signature of Two Same Electric Charge Light Leptons Associated with a Tau Using the ATLAS Detector at the LHC</h5>
@@ -539,7 +558,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <h4 class="mt-4 mb-3" id="posters">Posters</h4>
       <hr>
       <div class="list-group mx-lg-3">
-        <a href="https://example.com" class="anchor-box">
+        <a href="https://indico.cern.ch/event/1291157/contributions/5878747/" class="anchor-box">
           <div class="list-group-item d-flex justify-content-between align-items-center">
             <div>
               <h5>Observation of top‑quark pair production in $p$+Pb collisions in the ATLAS experiment</h5>
@@ -548,7 +567,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="year"><strong>2024</strong></div>
           </div>
         </a>
-        <a href="https://example.com" class="anchor-box">
+        <a href="https://indico.cern.ch/event/868940/contributions/3813492/" class="anchor-box">
           <div class="list-group-item d-flex justify-content-between align-items-center">
             <div>
               <h5>Fake‑Rate determination for the $t\bar tH$ coupling measurement with a signature of two same electric charge light leptons associated with a tau using the ATLAS detector at the LHC</h5>
@@ -564,13 +583,13 @@ document.addEventListener('DOMContentLoaded', function() {
 </section>
 
   
-   <!-- end talk section -->
+   <!-- end Recent & Upcoming Talks -->
 
 
    <!-- Featured Publications-->
     <section id="publications">
-      <div class=" container">
-        <h1 class=" section-title " data-aos="fade-up">Featured Publications</h1>
+      <div class=" container" data-aos="fade-up">
+        <h1 class=" section-title ">Featured Publications</h1>
   <div class="row" >
     <!-- Left Heading Section -->
     <div class="col-12 col-md-4 d-flex align-items-start align-items-md-start justify-content-start justify-content-md-start mb-4 mb-md-0">
@@ -584,16 +603,16 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="pub-card shadow-sm">
           <div class="pub-card-body">
             <p class="pub-authors">
-              ATLAS Collaboration, <strong>Santu Mondal</strong>, James Howarth, Ethan Simpson
+              ATLAS Collaboration, <strong>Santu Mondal</strong>
             </p>
-            <p class="pub-date">April, 2025· <em>Nature</em></p>
+            <p class="pub-date"> Published: 7 April 2025 · <strong class="journal-name"><em>Physical Review Letters (PRL)</em></strong></p>
           </div>
           <img src="Image/publication-2025.png" alt="Publication image" class="pub-image">
           <div class="pub-card-body">
             <h5 class="pub-title">
-              Observation of top‑quark pair production in lead‑lead collisions at <em>&#8730;s<sub>NN</sub> = 5.02 TeV</em> with the ATLAS detector</h5>
+              Observation of top‑quark pair production in lead‑lead collisions at $\sqrt{sNN} = 5.02 TeV$ with the ATLAS detector</h5>
             <p class="pub-subtitle">
-              The first observation of quantum entanglement at high energies in quarks!
+             Achieved the first-ever observation of top-quark pair production in lead-lead ion collisions, a breakthrough in heavy-ion physics that opens new avenues to study the quark-gluon plasma and the strong force.
             </p>
             <a href="https://doi.org/10.1103/PhysRevLett.134.142301" target="_blank" class="pub-card-link"> <button class="pub-btn">Read Full Paper</button></a>
            
@@ -604,16 +623,16 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="pub-card shadow-sm">
           <div class="pub-card-body">
             <p class="pub-authors">
-              ATLAS Collaboration, <strong>Santu Mondal</strong>, James Howarth, Ethan Simpson
+              ATLAS Collaboration, <strong>Santu Mondal</strong>
             </p>
-            <p class="pub-date">November, 2024 · <em>Nature</em></p>
+            <p class="pub-date"> Published: 19 November 2024· <strong class="journal-name"><em>Journal of High Energy Physics (JHEP)</em></strong></p>
           </div>
           <img src="Image/publication-2024.png" alt="Publication image" class="pub-image">
           <div class="pub-card-body">
             <h5 class="pub-title">
-              Observation of t&#772;t production in lepton+jets and dilepton channels in <em>p+Pb</em> collisions at <em>&#8730;s<sub>NN</sub> = 8.16 TeV</em> with the ATLAS detector</h5>
+              Observation of t&#772;t production in lepton+jets and dilepton channels in <em>p+Pb</em> collisions at $\sqrt{sNN} = 8.16 TeV$  with the ATLAS detector</h5>
             <p class="pub-subtitle">
-              More exciting high‑energy physics details!
+              The top-quark pair production cross-section in proton-lead collisions was measured with a relative uncertainty of 9%, making this the most precise tt̄ cross-section determination in nuclear collisions to date.
             </p>
             <a href="https://link.springer.com/article/10.1007/JHEP11(2024)101" target="_blank" class="pub-card-link" > <button class="pub-btn">Read Full Paper</button></a>
           </div>
@@ -626,7 +645,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <p class="pub-authors">
               ATLAS Collaboration, <strong>Santu Mondal</strong>, James Howarth, Ethan Simpson
             </p>
-            <p class="pub-date">November, 2023 · <em>Nature</em></p>
+            <p class="pub-date">November, 2023 · <strong class="journal-name"><em>Nature</em></strong> </p>
           </div>
           <img src="Image/publication-2023.jpg" alt="Publication image" class="pub-image">
           <div class="pub-card-body">
@@ -651,8 +670,9 @@ document.addEventListener('DOMContentLoaded', function() {
    <!-- end Featured Publications -->
 
     <!-- start Recent Publications -->
+     <!-- /* recent publications card styling same as Recent & Upcoming Talks  */ -->
      <section id ="conference-section">
-      <div class="container">
+      <div class="container" data-aos="fade-up">
 
   <h1 class=" section-title">Recent Publications</h1>
     <div class="mx-lg-5">
@@ -717,7 +737,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       <!-- start gallery -->
 <section id="gallery">
-      <div class="container">
+      <div class="container" data-aos="fade-up">
         
   <h1 class="section-title">Gallery</h1>
   <div class="carousel-container container-fluid">
@@ -763,7 +783,7 @@ document.addEventListener('DOMContentLoaded', function() {
    
   <footer class="bg-dark text-light pt-5 pb-4">
      <section id="contact"></section>
-  <div class="container text-center text-md-start">
+  <div class="container text-center text-md-start " data-aos="fade-up">
     <div class="row text-center text-md-start">
       <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
         <h5 class="text-uppercase mb-4 fw-bold text-light">Get in touch</h5>
