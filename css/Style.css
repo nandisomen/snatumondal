@@ -27,7 +27,9 @@ section {
 /* ------------------------------
    Navbar link styles
 ------------------------------ */
-
+nav{
+  z-index: 1000;
+}
 .navbar-nav .nav-link {
   position: relative;
   color: #333;                 /* default text color */
@@ -110,6 +112,12 @@ section {
 html {
   scroll-behavior: smooth;      /* optional for smooth scrolling */
   scroll-padding-top: 60px;     /* height of your navbar */
+}
+@media (max-width: 576px) {
+  html {
+    scroll-behavior: smooth;      /* optional for smooth scrolling */
+    scroll-padding-top: 200px;   /* adjust for smaller screens */
+  }
 }
  a{
   text-decoration: none !important;
@@ -490,7 +498,7 @@ background : var(--box-color);
     margin-bottom: 20px ;
   }
   .card{
-    width: 70%;
+    width: 80%;
     margin: 0 auto;      /* centers horizontally */
     display: block;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.496);
@@ -636,6 +644,7 @@ background : var(--box-color);
   max-width: 350px;
   border-radius: 12px;
   overflow: hidden;
+ 
   background: var(--box-color);
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -648,8 +657,10 @@ background : var(--box-color);
 /* Image styling */
 .briefing-img {
   width: 100%;
-  height: 200px;           /* adjust size */
-  object-fit: contain;       /* no distortion */
+  
+  /* height: 200px;           adjust size */
+   aspect-ratio: 16 / 9; /* maintain a 16:9 aspect ratio */
+  object-fit: cover;       /* no distortion */
   display: block;
 }
 
@@ -683,7 +694,9 @@ background : var(--box-color);
 
 
 
-    /* new talk */
+    /* start Recent & Upcoming Talks  */
+
+    /* recent publications card styling same as Recent & Upcoming Talks  */
   .list-group .list-group-item{
     background: var(--box-color);
   }
@@ -755,8 +768,12 @@ background : var(--box-color);
   white-space: nowrap; /* prevent wrapping */
 }
 
+ 
 
-/* new talk end */
+    /* recent publications card styling same as Recent & Upcoming Talks  */
+
+
+   /* end Recent & Upcoming Talks  */
     
 #talks h5{
   font-size: 1rem;
@@ -764,6 +781,14 @@ background : var(--box-color);
 #talks p{
   font-size: small;
   margin-bottom: 5px;
+}
+
+@media (max-width: 576px) {
+#talks h4 {
+  font-size: 1.1rem;
+  
+}
+
 }
 
 
@@ -813,7 +838,7 @@ background : var(--box-color);
 }
 
 .pub-authors {
-  font-size: 0.9rem;
+  font-size: 1rem;
   margin-bottom: 0;
   color: #555;
 }
@@ -822,7 +847,10 @@ background : var(--box-color);
   color: #777;
   margin-bottom: 10px;
 }
-
+.journal-name{
+  font-size: 1rem;
+  color: #555;
+}
 .pub-image {
   width: 100%;
   height: auto;
@@ -832,8 +860,9 @@ background : var(--box-color);
 }
 
 .pub-title {
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: .9rem;
+  letter-spacing: 1px;
+  font-weight: 600;
   margin-top: 10px;
   margin-bottom: 5px;
   font-family: 'Merriweather', serif;
@@ -872,6 +901,8 @@ background : var(--box-color);
 
 
    /* recent publication */
+
+   /* recent publications card styling same as Recent & Upcoming Talks  */
 
 #conference-section h5{
   font-size: 1rem;
@@ -1048,4 +1079,6 @@ background : var(--box-color);
   color: #66ccff;
 }
 
+
+/* new rescent */
 
