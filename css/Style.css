@@ -239,19 +239,22 @@ section:nth-of-type(odd) {
     /* new exprinces */
     /* General card styling */
 .custom-experience-card {
+
   background: var(--box-color );
   border-radius: 10px;
+  /* border: #000000 solid 1px; */
   padding: 20px;
   margin: 20px auto;
   max-width: 850px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  box-shadow: 4px 6px 8px #0000007d;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Hover effect */
 .custom-experience-card:hover {
+  
   transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+  box-shadow: 6px 6px 16px #4200b597;
 }
 
 /* Title and subtitle */
@@ -278,6 +281,7 @@ section:nth-of-type(odd) {
   font-size: 1rem;
   color: #333;
 }
+fon
 
 /* Links inside */
 .custom-experience-card a {
@@ -342,6 +346,7 @@ section:nth-of-type(odd) {
 /*exprience end  */
 /* Default text size for desktop/tablet */
 .custom-experience-card {
+
   font-size: 0.95rem;
   line-height: 1.5;
 }
@@ -401,14 +406,21 @@ section:nth-of-type(odd) {
 
 
 
-/* newww analysis */
-#projects .card{
+/* Physics Analysis Experience*/
+#Analysis .card{
 background : var(--box-color);
 }
 .card {
   position: relative; /* important for absolute children */
   overflow: hidden;
   
+}
+.info-card {
+  
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+  /* font-family: 'Merriweather', 'Times New Roman', serif;  */
 }
 .card img{
   height: 200px;
@@ -429,17 +441,11 @@ background : var(--box-color);
 .card-title{
   margin-top: 0;         /* remove any top gap */
   padding-top: 0;        /* remove the 10% padding */
-  font-family: 'Merriweather', 'Times New Roman', serif;
+  /* font-family: 'Merriweather', 'Times New Roman', serif; */
   font-size: 1rem;
   text-align: center;
 }
-.info-card {
-  
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  cursor: pointer;
-  border: 1px solid transparent;
-  font-family: 'Merriweather', 'Times New Roman', serif; 
-}
+
 .modal{
   background: rgba(0, 0, 0, 0.729);
 }
@@ -494,7 +500,7 @@ background : var(--box-color);
 }
 }
 @media(max-width:576px){
-  #projects .section-title{
+  #Analysis .section-title{
     margin-bottom: 20px ;
   }
   .card{
@@ -519,11 +525,13 @@ background : var(--box-color);
 
 .modal-content{
   box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.69);
+  
 }
 .modal-header{
- background-color: #8e8e8ece;
- color: #F2F2F2;
+ background-color: #ccccff;
+ color: #000000;
 }
+
 #modalContent {
   font-size: .85rem;
   line-height: 2;
@@ -531,19 +539,34 @@ background : var(--box-color);
   text-align: justify;
   text-justify: inter-word;
   background-color: #F2F2F2;
+  overflow-y: auto; 
+  max-height: 80vh;  
   
-}
+  
+} 
 .modal-title {
   font-weight: bold;
   width: 100%;
   text-align: center;
  
 }
+@media (max-width: 576px) {
+
+  .modal-title {
+    font-size: 1rem;
+    text-align: center;
+  }
+  #modalContent {
+  max-height: 80vh;  /* modal content won’t exceed 80% of viewport height */
+   /* enable vertical scroll if content overflows */
+  padding: 1rem;
+  }
+}
 
 
 
 
-/* analysis end */
+/* end Physics Analysis Experience */
 
 
     /* start outreach  */
@@ -609,7 +632,7 @@ background : var(--box-color);
 .video-icons a:hover {
   color: #003cb5; /* change to your accent color on hover */
 }
-@media (max-width: 576px) {
+@media (max-width: 1000px) {
   .video-card {
     max-width: 100%;      /* take full width on mobile */
     max-height: none;     /* allow height to adjust naturally */
@@ -618,7 +641,7 @@ background : var(--box-color);
   }
 
   .video-player {
-    height: auto;         /* let it scale responsively */
+    min-height: 400px;         /* let it scale responsively */
     min-height: 180px;    /* optional: ensure it’s not too short */
   }
 
@@ -644,7 +667,6 @@ background : var(--box-color);
   max-width: 350px;
   border-radius: 12px;
   overflow: hidden;
- 
   background: var(--box-color);
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -769,38 +791,46 @@ background : var(--box-color);
 }
 
  
+#talks h5 , #recent-publications h5{
+  font-size: 1.1rem;
+}
+#talks p , #recent-publications p{
+  font-size: small;
+  margin-bottom: 5px;
+}
+@media (max-width: 576px) {
+  #talks h5 , #recent-publications h5{
+  font-size: .9rem;
+  text-align: justify;
+  }
+  #talks p , #recent-publications p{
+  font-size: .7rem;
+  margin-bottom: 5px;
+}
+.list-group-item .year {
+  font-size: .7rem;
+  font-weight: 500;
+  margin-left: 20px; /* space from the left content */
+  white-space: nowrap; /* prevent wrapping */
+}
+  #talks h4, #recent-publications h4{
+  font-size: 1.1rem;
+  
+}
+}
 
     /* recent publications card styling same as Recent & Upcoming Talks  */
 
 
    /* end Recent & Upcoming Talks  */
     
-#talks h5{
-  font-size: 1rem;
-}
-#talks p{
-  font-size: small;
-  margin-bottom: 5px;
-}
 
-@media (max-width: 576px) {
-#talks h4 {
-  font-size: 1.1rem;
-  
-}
 
-}
 
 
 
     /*  Featured  publication */
 /* Heading style */
-.pub-heading {
-  font-size: 2rem;
-  font-weight: 500;
-  font-family: 'Merriweather', serif;
-  color: #222;
-}
 
 /* Card styling */
 .pub-heading {
@@ -869,6 +899,7 @@ background : var(--box-color);
 }
 
 .pub-subtitle {
+  text-align: justify;
   font-size: 0.85rem;
   color: #666;
   margin-bottom: 10px;
@@ -904,13 +935,6 @@ background : var(--box-color);
 
    /* recent publications card styling same as Recent & Upcoming Talks  */
 
-#conference-section h5{
-  font-size: 1rem;
-}
-#conference-section p{
-  font-size: small;
-  margin-bottom: 5px;
-}
 
 
 /* rescent publication end  */
