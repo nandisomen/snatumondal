@@ -7,7 +7,7 @@
   <!-- font awesome cdn link -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- style sheet or my css file  -->
-  <link rel="stylesheet" href="css/Style.css">
+  <link rel="stylesheet" href="/Style.css">
   <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
 
   <!-- Bootstrap CSS (offline) -->
@@ -65,8 +65,9 @@
 
     <!--intro section  -->
 <section class="intro pt-4">
-  <div class="container">
-    <div class="row align-items-center text-center text-md-start">
+  <div class="container ">
+    <div class="intro-main-container">
+          <div class="row align-items-center text-center text-md-start">
     <!-- Image column -->
     <div class="col-12 col-md-3 mb-4 mb-md-0 d-flex justify-content-center">
       <img src="Image/dp.jpg" class="img-fluid rounded-circle" alt="Dr. Santu Mondal" style="max-width:180px;">
@@ -94,9 +95,11 @@
       <p>I am a physicist at CERN and Czech Technical University in Prague, working within the ATLAS experiment. I focus on top-quark production in high-energy proton–proton and heavy-ion collisions, contributing to cross-section measurements, statistical analysis, and calibration frameworks for b-jet tagging.</p>
       </div>
 
+    </div>
+
   </div>
     <div class="about align-content-center container">
-         <div class="two-cols justify-content-center ">
+         <div class="two-cols justify-content-center g-md-5 ">
         <div class ="education">
           <h3>Education</h3>
           <dl class="px-3">
@@ -115,11 +118,11 @@
         <div>
           <h3>Research Interests</h3>
           <div class="Research-intrest px-3">
-            <p class="py-0">Top-Quark Physics</p>
-            <p class="py-0">Heavy-Ion Collisions</p>
-            <p class="py-0">Flavour Tagging Calibration</p>
-            <p class="py-0">Precision Measurements with Statistical Tools</p>
-            <p class="py-0">Jet Substructure Analysis</p>
+            <p><img src="Image/RI-icon/Top-Quark.png" class="research-icon" alt="icon">Top-Quark Physics</p>
+            <p><img src="Image/RI-icon/Heavy-Ion Collisions.png" class="research-icon" alt="icon">Heavy-Ion Collisions</p>
+            <p><img src="Image/RI-icon/Flavour-Tagging-Calibration.png" class="research-icon" alt="icon">Flavour Tagging Calibration</p>
+            <p><img src="Image/RI-icon/Precision-Measurements.png" alt="icon" class="research-icon">Precision Measurements with Statistical Tools</p>
+            <p><img src="Image/RI-icon/Jet-Substructure-Analysis.png" alt="icon" class="research-icon">Jet Substructure Analysis</p>
           </div>
         </div>
       </div>
@@ -144,8 +147,8 @@
         <div class="video-card">
           <iframe class="video-player"
             scrolling="no"
-            src="https://videos.cern.ch/video/ATLAS-VIDEO-2023-035-001?autoplay=1&loop=1&muted=1"
-            frameborder="0" allow="autoplay; fullscreen" allowfullscreen>
+            src="https://videos.cern.ch/video/ATLAS-VIDEO-2023-035-001"
+            frameborder="0" fullscreen" allowfullscreen>
           </iframe>
           <div class="video-content">
             <h3 class="video-title text-center">On Top of Heavy Ions | ATLAS Results Explained</h3>
@@ -166,7 +169,7 @@
       <!-- Video 2 -->
       <div class="col-10 col-md-5 d-flex justify-content-center">
         <div class="video-card">
-          <video class="video-player" controlsList="nodownload" autoplay muted controls loop playsinline>
+          <video class="video-player" controlsList="nodownload" muted controls playsinline>
             <source src="Image/video2.mp4" type="video/mp4">
           </video>
           <div class="video-content">
@@ -194,7 +197,7 @@
 
     <!-- exprience -->
 
-    <section class="experience" >
+    <section class="experience" id=" experience" >
       <div class="container" data-aos="fade-up">
         <h1 class="section-title">Experience</h1>
         <!-- satrt for new box copy and edit this -->
@@ -297,7 +300,7 @@
 <section id="Analysis" class="projects-box" >
   <div class="container" data-aos="fade-up">
     <h1 class="section-title">Physics Analysis Experience</h1>
-  <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+  <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4 pt-3 px-lg-5">
     <!-- start for new box copy and edit this -->
     <div class="col">
       <div class="card info-card" data-bs-toggle="modal" data-bs-target="#detailModal">
@@ -422,7 +425,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="container" data-aos="fade-up">
     <h1 class="section-title">Briefings</h1>
 
-  <div class="row justify-content-center g-4">
+  <div class="row justify-content-center g-4 pt-2">
 
     <!-- Card 1 -->
     <div class="col-10 col-md-6 col-lg-4">
@@ -674,7 +677,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="container" data-aos="fade-up">
 
   <h1 class=" section-title">Recent Publications</h1>
-    <div class="mx-lg-5">
+    <div class="mx-lg-5 pt-3">
        <div class="list-group mb-4 mx-lg-3">
         <a href="https://doi.org/10.5506/APhysPolBSupp.18.1-A32" class="anchor-box">
           <div class="list-group-item d-flex justify-content-between align-items-center">
@@ -732,72 +735,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
       <!-- end Recent Publications -->
-<h1>for test</h1>
-  
-<!-- start Recent Publications -->
-     <!-- /* recent publications card styling same as Recent & Upcoming Talks  */ -->
-     <section id ="recent-publications">
-      <div class="container" data-aos="fade-up">
-
-  <h1 class=" section-title">Recent Publications</h1>
-    <div class="mx-lg-5">
-       <div class="list-group mb-4 mx-lg-3">
-        <a href="https://doi.org/10.5506/APhysPolBSupp.18.1-A32" class="anchor-box">
-          <div class="list-group-item d-flex justify-content-between align-items-center">
-            <div>
-              <h5>Recent ATLAS results relevant for PDFs at low and high x, saturation in both <i>pp</i> and HI collisions</h5>
-              <p class="mb-0">Diffraction and Low-x</p>
-            </div>
-            <div class="year"><strong>2024</strong></div>
-          </div>
-        </a>
-        <a href="https://doi.org/10.22323/1.476.0637" class="anchor-box">
-          <div class="list-group-item d-flex justify-content-between align-items-center">
-            <div>
-              <h5>Observation of top‑quark pair production in <i>p</i>+Pb collisions in the ATLAS experiment</h5>
-              <p class="mb-0">International Conference on High Energy Physics (ICHEP)</p>
-            </div>
-            <div class="year"><strong>2024</strong></div>
-          </div>
-        </a>
-        <a href="https://inspirehep.net/literature/2702726" class="anchor-box">
-          <div class="list-group-item d-flex justify-content-between align-items-center">
-            <div>
-              <h5>Observation of <i>tt</i> production in lepton+jets and dilepton channels in <i>p</i>+Pb collisions at √s<sub>NN</sub> = 8.16 TeV with the ATLAS detector</h5>
-              <p class="mb-0">Quark Matter</p>
-            </div>
-            <div class="year"><strong>2023</strong></div>
-          </div>
-        </a>
-        <a href="https://pos.sissa.it/390/100" class="anchor-box">
-          <div class="list-group-item d-flex justify-content-between align-items-center">
-            <div>
-              <h5>Tau-lepton Fake‑Rate determination for the <i>t t̄ H</i> coupling measurement using the ATLAS detector at the LHC</h5>
-              <p class="mb-0">International Conference on High Energy Physics (ICHEP)</p>
-            </div>
-            <div class="year"><strong>2020</strong></div>
-          </div>
-        </a>
-        <a href="https://inspirehep.net/literature/1759582" class="anchor-box">
-          <div class="list-group-item d-flex justify-content-between align-items-center">
-            <div>
-              <h5>Analysis of <i>t t̄ H</i> and <i>t t̄ W</i> production in multilepton final states with the ATLAS detector</h5>
-              <p class="mb-0">12th International Workshop on Top Quark Physics</p>
-            </div>
-            <div class="year"><strong>2019</strong></div>
-          </div>
-        </a>
-      </div>
-    </div>
-
-  
-
-      </div>
-     </section>
 
 
-
-      <!-- end Recent Publications -->
       <!-- start gallery -->
 <section id="gallery">
       <div class="container" data-aos="fade-up">
@@ -901,7 +840,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <script>
   AOS.init({
     duration: 1000,   // animation duration
-    once: false        // animation happens only once when scrolling
+    once: true        // animation happens only once when scrolling
   });
 </script>
 
