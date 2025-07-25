@@ -3,6 +3,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Source+Sans+Pro&display=swap');
 
+/* start font section */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+/* end font section */
 :root {
   --bg-color: #f9f6ef;
   --text-color: #222;
@@ -13,6 +19,10 @@
   --card-shadow: rgba(0, 0, 0, 0.1);
   --box-color:#fafafa;
 }
+
+
+
+
 body {
   font-family: "Cormorant", serif;
   background-color: var(--bg-color);
@@ -127,13 +137,17 @@ html {
   main section{
   padding-left: 20px;
   padding-right: 20px;
-  padding-top: 10px;   /* optional */
-  padding-bottom: 40px; /* optional */
+  padding-top: 20px;   /* optional */
+  padding-bottom: 30px; /* optional */
   }
 .section-title {
+  /* padding-bottom: 1rem; */
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
     font-size: 2rem;
-    margin: 10px 0 .5rem;
-    font-weight: bold;
+    margin: 10px 0 10px;
+    letter-spacing: 2px;
+    
     
   }
 
@@ -159,11 +173,14 @@ section:nth-of-type(odd) {
 }
 
 
-
-
-
-
     /* Intro */
+    @media (min-width: 992px) {
+     .intro-main-container{
+      padding-left: 70px;
+      padding-right: 100px;
+      }
+    }
+    
     .intro h1 {
       font-size: 2.5rem;
       color: var(--accent-color);
@@ -180,8 +197,6 @@ section:nth-of-type(odd) {
     .wos-icon {
   fill: var(--accent-color);
 }
-
-    .about p { max-width: 900px; line-height: 1.6; }
     .two-cols {
       display: flex;
       flex-wrap: wrap;
@@ -201,28 +216,23 @@ section:nth-of-type(odd) {
       margin-left: -1em;
     }
     .full-details p{
-       text-align: justify;
+       /* text-align: justify; */
+       width: auto;
     }
-    @media (max-width: 576px) {
-      .full-details h2{
-        text-align: center;
-      }
    
-    } 
+
+    .about .two-cols {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12rem; /* 🔥 increase this value for bigger spacing */
+    }
+
     
     .education dd{
       font-size: .9rem;
       color: rgba(0, 0, 0, 0.608);
     }
 
-    div.Research-intrest{
-      font-size: 1rem;
-      font-weight: bold;
-    }
-    .Research-intrest p {
-  margin-bottom: 6px 0; /* reduce top and bottom margin */
-  padding: 0;    /* ensure no extra padding */
-}
 
     ul.no-bullets {
       list-style: none !important;    /* removes bullets */
@@ -232,11 +242,61 @@ section:nth-of-type(odd) {
     ul.no-bullets li {
       list-style-type: none !important; /* extra safety */
     }
+     .Research-intrest p {
+      font-size: 1rem;
+      font-weight: bold;
+      margin-bottom: 11px; /* reduce top and bottom margin */
+      padding: 0;    /* ensure no extra padding */
+    }
+
+       .research-icon {
+        margin-right: 8px;
+        width: 24px;
+        height: 24px;
+        position: relative;
+        top: -2px; /* adjust to taste */
+      }
+
+     @media (max-width: 576px) {
+      .full-details{
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* centers horizontally */
+         align-items: center;
+      }
+      .full-details h2{
+        font-size: 1.5rem;
+        text-align: center;
+      }
+      .full-details p{
+        text-align: center;
+        width: 90%;
+      }
+      .about{
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* centers horizontally */
+         align-items: center;
+      }
+      .about h3{
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.4rem;
+      }
+      .about .two-cols {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+   
+    } 
 
     /* reserarch intrest */
-    
+ 
+
 
     /* new exprinces */
+
     /* General card styling */
 .custom-experience-card {
 
@@ -244,9 +304,9 @@ section:nth-of-type(odd) {
   border-radius: 10px;
   /* border: #000000 solid 1px; */
   padding: 20px;
-  margin: 20px auto;
+  margin: 30px auto;
   max-width: 850px;
-  box-shadow: 4px 6px 8px #0000007d;
+  box-shadow: 3px 5px 8px #0000006d;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -254,7 +314,8 @@ section:nth-of-type(odd) {
 .custom-experience-card:hover {
   
   transform: translateY(-4px);
-  box-shadow: 6px 6px 16px #4200b597;
+  border: 2px solid rgb(0, 0, 181);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
 /* Title and subtitle */
@@ -281,7 +342,7 @@ section:nth-of-type(odd) {
   font-size: 1rem;
   color: #333;
 }
-fon
+
 
 /* Links inside */
 .custom-experience-card a {
@@ -305,9 +366,6 @@ fon
 }
 
     /*  */
-    .experience {
-      padding: 2rem 0;
-    }
     .timeline {
       display: flex;
       flex-direction: column;
@@ -441,17 +499,12 @@ background : var(--box-color);
 .card-title{
   margin-top: 0;         /* remove any top gap */
   padding-top: 0;        /* remove the 10% padding */
-  /* font-family: 'Merriweather', 'Times New Roman', serif; */
+  font-family: 'Merriweather', 'Times New Roman', serif;
   font-size: 1rem;
   text-align: center;
 }
 
-.modal{
-  background: rgba(0, 0, 0, 0.729);
-}
-.modal-body{
-  font-family: 'Merriweather', 'Times New Roman', serif; 
-}
+
 
 /* Hover effect */
 .info-card:hover {
@@ -518,38 +571,52 @@ background : var(--box-color);
 }
 }
 
+
 .card:hover .view-details {
   display: block;
   opacity: 1;
 }
 
+.modal{
+  background: rgba(0, 0, 0, 0.729);
+}
+.modal-body{
+  font-family: 'Merriweather', 'Times New Roman', serif; 
+}
+
 .modal-content{
+  
   box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.69);
   
 }
 .modal-header{
- background-color: #ccccff;
- color: #000000;
+  padding: 8px 5px !important;
+ background: #c1b2cf;
+ color: #ffffff;
 }
-
-#modalContent {
-  font-size: .85rem;
-  line-height: 2;
-  font-family: 'Merriweather', 'Times New Roman', serif;
-  text-align: justify;
-  text-justify: inter-word;
-  background-color: #F2F2F2;
-  overflow-y: auto; 
-  max-height: 80vh;  
-  
-  
-} 
 .modal-title {
+  font-size: 1.1rem;
   font-weight: bold;
   width: 100%;
   text-align: center;
  
 }
+
+#modalContent {
+  border-radius: 10px;
+  font-size: .85rem;
+  line-height: 2;
+  font-family: 'Merriweather', 'Times New Roman', serif;
+  text-align: justify;
+  text-justify: inter-word;
+  background-color: var(--bg-color);
+  overflow-y: auto; 
+  max-height: 80vh;  
+  padding: 2rem;
+  
+  
+} 
+
 @media (max-width: 576px) {
 
   .modal-title {
