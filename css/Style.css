@@ -299,14 +299,13 @@ section:nth-of-type(odd) {
 
     /* General card styling */
 .custom-experience-card {
-
   background: var(--box-color );
   border-radius: 10px;
   /* border: #000000 solid 1px; */
   padding: 20px;
   margin: 30px auto;
   max-width: 850px;
-  box-shadow: 3px 5px 8px #0000006d;
+  box-shadow: 3px 5px 8px #00000035;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -314,9 +313,8 @@ section:nth-of-type(odd) {
 .custom-experience-card:hover {
   
   transform: translateY(-4px);
-  border: 2px solid rgb(0, 0, 181);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
+  box-shadow: 3px 5px 8px #0000007f;
+} 
 
 /* Title and subtitle */
 .custom-experience-card .title {
