@@ -314,7 +314,7 @@ section:nth-of-type(odd) {
   
   transform: translateY(-4px);
   box-shadow: 3px 5px 8px #0000007f;
-} 
+}
 
 /* Title and subtitle */
 .custom-experience-card .title {
@@ -635,97 +635,14 @@ background : var(--box-color);
 
 
     /* start outreach  */
-
-    /* start video card  */
-
-.video-card {
-  align-self: flex-end;
-  max-height: 500px;
-  max-width: 400px; 
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-  background: var(--box-color);
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.video-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
-}
-
-.video-player {
-  width: 100%;     /* limit height without cropping */
-  height: 315px;            /* keep aspect ratio */
-  object-fit: contain;     /* show whole video without crop */
-  background: #000;  
-}
-
-.video-content {
-  padding: 15px;
-}
-
-.video-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin: 0 0 8px;
-}
-
-.video-description {
-  font-size: 0.9rem;
-  color: #555;
-}
-
-.video-icons {
-  
-  margin-bottom: 5px;
-  display: flex;
-  justify-content: center; /* center horizontally */
-  gap: 12px; /* space between icons */
-  margin-top: 5px;
-}
-
-.video-icons a {
-  text-decoration: none;
-  font-size: 22px;
-  color: black; /* default color */
-  transition: color 0.3s ease;
-}
-
-.video-icons a:hover {
-  color: #003cb5; /* change to your accent color on hover */
-}
-@media (max-width: 1000px) {
-  .video-card {
-    max-width: 100%;      /* take full width on mobile */
-    max-height: none;     /* allow height to adjust naturally */
-    margin: 0 auto;       /* center it */
-    border-radius: 10px;  /* keep rounded corners */
-  }
-
-  .video-player {
-    min-height: 400px;         /* let it scale responsively */
-    min-height: 180px;    /* optional: ensure it’s not too short */
-  }
-
-  .video-title {
-    font-size: 1rem;      /* slightly smaller title */
-  }
-
-  .video-description {
-    font-size: 0.85rem;   /* slightly smaller text */
-  }
-
-  .video-icons {
-    gap: 8px;             /* tighten icon spacing on mobile */
-  }
-}
+      /* start video card  */
 
 
 
 /* end vido card */
+
+
+
 
 /* Briefings specific card styles */
 .briefing-card {
