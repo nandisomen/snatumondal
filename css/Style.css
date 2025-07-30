@@ -10,6 +10,9 @@
 /* font for section caption  */
 @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap');
 
+/*santu mondal font  */
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 
 /* end font section */
 :root {
@@ -197,6 +200,7 @@ section:nth-of-type(odd) {
     }
     
     .intro h1 {
+      font-family : mulish;
       font-size: 2.5rem;
       color: var(--accent-color);
     }
