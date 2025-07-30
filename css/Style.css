@@ -7,6 +7,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
+/* font for section caption  */
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 /* end font section */
 :root {
@@ -143,18 +146,30 @@ html {
 .section-title {
   /* padding-bottom: 1rem; */
   font-family: "Playfair Display", serif;
-  font-weight: 700;
+  font-weight: 700; 
     font-size: 2rem;
     margin: 10px 0 10px;
     letter-spacing: 2px;
     
     
   }
+  .section-caption{
+    font-family: bitter;
+    color: rgb(146, 146, 146);
+    font-size: 1.1rem;
+    padding-left: 40px;
+    margin-bottom:18px ;
+  }
 
   @media (max-width: 576px) {
   .section-title {
     text-align: center !important;
     font-size: 1.3rem;
+  }
+   .section-caption {
+    font-size: 0.95rem;     /* smaller font size */
+    padding-left: 20px;     /* reduce padding */
+    text-align: center;     /* optional for better layout on small screens */
   }
   main section {
     padding-left: 5px;
@@ -1462,5 +1477,5 @@ input.wgh-slider-target {
 }
 
 
-/* new rescent */
+
 
