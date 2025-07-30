@@ -1,0 +1,388 @@
+/* nav bar  */
+
+.navbar {
+  background-color: transparent;
+  transition: background-color 0.5s ease;
+  z-index: 1000;
+  height: 50px;
+  padding: 0;
+}
+
+
+
+.navbar .nav-link {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  color: #C57ED3;
+  border-bottom: 1px solid #C57ED3;
+}
+
+.navbar.solid {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navbar.solid .nav-link {
+  color: #000000;
+}
+
+@media (max-width: 586px) {
+  .navbar {
+    height: 50px;
+  }
+  .navbar .nav-link {
+  font-size: .9rem;
+ 
+}
+}
+
+
+
+/* start hero section */
+.hero {
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.566)), 
+    url('Image/photography/galery-hero-cover.jpg') no-repeat center center;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 5rem; /* Bigger font */
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.tagline {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #ccc;
+  margin-bottom: 1.5rem;
+}
+
+.quote {
+  font-style: italic;
+  font-size: 1.5rem;
+  color: #aaa;
+  margin-bottom: 2rem;
+}
+
+/* text animation  */
+
+.text-chanege {
+  
+  height: 50px;
+ padding: 10px;
+ border-radius: 8px;
+ display: flex;
+   /* align-items: center; */
+  justify-content: center; 
+ color: #ffffff;
+ font-family: poppins, sans-serif;
+
+ font-size: 2rem;
+  font-weight: 600;
+ box-sizing: content-box;
+}
+.intro-text{
+  margin-top: -2px;
+}
+.roles-container {
+overflow: hidden;
+position: relative;
+}
+.role{
+  height: 100%;
+  padding-left: 6px;
+  color: rgb(255, 200, 0);
+  animation: role-change 5s  infinite;
+}
+@keyframes role-change {
+  100% { transform: translateY(-102%); }
+  
+  25% { transform: translateY(-100%); }
+  35% { transform: translateY(-202%); }
+  50% { transform: translateY(-200%); }
+  60% { transform: translateY(-302%); }
+  75% { transform: translateY(-300%); }
+  85% { transform: translateY(-402%); }
+  100% { transform: translateY(-400%); }
+}
+
+/* Responsive Font Scaling */
+@media (max-width: 768px) {
+  .text-chanege {
+    font-size: 1.5rem;
+    padding: 8px;
+  }
+
+  .roles-container {
+    height: 1.8rem;
+  }
+
+  .intro-text {
+    margin-right: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-chanege {
+    font-size: 1.2rem;
+    height: 1.3rem;
+    text-align: center;
+  }
+
+  .intro-text {
+    margin-bottom: 5px;
+  }
+
+  .roles-container {
+    height: 1.9rem;
+  }
+}
+
+
+
+.social-icons {
+  margin-top: 1rem;
+}
+
+.social-icons a {
+  margin: 10px 15px;
+  font-size: 2rem; /* Bigger icons */
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #1877F2;
+}
+.social-icons .fa-youtube:hover {
+  color: #FF0000; /* YouTube red */
+}
+.social-icons .fa-instagram:hover {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .hero {
+      background: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.566)), 
+    url('Image/photography/galery-hero-cover-mobile.jpg') no-repeat center center;
+    height: 100vh;
+    padding: 3rem 1rem;
+    background-position: center top;
+    flex-direction: column;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .tagline {
+    font-size: 1.25rem;
+  }
+
+  .quote {
+    font-size: 1rem;
+  }
+
+  .social-icons a {
+    font-size: 1.5rem;
+    margin: 0 10px;
+  }
+
+  .hero-content {
+    padding: 10px;
+  }
+}
+
+@media (max-width:586px) {
+
+  .hero-content {
+    padding-top: 30%;
+  }
+  .social-icons{
+    padding-top: 50px;
+  }
+}
+
+
+
+/* end hero section */
+
+img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: pointer;
+}
+
+/* Remove background of modal for cleaner full-view */
+.masonry-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-auto-rows: 10px;
+  gap: 20px;
+}
+
+.masonry-gallery .image-container {
+  break-inside: avoid;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  height: 100%; /* NEW: Ensure it doesn’t collapse */
+  grid-row-end: span 1;
+}
+
+.masonry-gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  will-change: transform; /* NEW: Optimize scaling */
+}
+
+
+
+.image-container:hover img {
+  transform: scale(1.05);
+}
+
+.overlay {
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+   align-items: flex-end; 
+  padding: 15px;  
+  transition: opacity 0.3s ease;
+   z-index: 2;
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+}
+
+.caption {
+
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.fullscreen-btn {
+  align-self: flex-end;
+  background: #0000005e;
+  border: none;
+  font-size: 1.2rem;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.fullscreen-btn:hover {
+  background: #0000008d;
+}
+.modal-content {
+  background-color: transparent;
+}
+body.modal-open {
+  overflow: hidden;
+}
+.modal-content {
+  background-color: #0000009c;
+  border: none;
+  border-radius: 0;
+}
+
+
+
+.btn-close {
+  z-index: 1056; /* above modal content */
+  font-size: 1.5rem;
+}
+
+
+.modal-dialog {
+  margin: 0;
+  max-width: 100%;
+}
+
+.modal-body {
+  padding: 0;
+}
+
+#modalImage {
+  width: 90%;
+  height: 90vh;
+  object-fit: contain;
+}
+@media (max-width: 768px) {
+  #modalImage {
+    width: 100%;
+    height: 100%;
+  }
+}
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 1060;
+  border-radius: 8px;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+.nav-btn:hover {
+  background: rgba(0,0,0,0.8);
+}
