@@ -1,3 +1,7 @@
+/* font for quotes  */
+@import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
+
+
 /* nav bar  */
 
 .navbar {
@@ -49,7 +53,7 @@
 .hero {
   background: 
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.566)), 
-    url('../Image/photography/galery-hero-cover.jpg') no-repeat center center;
+    url('Image/photography/galery-hero-cover.jpg') no-repeat center center;
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -76,18 +80,15 @@
 }
 
 .tagline {
-  font-size: 2rem;
+   font-family: "Lavishly Yours", cursive;
+   /* letter-spacing: 2px; */
+  font-size: 4.2rem;
   font-weight: 400;
-  color: #ccc;
+  color: #ffffff;
   margin-bottom: 1.5rem;
+  letter-spacing: 3px;
 }
 
-.quote {
-  font-style: italic;
-  font-size: 1.5rem;
-  color: #aaa;
-  margin-bottom: 2rem;
-}
 
 /* text animation  */
 
@@ -131,6 +132,8 @@ position: relative;
   100% { transform: translateY(-400%); }
 }
 
+
+
 /* Responsive Font Scaling */
 @media (max-width: 768px) {
   .text-chanege {
@@ -166,7 +169,7 @@ position: relative;
 
 
 .social-icons {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .social-icons a {
@@ -188,12 +191,19 @@ position: relative;
   -webkit-text-fill-color: transparent;
   transition: all 0.3s ease;
 }
+.down-arrow {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  color: #ffffff;
+  z-index: 2;
+}
 
 @media (max-width: 768px) {
   .hero {
       background: 
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.566)), 
-    url('../Image/photography/galery-hero-cover-mobile.jpg') no-repeat center center;
+    url('Image/photography/galery-hero-cover-mobile.jpg') no-repeat center center;
     height: 100vh;
     padding: 3rem 1rem;
     background-position: center top;
@@ -385,4 +395,59 @@ body.modal-open {
 
 .nav-btn:hover {
   background: rgba(0,0,0,0.8);
+}
+
+
+
+/* footer  */
+.footer a:hover {
+  color: #f39c12 !important;
+  text-decoration: underline;
+}
+
+.footer .social-icons a:hover {
+  color: #ff6347 !important;
+  transform: scale(1.2);
+  transition: all 0.3s ease;
+}
+
+.footer h5 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer p, .footer li {
+  font-size: 0.95rem;
+}
+.footer-link {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  margin-bottom: 0.4rem;
+  transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #f39c12;
+  text-decoration: underline;
+}
+
+.footer-social {
+  color: #ffffff;
+  margin-right: 15px;
+  transition: all 0.3s ease;
+}
+
+.footer-social:hover {
+  color: #ff6347;
+  transform: scale(1.2);
+}
+
+.footer h5 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer p, .footer li {
+  font-size: 0.95rem;
 }
