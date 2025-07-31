@@ -6,12 +6,9 @@
 /* start font section */
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-
-/* font for section caption  */
-@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap');
-
 /*santu mondal font  */
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 
 
 /* end font section */
@@ -45,6 +42,9 @@ section {
 ------------------------------ */
 nav{
   z-index: 1000;
+}
+.nav-item{
+  margin-left: 10px;
 }
 .navbar-nav .nav-link {
   position: relative;
@@ -156,11 +156,10 @@ html {
     
     
   }
-  .section-caption{
-    font-family: bitter;
-    color: rgb(146, 146, 146);
-    font-size: 1.1rem;
-    padding-left: 40px;
+  .section-caption{   
+    
+    color: rgb(97, 97, 97);
+    font-size: .9rem;
     margin-bottom:18px ;
   }
 
@@ -170,9 +169,8 @@ html {
     font-size: 1.3rem;
   }
    .section-caption {
-    font-size: 0.95rem;     /* smaller font size */
-    padding-left: 20px;     /* reduce padding */
-    text-align: center;     /* optional for better layout on small screens */
+    font-size: 0.7rem;     /* smaller font size */
+  
   }
   main section {
     padding-left: 5px;
@@ -200,7 +198,7 @@ section:nth-of-type(odd) {
     }
     
     .intro h1 {
-      font-family : mulish;
+      font-family: mulish;
       font-size: 2.5rem;
       color: var(--accent-color);
     }
@@ -245,7 +243,7 @@ section:nth-of-type(odd) {
     .about .two-cols {
         display: flex;
         flex-wrap: wrap;
-        gap: 12rem; /* 🔥 increase this value for bigger spacing */
+        gap: 11rem; /* 🔥 increase this value for bigger spacing */
     }
 
     
@@ -263,7 +261,7 @@ section:nth-of-type(odd) {
     ul.no-bullets li {
       list-style-type: none !important; /* extra safety */
     }
-     .Research-intrest p {
+     .research-intrest p {
       font-size: 1rem;
       font-weight: bold;
       margin-bottom: 11px; /* reduce top and bottom margin */
@@ -313,6 +311,163 @@ section:nth-of-type(odd) {
     } 
 
     /* reserarch intrest */
+
+      /* start outreach  */
+
+      /* pc video iframe  */
+      .outreach-pc{
+        margin-bottom: -70px;
+      }
+
+      .iframe-wrapper {
+  width: 100%;
+  max-width: 450px;
+}
+
+.iframe-wrapper iframe {
+  aspect-ratio: 10 / 16;
+  width: 100%;
+  /* height: auto; */
+}
+.pc-outreach-icon {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 12px; /* space between icons */
+  margin-top: 12px;
+  height: 40px; /* fixed height */
+  width: 100%;
+  transform: translateY(-90px); /* Move up by 20px */
+}
+
+.pc-outreach-icon img {
+  width: 32px;
+  height: auto;
+}
+
+.pc-outreach-icon i {
+  font-size: 30px;
+  color: #444;
+  transition: color 0.3s ease;
+}
+
+.pc-outreach-icon i:hover {
+   /* Bootstrap primary or brand color */
+  text-shadow: 6px 5px 2px rgba(0, 0, 0, 0.5); /* soft blue glow */
+}
+.pc-outreach-icon img:hover{
+    filter: drop-shadow(6px 6px 6px rgba(0, 0, 0, 0.671));
+ 
+}
+
+
+    /*mobile  start video card  */
+    .outreach-mobile{
+      display: none;
+    }
+
+.video-card {
+  align-self: flex-end;
+  max-height: 500px;
+  max-width: 400px; 
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  background: var(--box-color);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+.video-player {
+  width: 100%;     /* limit height without cropping */
+  height: 315px;            /* keep aspect ratio */
+  object-fit: contain;     /* show whole video without crop */
+  background: #000;  
+}
+
+.video-content {
+  padding: 15px;
+}
+
+.video-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.video-description {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.video-icons {
+  
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center; /* center horizontally */
+  gap: 12px; /* space between icons */
+  margin-top: 5px;
+}
+
+.video-icons a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black; /* default color */
+  transition: color 0.3s ease;
+}
+
+.video-icons a:hover {
+  color: #003cb5; /* change to your accent color on hover */
+}
+@media (max-width: 1000px) {
+  .video-card {
+    max-width: 100%;      /* take full width on mobile */
+    max-height: none;     /* allow height to adjust naturally */
+    margin: 0 auto;       /* center it */
+    border-radius: 10px;  /* keep rounded corners */
+  }
+
+  .video-player {
+    min-height: 400px;         /* let it scale responsively */
+    min-height: 180px;    /* optional: ensure it’s not too short */
+  }
+
+  .video-title {
+    font-size: 1rem;      /* slightly smaller title */
+  }
+
+  .video-description {
+    font-size: 0.85rem;   /* slightly smaller text */
+  }
+
+  .video-icons {
+    gap: 8px;             /* tighten icon spacing on mobile */
+  }
+}
+
+@media (max-width: 768px) {
+  .outreach-mobile{
+    display:block;
+  }
+  .outreach-pc{
+    display: none;
+  }
+}
+
+
+/* end video card mobile */
+    /* start outreach  */
+      /* start video card  */
+
+
+
+/* end vido card */
  
 
 
@@ -655,115 +810,7 @@ background : var(--box-color);
 
 /* end Physics Analysis Experience */
 
-    /* start outreach  */
-
-    /*mobile  start video card  */
-    .outreach-mobile{
-      display: none;
-    }
-
-.video-card {
-  align-self: flex-end;
-  max-height: 500px;
-  max-width: 400px; 
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-  background: var(--box-color);
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.video-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
-}
-
-.video-player {
-  width: 100%;     /* limit height without cropping */
-  height: 315px;            /* keep aspect ratio */
-  object-fit: contain;     /* show whole video without crop */
-  background: #000;  
-}
-
-.video-content {
-  padding: 15px;
-}
-
-.video-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin: 0 0 8px;
-}
-
-.video-description {
-  font-size: 0.9rem;
-  color: #555;
-}
-
-.video-icons {
   
-  margin-bottom: 5px;
-  display: flex;
-  justify-content: center; /* center horizontally */
-  gap: 12px; /* space between icons */
-  margin-top: 5px;
-}
-
-.video-icons a {
-  text-decoration: none;
-  font-size: 22px;
-  color: black; /* default color */
-  transition: color 0.3s ease;
-}
-
-.video-icons a:hover {
-  color: #003cb5; /* change to your accent color on hover */
-}
-@media (max-width: 1000px) {
-  .video-card {
-    max-width: 100%;      /* take full width on mobile */
-    max-height: none;     /* allow height to adjust naturally */
-    margin: 0 auto;       /* center it */
-    border-radius: 10px;  /* keep rounded corners */
-  }
-
-  .video-player {
-    min-height: 400px;         /* let it scale responsively */
-    min-height: 180px;    /* optional: ensure it’s not too short */
-  }
-
-  .video-title {
-    font-size: 1rem;      /* slightly smaller title */
-  }
-
-  .video-description {
-    font-size: 0.85rem;   /* slightly smaller text */
-  }
-
-  .video-icons {
-    gap: 8px;             /* tighten icon spacing on mobile */
-  }
-}
-
-@media (max-width: 768px) {
-  .outreach-mobile{
-    display:block;
-  }
-  .outreach-pc{
-    display: none;
-  }
-}
-
-
-/* end video card mobile */
-    /* start outreach  */
-      /* start video card  */
-
-
-
-/* end vido card */
 
 
 
@@ -1467,19 +1514,148 @@ input.wgh-slider-target {
 /* end galary  */
 
 
-    /* Contact */
-    .contact-info i {
-      margin-right: 0.5rem;
-      color: var(--accent-color);
-    }
-
     /* for footer */
+.custom-footer {
+  background-color: #1c1c1c;
+  padding: 60px 20px 20px 20px;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  font-family: 'Segoe UI', sans-serif;
+}
 
-    footer a:hover {
-  text-decoration: underline;
-  color: #66ccff;
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.footer-column {
+  flex: 1 1 180px;
+}
+
+
+.footer-column h4 {
+  font-size: 1.2rem;
+  color: #ffffff;
+
+  position: relative;
+  
+}
+@media (min-width:900px) {
+  .footer-container .footer-column .line {
+  display: block;
+  width: 50px;
+  height: 4px;
+  background-color: #f50057 !important;
+  border: none;                  /* <— very important */
+  border-radius: 10px;
+  margin: 0;
+    margin-bottom: 10px;
+  transform: translateY(-4px);
+  visibility: visible;
+    
+}
+
+  
+}
+
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  font-size: 1.1rem;
+  color: #aaa;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: #f50057;
+}
+.footer-column p {
+  color: #aaa;
+  font-size: 1rem;
+  /* margin-bottom: 12px; */
+
+}
+
+.footer-column p i {
+  color: #f50057;
+  margin-right: 8px;
+}
+.footer-link{
+
+  color: #aaa;
+}
+/* Base layout: stack vertically (for desktop) */
+.social-links {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;  /* Default: vertical */
+  /* gap: 10px; */
+}
+
+/* Icons stay centered inside circles */
+.social-links a {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  margin-bottom: 10px;
+  background: #333;
+  color: #fff;
+  border-radius: 50%;
+  margin-right: 0;
+  transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 
 
+.social-links a:hover {
+  background: #f50057;
+  transform: translateY(-3px);
+}
+.last-updated-section p{
+  color: #ffffff93;
+  font-size: .8rem;
+}
+
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .footer-column {
+    margin-bottom: 10px;
+  }
+  .social-links {
+    flex-direction: row;
+    justify-content: center; /* center horizontally */
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .social-links a {
+    margin-bottom: 0; /* remove vertical gap */
+    margin-right: 0;
+  }
+
+}
 
