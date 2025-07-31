@@ -43,8 +43,10 @@
       <!-- Nav items on the right -->
       <ul class="navbar-nav ms-auto">
         
-        <li class="nav-item"><a class="nav-link" href="hobbies.html">Photo</a></li>
-        <li class="nav-item dropdown">
+        <li class="nav-item"><a class="nav-link" href="#Analysis">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#talks">Talks</a></li>
+        
+        <!-- <li class="nav-item dropdown">
           <a href="#talk" class="nav-link"id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Talks
           </a>
@@ -53,9 +55,13 @@
             <li><a class="dropdown-item" href="#invited">Invited Talks</a></li>
             <li><a class="dropdown-item" href="#posters">Posters</a></li>
           </ul>
-        </li>
+        </li> -->
         <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="#outreach">Media</a></li>
+        <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="/hobbies.html"> Lens & Life</a></li>
+
+        <li class="nav-item"><a class="nav-link" href="#custom-footer">Contact</a></li>
       </ul>
     </div>
   </div>
@@ -119,9 +125,9 @@
             <dd class = "mx-4 pl-4 ">Burdwan University, IN</dd>
           </dl>
         </div>
-        <div>
+        <div class="research-intrest">
           <h3>Research Interests</h3>
-          <div class="Research-intrest px-3">
+          <div class="px-3">
              <p><img src="Image/RI-icon/Jet-Substructure-Analysis.png" alt="icon" class="research-icon">Jet Substructure Analysis</p>
             <p><img src="Image/RI-icon/Top-Quark.png" class="research-icon" alt="icon">Top-Quark Physics</p>
             <p><img src="Image/RI-icon/Flavour-Tagging-Calibration.png" class="research-icon" alt="icon">Flavour Tagging Calibration</p>
@@ -146,11 +152,48 @@
 
     <section id="outreach" class="outreach" >
 
+       <!-- for pc outreach section -->
+   <div class="container outreach-pc" data-aos="fade-up">
+    <h1 class="section-title">Science Communication</h1>
+    <h3 class="section-caption">Featured as the lead analyst in two exclusive outreach videos produced by CERN, highlighting the top quark observations in heavy-ion collisions.</h3>
+    <div class="row justify-content-center outreach-video-mainDiv mt-2">
+      <!-- Video 1 -->
+        <div class="container-fluid col-md-4  d-flex flex-column justify-content-md-center video-card-effect ">
+          <div class="iframe-wrapper" ><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7275193978193428481" height="940" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+          </div>
+          
+          <div class="pc-outreach-icon"><a href="https://videos.cern.ch/record/2298651"><img src="Image/LogoOutline-Black.svg" alt="CERN Logo" ></a>
+              <a href="https://www.linkedin.com/posts/atlas-collaboration_the-atlas-collaboration-at-cern-observed-activity-7112873935779557377-FMBN?utm_source=share&utm_medium=member_desktop&rcm=ACoAABhVGAcBxPxsVxBrfnYPycNSyJm_Vpigz4g" onclick="return handleLinkClick(this)"><i class="fa-brands fa-square-linkedin"></i></a>
+              <a href="https://x.com/ATLASexperiment/status/1707105631910396348?s=20" onclick="return handleLinkClick(this)"><i class="fab fa-x-twitter"></i></a>
+              <a href="https://www.facebook.com/ATLASexperiment/videos/827977738818553" onclick="return handleLinkClick(this)"><i class="fab fa-facebook"></i></a></div>
+          
+        </div>
+      
+      <!-- Video 2 -->
+     <div class="video-card-effect container-fluid col-md-4 d-flex flex-column justify-content-md-center">
+      <div class="iframe-wrapper">
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7112873935221731329" height="940" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+      </div>
+      <div class="pc-outreach-icon">
+          <a href=""><img src="Image/LogoOutline-Black.svg" alt="CERN Logo" ></a>
+              <a href="https://www.linkedin.com/posts/atlas-collaboration_physicists-from-the-atlas-experiment-have-activity-7275193979069992961-pdU6?utm_source=share&utm_medium=member_desktop" onclick="return handleLinkClick(this)"><i class="fa-brands fa-square-linkedin"></i></a>
+              <a href="https://www.threads.net/@atlasexperiment/post/DDujLYiChR9" onclick="return handleLinkClick(this)"><i class="fab fa-threads"></i></a>
+              <a href="https://www.facebook.com/ATLASexperiment/videos/550956644435005" onclick="return handleLinkClick(this)"><i class="fab fa-facebook"></i></a>
+        </div>
+       
+          
+        </div>
+      
+         
+
+    </div>
+  </div>
+
       <!-- for mobile outreach section -->
        
   <div class="container outreach-mobile" data-aos="fade-up">
-    <h1 class="section-title">Science Communication & Outreach</h1>
-    <h3 class="section-caption">Featured as the lead analyst in two exclusive outreach videos produced by CERN, highlighting the top quark observations in heavy-ion collisions. These well-regarded videos feature interviews in which I explain the significance of the results and the impact of the analysis I led within the ATLAS collaboration.</h3>
+    <h1 class="section-title">Science Communication</h1>
+    <h3 class="section-caption">Featured as the lead analyst in two exclusive outreach videos produced by CERN, highlighting the top quark observations in heavy-ion collisions.</h3>
     <div class="row g-3 justify-content-center outreach-video-mainDiv mt-1">
       <!-- Video 1 -->
            <div class="col-10 col-md-5 d-flex justify-content-center">
@@ -179,7 +222,7 @@
       <!-- Video 2 -->
                <div class="col-10 col-md-5 d-flex justify-content-center">
         <div class="video-card">
-          <video id="myVideo" class="video-player" controlsList="nodownload"   muted controls playsinline>
+          <video id="mobile-video-2" class="video-player" controlsList="nodownload"   muted controls playsinline>
             <source src="Image/video2.mp4" type="video/mp4">
           </video>
           <div class="video-content">
@@ -193,8 +236,15 @@
               <a href="https://www.threads.net/@atlasexperiment/post/DDujLYiChR9" onclick="return handleLinkClick(this)"><i class="fab fa-threads"></i></a>
               <a href="https://www.facebook.com/ATLASexperiment/videos/550956644435005" onclick="return handleLinkClick(this)"><i class="fab fa-facebook"></i></a>
 
-               <script>
-                      const video = document.getElementById('myVideo');
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+                      const video = document.getElementById('mobile-video-2');
 
                       // Set your start time in seconds
                       const startTime = 107;
@@ -204,36 +254,7 @@
                         video.currentTime = startTime;
                       });
                     </script>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- for pc outreach section -->
-   <div class="container outreach-pc" data-aos="fade-up">
-    <h1 class="section-title">Science Communication & Outreach</h1>
-    <h3 class="section-caption">Featured as the lead analyst in two exclusive outreach videos produced by CERN, highlighting the top quark observations in heavy-ion collisions. These well-regarded videos feature interviews in which I explain the significance of the results and the impact of the analysis I led within the ATLAS collaboration.</h3>
-    <div class="row g-3 justify-content-center outreach-video-mainDiv mt-1">
-      <!-- Video 1 -->
-        <div class="container-fluid col-10 col-md-4  d-flex justify-content-md-center video-card-effect ">
-       
-          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7275193978193428481" height="940" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
-          
-        </div>
-      
-      <!-- Video 2 -->
-     <div class="video-card-effect container-fluid col-10 col-md-4 d-flex justify-content-md-center">
-       
-          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7112873935221731329" height="940" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
-        </div>
-      
-         
-
-    </div>
-  </div>
+ 
 </section>
 
     <!-- end outreach for mobile -->
@@ -250,32 +271,26 @@
     <section class="experience" id=" experience" >
       <div class="container" data-aos="fade-up">
         <h1 class="section-title">Research Employment</h1>
-        <h3 class="section-caption">Where I’ve worked and what I’ve contributed to as a physicist</h3>
         <!-- satrt for new box copy and edit this -->
         <!-- 1st card -->
         <div class="custom-experience-card container-fluid"  >
       <div class="d-flex align-items-start">
-        <img src="Image/CERN_logo.svg.png" alt="UofG Logo" style="width:60px; height:auto; margin-right:15px;">
+        <img src="Image/logotyp_fakulty_rgb4.png" alt="UofG Logo" style="width:60px; height:auto; margin-right:15px; margin-top: 15px;">
         <div>
-          <h5 class="title">Senior Research Fellow</h5>
-          <h6 class="institution">CERN</h6>
-          <p class="duration">April 2024 – Present Glasgow (UK)</p>
+          <h5 class="title">Post‑Doctoral Research Associate</h5>
+          <h6 class="institution">Charles University, Faculty of Mathematics and Physics</h6>
+          <p class="duration">September 2025 – Now · Prague (CZ)</p>
         </div>
       </div>
       <p>
-        I led the legacy $t\\bar{t}Z$ ATLAS measurement and contributed to the first measurement of the $t\\bar{t}$ spin
-        density matrix with the full Run 2 dataset; for both analyses, I developed an extensive Effective Field
-        Theory fitting framework in the Julia language. I was also involved in background estimations for a
-        combination of Dark Matter searches with $t\\bar{t} + E_{T}^{miss}$ signatures, as well as prototyping an auto‑encoder
-        for an <a href="#">Anomaly Detection based search for new physics</a>.
+        I conduct research within the ATLAS Collaboration focused on two distinct areas. The first involves studies of jet properties and substructure in both proton-proton (pp) and heavy-ion (Pb+Pb, O+O, etc.) collisions, working to improve jet calibration and develop advanced analysis techniques to better characterise jet phenomena across different collision systems. In parallel, I investigate top-quark production in heavy-ion (Pb+Pb) collisions, aiming to deepen the understanding of top-quark behaviour and interactions in the quark-gluon plasma environment.
       </p>
 
       <p class="fw-semibold">Other responsibilities included:</p>
       <ul>
-        <li>Supervision of MSc and PhD students</li>
-        <li>Summarising ATLAS and CMS $t\\bar{t} + X$ results for the <a href="#">LHC Top working group</a></li>
-        <li>Supporting the ATLAS Top group in Monte Carlo generation</li>
-        <li>Acting as ATLAS Trigger online expert and online release coordinator</li>
+        <li>Performing p1 muon detector shift duties as part of ATLAS online operations</li>
+        <li>Supervising PhD and MSc students, providing guidance on data analysis and research projects</li>
+        <li>Contributing to ATLAS software validation efforts, particularly b-tagging performance under heavy-ion conditions</li>
       </ul>
     </div>
 
@@ -283,35 +298,41 @@
     <!-- 2nd card -->
     <div class="custom-experience-card" >
       <div class="d-flex align-items-start">
-        <img src="YOUR_LOGO_URL_HERE" alt="UofG Logo" style="width:60px; height:auto; margin-right:15px;">
+        <img src="Image/Logo_CTU.png" alt="UofG Logo" style="width:60px; height:auto; margin-right:15px; margin-top: 15px;">
         <div>
           <h5 class="title">Post‑Doctoral Research Associate</h5>
-          <h6 class="institution">University of Glasgow</h6>
-          <p class="duration">April 2020 – August 2021 · Glasgow (UK)</p>
+          <h6 class="institution">Czech Technical University in Prague</h6>
+          <p class="duration">September 2024 – September 2025 · Prague (CZ)</p>
         </div>
       </div>
 
-      <p>
-        I led the legacy $t\\bar{t}Z$ ATLAS measurement and contributed to the first measurement of the $t\\bar{t}$ spin
-        density matrix with the full Run 2 dataset; for both analyses, I developed an extensive Effective Field
-        Theory fitting framework in the Julia language. I was also involved in background estimations for a
-        combination of Dark Matter searches with $t\\bar{t} + E_{T}^{miss}$ signatures, as well as prototyping an auto‑encoder
-        for an <a href="#">Anomaly Detection based search for new physics</a>.
-      </p>
+    <p>
+Led key aspects of the analysis culminating in the first \(5.0\sigma\) observation of top–antitop production in heavy-ion collisions. Responsibilities included optimising signal regions, implementing a profile-likelihood multi-fit strategy across various models, and maximising sensitivity in the dilepton final state with high-purity \(t\bar{t}\) reconstruction. Leveraged cross-collision expertise from \(pp\) ,  \(p+\mathrm{Pb}\), and \(\mathrm{Pb}+\mathrm{Pb}\) datasets to refine selection and systematics. Ensured analysis reproducibility by preparing HEPData submissions, promoting transparency and reusability by the global theory community.
+</p>
+
 
       <p class="fw-semibold">Other responsibilities included:</p>
       <ul>
-        <li>Supervision of MSc and PhD students</li>
-        <li>Summarising ATLAS and CMS $t\\bar{t} + X$ results for the <a href="#">LHC Top working group</a></li>
-        <li>Supporting the ATLAS Top group in Monte Carlo generation</li>
-        <li>Acting as ATLAS Trigger online expert and online release coordinator</li>
+        <li>
+          Contributed to ATLAS software validation efforts, focusing on <i>b</i>-tagging performance in high-occupancy environments
+        </li>
+        <li>
+          Acted as the ATLAS bJet/ID/MinBias signatures expert-on-call and online coordinator during active data-taking periods
+        </li>
+        <li>
+          Initiated Run 3 heavy-ion analysis efforts on \(\mathrm{Pb}+\mathrm{Pb}\) collisions, including early event selection and workflow development
+        </li>
+        <li>
+          Led and participated in outreach activities, including public talks, student workshops, and science communication campaigns
+        </li>
       </ul>
+
     </div>
 
     <!-- 3rdd card -->
     <div class="custom-experience-card">
       <div class="d-flex align-items-start">
-        <img src="Image/Logo_CTU.png" alt="UofG Logo" style="width:60px; height:auto; margin-right:15px;">
+        <img src="Image/Logo_CTU.png" alt="UofG Logo" style="width:60px; height:auto; margin-right:15px; margin-top: 15px;">
         <div>
           <h5 class="title">Doctoral Researcher</h5>
           <h6 class="institution">Czech Technical University  in Prague </h6>
@@ -326,21 +347,21 @@
       <p class="fw-semibold">Highlights of my doctoral work:</p>
       <p>
         <ul>
-  <li>
-    <strong>Top‑Quark Pair Production in p+Pb Collisions at &#8730;<i>s<sub>NN</sub></i> = 8.16&nbsp;TeV</strong><br>
-    Led the first observation of top‑quark pair production in a heavy‑ion environment with &gt;5σ significance and 9% uncertainty — based on full ATLAS p+Pb data. Designed the profile‑likelihood framework, handled systematics, optimised fit variables, and contributed to pseudo‑top reconstruction. The framework was later extended to Pb+Pb studies. Results were presented at <em>ICHEP 2024</em> and <em>Diffraction &amp; Low‑x 2024</em>, and published in <em>JHEP 11 (2024) 101</em>.
-  </li>
+            <li>
+              <strong>Top‑Quark Pair Production in p+Pb Collisions at &#8730;<i>s<sub>NN</sub></i> = 8.16&nbsp;TeV</strong><br>
+              Led the first observation of top‑quark pair production in a heavy‑ion environment with &gt;5σ significance and 9% uncertainty — based on full ATLAS p+Pb data. Designed the profile‑likelihood framework, handled systematics, optimised fit variables, and contributed to pseudo‑top reconstruction. The framework was later extended to Pb+Pb studies. Results were presented at <em>ICHEP 2024</em> and <em>Diffraction &amp; Low‑x 2024</em>, and published in <em>JHEP 11 (2024) 101</em>.
+            </li>
 
-  <li>
-    <strong>t&#772;tH and t&#772;tW Production in Multilepton Final States at &#8730;<i>s</i> = 13&nbsp;TeV</strong><br>
-    Contributed to t&#772;tH/t&#772;tW measurements using 80 fb<sup>−1</sup> of pp data, focusing on same‑sign dilepton&nbsp;+&nbsp;hadronic τ channel. Led background estimation using a data‑driven fake‑factor (ABCD) method, optimised MVA discriminants, and supported framework development and MC production. Results presented at <em>ICHEP 2020</em>.
-  </li>
+            <li>
+              <strong>t&#772;tH and t&#772;tW Production in Multilepton Final States at &#8730;<i>s</i> = 13&nbsp;TeV</strong><br>
+              Contributed to t&#772;tH/t&#772;tW measurements using 80 fb<sup>−1</sup> of pp data, focusing on same‑sign dilepton&nbsp;+&nbsp;hadronic τ channel. Led background estimation using a data‑driven fake‑factor (ABCD) method, optimised MVA discriminants, and supported framework development and MC production. Results presented at <em>ICHEP 2020</em>.
+            </li>
 
-  <li>
-    <strong>Flavour‑Tagging Calibration for LHC Run 2</strong><br>
-    Developed and maintained pseudo‑continuous b‑tagging calibration tools using 139 fb<sup>−1</sup> of &#8730;<i>s</i> = 13&nbsp;TeV data. Built validation and visualisation utilities based on CDI files, improving release‑to‑release consistency and analysis readiness across ATLAS.
-  </li>
-</ul>
+            <li>
+              <strong>Flavour‑Tagging Calibration for LHC Run 2</strong><br>
+              Developed and maintained pseudo‑continuous b‑tagging calibration tools using 139 fb<sup>−1</sup> of &#8730;<i>s</i> = 13&nbsp;TeV data. Built validation and visualisation utilities based on CDI files, improving release‑to‑release consistency and analysis readiness across ATLAS.
+            </li>
+          </ul>
 
       </p>
 
@@ -350,6 +371,7 @@
         <li>Acted as an official reviewer for ATLAS–CERN publications, representing the Czech Technical University in Prague (2017–Present)</li>
         <li>Mentored MSc students on flavour tagging and Higgs analysis reproducibility</li>
         <li>Presented analysis updates and results at ATLAS collaboration meetings and major international conferences</li>
+        <li> Organised ICHEP 2024 from the institute’s side as part of the local organising committee</li>
       </ul>
     </div>
             
@@ -368,12 +390,11 @@
 <section id="Analysis" class="projects-box" >
   <div class="container" data-aos="fade-up">
     <h1 class="section-title">Key Physics Analyses</h1>
-    <h3 class="section-caption">Major studies and discoveries I’ve led or contributed to in the ATLAS experiment.</h3>
   <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4 pt-3 px-lg-5">
     <!-- start for new box copy and edit this -->
     <div class="col">
       <div class="card info-card" data-bs-toggle="modal" data-bs-target="#detailModal">
-        <img src="Image/analisis.jpg" class="card-img-top" alt="...">
+        <img src="Image/Physics-Analyses/1-Pb-Pb.png" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title text-center">
             Observation of top‑quark pair production in lead‑lead collisions
@@ -391,7 +412,7 @@
     <!-- card 2 -->
     <div class="col">
       <div class="card info-card" data-bs-toggle="modal" data-bs-target="#detailModal" >
-        <img src="Image/analisis.jpg" class="card-img-top" alt="...">
+        <img src="Image/Physics-Analyses/2-p-Pb.png" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title text-center">
             Observation of top quark pair production in $p$‑Pb collisions
@@ -399,7 +420,14 @@
           <div><h6 class="text-center view-details">Read More</h6></div>
           
           <p class="card-text d-none">
-            Search for $t\bar{t}H$ production in multilepton final states using $pp$ collisions at $\sqrt{s} = 13$ TeV with an integrated luminosity of $80\ \text{fb}^{-1}$. Six final states, categorised by charged‑lepton number and flavour, were defined, along with 25 event categories, to simultaneously detect the $t\bar{t}H$ signal and constrain significant backgrounds. An excess of events consistent with $t\bar{t}H$ production was observed, corresponding to 1.8 standard deviations, compared to the expected 3.1 standard deviations. Assuming Standard Model branching fractions, the best‑fit $t\bar{t}H$ production cross section is $\sigma_{t\bar{t}H} = 294^{+182}_{-162}\ \text{fb}$, which is consistent with Standard Model predictions.
+
+          This ATLAS analysis achieved the first observation of top-quark pair (\( t\bar{t} \)) production in \( p+\text{Pb} \) collisions at \( \sqrt{s} = 8.16~\mathrm{TeV} \), reaching \( >5\sigma \) significance and 9% cross-section uncertainty—the most precise result in a heavy-ion environment. Top quarks, decaying before QGP formation, serve as clean probes of initial-state nPDFs, particularly high-\( Q^2 \) gluons.
+        <br>
+          Applicant led the analysis, developing the profile-likelihood framework, background and systematic treatment, and optimising fit variables, while also contributing to pseudo-top reconstruction and sample validation. The framework was later applied to Pb+Pb analyses. Results were presented at 
+          <a href="https://indico.cern.ch/event/1291157/contributions/5878747/" target="_blank">ICHEP 2024</a> and 
+          <a href="https://indico.cern.ch/event/1354173/contributions/6103804/" target="_blank">Diffraction &amp; Low-x 2024</a> and published in 
+          <a href="https://doi.org/10.1007/JHEP11(2024)101" target="_blank">JHEP 11 (2024) 101</a>, supported by the 
+          <a href="https://www.utef.cvut.cz/ieap" target="_blank">Czech Technical University in Prague</a>.
           </p>
         </div>
       </div>
@@ -409,15 +437,23 @@
     <!-- card 3  -->
     <div class="col">
       <div class="card info-card" data-bs-toggle="modal" data-bs-target="#detailModal">
-        <img src="Image/analysis-3-Higgs-3.jpg" class="card-img-top" alt="...">
+        <img src="Image/Physics-Analyses/3-ttH.png" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title text-center">
             Analysis of $t\bar{t}H$ and $t\bar{t}W$ production in multilepton final states with the ATLAS detector
           </h5>
           <h6 class="text-center view-details">Read More</h6>
           <p class="card-text d-none">
-            Search for $t\bar{t}H$ production in multilepton final states using $pp$ collisions at $\sqrt{s} = 13$ TeV with an integrated luminosity of $80\ \text{fb}^{-1}$. Six final states, categorised by charged‑lepton number and flavour, were defined, along with 25 event categories, to simultaneously detect the $t\bar{t}H$ signal and constrain significant backgrounds. An excess of events consistent with $t\bar{t}H$ production was observed, corresponding to 1.8 standard deviations, compared to the expected 3.1 standard deviations. Assuming Standard Model branching fractions, the best‑fit $t\bar{t}H$ production cross section is $\sigma_{t\bar{t}H} = 294^{+182}_{-162}\ \text{fb}$, which is consistent with Standard Model predictions.
-          </p>
+       
+              This ATLAS analysis measured \( t\bar{t}H \) and \( t\bar{t}W \) production in multilepton final states, focusing on the two same-sign leptons plus one hadronic tau channel, using 80~fb\(^{-1} \) of 13~TeV \( pp \) data. It provided direct sensitivity to the top-Higgs Yukawa coupling and probed \( t\bar{t}W \) backgrounds in high-object-multiplicity final states. <br>
+          
+              I optimised multivariate discriminants to isolate the \( t\bar{t}H \) signal from major SM backgrounds (\( t\bar{t}W \), \( VV \), non-prompt leptons) and led the lepton background estimation using a data-driven fake-factor (ABCD) method, improving modelling accuracy. I also contributed to simulation production and framework development to enhance analysis efficiency. Results were presented at 
+              <a href="https://indico.cern.ch/event/868940/contributions/3813492/" target="_blank">ICHEP 2020</a>. This work was supported by the 
+              <a href="https://www.utef.cvut.cz/ieap" target="_blank">Czech Technical University in Prague</a> and the 
+              <a href="https://www.slu.cz/slu/en/" target="_blank">Silesian University in Opava</a> doctoral scholarship.
+            
+
+                      </p>
         </div>
       </div>
       <!-- <a class="btn btn-primary w-100 mt-3 rounded-md shadow-md hover-effect" href="#" role="button">Full Artical</a> -->
@@ -426,17 +462,16 @@
     <!-- card-4  -->
     <div class="col">
       <div class="card info-card" data-bs-toggle="modal" data-bs-target="#detailModal">
-        <img src="Image/analysis4.jpeg" class="card-img-top img-fluid" alt="...">
+        <img src="Image/Physics-Analyses/analysis4.jpeg" class="card-img-top img-fluid" alt="...">
         <div class="card-body">
           <h5 class="card-title text-center">
             ATLAS Flavour tagging: jet collection calibration and CDI tooling
           </h5>
           <h6 class="text-center view-details">Read More</h6>
           <p class="card-text d-none">
-        I developed and maintained the pseudo‑continuous calibration framework for flavour tagging and b‑jet identification in ATLAS simulations and data. 
-        Using the full Run 2 dataset (139 fb<sup>−1</sup> at &radic;s = 13 TeV), I established a robust methodology for extracting b‑tagging efficiency and c‑/light‑jet misidentification rates directly from data. 
-        To support validation and integration workflows, I created tools to visualise calibrations directly from CDI files, enabling fast cross‑release comparisons and reducing redundancy. 
-        These tools streamlined the calibration pipeline and have been adopted across multiple ATLAS analyses requiring precise flavour tagging performance.
+
+            I developed and maintained the pseudo-continuous calibration framework for flavour tagging and b-jet identification in ATLAS simulations and data. Using the full Run 2 dataset (139~fb\(^{-1}\) at \( \sqrt{s} = 13~\mathrm{TeV} \)), I established a robust methodology for extracting b-tagging efficiency and c-/light-jet misidentification rates directly from data. To support validation and integration workflows, I created tools to visualise calibrations directly from CDI files, enabling fast cross-release comparisons and reducing redundancy. These tools streamlined the calibration pipeline and have been adopted across multiple ATLAS analyses requiring precise flavour tagging performance. This work has been published in 
+            <a href="https://link.springer.com/article/10.1140/epjc/s10052-023-11699-1" target="_blank">European Physical Journal C</a>.
           </p>
         </div>
       </div>
@@ -493,7 +528,7 @@ document.addEventListener('DOMContentLoaded', function() {
  <section class="briefings-section">
   <div class="container" data-aos="fade-up">
     <h1 class="section-title">Briefings</h1>
-    <h3 class="section-caption">The key analysis of proton-lead and lead-lead data that enabled ATLAS’s first observation of top quarks in heavy-ion collisions—an achievement formally recognised by CERN’s exclusive Physics Briefings for its significant impact.</h3>
+    <h3 class="section-caption">The first observation of top quarks in heavy-ion collisions—an achievement formally recognised by CERN’s exclusive Physics Briefings for its significant impact.</h3>
 
   <div class="row justify-content-center g-4 pt-2">
 
@@ -539,7 +574,6 @@ document.addEventListener('DOMContentLoaded', function() {
   <section class="news-section">
     <div class="container" data-aos="fade-up">
       <h1 class="section-title">Research in the News</h1>
-      <h3 class="section-caption"> Media coverage, ATLAS updates, or brief summaries of research activity.</h3>
 
       <div class="news-container">
   <div class="wgh-slider">
@@ -617,14 +651,13 @@ document.addEventListener('DOMContentLoaded', function() {
     <section id="talks">
   <div class="container" data-aos="fade-up">
     <h1 class="section-title">Recent &amp; Upcoming Talks</h1>
-    <h3 class="section-caption">Plenary, invited, and contributed presentations at international events.</h3>
     <div class="mx-lg-5">
 
       <!-- Plenary Talks -->
       <h4 class="mt-4 mb-3" id="plenary">Plenary Talks</h4>
       <hr>
       <div class="list-group mb-4 mx-lg-3">
-        <a href="https://indico.cern.ch/event/1354173/contributions/6103804/" onclick="return handleLinkClick(this)" class="anchor-box">
+        <a href="https://indico.cern.ch/event/1354173/contributions/6103804/" class="anchor-box">
           <div class="list-group-item d-flex justify-content-between align-items-center">
             <div>
               <h5>Recent ATLAS results relevant for PDFs at low and high x, saturation in both pp and HI collisions</h5>
@@ -633,7 +666,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="year"><strong>2024</strong></div>
           </div>
         </a>
-        <a href="https://indico.cern.ch/event/1161009/timetable/#25-top-production-in-heavy-ion" onclick="return handleLinkClick(this)" class="anchor-box">
+        <a href="https://indico.cern.ch/event/1161009/timetable/#25-top-production-in-heavy-ion" class="anchor-box">
           <div class="list-group-item d-flex justify-content-between align-items-center">
             <div>
               <h5>Top production in Heavy Ion (PbPb and $p$Pb) collisions</h5>
@@ -648,7 +681,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <h4 class="mt-4 mb-3" id="invited">Invited Talks</h4>
       <hr>
       <div class="list-group mb-4 mx-lg-3">
-        <a href="https://indico.cern.ch/event/1380777/contributions/5944814/" onclick="return handleLinkClick(this)" class="anchor-box">
+        <a href="https://indico.cern.ch/event/1380777/contributions/5944814/"  class="anchor-box">
           <div class="list-group-item d-flex justify-content-between align-items-center">
             <div>
               <h5>Towards the observation of top‑quark pair production in proton‑lead collisions at 8.16 TeV</h5>
@@ -657,7 +690,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="year"><strong>2024</strong></div>
           </div>
         </a>
-        <a href="https://indico.cern.ch/event/1245771/contributions/5459469/" onclick="return handleLinkClick(this)" class="anchor-box">
+        <a href="https://indico.cern.ch/event/1245771/contributions/5459469/"  class="anchor-box">
           <div class="list-group-item d-flex justify-content-between align-items-center">
             <div>
               <h5>Towards the observation of top‑quark pair production in proton‑lead collisions at 8.16 TeV</h5>
@@ -666,7 +699,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="year"><strong>2023</strong></div>
           </div>
         </a>
-        <a href="https://indico.cern.ch/event/1139676/contributions/5048957/" onclick="return handleLinkClick(this)" class="anchor-box">
+        <a href="https://indico.cern.ch/event/1139676/contributions/5048957/"  class="anchor-box">
           <div class="list-group-item d-flex justify-content-between align-items-center">
             <div>
               <h5>TRExFitter: A framework for binned template profile likelihood fits in ATLAS</h5>
@@ -675,7 +708,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="year"><strong>2022</strong></div>
           </div>
         </a>
-        <a href="https://indico.cern.ch/event/1139204/contributions/4841836/" onclick="return handleLinkClick(this)" class="anchor-box">
+        <a href="https://indico.cern.ch/event/1139204/contributions/4841836/"    class="anchor-box">
           <div class="list-group-item d-flex justify-content-between align-items-center">
             <div>
               <h5>Towards the observation of top‑quark pair production in proton‑lead collisions at 8.16 TeV</h5>
@@ -684,7 +717,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="year"><strong>2022</strong></div>
           </div>
         </a>
-        <a href="https://www.utef.cvut.cz/seminars/2022-03-01/observation-of-top-quark-pair-production-in-proton-lead-collisions-in-atlas-detector" onclick="return handleLinkClick(this)" class="anchor-box">
+        <a href="https://www.utef.cvut.cz/seminars/2022-03-01/observation-of-top-quark-pair-production-in-proton-lead-collisions-in-atlas-detector"  class="anchor-box">
           <div class="list-group-item d-flex justify-content-between align-items-center">
             <div>
               <h5>Observation of top-quark pair production in proton-lead collisions in ATLAS detector</h5>
@@ -693,7 +726,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="year"><strong>2022</strong></div>
           </div>
         </a>
-        <a href="https://www.dpg-verhandlungen.de/year/2019/conference/aachen/part/t/session/3/contribution/2" onclick="return handleLinkClick(this)" class="anchor-box">
+        <a href="https://www.dpg-verhandlungen.de/year/2019/conference/aachen/part/t/session/3/contribution/2" class="anchor-box">
           <div class="list-group-item d-flex justify-content-between align-items-center">
             <div>
               <h5>Fake‑Rate Determination for the $t\bar tH$ Coupling Measurement with a Signature of Two Same Electric Charge Light Leptons Associated with a Tau Using the ATLAS Detector at the LHC</h5>
@@ -708,7 +741,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <h4 class="mt-4 mb-3" id="posters">Posters</h4>
       <hr>
       <div class="list-group mx-lg-3">
-        <a href="https://indico.cern.ch/event/1291157/contributions/5878747/" onclick="return handleLinkClick(this)" class="anchor-box">
+        <a href="https://indico.cern.ch/event/1291157/contributions/5878747/"  class="anchor-box">
           <div class="list-group-item d-flex justify-content-between align-items-center">
             <div>
               <h5>Observation of top‑quark pair production in $p$+Pb collisions in the ATLAS experiment</h5>
@@ -717,7 +750,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="year"><strong>2024</strong></div>
           </div>
         </a>
-        <a href="https://indico.cern.ch/event/868940/contributions/3813492/" class="anchor-box" onclick="return handleLinkClick(this)">
+        <a href="https://indico.cern.ch/event/868940/contributions/3813492/" class="anchor-box" >
           <div class="list-group-item d-flex justify-content-between align-items-center">
             <div>
               <h5>Fake‑Rate determination for the $t\bar tH$ coupling measurement with a signature of two same electric charge light leptons associated with a tau using the ATLAS detector at the LHC</h5>
@@ -740,7 +773,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <section id="publications">
       <div class=" container" data-aos="fade-up">
         <h1 class=" section-title ">Featured Publications</h1>
-        <h3 class="section-caption">Peer-reviewed journal articles co-authored by me.</h3>
+        
   <div class="row" >
     <!-- Left Heading Section -->
     <div class="col-12 col-md-4 d-flex align-items-start align-items-md-start justify-content-start justify-content-md-start mb-4 mb-md-0">
@@ -765,7 +798,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <p class="pub-subtitle">
              Achieved the first-ever observation of top-quark pair production in lead-lead ion collisions, a breakthrough in heavy-ion physics that opens new avenues to study the quark-gluon plasma and the strong force.
             </p>
-            <a href="https://doi.org/10.1103/PhysRevLett.134.142301" onclick="return handleLinkClick(this)" class="pub-card-link"> <button class="pub-btn">Read Full Paper</button></a>
+            <a href="https://doi.org/10.1103/PhysRevLett.134.142301"  class="pub-card-link"> <button class="pub-btn">Read Full Paper</button></a>
            
           </div>
         </div>
@@ -785,7 +818,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <p class="pub-subtitle">
               The top-quark pair production cross-section in proton-lead collisions was measured with a relative uncertainty of 9%, making this the most precise tt̄ cross-section determination in nuclear collisions to date.
             </p>
-            <a href="https://link.springer.com/article/10.1007/JHEP11(2024)101" onclick="return handleLinkClick(this)" class="pub-card-link" > <button class="pub-btn">Read Full Paper</button></a>
+            <a href="https://link.springer.com/article/10.1007/JHEP11(2024)101"  class="pub-card-link" > <button class="pub-btn">Read Full Paper</button></a>
           </div>
         </div>
 
@@ -806,7 +839,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <p class="pub-subtitle">
               Contributed to the development of the pseudo‑continuous data‑based calibration
             </p>
-            <a href=" https://10.1140/epjc/s10052-023-11699-1" onclick="return handleLinkClick(this)" class="pub-card-link"> <button class="pub-btn">Read Full Paper</button></a>
+            <a href=" https://10.1140/epjc/s10052-023-11699-1"  class="pub-card-link"> <button class="pub-btn">Read Full Paper</button></a>
           </div>
         </div>
     </div>
@@ -829,7 +862,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <h3 class="section-caption">Newest results, reports, or updates from my ongoing research.</h3>
     <div class="mx-lg-5 pt-3">
        <div class="list-group mb-4 mx-lg-3">
-        <a href="https://doi.org/10.5506/APhysPolBSupp.18.1-A32" onclick="return handleLinkClick(this)" class="anchor-box">
+        <a href="https://doi.org/10.5506/APhysPolBSupp.18.1-A32"  class="anchor-box">
           <div class="list-group-item d-flex justify-content-between align-items-center">
             <div>
               <h5>Recent ATLAS results relevant for PDFs at low and high x, saturation in both <i>pp</i> and HI collisions</h5>
@@ -838,7 +871,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="year"><strong>2024</strong></div>
           </div>
         </a>
-        <a href="https://doi.org/10.22323/1.476.0637" onclick="return handleLinkClick(this)" class="anchor-box">
+        <a href="https://doi.org/10.22323/1.476.0637"  class="anchor-box">
           <div class="list-group-item d-flex justify-content-between align-items-center">
             <div>
               <h5>Observation of top‑quark pair production in <i>p</i>+Pb collisions in the ATLAS experiment</h5>
@@ -847,7 +880,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="year"><strong>2024</strong></div>
           </div>
         </a>
-        <a href="https://inspirehep.net/literature/2702726" onclick="return handleLinkClick(this)" class="anchor-box">
+        <a href="https://inspirehep.net/literature/2702726"  class="anchor-box">
           <div class="list-group-item d-flex justify-content-between align-items-center">
             <div>
               <h5>Observation of <i>tt</i> production in lepton+jets and dilepton channels in <i>p</i>+Pb collisions at $\sqrt{s_{NN}} = 8.16~\text{TeV}$ with the ATLAS detector </h5>
@@ -856,7 +889,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="year"><strong>2023</strong></div>
           </div>
         </a>
-        <a href="https://pos.sissa.it/390/100" onclick="return handleLinkClick(this)" class="anchor-box">
+        <a href="https://pos.sissa.it/390/100" class="anchor-box">
           <div class="list-group-item d-flex justify-content-between align-items-center">
             <div>
               <h5>Tau-lepton Fake‑Rate determination for the $t\bar tH$ coupling measurement using the ATLAS detector at the LHC</h5>
@@ -865,7 +898,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="year"><strong>2020</strong></div>
           </div>
         </a>
-        <a href="https://inspirehep.net/literature/1759582" onclick="return handleLinkClick(this)" class="anchor-box">
+        <a href="https://inspirehep.net/literature/1759582"  class="anchor-box">
           <div class="list-group-item d-flex justify-content-between align-items-center">
             <div>
               <h5>Analysis of $t\bar tH$ and $t\bar tW$ production in multilepton final states with the ATLAS detector</h5>
@@ -892,7 +925,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="container" data-aos="fade-up">
         
   <h1 class="section-title">Gallery</h1>
-  <h3 class="section-caption">Photos from analysis sessions, conferences, and experiment visuals.</h3>
+  
   <div class="carousel-container container-fluid">
 
     <!-- Big Image Section -->
@@ -934,43 +967,82 @@ document.addEventListener('DOMContentLoaded', function() {
 
    <!-- footer section -->
    
-  <footer class="bg-dark text-light pt-5 pb-4">
-     <section id="contact"></section>
-  <div class="container text-center text-md-start " data-aos="fade-up">
-    <div class="row text-center text-md-start">
-      <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
-        <h5 class="text-uppercase mb-4 fw-bold text-light">Get in touch</h5>
-
-      </div>
-
-      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-        <h5 class="text-uppercase mb-4 fw-bold text-light">Quick Links</h5>
-        <p><a href="#projects"  class="text-light text-decoration-none">Projects</a></p>
-        <p><a href="#talks" class="text-light text-decoration-none">Talks</a></p>
-        <p><a href="#publications" class="text-light text-decoration-none">Publications</a></p>
-        <p><a href="#contact" class="text-light text-decoration-none">Contact</a></p>
-      </div>
-
-      <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
-        <h5 class="text-uppercase mb-4 fw-bold text-light">Contact</h5>
-        <p><i class="fas fa-envelope me-3"></i> santu.mondal@cern.ch</p>
-        <p><i class="fas fa-map-marker-alt me-3"></i> Geneva, Switzerland</p>
-        <div>
-          <a href="https://twitter.com/" onclick="return handleLinkClick(this)" class="text-light me-3"><i class="fab fa-twitter"></i></a>
-          <a href="https://github.com/" onclick="return handleLinkClick(this)" class="text-light me-3"><i class="fab fa-github"></i></a>
-          <a href="https://orcid.org/" onclick="return handleLinkClick(this)" class="text-light me-3"><i class="fab fa-orcid"></i></a>
-        </div>
-      </div>
+<footer class="custom-footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h4>Research Profile</h4>
+      <div class="line"></div>
+      <ul>
+        <li><a href="#">Publications</a></li>
+        <li><a href="#">Talks</a></li>
+        <li><a href="#">Conference</a></li>
+      </ul>
     </div>
 
-    <hr class="my-4" />
+    <div class="footer-column">
+      <h4>Science Communication</h4>
+      <div class="line"></div>
+      <ul>
+        <li><a href="#">Outreach</a></li>
+        <li><a href="#">Media</a></li>
+        <li><a href="#">News</a></li>
+      </ul>
+    </div>
+      <div class="footer-column">
+      <h4>Hobbies</h4>
+      <div class="line"></div>
+      <ul>
+        <li><a href="#">Photography</a></li>
+      </ul>
+    </div>
 
-    <div class="text-center">
+      <div class="footer-column ">
+        <h4>Contact</h4>
+        <div class="line"></div>
+        <p><strong>Santu Mondal</strong><br>
+        Charles University <br>Faculty of Mathematics and Physics
+        <br><i class="fas fa-map-marker-alt me-2"></i>Ke Karlovu 2027/3, 121 16 <br>Nové Město, Prague, CZ 
+        </p>
+        <p><i class="fas fa-envelope me-2"></i><a href="mailto:santu.mondal@cern.ch" class="footer-link">santu.mondal@cern.ch</a></p>
+           
+      </div>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+
+
+    
+     
+   
+    
+  </div>
+  
+     <div class=" last-updated-section text-center pt-2">
+      <p id="last-updated" class="m-0 p-0"></p>
       <p class="mb-0">© <span id="year"></span> Santu Mondal. All rights reserved.</p>
     </div>
-  </div>
-</footer>
   
+
+</footer>
+
+
+
+
+
+<script>
+  const lastModified = new Date(document.lastModified);
+  const formattedDate = lastModified.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+  document.getElementById("last-updated").innerText = "Last updated: " + formattedDate;
+</script>
+
+
      
 
 
