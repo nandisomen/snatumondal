@@ -53,7 +53,7 @@
 .hero {
   background: 
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.566)), 
-    url('Image/photography/galery-hero-cover.jpg') no-repeat center center;
+    url('../Image/photography/galery-hero-cover.jpg') no-repeat center center;
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -203,7 +203,7 @@ position: relative;
   .hero {
       background: 
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.566)), 
-    url('Image/photography/galery-hero-cover-mobile.jpg') no-repeat center center;
+    url('../Image/photography/galery-hero-cover-mobile.jpg') no-repeat center center;
     height: 100vh;
     padding: 3rem 1rem;
     background-position: center top;
