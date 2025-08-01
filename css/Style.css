@@ -1,13 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Libertinus+Mono&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Libertinus+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Source+Sans+Pro&display=swap'); */
 
 /* start font section */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
-/*santu mondal font  */
-@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap'); */
+
+/* font box */
+
+@font-face {
+  font-family: 'Red Hat Display';
+  src:
+       url('../fonts/Red_Hat_Display/RedHatDisplay-VariableFont_wght.ttf'),
+       url('../fonts/Red_Hat_Display/static/RedHatDisplay-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
 
 
 
@@ -43,6 +52,9 @@ section {
 nav{
   z-index: 1000;
 }
+.navbar-brand{
+  font-family: 'Red Hat Display', sans-serif;
+}
 .nav-item{
   margin-left: 10px;
 }
@@ -54,7 +66,7 @@ nav{
   padding: 0.5rem 1rem;        /* consistent spacing */
 }
 
-.navbar-nav .nav-link:hover {
+.navbar-nav .nav-link:hover  {
   color: #0d6efd;              /* Bootstrap primary color on hover */
 }
 
@@ -69,7 +81,16 @@ nav{
   background-color: #0d6efd;
   transition: width 0.3s ease;
 }
-
+.nav-link.active{
+  color: #D25D5D !important;
+  font-size: 1.2rem; /* or try 18px, 120%, etc. */
+  font-weight: bold; /* Optional for more emphasis */
+  transition: all 0.2s ease; /* Smooth size change */
+}
+/* .nav-link.active::after {
+  width: 100%;
+  color: #D25D5D !important;
+} */
 .navbar-nav .nav-link:hover::after {
   width: 100%;
 }
@@ -83,7 +104,7 @@ nav{
 
 /* ------------------------------
    Dropdown styles
------------------------------- */
+----------------------- ------- */
 
 .navbar .dropdown-menu {
   border-radius: 0.5rem;
@@ -127,7 +148,7 @@ nav{
 
 html {
   scroll-behavior: smooth;      /* optional for smooth scrolling */
-  scroll-padding-top: 60px;     /* height of your navbar */
+  scroll-padding-top: 50px;     /* height of your navbar */
 }
 @media (max-width: 576px) {
   html {
@@ -163,7 +184,7 @@ html {
     margin-bottom:18px ;
   }
 
-  @media (max-width: 576px) {
+  @media (max-width: 786px) {
   .section-title {
     text-align: center !important;
     font-size: 1.3rem;
@@ -198,11 +219,12 @@ section:nth-of-type(odd) {
     }
     
     .intro h1 {
-      font-family: mulish;
+      font-family: 'Red Hat Display', sans-serif;
       font-size: 2.5rem;
       color: var(--accent-color);
     }
     .intro h3 {
+      font-family: 'Red Hat Display', sans-serif;
       margin: 0.5rem 0;
       font-weight: normal;
     }
@@ -214,12 +236,16 @@ section:nth-of-type(odd) {
     .wos-icon {
   fill: var(--accent-color);
 }
-    .two-cols {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 4rem;
-      margin-top: 1rem;
+       .about .two-cols {
+          margin-top: 1rem;
+        display: flex;
+        flex-wrap: wrap;
     }
+@media (min-width:990px) {
+  .about .two-cols{
+    gap: 11rem;
+  }
+}
     .two-cols ul {
       list-style: none;
       padding-left: 0;
@@ -240,11 +266,6 @@ section:nth-of-type(odd) {
     color: #060080;
    }
 
-    .about .two-cols {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 11rem; /* 🔥 increase this value for bigger spacing */
-    }
 
     
     .education dd{
@@ -275,8 +296,22 @@ section:nth-of-type(odd) {
         position: relative;
         top: -2px; /* adjust to taste */
       }
+      @media (max-width: 576px) {
+        .two-cols {
+          flex-direction: column;
+          align-items: stretch; /* optional: can use center if you prefer */
+          gap: 2rem; /* smaller spacing for stacked layout */
+        }
 
-     @media (max-width: 576px) {
+        .two-cols > div {
+          width: 100%;
+        }
+
+      
+      }
+
+
+     @media (max-width: 786px) {
       .full-details{
         display: flex;
         flex-direction: column;
@@ -640,6 +675,8 @@ section:nth-of-type(odd) {
 
 
 
+/* Key Physics Analyses */
+
 /* Physics Analysis Experience*/
 #Analysis .card{
 background : var(--box-color);
@@ -657,7 +694,8 @@ background : var(--box-color);
   /* font-family: 'Merriweather', 'Times New Roman', serif;  */
 }
 .card img{
-  height: 200px;
+  border-top: 10px white solid;
+  aspect-ratio: 16/9;
   object-fit: contain;
   
 }
@@ -745,6 +783,7 @@ background : var(--box-color);
   font-size: .8rem !important;
   text-align: center;
 }
+
 }
 
 
@@ -804,6 +843,7 @@ background : var(--box-color);
   max-height: 80vh;  /* modal content won’t exceed 80% of viewport height */
    /* enable vertical scroll if content overflows */
   padding: 1rem;
+  font-size: .7rem;
   }
 }
 
@@ -1450,12 +1490,12 @@ input.wgh-slider-target {
 
 .big-image-caption {
   
-  width: 60%;
+  max-width: 90%;
   margin-top: 10px;
   padding-bottom: 2px;
   background: #f6f5f8;
   text-align: center;
-  font-size: 1.3rem;
+ font-size: clamp(.5rem, 2vw, 1rem);
   font-weight: 500;
   text-align: center;
   color: #000000;
@@ -1464,7 +1504,7 @@ white-space: nowrap;     /* Forces single-line */
   text-overflow: ellipsis; /* Adds "..." if text overflows */
   overflow: hidden;        /* Hides overflow text */
   text-align: center;
-  font-size: clamp(.5rem, 2vw, 1rem);
+  
 }
 @media (max-width: 768px) {
   .thumb-item {
@@ -1473,11 +1513,16 @@ white-space: nowrap;     /* Forces single-line */
   .thumb-item img {
     max-height: 50px;
   }
+  .big-image-caption{
+    max-width: 90%;max-width: 100%;
+    font-size: clamp(.7rem, 2vw, 1rem);
+  }
 }
 
 @media (max-width: 576px) {
   .big-image-caption {
-    font-size: 1rem;
+    font-size: clamp(.7rem, 2vw, 1rem);
+     max-width: 100%;
   }
     .carousel-thumbnails-wrapper {
     display: flex;
@@ -1531,8 +1576,7 @@ white-space: nowrap;     /* Forces single-line */
 }
 
 .footer-container {
-  max-width: 1200px;
-  margin: auto;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -1581,7 +1625,8 @@ white-space: nowrap;     /* Forces single-line */
 
 .footer-column ul li a {
   font-size: 1rem;
-  color: #aaa;
+  /* color: #aaa; origanal color  */
+  color: #f0f0f0;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -1590,7 +1635,7 @@ white-space: nowrap;     /* Forces single-line */
   color: #f50057;
 }
 .footer-column p {
-  color: #aaa;
+  color: #f0f0f0;
   font-size: 1rem;
   /* margin-bottom: 12px; */
 
@@ -1605,7 +1650,7 @@ white-space: nowrap;     /* Forces single-line */
 }
 .footer-link{
 
-  color: #aaa;
+  color: #f0f0f0;
 }
 .footer-link:hover{
   color: #f50057;
@@ -1662,6 +1707,7 @@ white-space: nowrap;     /* Forces single-line */
     justify-content: center; /* center horizontally */
     flex-wrap: wrap;
     gap: 10px;
+    margin-bottom: 15px;
   }
 
   .social-links a {
