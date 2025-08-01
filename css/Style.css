@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
 /* font box */
+/*  */
+/* sign font footer  */
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
 
 @font-face {
   font-family: 'Red Hat Display';
@@ -11,10 +16,19 @@
 }
 
 @font-face {
-  font-family: 'Cormorant', serif;
+  font-family: 'Cormorant';
   src:
        url('../fonts/Cormorant/Cormorant-VariableFont_wght.ttf') format('truetype'),
        url('../fonts/Cormorant/Cormorant-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mulish';
+  src:
+       url('../fonts/Mulish/Mulish-VariableFont_wght.ttf') format('truetype'),
+       url('../fonts/Mulish/Mulish-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -56,6 +70,8 @@ nav{
 }
 .navbar-brand{
   font-family: 'Red Hat Display', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 .nav-item{
   margin-left: 10px;
@@ -69,7 +85,10 @@ nav{
 }
 
 .navbar-nav .nav-link:hover  {
-  color: #0d6efd;              /* Bootstrap primary color on hover */
+  color: #0d1dff;
+ 
+  transform: scale(1.2);  /* 1.2 = 120% size */
+  transition: all 0.3s ease;  /* Smooth animation */              /* Bootstrap primary color on hover */
 }
 
 /* underline effect on hover */
@@ -80,21 +99,18 @@ nav{
   bottom: 0;
   width: 0;
   height: 2px;
-  background-color: #0d6efd;
+  background-color: #5157ff;
   transition: width 0.3s ease;
 }
 .nav-link.active{
-  color: #D25D5D !important;
-  font-size: 1.2rem; /* or try 18px, 120%, etc. */
-  font-weight: bold; /* Optional for more emphasis */
-  transition: all 0.2s ease; /* Smooth size change */
+   color: #D25D5D !important;
+  transform: scale(1.3);  /* 1.2 = 120% size */
+  transition: all 0.3s ease; 
 }
-/* .nav-link.active::after {
-  width: 100%;
-  color: #D25D5D !important;
-} */
+
 .navbar-nav .nav-link:hover::after {
   width: 100%;
+  
 }
 
 /* remove focus outline */
@@ -124,9 +140,13 @@ nav{
 .navbar .dropdown-menu .dropdown-item {
   transition: color 0.3s ease, background-color 0.3s ease;
 } 
+#navbarScrollingDropdown:hover{
+  color: #0d1dff;
+}
 .navbar .dropdown-menu .dropdown-item:hover {
   background-color: #f2f4f8;   /* subtle hover background */
-  color: #0d6efd;              /* accent color */
+  color: #0d1dff;              /* accent color */
+  
 }
 
 /* ------------------------------
@@ -226,12 +246,12 @@ section:nth-of-type(odd) {
     }
     
     .intro h1 {
-      font-family: 'Red Hat Display', sans-serif;
+      font-family: "Mulish", sans-serif !important;
       font-size: 2.5rem;
+      font-weight: bold;
       color: var(--accent-color);
     }
     .intro h3 {
-      font-family: 'Red Hat Display', sans-serif;
       margin: 0.5rem 0;
       font-weight: normal;
     }
@@ -241,8 +261,16 @@ section:nth-of-type(odd) {
       font-size: 1.3rem;
     }
     .wos-icon {
+      width:22px; height:22px;
   fill: var(--accent-color);
 }
+.wos-icon:hover{
+  transform: scale(1.2);     /* enlarge image */
+  filter: brightness(2);   /* optional: slight brightness on hover */
+}
+
+/* all other icon like youtube ,fb hover style on footer section  */
+
        .about .two-cols {
           margin-top: 1rem;
         display: flex;
@@ -264,6 +292,9 @@ section:nth-of-type(odd) {
       display: inline-block;
       width: 1em;
       margin-left: -1em;
+    }
+    .full-details h2{
+      font-size: 1.8rem;
     }
     .full-details p{
        /* text-align: justify; */
@@ -393,11 +424,10 @@ section:nth-of-type(odd) {
   transition: color 0.3s ease;
 }
 
-.pc-outreach-icon i:hover {
-   /* Bootstrap primary or brand color */
-  color:#007acc;
-}
+
 .pc-outreach-icon img:hover {
+  transform: scale(1.2);  /* 1.2 = 120% size */
+  transition: all 0.3s ease;  /* Smooth animation */
   filter: brightness(0) saturate(100%) invert(14%) sepia(100%) saturate(735%) hue-rotate(189deg) brightness(100%) contrast(101%);
 }
 
@@ -581,7 +611,11 @@ section:nth-of-type(odd) {
   color: #222;
 }
 .experience-card-img {
-  width:100px; height:auto; margin-right:15px; margin-top: 15px;
+  /* object-fit: cover; */
+  width:70px; 
+  height:70px; 
+  margin-right:15px;
+  transform: translateY(-3px);
 }
     /*  */
     .timeline {
@@ -1575,11 +1609,11 @@ white-space: nowrap;     /* Forces single-line */
 
     /* for footer */
 .custom-footer {
+  font-family: "Caveat", cursive;
   background-color: #4a4a55;
-  padding: 60px 20px 10px 20px;
+  padding: 40px 20px 10px 20px;
   color: #f0f0f0;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-  font-family: 'Segoe UI', sans-serif;
 }
 
 .footer-container {
@@ -1596,7 +1630,7 @@ white-space: nowrap;     /* Forces single-line */
 
 .footer-column h4 {
   font-size: 1.2rem;
-  color: #ffffff;
+  color: #ffffffcb;
 
   position: relative;
   
@@ -1604,14 +1638,14 @@ white-space: nowrap;     /* Forces single-line */
 @media (min-width:900px) {
   .footer-container .footer-column .line {
   display: block;
-  width: 50px;
-  height: 4px;
-  background-color: #f50057 !important;
+  width: 40px;
+  height: 3px;
+  background-color: #D25D5D !important;
   border: none;                  /* <— very important */
   border-radius: 10px;
   margin: 0;
-    margin-bottom: 10px;
-  transform: translateY(-4px);
+    /* margin-bottom: 10px; */
+  transform: translateY(-9px);
   visibility: visible;
     
 }
@@ -1632,8 +1666,8 @@ white-space: nowrap;     /* Forces single-line */
 
 .footer-column ul li a {
   font-size: 1rem;
-  /* color: #aaa; origanal color  */
-  color: #f0f0f0;
+  color: #aaa; 
+
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -1642,7 +1676,7 @@ white-space: nowrap;     /* Forces single-line */
   color: #f50057;
 }
 .footer-column p {
-  color: #f0f0f0;
+  color: #aaa;
   font-size: 1rem;
   /* margin-bottom: 12px; */
 
@@ -1654,20 +1688,25 @@ white-space: nowrap;     /* Forces single-line */
 }
 .footer-column strong{
   font-size: 1.3rem;
+  color: #aaa;
+  letter-spacing: 1px;
 }
-.footer-link{
 
-  color: #f0f0f0;
+.footer-link{
+  color: #aaa;
 }
 .footer-link:hover{
   color: #f50057;
 }
+
+
 /* Base layout: stack vertically (for desktop) */
 .social-links {
-  margin-top: 15px;
+  margin-left: 10px;
+  /* margin-top: 15px; */
   display: flex;
   flex-direction: column;  /* Default: vertical */
-  /* gap: 10px; */
+  gap: 1px;
 }
 
 /* Icons stay centered inside circles */
@@ -1678,7 +1717,7 @@ white-space: nowrap;     /* Forces single-line */
   justify-content: center;
   height: 40px;
   width: 40px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   background: #333;
   color: #fff;
   border-radius: 50%;
@@ -1690,9 +1729,34 @@ white-space: nowrap;     /* Forces single-line */
 
 
 .social-links a:hover {
-  background: #f50057;
+  /* background: #f50057; */
   transform: translateY(-3px);
+  box-shadow: 2px 3px 5px #ffffff;
 }
+
+.fa-facebook-f:hover ,.fa-facebook:hover, .fa-linkedin-in:hover ,.fa-square-linkedin:hover , .fa-linkedin:hover,.fa-envelope:hover{
+  color: #3888ff;
+  transform: scale(1.2);  /* 1.2 = 120% size */
+  transition: all 0.3s ease;  /* Smooth animation */
+ 
+}
+
+.fa-orcid:hover{
+  color: #1aba04;
+  transform: scale(1.2);  /* 1.2 = 120% size */
+  transition: all 0.3s ease;  /* Smooth animation */
+}
+.fa-x-twitter:hover,.fa-threads:hover{
+  color:#000;
+  transform: scale(1.2);  /* 1.2 = 120% size */
+  transition: all 0.2s ease;  /* Smooth animation */
+}
+.fa-instagram:hover , .fa-youtube:hover{
+color :red;
+transform: scale(1.2);  /* 1.2 = 120% size */
+  transition: all 0.3s ease;  /* Smooth animation */
+}
+
 .last-updated-section p{
   color: #ffffff93;
   font-size: .8rem;
@@ -1703,7 +1767,7 @@ white-space: nowrap;     /* Forces single-line */
   .footer-container {
     flex-direction: column;
     text-align: center;
-    gap: 10px;
+    /* gap: 10px; */
   }
 
   .footer-column {
@@ -1731,7 +1795,7 @@ white-space: nowrap;     /* Forces single-line */
   font-size: 0.9rem; 
   color: #555;
   border-top: 1px solid #878787c9;
-  margin-top: 20px;                /* Adds spacing from above content */
+  margin-top: 10px;                /* Adds spacing from above content */
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);  /* Optional light top shadow */
 }
 
