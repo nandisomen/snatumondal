@@ -869,14 +869,6 @@ section:nth-of-type(odd) {
 
 /* school */
 
-.card-img-top {
-  object-fit: cover;
-  height: 200px;
-}
-.card:hover {
-  transform: scale(1.02);
-  transition: 0.3s ease;
-}
 
 
 /* Key Physics Analyses */
