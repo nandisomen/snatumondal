@@ -29,45 +29,10 @@
 
    <!-- font awesome offline  -->
     <link rel="stylesheet" href="css/all.min.css">
-
-    <!-- <link rel="stylesheet" href="school.css"> -->
-
-  <style>
-    #preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: white; /* or #000 for dark background */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.loader {
-  width: 50px;
-  height: 50px;
-  border: 5px solid #ccc;
-  border-top: 5px solid #3498db; /* Blue spinner */
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-  </style>
  
 </head>
 <body>
-  <div id="preloader">
-  <div class="loader"></div>
-</div>
-
+  
 <!--NAV BAR -->
  <nav class=" navbar navbar-light navbar-expand-lg sticky-top ">
   <div class="container">
@@ -86,7 +51,7 @@
       <ul class="navbar-nav ms-auto">
          <li class="nav-item dropdown">
           <a class="nav-link" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Research Highlights
+            Highlights
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
             <li><a class="dropdown-item" href="#outreach">Science Communication</a></li>
@@ -132,7 +97,7 @@
 
     <!-- Details column -->
     <div class="col-12 col-md-9 details">
-      <h1 class="fw-bold">Santu Mondal</h1>
+      <h1>Santu Mondal</h1>
       <h3 class="h5 text-muted mb-3">
         Experimental particle Physicist at CERN - ATLAS collaboration
       </h3>
@@ -212,11 +177,13 @@
         <div class="container-fluid col-md-4  d-flex flex-column justify-content-md-center video-card-effect ">
           <div class="iframe-wrapper" ><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7275193978193428481" height="940" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
           </div>
+          <div class="pc-outreach-icon">
+          <a href=""><img src="Image/LogoOutline-Black.svg" alt="CERN Logo" ></a>
+              <a href="https://www.linkedin.com/posts/atlas-collaboration_physicists-from-the-atlas-experiment-have-activity-7275193979069992961-pdU6?utm_source=share&utm_medium=member_desktop" onclick="return handleLinkClick(this)"><i class="fa-brands fa-square-linkedin"></i></a>
+              <a href="https://www.threads.net/@atlasexperiment/post/DDujLYiChR9" onclick="return handleLinkClick(this)"><i class="fab fa-threads"></i></a>
+              <a href="https://www.facebook.com/ATLASexperiment/videos/550956644435005" onclick="return handleLinkClick(this)"><i class="fab fa-facebook"></i></a>
+        </div>
           
-          <div class="pc-outreach-icon"><a href="https://videos.cern.ch/record/2298651"><img src="Image/LogoOutline-Black.svg" alt="CERN Logo" ></a>
-              <a href="https://www.linkedin.com/posts/atlas-collaboration_the-atlas-collaboration-at-cern-observed-activity-7112873935779557377-FMBN?utm_source=share&utm_medium=member_desktop&rcm=ACoAABhVGAcBxPxsVxBrfnYPycNSyJm_Vpigz4g" onclick="return handleLinkClick(this)"><i class="fa-brands fa-square-linkedin"></i></a>
-              <a href="https://x.com/ATLASexperiment/status/1707105631910396348?s=20" onclick="return handleLinkClick(this)"><i class="fab fa-x-twitter"></i></a>
-              <a href="https://www.facebook.com/ATLASexperiment/videos/827977738818553" onclick="return handleLinkClick(this)"><i class="fab fa-facebook"></i></a></div>
           
         </div>
       
@@ -225,13 +192,13 @@
       <div class="iframe-wrapper">
         <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7112873935221731329" height="940" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
       </div>
-      <div class="pc-outreach-icon">
-          <a href=""><img src="Image/LogoOutline-Black.svg" alt="CERN Logo" ></a>
-              <a href="https://www.linkedin.com/posts/atlas-collaboration_physicists-from-the-atlas-experiment-have-activity-7275193979069992961-pdU6?utm_source=share&utm_medium=member_desktop" onclick="return handleLinkClick(this)"><i class="fa-brands fa-square-linkedin"></i></a>
-              <a href="https://www.threads.net/@atlasexperiment/post/DDujLYiChR9" onclick="return handleLinkClick(this)"><i class="fab fa-threads"></i></a>
-              <a href="https://www.facebook.com/ATLASexperiment/videos/550956644435005" onclick="return handleLinkClick(this)"><i class="fab fa-facebook"></i></a>
-        </div>
-       
+      
+       <div class="pc-outreach-icon">
+            <a href="https://videos.cern.ch/record/2298651"><img src="Image/LogoOutline-Black.svg" alt="CERN Logo" ></a>
+              <a href="https://www.linkedin.com/posts/atlas-collaboration_the-atlas-collaboration-at-cern-observed-activity-7112873935779557377-FMBN?utm_source=share&utm_medium=member_desktop&rcm=ACoAABhVGAcBxPxsVxBrfnYPycNSyJm_Vpigz4g" onclick="return handleLinkClick(this)"><i class="fa-brands fa-square-linkedin"></i></a>
+              <a href="https://x.com/ATLASexperiment/status/1707105631910396348?s=20" onclick="return handleLinkClick(this)"><i class="fab fa-x-twitter"></i></a>
+              <a href="https://www.facebook.com/ATLASexperiment/videos/827977738818553" onclick="return handleLinkClick(this)"><i class="fab fa-facebook"></i></a>
+            </div>
           
         </div>
       
@@ -273,9 +240,8 @@
       <!-- Video 2 -->
                <div class="col-10 col-md-5 d-flex justify-content-center">
         <div class="video-card">
-          <video id="mobile-video-2" class="video-player" controlsList="nodownload"   muted controls playsinline>
-            <source src="Image/video2.mp4" type="video/mp4">
-          </video>
+          <iframe class="video-player" src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7275193978193428481?compact=1" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+
           <div class="video-content">
             <h3 class="video-title text-center">ATLAS observes top quarks in lead-lead collisions</h3>
             <p class="video-description text-center">
@@ -349,7 +315,7 @@
     <!-- 2nd card -->
     <div class="custom-experience-card" >
       <div class="d-flex align-items-start">
-        <img src="Image/CTU-logo.jpeg" alt="UofG Logo"class=" experience-card-img">
+        <img src="Image/2-IEAP-CTU-logo.jpg" alt="UofG Logo"class=" experience-card-img">
         <div>
           <h5 class="title">Post‑Doctoral Research Associate</h5>
           <h6 class="institution">Czech Technical University in Prague</h6>
@@ -435,133 +401,10 @@
 
     <!--  -->
 
-    <!-- start achievement section -->
-<section id="achievements">
-  <div class="container">
-    <h1 class="section-title">Academic Achievements</h1>
-
-    <div class="achievement-grid">
-      <a href="#" class="achievement-card">
-        <h3>2024</h3>
-        <h4>RNDr. Degree</h4>
-        <p>
-          Completed a two-year academic Master’s programme in Theoretical Physics at the Institute of Physics, Silesian University in Opava, leading to the RNDr. degree.
-        </p>
-        <span class="link-text">More Details</span>
-      </a>
-
-      <a href="#" class="achievement-card">
-        <h3>2024</h3>
-        <h4>CERN Scholarship</h4>
-        <p>
-          Fully funded participation in ESHEP 2024, hosted in Peebles, Scotland, UK, awarded by CERN.
-        </p>
-        <span class="link-text">More Details</span>
-      </a>
-
-      <a href="#" class="achievement-card">
-        <h3>2018–19</h3>
-        <h4>Extraordinary Scholarship</h4>
-        <p>
-          Awarded for academic excellence and research contributions by Silesian University in Opava.
-        </p>
-        <span class="link-text">More Details</span>
-      </a>
-
-      <a href="#" class="achievement-card">
-        <h3>2017–</h3>
-        <h4>Publications Reviewer</h4>
-        <p>
-          Reviewed ATLAS–CERN publications on behalf of ČVUT in Prague.
-        </p>
-        <span class="link-text">More Details</span>
-      </a>
-    </div>
-  </div>
-</section>
 
 
 
 
-    <!-- end achievement section  -->
-
-
-
-<!-- school 1  -->
-<section>
-  <div class="container">
-    <h2>CERN School Attended</h2>
-    <div class="container-fluid px-3 py-4">
-      <div class="row g-4">
-
-        <!-- Card 1 -->
-        <div class="col-lg-6 col-12">
-          <div class="school-card">
-            <div class="school-image ratio ratio-16x9">
-              <img src="https://res.cloudinary.com/muhammederdem/image/upload/v1537132203/news-slider/item-1.jpg" alt="School Image" class="w-100 h-100">
-            </div>
-            <div class="school-content">
-              <p class="school-date">26 December 2019</p>
-              <h2 class="school-title">European School of High-Energy Physics (ESHEP 2024)</h2>
-              <p class="school-location">Peebles, Scotland, UK</p>
-              <p class="school-duration"><strong>Sept 25 – Oct 8, 2024</strong></p>
-              <a href="#" class="read-more-btn">More Info</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 2 (✅ Fixed here) -->
-        <div class="col-lg-6 col-12">
-          <div class="school-card">
-            <div class="school-image ratio ratio-16x9">
-              <img src="https://res.cloudinary.com/muhammederdem/image/upload/v1537132203/news-slider/item-1.jpg" alt="School Image" class="w-100 h-100">
-            </div>
-            <div class="school-content">
-              <p class="school-date">15 July 2024</p>
-              <h2 class="school-title">Summer School on Particle Physics 2024</h2>
-              <p class="school-location">Geneva, Switzerland</p>
-              <p class="school-duration"><strong>July 20 – Aug 3, 2024</strong></p>
-              <a href="#" class="read-more-btn">More Info</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="col-lg-6 col-12">
-          <div class="school-card">
-            <div class="school-image ratio ratio-16x9">
-              <img src="https://res.cloudinary.com/muhammederdem/image/upload/v1537132203/news-slider/item-1.jpg" alt="School Image" class="w-100 h-100">
-            </div>
-            <div class="school-content">
-              <p class="school-date">26 December 2019</p>
-              <h2 class="school-title">European School of High-Energy Physics (ESHEP 2024)</h2>
-              <p class="school-location">Peebles, Scotland, UK</p>
-              <p class="school-duration"><strong>Sept 25 – Oct 8, 2024</strong></p>
-              <a href="#" class="read-more-btn">More Info</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="col-lg-6 col-12">
-          <div class="school-card">
-            <div class="school-image ratio ratio-16x9">
-              <img src="https://res.cloudinary.com/muhammederdem/image/upload/v1537132203/news-slider/item-1.jpg" alt="School Image" class="w-100 h-100">
-            </div>
-            <div class="school-content">
-              <p class="school-date">15 July 2024</p>
-              <h2 class="school-title">Summer School on Particle Physics 2024</h2>
-              <p class="school-location">Geneva, Switzerland</p>
-              <p class="school-duration"><strong>July 20 – Aug 3, 2024</strong></p>
-              <a href="#" class="read-more-btn">More Info</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
 
 
 
@@ -700,7 +543,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-<!--  -->
+<!-- end  <Physics Analysis Experience--> 
 
 
 
@@ -825,7 +668,53 @@ document.addEventListener('DOMContentLoaded', function() {
    <!-- end news section  -->
 
     <!-- start Recent & Upcoming Talks -->
+    <!-- start achievement section -->
+<section id="achievements">
+  <div class="container" data-aos="fade-up">
+    <h1 class="section-title">Academic Achievements</h1>
 
+    <div class="achievement-grid">
+      <div class="achievement-card">
+        <h3>2024</h3>
+        <h4>RNDr. DEGREE</h4>
+        <p>
+          Completed a two-year academic Master’s programme in Theoretical Physics at the Institute of Physics, Silesian University in Opava, leading to the RNDr. degree.
+        </p>
+        <span class="link-text">More Details</span>
+      </div>
+
+      <div class="achievement-card">
+        <h3>2024</h3>
+        <h4>CERN SCHOLARSHIP</h4>
+        <p>
+          Fully funded participation in ESHEP 2024, hosted in Peebles, Scotland, UK, awarded by CERN.
+        </p>
+        <span class="link-text">More Details</span>
+      </div>
+
+      <div class="achievement-card">
+        <h3>2018 – 19</h3>
+        <h4>EXTRAORDINARY SCHOLARSHIP</h4>
+        <p>
+          Awarded for academic excellence and research contributions by Silesian University in Opava.
+        </p>
+        <span class="link-text">More Details</span>
+      </div>
+
+      <div class="achievement-card">
+        <h3>2017</h3>
+        <h4>PUBLICATIONS REVIEWER</h4>
+        <p>
+          Reviewed ATLAS–CERN publications on behalf of ČVUT in Prague.
+        </p>
+        <span class="link-text">More Details</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- end achievement section  -->
   
 
    <!-- start Recent & Upcoming Talks -->
@@ -1100,6 +989,81 @@ document.addEventListener('DOMContentLoaded', function() {
       <!-- end Recent Publications -->
 
 
+
+            <!-- school 1  -->
+  <section id="school">
+      <div class="container" data-aos="fade-up">
+        <h2 class=" section-title">CERN School Attended</h2>
+        <div class="row g-4 mt-1">
+
+            <!-- Card 1 -->
+            <div class="col-md-6 col-10 mx-auto ">
+              <div class="school-card">
+                <div class="school-image">
+                  <img src="Image/school/1.jpg" alt="School Image">
+                </div>
+                <div class="school-content">
+                  <p class="school-date">September 25 ‑ October 8, 2024</p>
+                  <a href="https://indico.cern.ch/event/1378334/"  class="school-title">European School of High-Energy Physics (ESHEP 2024)</a>
+                  <p class="school-location">Peebles, Scotland, UK</p>
+                  
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 (✅ Fixed here) -->
+            <div class="col-md-6 col-10 mx-auto">
+              <div class="school-card">
+                <div class="school-image">
+                  <img src="Image/school/2.jpg" alt="School Image">
+                </div>
+                <div class="school-content">
+                  <p class="school-date">August 10 ‑ 21, 2020</p>
+                  <a href="https://indico.fnal.gov/event/43762/" class="school-title">Fermilab‑CERN Hadron Collider Physics Summer School (HCPSS)</a>
+                  <p class="school-location">Virtual</p>
+                  
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-md-6 col-10 mx-auto">
+              <div class="school-card">
+                <div class="school-image">
+                  <img src="https://res.cloudinary.com/muhammederdem/image/upload/v1537132203/news-slider/item-1.jpg" alt="School Image">
+                </div>
+                <div class="school-content">
+                  <p class="school-date">August 10 ‑ 21, 2020</p>
+                  <a href="https://conferences.slac.stanford.edu/2020-archives/ssi-slac-summer-institute-2020"  class="school-title">SSI 2020 ‑ SLAC Summer Institute 2020 </a>
+                  <p class="school-location">Virtual</p>
+                  
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="col-md-6 col-10 mx-auto">
+              <div class="school-card">
+                <div class="school-image ratio-16x9">
+                  <img src="Image/school/4th-2018.jpg" alt="School Image">
+                </div>
+                <div class="school-content">
+                  <p class="school-date">September 9 ‑ 15, 2018</p>
+                  <a href="https://indico.global/event/12608/" class="school-title">The 12th Models of Modern Physics Workshop and Summer School in Theoretical Physics </a>
+                  <p class="school-location">Zuberec, Slovakia</p>
+                </div>
+              </div>
+            </div>
+
+            
+
+          </div>
+      </div>
+    </section>
+
+
+<!-- end school  -->
+
       <!-- start gallery -->
 <section id="gallery">
       <div class="container" data-aos="fade-up">
@@ -1139,6 +1103,8 @@ document.addEventListener('DOMContentLoaded', function() {
  
       
       <!-- gallery end -->
+
+
 
 </main>
 
@@ -1247,7 +1213,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <script src="js/aos.js"></script>
 <script>
   AOS.init({
-    duration: 1000,   // animation duration
+    duration: 750,   // animation duration
     once: true        // animation happens only once when scrolling
   });
 </script>
@@ -1283,6 +1249,7 @@ function handleLinkClick(link) {
       svg: { fontCache: 'global' }
     };
     </script>
+    <!-- <script async src="libs/MathJax-3.2.2/es5/tex-mml-chtml.js"></script> -->
     <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <!-- latex end -->
 
@@ -1403,12 +1370,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 <!-- end script for gallery  -->
-<script>
-  window.addEventListener("load", function () {
-    const preloader = document.getElementById("preloader");
-    preloader.style.display = "none";
-  });
-</script>
 
 
 
