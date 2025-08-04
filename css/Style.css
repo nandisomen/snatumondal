@@ -133,7 +133,7 @@ nav{
 } 
 
 .navbar .dropdown-menu .dropdown-item:hover {
-  background-color: #007bff8f ;  /* subtle hover background */
+  background-color: #d3d3d3 ;  /* subtle hover background */
   color: #ffffff;              /* accent color */
   
 }
