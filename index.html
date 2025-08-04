@@ -92,14 +92,14 @@
           <div class="row align-items-center text-center text-md-start">
     <!-- Image column -->
     <div class="col-12 col-md-3 mb-4 mb-md-0 d-flex justify-content-center">
-      <img src="Image/dp.jpg" class="img-fluid rounded-circle" alt="Dr. Santu Mondal" style="max-width:180px;">
+      <img src="Image/dp.jpg" class="img-fluid rounded-circle" alt="Dr. Santu Mondal"  style="width: 180px; height: 180px; object-fit: cover;">
     </div>
 
     <!-- Details column -->
     <div class="col-12 col-md-9 details">
       <h1>Santu Mondal</h1>
       <h3 class="h5 text-muted mb-3">
-        Experimental particle Physicist at CERN - ATLAS collaboration
+        Experimental Particle Physicist at CERN
       </h3>
       <div class="d-flex justify-content-center justify-content-md-start gap-3 icons">
         <a href="mailto:santu.mondal@cern.ch" class="fs-4" onclick="return handleLinkClick(this)"><i class="fas fa-envelope"></i></a>
@@ -403,11 +403,6 @@
 
 
 
-
-
-
-
-
  <!-- Physics Analysis Experience-->
   <!-- Key Physics Analyses -->
 
@@ -426,7 +421,7 @@
           <p class="card-text d-none">
               This ATLAS analysis achieved the first observation of top-quark pair (<em>tt̄</em>) production in Pb–Pb collisions, using 1.9 nb⁻¹ of Run-2 data. Top quarks, decaying before QGP formation, serve as unique probes of initial-state dynamics and high-Q² nPDFs. The analysis focused on the dilepton final state. A 5.0σ discovery-level significance was achieved, with a cross-section of 3.6 μb and 31% total uncertainty, in agreement with nPDF-based predictions. Applicant optimised the signal region, implemented the profile-likelihood multi-fit analysis, extracted the signal strength for the cross-section measurement, and integrated theoretical inputs into the analysis. This result establishes the foundation for precision top-quark measurements in heavy-ion collisions. The results were featured on <a href="https://phys.org/news/2024-11-atlas-quarks-leadlead-collisions.html" onclick="return handleLinkClick(this)"rel="noopener noreferrer">Phys.org</a>, <a href="https://doi.org/10.1038/d41586-025-01075-2" target="_blank" rel="noopener noreferrer">Nature.com</a>, and <a href="https://physicsworld.com/a/quark-pairs-at-atlas-could-shed-light-on-the-early-universe/" onclick="return handleLinkClick(this)" rel="noopener noreferrer">IOP Physics World</a>. Published as a <em>Phys. Rev. Lett. Editors’ Suggestion</em> (PRL 134, 142301), supported by the Czech Technical University in Prague.
           </p>
-          <h6 class="text-center view-details">Read More</h6>
+          <button class="analysis-btn view-details">Read More</button>
         </div>
       </div>
       <!-- <a class="btn btn-primary w-100 mt-3 rounded-md shadow-md hover-effect" href="#" role="button">Full Artical</a> -->
@@ -441,7 +436,7 @@
           <h5 class="card-title text-center">
             Observation of top quark pair production in $p$‑Pb collisions
           </h5>
-          <div><h6 class="text-center view-details">Read More</h6></div>
+          <button class="analysis-btn view-details">Read More</button>
           
           <p class="card-text d-none">
 
@@ -466,7 +461,7 @@
           <h5 class="card-title text-center">
             Analysis of $t\bar{t}H$ and $t\bar{t}W$ production in multilepton final states with the ATLAS detector
           </h5>
-          <h6 class="text-center view-details">Read More</h6>
+          <button class="analysis-btn view-details">Read More</button>
           <p class="card-text d-none">
        
               This ATLAS analysis measured \( t\bar{t}H \) and \( t\bar{t}W \) production in multilepton final states, focusing on the two same-sign leptons plus one hadronic tau channel, using 80~fb\(^{-1} \) of 13~TeV \( pp \) data. It provided direct sensitivity to the top-Higgs Yukawa coupling and probed \( t\bar{t}W \) backgrounds in high-object-multiplicity final states. <br>
@@ -491,7 +486,7 @@
           <h5 class="card-title text-center">
             ATLAS Flavour tagging: jet collection calibration and CDI tooling
           </h5>
-          <h6 class="text-center view-details">Read More</h6>
+          <button class="analysis-btn view-details">Read More</button>
           <p class="card-text d-none">
 
             I developed and maintained the pseudo-continuous calibration framework for flavour tagging and b-jet identification in ATLAS simulations and data. Using the full Run 2 dataset (139~fb\(^{-1}\) at \( \sqrt{s} = 13~\mathrm{TeV} \)), I established a robust methodology for extracting b-tagging efficiency and c-/light-jet misidentification rates directly from data. To support validation and integration workflows, I created tools to visualise calibrations directly from CDI files, enabling fast cross-release comparisons and reducing redundancy. These tools streamlined the calibration pipeline and have been adopted across multiple ATLAS analyses requiring precise flavour tagging performance. This work has been published in 
@@ -673,45 +668,54 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="container" data-aos="fade-up">
     <h1 class="section-title">Academic Achievements</h1>
 
-    <div class="achievement-grid">
-      <div class="achievement-card">
-        <h3>2024</h3>
-        <h4>RNDr. DEGREE</h4>
-        <p>
-          Completed a two-year academic Master’s programme in Theoretical Physics at the Institute of Physics, Silesian University in Opava, leading to the RNDr. degree.
-        </p>
-        <span class="link-text">More Details</span>
+    <div class="row g-4 ps-lg-5 achievement-card-main pt-3">
+      <div class="col-lg-3 col-md-5 col-10 mx-auto">
+        <div class="achievement-card">
+          <h3>2024</h3>
+          <h4>RNDr. DEGREE</h4>
+          <p>
+            Completed a two-year academic Master’s programme in Theoretical Physics at the Institute of Physics, Silesian University in Opava, leading to the RNDr. degree.
+          </p>
+          <span class="link-text">More Details</span>
+        </div>
       </div>
 
-      <div class="achievement-card">
-        <h3>2024</h3>
-        <h4>CERN SCHOLARSHIP</h4>
-        <p>
-          Fully funded participation in ESHEP 2024, hosted in Peebles, Scotland, UK, awarded by CERN.
-        </p>
-        <span class="link-text">More Details</span>
+      <div class="col-lg-3 col-md-5 col-10 mx-auto">
+        <div class="achievement-card">
+          <h3>2024</h3>
+          <h4>CERN SCHOLARSHIP</h4>
+          <p>
+            Fully funded participation in ESHEP 2024, hosted in Peebles, Scotland, UK, awarded by CERN.
+          </p>
+          <span class="link-text">More Details</span>
+        </div>
       </div>
 
-      <div class="achievement-card">
-        <h3>2018 – 19</h3>
-        <h4>EXTRAORDINARY SCHOLARSHIP</h4>
-        <p>
-          Awarded for academic excellence and research contributions by Silesian University in Opava.
-        </p>
-        <span class="link-text">More Details</span>
+      <div class="col-lg-3 col-md-5 col-10 mx-auto">
+        <div class="achievement-card">
+          <h3>2018 – 19</h3>
+          <h4>EXTRAORDINARY SCHOLARSHIP</h4>
+          <p>
+            Awarded for academic excellence and research contributions by Silesian University in Opava.
+          </p>
+          <span class="link-text">More Details</span>
+        </div>
       </div>
 
-      <div class="achievement-card">
-        <h3>2017</h3>
-        <h4>PUBLICATIONS REVIEWER</h4>
-        <p>
-          Reviewed ATLAS–CERN publications on behalf of ČVUT in Prague.
-        </p>
-        <span class="link-text">More Details</span>
+      <div class="col-lg-3 col-md-5 col-10 mx-auto">
+        <div class="achievement-card">
+          <h3>2017 – NOW</h3>
+          <h4>PUBLICATIONS REVIEWER</h4>
+          <p>
+            Reviewed ATLAS–CERN publications on behalf of ČVUT in Prague.
+          </p>
+          <span class="link-text">More Details</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
 
 
     <!-- end achievement section  -->
@@ -719,121 +723,121 @@ document.addEventListener('DOMContentLoaded', function() {
 
    <!-- start Recent & Upcoming Talks -->
     <section id="talks">
-  <div class="container" data-aos="fade-up">
-    <h1 class="section-title">Conference Talks</h1>
-    <div class="mx-lg-5">
+      <div class="container" data-aos="fade-up">
+        <h1 class="section-title">Conference Talks</h1>
+        <div class="mx-lg-5">
 
-      <!-- Plenary Talks -->
-      <h4 class="mt-4 mb-3" id="plenary">Plenary Talks</h4>
-      <hr>
-      <div class="list-group mb-4 mx-lg-3">
-        <a href="https://indico.cern.ch/event/1354173/contributions/6103804/" class="anchor-box">
-          <div class="list-group-item d-flex justify-content-between align-items-center">
-            <div>
-              <h5>Recent ATLAS results relevant for PDFs at low and high x, saturation in both pp and HI collisions</h5>
-              <p class="mb-0"><strong>Event:</strong> Diffraction and Low-x — <em>Sicily, Italy</em></p>
-            </div>
-            <div class="year"><strong>2024</strong></div>
+          <!-- Plenary Talks -->
+          <h4 class="mt-4 mb-3" id="plenary">Plenary Talks</h4>
+          <hr>
+          <div class="list-group mb-4 mx-lg-3">
+            <a href="https://indico.cern.ch/event/1354173/contributions/6103804/" class="anchor-box">
+              <div class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                  <h5>Recent ATLAS results relevant for PDFs at low and high x, saturation in both pp and HI collisions</h5>
+                  <p class="mb-0"><strong>Event:</strong> Diffraction and Low-x — <em>Sicily, Italy</em></p>
+                </div>
+                <div class="year"><strong>2024</strong></div>
+              </div>
+            </a>
+            <a href="https://indico.cern.ch/event/1161009/timetable/#25-top-production-in-heavy-ion" class="anchor-box">
+              <div class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                  <h5>Top production in Heavy Ion (PbPb and $p$Pb) collisions</h5>
+                  <p class="mb-0"><strong>Event:</strong> ATLAS Week, 30th birthday — <em>University of Lisbon, Lisbon, Portugal</em></p>
+                </div>
+                <div class="year"><strong>2022</strong></div>
+              </div>
+            </a>
           </div>
-        </a>
-        <a href="https://indico.cern.ch/event/1161009/timetable/#25-top-production-in-heavy-ion" class="anchor-box">
-          <div class="list-group-item d-flex justify-content-between align-items-center">
-            <div>
-              <h5>Top production in Heavy Ion (PbPb and $p$Pb) collisions</h5>
-              <p class="mb-0"><strong>Event:</strong> ATLAS Week, 30th birthday — <em>University of Lisbon, Lisbon, Portugal</em></p>
-            </div>
-            <div class="year"><strong>2022</strong></div>
+
+          <!-- Invited Talks -->
+          <h4 class="mt-4 mb-3" id="invited">Invited Talks</h4>
+          <hr>
+          <div class="list-group mb-4 mx-lg-3">
+            <a href="https://indico.cern.ch/event/1380777/contributions/5944814/"  class="anchor-box">
+              <div class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                  <h5>Towards the observation of top‑quark pair production in proton‑lead collisions at 8.16 TeV</h5>
+                  <p class="mb-0"><strong>Event:</strong> CZ+SK HEP Workshop — <em> Palacký University in Olomouc, Czech Republic</em></p>
+                </div>
+                <div class="year"><strong>2024</strong></div>
+              </div>
+            </a>
+            <a href="https://indico.cern.ch/event/1245771/contributions/5459469/"  class="anchor-box">
+              <div class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                  <h5>Towards the observation of top‑quark pair production in proton‑lead collisions at 8.16 TeV</h5>
+                  <p class="mb-0"><strong>Event:</strong> CZ+SK HEP Workshop — <em> Comenius University, Bratislava, Slovakia</em></p>
+                </div>
+                <div class="year"><strong>2023</strong></div>
+              </div>
+            </a>
+            <a href="https://indico.cern.ch/event/1139676/contributions/5048957/"  class="anchor-box">
+              <div class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                  <h5>TRExFitter: A framework for binned template profile likelihood fits in ATLAS</h5>
+                  <p class="mb-0"><strong>Event:</strong> New Vistas in Photon Physics in Heavy-Ion Collisions — <em>Polish Academy of Sciences, AGH University of Science and Technology, Kraków, Poland</em></p>
+                </div>
+                <div class="year"><strong>2022</strong></div>
+              </div>
+            </a>
+            <a href="https://indico.cern.ch/event/1139204/contributions/4841836/"    class="anchor-box">
+              <div class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                  <h5>Towards the observation of top‑quark pair production in proton‑lead collisions at 8.16 TeV</h5>
+                  <p class="mb-0"><strong>Event:</strong> ATLAS top workshop — <em>Instituto de Física Corpuscular (IFIC), Valencia, Spain</em></p>
+                </div>
+                <div class="year"><strong>2022</strong></div>
+              </div>
+            </a>
+            <a href="https://www.utef.cvut.cz/seminars/2022-03-01/observation-of-top-quark-pair-production-in-proton-lead-collisions-in-atlas-detector"  class="anchor-box">
+              <div class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                  <h5>Observation of top-quark pair production in proton-lead collisions in ATLAS detector</h5>
+                  <p class="mb-0"><strong>Event:</strong> IEAP — <em>CTU in Prague, Czech Republic</em></p>
+                </div>
+                <div class="year"><strong>2022</strong></div>
+              </div>
+            </a>
+            <a href="https://www.dpg-verhandlungen.de/year/2019/conference/aachen/part/t/session/3/contribution/2" class="anchor-box">
+              <div class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                  <h5>Fake‑Rate Determination for the $t\bar tH$ Coupling Measurement with a Signature of Two Same Electric Charge Light Leptons Associated with a Tau Using the ATLAS Detector at the LHC</h5>
+                  <p class="mb-0"><strong>Event:</strong> DPG Conference Aachen — <em>RWTH Aachen University, Aachen, Germany</em></p>
+                </div>
+                <div class="year"><strong>2019</strong></div>
+              </div>
+            </a>
           </div>
-        </a>
+
+          <!-- Posters -->
+          <h4 class="mt-4 mb-3" id="posters">Posters</h4>
+          <hr>
+          <div class="list-group mx-lg-3">
+            <a href="https://indico.cern.ch/event/1291157/contributions/5878747/"  class="anchor-box">
+              <div class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                  <h5>Observation of top‑quark pair production in $p$+Pb collisions in the ATLAS experiment</h5>
+                  <p class="mb-0"><strong>Event:</strong> 42th International Conference on High Energy Physics (ICHEP) — <em>Prague, Czech Republic</em></p>
+                </div>
+                <div class="year"><strong>2024</strong></div>
+              </div>
+            </a>
+            <a href="https://indico.cern.ch/event/868940/contributions/3813492/" class="anchor-box" >
+              <div class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                  <h5>Fake‑Rate determination for the $t\bar tH$ coupling measurement with a signature of two same electric charge light leptons associated with a tau using the ATLAS detector at the LHC</h5>
+                  <p class="mb-0"><strong>Event:</strong> 40th International Conference on High Energy Physics (ICHEP) — <em>Virtual</em></p>
+                </div>
+                <div class="year"><strong>2020</strong></div>
+              </div>
+            </a>
+          </div>
+
+        </div>
       </div>
-
-      <!-- Invited Talks -->
-      <h4 class="mt-4 mb-3" id="invited">Invited Talks</h4>
-      <hr>
-      <div class="list-group mb-4 mx-lg-3">
-        <a href="https://indico.cern.ch/event/1380777/contributions/5944814/"  class="anchor-box">
-          <div class="list-group-item d-flex justify-content-between align-items-center">
-            <div>
-              <h5>Towards the observation of top‑quark pair production in proton‑lead collisions at 8.16 TeV</h5>
-              <p class="mb-0"><strong>Event:</strong> CZ+SK HEP Workshop — <em> Palacký University in Olomouc, Czech Republic</em></p>
-            </div>
-            <div class="year"><strong>2024</strong></div>
-          </div>
-        </a>
-        <a href="https://indico.cern.ch/event/1245771/contributions/5459469/"  class="anchor-box">
-          <div class="list-group-item d-flex justify-content-between align-items-center">
-            <div>
-              <h5>Towards the observation of top‑quark pair production in proton‑lead collisions at 8.16 TeV</h5>
-              <p class="mb-0"><strong>Event:</strong> CZ+SK HEP Workshop — <em> Comenius University, Bratislava, Slovakia</em></p>
-            </div>
-            <div class="year"><strong>2023</strong></div>
-          </div>
-        </a>
-        <a href="https://indico.cern.ch/event/1139676/contributions/5048957/"  class="anchor-box">
-          <div class="list-group-item d-flex justify-content-between align-items-center">
-            <div>
-              <h5>TRExFitter: A framework for binned template profile likelihood fits in ATLAS</h5>
-              <p class="mb-0"><strong>Event:</strong> New Vistas in Photon Physics in Heavy-Ion Collisions — <em>Polish Academy of Sciences, AGH University of Science and Technology, Kraków, Poland</em></p>
-            </div>
-            <div class="year"><strong>2022</strong></div>
-          </div>
-        </a>
-        <a href="https://indico.cern.ch/event/1139204/contributions/4841836/"    class="anchor-box">
-          <div class="list-group-item d-flex justify-content-between align-items-center">
-            <div>
-              <h5>Towards the observation of top‑quark pair production in proton‑lead collisions at 8.16 TeV</h5>
-              <p class="mb-0"><strong>Event:</strong> ATLAS top workshop — <em>Instituto de Física Corpuscular (IFIC), Valencia, Spain</em></p>
-            </div>
-            <div class="year"><strong>2022</strong></div>
-          </div>
-        </a>
-        <a href="https://www.utef.cvut.cz/seminars/2022-03-01/observation-of-top-quark-pair-production-in-proton-lead-collisions-in-atlas-detector"  class="anchor-box">
-          <div class="list-group-item d-flex justify-content-between align-items-center">
-            <div>
-              <h5>Observation of top-quark pair production in proton-lead collisions in ATLAS detector</h5>
-              <p class="mb-0"><strong>Event:</strong> IEAP — <em>CTU in Prague, Czech Republic</em></p>
-            </div>
-            <div class="year"><strong>2022</strong></div>
-          </div>
-        </a>
-        <a href="https://www.dpg-verhandlungen.de/year/2019/conference/aachen/part/t/session/3/contribution/2" class="anchor-box">
-          <div class="list-group-item d-flex justify-content-between align-items-center">
-            <div>
-              <h5>Fake‑Rate Determination for the $t\bar tH$ Coupling Measurement with a Signature of Two Same Electric Charge Light Leptons Associated with a Tau Using the ATLAS Detector at the LHC</h5>
-              <p class="mb-0"><strong>Event:</strong> DPG Conference Aachen — <em>RWTH Aachen University, Aachen, Germany</em></p>
-            </div>
-            <div class="year"><strong>2019</strong></div>
-          </div>
-        </a>
-      </div>
-
-      <!-- Posters -->
-      <h4 class="mt-4 mb-3" id="posters">Posters</h4>
-      <hr>
-      <div class="list-group mx-lg-3">
-        <a href="https://indico.cern.ch/event/1291157/contributions/5878747/"  class="anchor-box">
-          <div class="list-group-item d-flex justify-content-between align-items-center">
-            <div>
-              <h5>Observation of top‑quark pair production in $p$+Pb collisions in the ATLAS experiment</h5>
-              <p class="mb-0"><strong>Event:</strong> 42th International Conference on High Energy Physics (ICHEP) — <em>Prague, Czech Republic</em></p>
-            </div>
-            <div class="year"><strong>2024</strong></div>
-          </div>
-        </a>
-        <a href="https://indico.cern.ch/event/868940/contributions/3813492/" class="anchor-box" >
-          <div class="list-group-item d-flex justify-content-between align-items-center">
-            <div>
-              <h5>Fake‑Rate determination for the $t\bar tH$ coupling measurement with a signature of two same electric charge light leptons associated with a tau using the ATLAS detector at the LHC</h5>
-              <p class="mb-0"><strong>Event:</strong> 40th International Conference on High Energy Physics (ICHEP) — <em>Virtual</em></p>
-            </div>
-            <div class="year"><strong>2020</strong></div>
-          </div>
-        </a>
-      </div>
-
-    </div>
-  </div>
-</section>
+    </section>
 
   
    <!-- end Recent & Upcoming Talks -->
@@ -861,7 +865,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </p>
             <p class="pub-date"> Published: 7 April 2025 · <strong class="journal-name"><em>Physical Review Letters (PRL)</em></strong></p>
           </div>
-          <img src="Image/publication-2025.png" alt="Publication image" class="pub-image">
+          <img src="Image/publication-2025.png" loading="lazy" alt="Publication image" class="pub-image">
           <div class="pub-card-body">
             <h5 class="pub-title">
               Observation of top‑quark pair production in lead‑lead collisions at $\sqrt{s_{NN}} = 5.02~\text{TeV}$ with the ATLAS detector</h5>
@@ -881,7 +885,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </p>
             <p class="pub-date"> Published: 19 November 2024· <strong class="journal-name"><em>Journal of High Energy Physics (JHEP)</em></strong></p>
           </div>
-          <img src="Image/publication-2024.png" alt="Publication image" class="pub-image">
+          <img src="Image/publication-2024.png" loading="lazy" alt="Publication image" class="pub-image">
           <div class="pub-card-body">
             <h5 class="pub-title">
               Observation of t&#772;t production in lepton+jets and dilepton channels in <em>p+Pb</em> collisions at$\sqrt{s_{NN}} = 8.16~\text{TeV}$  with the ATLAS detector</h5>
@@ -901,7 +905,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </p>
             <p class="pub-date">Published: 31 July 2023 · <strong class="journal-name"><em> The European Physical Journal C (EPJC)</em></strong> </p>
           </div>
-          <img src="Image/publication-2023.jpg" alt="Publication image" class="pub-image">
+          <img src="Image/publication-2023.jpg" loading="lazy" alt="Publication image" class="pub-image">
           <div class="pub-card-body">
             <h5 class="pub-title">
               ATLAS flavour‑tagging algorithms for the LHC Run 2 <em>pp</em> collision dataset
@@ -1018,7 +1022,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   <img src="Image/school/2.jpg" alt="School Image">
                 </div>
                 <div class="school-content">
-                  <p class="school-date">August 10 ‑ 21, 2020</p>
+                  <p class="school-date">August 10 ‑ August 21, 2020</p>
                   <a href="https://indico.fnal.gov/event/43762/" class="school-title">Fermilab‑CERN Hadron Collider Physics Summer School (HCPSS)</a>
                   <p class="school-location">Virtual</p>
                   
@@ -1033,7 +1037,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   <img src="https://res.cloudinary.com/muhammederdem/image/upload/v1537132203/news-slider/item-1.jpg" alt="School Image">
                 </div>
                 <div class="school-content">
-                  <p class="school-date">August 10 ‑ 21, 2020</p>
+                  <p class="school-date">August 10 ‑ August 21, 2020</p>
                   <a href="https://conferences.slac.stanford.edu/2020-archives/ssi-slac-summer-institute-2020"  class="school-title">SSI 2020 ‑ SLAC Summer Institute 2020 </a>
                   <p class="school-location">Virtual</p>
                   
@@ -1048,7 +1052,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   <img src="Image/school/4th-2018.jpg" alt="School Image">
                 </div>
                 <div class="school-content">
-                  <p class="school-date">September 9 ‑ 15, 2018</p>
+                  <p class="school-date">September 9 ‑ September 15, 2018</p>
                   <a href="https://indico.global/event/12608/" class="school-title">The 12th Models of Modern Physics Workshop and Summer School in Theoretical Physics </a>
                   <p class="school-location">Zuberec, Slovakia</p>
                 </div>
