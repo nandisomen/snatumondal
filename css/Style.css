@@ -3,8 +3,6 @@
 /*  */
 /* sign font footer  */
 
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
-
 
 @font-face {
   font-family: 'Red Hat Display';
@@ -88,27 +86,23 @@ nav{
 }
 
 
-@media (min-width:991px) {
-  .nav-link.active{
-   color: #D25D5D !important;
-  transform: scale(1.2);  /* 1.2 = 120% size */
-  transition: all 0.3s ease; 
-}
-.navbar-nav .nav-link:hover  {
-  color: #0b02ff;
- 
-  transform: scale(1.1);  /* 1.2 = 120% size */
-  
-  transition: all .15s ease;  /* Smooth animation */              /* Bootstrap primary color on hover */
-}
+
 
   
+.navbar-nav .nav-link {
+  text-decoration: none;
+  transition: 0.4s;
+  border-radius: 5px;
 }
 
-.navbar-nav .nav-link:hover::after {
-  width: 100%;
-  
+.navbar-nav .nav-link:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background: white;
 }
+
+
+
+
 
 /* remove focus outline */
 .navbar .nav-link:focus,
@@ -137,12 +131,10 @@ nav{
 .navbar .dropdown-menu .dropdown-item {
   transition: color 0.3s ease, background-color 0.3s ease;
 } 
-#navbarScrollingDropdown:hover{
-  color: #0d1dff;
-}
+
 .navbar .dropdown-menu .dropdown-item:hover {
-  background-color: #f2f4f8;   /* subtle hover background */
-  color: #0d1dff;              /* accent color */
+  background-color: #007bff8f ;  /* subtle hover background */
+  color: #ffffff;              /* accent color */
   
 }
 
@@ -162,7 +154,14 @@ nav{
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280,0,0,0.7%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-
+@media (min-width:991px) {
+  .nav-link.active,.dropdown .nav-link.active{
+   color: #B22222  !important;
+   font-weight: bold;
+  transform: scale(1.2);  /* 1.2 = 120% size */
+  transition: all 0.3s ease; 
+}
+}
 /* nav bar end */
 
 html {
@@ -242,7 +241,7 @@ section:nth-of-type(odd) {
     }
     
     .intro .details h1 {
-      font-family: "Mulish", sans-serif !important;
+      font-family: 'Mulish', sans-serif !important;
       font-size: 2.5rem;
       font-weight: 700 !important;
       color: var(--accent-color);
@@ -826,11 +825,13 @@ background : var(--box-color);
   
   box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.69);
   
+  background-color: #DCD9D4 !important;
 }
 .modal-header{
   font-family: Georgia, 'Times New Roman', Times, serif;
   padding: 8px 5px !important;
  background: #e2d1c3;
+ /* border-radius: 50%; */
   
  color: #2B2B2B ;
 }
@@ -841,21 +842,31 @@ background : var(--box-color);
   text-align: center;
  
 }
+.btn-close {
+  padding-right: 20px !important;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+.btn-close:hover {
+  transform: scale(1.2);
+}
+.btn-close:focus,
+.btn-close:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
 
-#modalContent {
-  border-radius: 10px;
+.modal-body{
+
   font-size: .85rem;
   line-height: 2;
   font-family: 'Merriweather', 'Times New Roman', serif;
   text-align: justify;
   text-justify: inter-word;
-  background-color: var(--bg-color);
-  background-color: #DCD9D4;
- background-image: linear-gradient(to bottom, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%), radial-gradient(at 50% 0%, rgba(255,255,255,0.10) 0%, rgba(0,0,0,0.50) 50%);
- background-blend-mode: soft-light,screen;
   overflow-y: auto; 
   max-height: 80vh;  
-  padding: 2rem;
+  padding: 1.5rem !important;
   
   
 } 
