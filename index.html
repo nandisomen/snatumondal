@@ -50,7 +50,7 @@
       <!-- Nav items on the right -->
       <ul class="navbar-nav ms-auto">
          <li class="nav-item dropdown">
-          <a class="nav-link" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Highlights
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
@@ -62,18 +62,10 @@
         
         <li class="nav-item"><a class="nav-link" href="#Analysis">Projects</a></li>
         <li class="nav-item"><a class="nav-link" href="#talks">Talks</a></li>
-        
-        <!-- <li class="nav-item dropdown">
-          <a href="#talk" class="nav-link"id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Talks
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-            <li><a class="dropdown-item" href="#plenary">Plenary Talk</a></li>
-            <li><a class="dropdown-item" href="#invited">Invited Talks</a></li>
-            <li><a class="dropdown-item" href="#posters">Posters</a></li>
-          </ul>
-        </li> -->
-        <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
+        <li class="nav-item">
+              <a class="nav-link" href="#publications" data-targets="#publications, #recent-publications">Publications</a>
+        </li>
+
         <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
         <li class="nav-item"><a class="nav-link" href="hobbies.html"> Lens & Life</a></li>
 
@@ -292,7 +284,7 @@
         <!-- 1st card -->
         <div class="custom-experience-card container-fluid"  >
       <div class="d-flex align-items-start">
-        <img src="Image/Charles-logo.png" alt="UofG Logo" class=" experience-card-img" >
+        <img src="Image/Charles-logo.png" loading="lazy" alt="UofG Logo" class=" experience-card-img" >
         <div>
           <h5 class="title">Post‑Doctoral Research Associate</h5>
           <h6 class="institution">Charles University, Faculty of Mathematics and Physics</h6>
@@ -315,7 +307,7 @@
     <!-- 2nd card -->
     <div class="custom-experience-card" >
       <div class="d-flex align-items-start">
-        <img src="Image/2-IEAP-CTU-logo.jpg" alt="UofG Logo"class=" experience-card-img">
+        <img src="Image/2-IEAP-CTU-logo.jpg" loading="lazy" alt="UofG Logo"class=" experience-card-img">
         <div>
           <h5 class="title">Post‑Doctoral Research Associate</h5>
           <h6 class="institution">Czech Technical University in Prague</h6>
@@ -349,7 +341,7 @@
     <!-- 3rdd card -->
     <div class="custom-experience-card">
       <div class="d-flex align-items-start">
-        <img src="Image/CTU-logo.jpeg" alt="UofG Logo" class=" experience-card-img">
+        <img src="Image/CTU-logo.jpeg" loading="lazy" alt="UofG Logo" class=" experience-card-img">
         <div>
           <h5 class="title">Doctoral Researcher</h5>
           <h6 class="institution">Czech Technical University  in Prague </h6>
@@ -413,7 +405,7 @@
     <!-- start for new box copy and edit this -->
     <div class="col ">
       <div class="card info-card" data-bs-toggle="modal" data-bs-target="#detailModal">
-        <img src="Image/Physics-Analyses/1-Pb-Pb.png" class="card-img-top" alt="...">
+        <img src="Image/Physics-Analyses/1-Pb-Pb.png" loading="lazy" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title text-center">
             Observation of top‑quark pair production in lead‑lead collisions
@@ -431,7 +423,7 @@
     <!-- card 2 -->
     <div class="col ">
       <div class="card info-card" data-bs-toggle="modal" data-bs-target="#detailModal" >
-        <img src="Image/Physics-Analyses/2-p-Pb.png" class="card-img-top" alt="...">
+        <img src="Image/Physics-Analyses/2-p-Pb.png" loading="lazy" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title text-center">
             Observation of top quark pair production in $p$‑Pb collisions
@@ -456,7 +448,7 @@
     <!-- card 3  -->
     <div class="col ">
       <div class="card info-card" data-bs-toggle="modal" data-bs-target="#detailModal">
-        <img src="Image/Physics-Analyses/3-ttH.png" class="card-img-top" alt="...">
+        <img src="Image/Physics-Analyses/3-ttH.png" loading="lazy" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title text-center">
             Analysis of $t\bar{t}H$ and $t\bar{t}W$ production in multilepton final states with the ATLAS detector
@@ -481,7 +473,7 @@
     <!-- card-4  -->
     <div class="col ">
       <div class="card info-card" data-bs-toggle="modal" data-bs-target="#detailModal">
-        <img src="Image/Physics-Analyses/analysis4.jpeg" class="card-img-top img-fluid" alt="...">
+        <img src="Image/Physics-Analyses/analysis4.jpeg" loading="lazy" class="card-img-top img-fluid" alt="...">
         <div class="card-body">
           <h5 class="card-title text-center">
             ATLAS Flavour tagging: jet collection calibration and CDI tooling
@@ -544,7 +536,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
   <!-- Briefings -->
- <section class="briefings-section" id="briefings">
+ <section class="briefings-section" id="briefings"> 
   <div class="container" data-aos="fade-up">
     <h1 class="section-title">Briefings</h1>
     <h3 class="section-caption">The first observation of top quarks in heavy-ion collisions—an achievement formally recognised by CERN’s exclusive Physics Briefings for its significant impact.</h3>
@@ -556,7 +548,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <a href="https://atlas.cern/Updates/Briefing/Observation-Top-PbPb" onclick="return handleLinkClick(this)"
          class="text-decoration-none text-dark">
         <div class="briefing-card mx-auto">
-          <img src="Image/Briefing-1-Pb-Pb_16-9.jpeg" class="briefing-img" alt="Card 1 image">
+          <img src="Image/Briefing-1-Pb-Pb_16-9.jpeg" loading="lazy" class="briefing-img" alt="Card 1 image">
           <div class="briefing-body">
             <h6 class="briefing-title text-decoration-none">
               ATLAS observes top quarks in lead‑lead collisions
@@ -571,7 +563,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <a href="https://atlas.cern/Updates/Briefing/HI-Top-Observation" onclick="return handleLinkClick(this)"
          class="text-decoration-none text-dark">
         <div class="briefing-card mx-auto">
-          <img src="Image/Briefings-2-p-Pb_16-9.jpeg" class="briefing-img" alt="Card 2 image">
+          <img src="Image/Briefings-2-p-Pb_16-9.jpeg" loading="lazy" class="briefing-img" alt="Card 2 image">
           <div class="briefing-body">
             <h6 class="briefing-title text-decoration-none">
               ATLAS observes top quarks in proton‑lead collisions
@@ -606,7 +598,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="wgh-slider__container">
           <div class="wgh-slider-item">
             <div class="wgh-slider-item__inner">
-              <figure class="wgh-slider-item-figure"><img class="wgh-slider-item-figure__image " src="Image/news/img1.png" alt="The 5th Exotic"/>
+              <figure class="wgh-slider-item-figure"><img class="wgh-slider-item-figure__image " loading="lazy" src="Image/news/img1.png" alt="The 5th Exotic"/>
                 <figcaption class="wgh-slider-item-figure__caption"><a href="">physicsworld</a></figcaption>
               </figure>
               <label class="wgh-slider-item__trigger" for="slide-1" title="physicsworld"></label>
@@ -614,7 +606,7 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
           <div class="wgh-slider-item">
             <div class="wgh-slider-item__inner">
-              <figure class="wgh-slider-item-figure"><img class="wgh-slider-item-figure__image" src="Image/news/img2.png" alt="The 5th Exotic"/>
+              <figure class="wgh-slider-item-figure"><img class="wgh-slider-item-figure__image" loading="lazy" src="Image/news/img2.png" alt="The 5th Exotic"/>
                 <figcaption class="wgh-slider-item-figure__caption"><a href="">phys.org</a></figcaption>
               </figure>
               <label class="wgh-slider-item__trigger" for="slide-2" title="phys.org"></label>
@@ -622,7 +614,7 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
           <div class="wgh-slider-item">
             <div class="wgh-slider-item__inner">
-              <figure class="wgh-slider-item-figure"><img class="wgh-slider-item-figure__image" src="Image/news/img3.png" alt="The 5th Exotic"/>
+              <figure class="wgh-slider-item-figure"><img class="wgh-slider-item-figure__image" loading="lazy" src="Image/news/img3.png" alt="The 5th Exotic"/>
                 <figcaption class="wgh-slider-item-figure__caption"><a href="">Nature</a></figcaption>
               </figure>
               <label class="wgh-slider-item__trigger" for="slide-3" title="Nature"></label>
@@ -630,7 +622,7 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
           <div class="wgh-slider-item">
             <div class="wgh-slider-item__inner">
-              <figure class="wgh-slider-item-figure"><img class="wgh-slider-item-figure__image" src="Image/news/img4.png" alt="The 5th Exotic"/>
+              <figure class="wgh-slider-item-figure"><img class="wgh-slider-item-figure__image" loading="lazy" src="Image/news/img4.png" alt="The 5th Exotic"/>
                 <figcaption class="wgh-slider-item-figure__caption"><a href="">physicsworld</a></figcaption>
               </figure>
               <label class="wgh-slider-item__trigger" for="slide-4" title="physicsworld"></label>
@@ -638,7 +630,7 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
           <div class="wgh-slider-item">
             <div class="wgh-slider-item__inner">
-              <figure class="wgh-slider-item-figure"><img class="wgh-slider-item-figure__image" src="Image/news/img2.png" alt="RYSY - Traveler LP"/>
+              <figure class="wgh-slider-item-figure"><img class="wgh-slider-item-figure__image" loading="lazy" src="Image/news/img2.png" alt="RYSY - Traveler LP"/>
                 <figcaption class="wgh-slider-item-figure__caption"><a href="">physicsworld</a></figcaption>
               </figure>
               <label class="wgh-slider-item__trigger" for="slide-5" title="physicsworld"></label>
@@ -1079,7 +1071,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- Big Image Section -->
 <div class="big-image-wrapper">
   <!-- default image (first one) -->
-  <img id="bigImage" src="Image/gallery/2.jpg" alt="image">
+  <img id="bigImage" src="Image/gallery/2.jpg" loading="lazy" alt="image">
 </div>
 
     <!-- Caption Section -->
@@ -1091,13 +1083,13 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- Thumbnails -->
      <div class="carousel-thumbnails-wrapper mt-2">
       <div class="carousel-thumbnails d-flex justify-content-center" id="thumbnailsContainer">
-        <div class="thumb-item"><img src="Image/gallery/2.jpg" alt="Slide 1" data-caption="My First Visit to CERN 2018"></div>
-        <div class="thumb-item"><img src="Image/gallery/6.jpg" alt="Slide 3" data-caption="Presenting the Higgs Finding at the DPG Germany Conference"></div>
-        <div class="thumb-item"><img src="Image/gallery/3.jpg" alt="Slide 3" data-caption="Deutsches Elektronen-Synchrotron DESY"></div>
-        <div class="thumb-item"><img src="Image/gallery/4.jpg" alt="Slide 4" data-caption="30 Years of ATLAS, Celebrated During ATLAS Week in Portugal"></div>
-        <div class="thumb-item"><img src="Image/gallery/5.jpg" alt="Slide 5" data-caption="Honoured to Deliver My Talk at the Universidade de Lisboa"></div>
+        <div class="thumb-item"><img src="Image/gallery/2.jpg" loading="lazy" alt="Slide 1" data-caption="My First Visit to CERN 2018"></div>
+        <div class="thumb-item"><img src="Image/gallery/6.jpg" loading="lazy" alt="Slide 3" data-caption="Presenting the Higgs Finding at the DPG Germany Conference"></div>
+        <div class="thumb-item"><img src="Image/gallery/3.jpg" loading="lazy" alt="Slide 3" data-caption="Deutsches Elektronen-Synchrotron DESY"></div>
+        <div class="thumb-item"><img src="Image/gallery/4.jpg" loading="lazy" alt="Slide 4" data-caption="30 Years of ATLAS, Celebrated During ATLAS Week in Portugal"></div>
+        <div class="thumb-item"><img src="Image/gallery/5.jpg" loading="lazy" alt="Slide 5" data-caption="Honoured to Deliver My Talk at the Universidade de Lisboa"></div>
         
-        <div class="thumb-item"><img src="Image/gallery/1.jpg" alt="Slide 2" data-caption="Conference : Diffraction and Low-x 2024, Sicily"></div>
+        <div class="thumb-item"><img src="Image/gallery/1.jpg" loading="lazy" alt="Slide 2" data-caption="Conference : Diffraction and Low-x 2024, Sicily"></div>
       </div>
     </div>
     
@@ -1260,29 +1252,87 @@ function handleLinkClick(link) {
 
     <!-- nav section active shows  -->
 
-    <script>
-  const sections = document.querySelectorAll('section');
-  const navLinks = document.querySelectorAll('.nav-link');
+ 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const navLinks = document.querySelectorAll("a[href^='#']");
+  const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+  const sections = document.querySelectorAll("section[id]");
+  const offset = 300;  // Adjust if your navbar is fixed
+  
 
-  window.addEventListener('scroll', () => {
-    let current = '';
-    
+  function activateNavLink() {
+    let scrollY = window.pageYOffset;
+
+    // Track matched links to re-activate them efficiently
+    let activeSections = new Set();
+
     sections.forEach(section => {
-      const sectionTop = section.offsetTop - 150  ;
-      const sectionHeight = section.clientHeight;
-      if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
-        current = section.getAttribute('id');
+      const sectionTop = section.offsetTop - offset;
+      const sectionHeight = section.offsetHeight;
+      const sectionId = section.getAttribute("id");
+
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        activeSections.add(sectionId);
       }
     });
 
+    // Loop through all nav links
     navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active');
+      const href = link.getAttribute("href");
+      if (!href) return;
+
+      // const targetIds = href.split(",").map(s => s.trim().replace("#", ""));
+      const dataTargets = link.getAttribute("data-targets");
+const targetIds = dataTargets
+  ? dataTargets.split(",").map(s => s.trim().replace("#", ""))
+  : [link.getAttribute("href").replace("#", "")];
+
+      const isActive = targetIds.some(id => activeSections.has(id));
+      
+
+      if (isActive) {
+        if (!link.classList.contains("active")) {
+          link.classList.add("active");
+        }
+
+        // Check if inside a dropdown
+        const dropdown = link.closest(".dropdown-menu");
+        if (dropdown) {
+          const toggle = dropdown.parentElement.querySelector(".dropdown-toggle");
+          if (toggle && !toggle.classList.contains("active")) {
+            toggle.classList.add("active");
+          }
+        }
+      } else {
+        if (link.classList.contains("active")) {
+          link.classList.remove("active");
+        }
       }
     });
+
+    // Handle dropdown toggles separately (in case none of their children matched)
+    dropdownToggles.forEach(toggle => {
+      const menu = toggle.nextElementSibling;
+      const activeChild = menu && menu.querySelector(".active");
+      if (!activeChild && toggle.classList.contains("active")) {
+        toggle.classList.remove("active");
+      }
+    });
+  }
+
+  // Throttle scroll handler for performance
+  let scrollTimeout;
+  window.addEventListener("scroll", () => {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(activateNavLink, 50);
   });
+
+  // Initial run
+  activateNavLink();
+});
 </script>
+
 
 
 
