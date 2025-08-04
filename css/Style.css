@@ -40,9 +40,12 @@
 :root {
   --bg-color: #f9f6ef;
   --text-color: #222;
-  --accent-color: #753BBD; /* previous color #4b0082*/
+  /* --accent-color: #753BBD;  */
+  --accent-color: #4b0082 ;
   
   --link-color: #007acc;
+
+  --link-hover-text : red;
   --nav-bg: #f6f5f8;
   --card-bg: #ffffff;
   --card-shadow: rgba(0, 0, 0, 0.1);
@@ -71,8 +74,11 @@ nav{
 }
 .navbar-brand{
   font-family: 'Red Hat Display', sans-serif;
-  font-weight: 700;
+  font-weight: 900;
   letter-spacing: 1px;
+  color: black;
+  -webkit-text-stroke: 0.5px black;
+
 }
 .nav-item{
   margin-left: 10px;
@@ -93,7 +99,7 @@ nav{
   transition: all 0.3s ease; 
 }
 .navbar-nav .nav-link:hover  {
-  color: #0284c7;
+  color: #0b02ff;
  
   transform: scale(1.1);  /* 1.2 = 120% size */
   
@@ -121,7 +127,7 @@ nav{
 
 .navbar .dropdown-menu {
   border-radius: 0.5rem;
-  margin-top: 0.3rem;
+  margin-top: 0.1rem;
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
@@ -170,7 +176,7 @@ html {
 @media (max-width: 576px) {
   html {
     scroll-behavior: smooth;      /* optional for smooth scrolling */
-    scroll-padding-top: 200px;   /* adjust for smaller screens */
+    scroll-padding-top: 330px;   /* adjust for smaller screens */
   }
 }
  a{
@@ -242,7 +248,7 @@ section:nth-of-type(odd) {
     .intro .details h1 {
       font-family: "Mulish", sans-serif !important;
       font-size: 2.5rem;
-      font-weight: 900;
+      font-weight: 900 !important;
       color: var(--accent-color);
     }
     .intro h3 {
@@ -298,8 +304,14 @@ section:nth-of-type(odd) {
     color: #060080;
    }
 
+   .full-details a:hover{
+    color: var(--link-hover-text);
+   }
 
-    
+
+    .education h3{
+      font-family: 'Red Hat Display', sans-serif !important;
+    }
     .education dd{
       font-size: .9rem;
       color: rgba(0, 0, 0, 0.608);
@@ -313,6 +325,10 @@ section:nth-of-type(odd) {
     }
     ul.no-bullets li {
       list-style-type: none !important; /* extra safety */
+    }
+
+    .research-intrest h3{
+      font-family: 'Red Hat Display', sans-serif !important;
     }
      .research-intrest p {
       font-size: 1rem;
@@ -727,7 +743,6 @@ background : var(--box-color);
 .info-card:hover {
   transform: translateY(-8px);           /* Lift card up */
   box-shadow: 0 10px 20px rgba(0,0,0,0.15); /* Soft shadow */
-  border-color: #0d6efd;                /* Optional border highlight */
 }
 /* Active effect (when pressing/clicking) */
 .info-card:active {
@@ -735,40 +750,48 @@ background : var(--box-color);
   box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Tighter shadow */
   border-color: #0a58ca;                /* Darker border while active */
 }
-
-.view-details {
+.analysis-btn {
+  background-image: linear-gradient(to right, #9D50BB 0%, #6E48AA 51%, #9D50BB 100%);
+  background-size: 200% auto;
+  color: white;
+  border-radius: 6px;
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  padding: 8px 15px;
+  text-align: center;
+  transition: 0.5s;
   position: absolute;
-  bottom: 10px;          /* stick near bottom of card body */
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-    background: #0d6efd;
-  color: #fff;
-  padding: 8px 12px;
-  border-radius: 4px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  display: none;
   opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none; /* not clickable */
 }
+
+
+
 @media (max-width: 992px) {
-  .view-details {
-  position: absolute;
-  bottom: 10px;          /* stick near bottom of card body */
-  left: 50%;
-  transform: translateX(-50%);
-    background: #0d6efd;
-  color: #fff;
-  padding: 6px 12px;
-  border-radius: 4px;
-  font-size: 07.rem;
-  font-weight: lighter;
+  .analysis-btn {
+    font-size: 0.7rem;
+    font-weight: lighter;
+    padding: 6px 12px;
+    opacity: 1;
+    pointer-events: auto; /* clickable on smaller screens */
+  }
+}
+
+.card:hover .analysis-btn {
   display: block;
   opacity: 1;
-  transition: opacity 0.3s ease;
 }
+
+.analysis-btn:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
 }
+
 @media(max-width:576px){
   #Analysis .section-title{
     margin-bottom: 20px ;
@@ -787,13 +810,14 @@ background : var(--box-color);
   text-align: center;
 }
 
+.analysis-btn{
+  font-size: .7rem;
+  font-weight: 600;
+}
+
 }
 
 
-.card:hover .view-details {
-  display: block;
-  opacity: 1;
-}
 
 .modal{
   background: rgba(0, 0, 0, 0.729);
@@ -810,7 +834,8 @@ background : var(--box-color);
 .modal-header{
   font-family: Georgia, 'Times New Roman', Times, serif;
   padding: 8px 5px !important;
- background: #c1b2cf;
+ background: #e2d1c3;
+  
  color: #2B2B2B ;
 }
 .modal-title {
@@ -829,6 +854,9 @@ background : var(--box-color);
   text-align: justify;
   text-justify: inter-word;
   background-color: var(--bg-color);
+  background-color: #DCD9D4;
+ background-image: linear-gradient(to bottom, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%), radial-gradient(at 50% 0%, rgba(255,255,255,0.10) 0%, rgba(0,0,0,0.50) 50%);
+ background-blend-mode: soft-light,screen;
   overflow-y: auto; 
   max-height: 80vh;  
   padding: 2rem;
@@ -901,7 +929,7 @@ background : var(--box-color);
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 .briefing-card:hover .briefing-title {
-  color: #0d6efd; /* bootstrap primary color */
+  color: var(--link-hover-text); /* bootstrap primary color */
   text-decoration: underline;
 }
 
@@ -1175,85 +1203,70 @@ input.wgh-slider-target {
 
 /* start achivement section  */
 
-
-.achievement-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
 .achievement-card {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  border-radius: .5em;  
-  text-decoration: none;
+  height: 290px;  
+  border-radius: 0.5em;
   background: var(--box-color);
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
   padding: 1.5em 1.2em;
-  box-shadow: 0 1.5em 2.5em -.5em rgba(0, 0, 0, 0.1);
-  transition: transform .75s ease, background .5s ease;
+  box-shadow: 0 1.5em 2.5em -0.5em rgba(0, 0, 0, 0.1);
+  transition: transform 0.75s ease, background 0.5s ease;
 }
 
 .achievement-card h3 {
-  
-  color: #2E3C40;
+  color: #2e3c40;
   font-size: 1.5em;
   font-weight: 600;
-  line-height: 1;
-  padding-bottom: .5em;
-  margin: 0 0 0.2em;
+  margin-bottom: 0.5em;
   border-bottom: 2px solid var(--accent-color);
-  transition: color .75s ease, border .75s ease;
+  transition: color 0.75s ease, border 0.75s ease;
 }
 
 .achievement-card h4 {
-  font-family: 'Mulish';
   color: #627084;
-  font-size: .9em;
+  font-size: 0.9em;
   font-weight: 700;
-  line-height: 1;
   letter-spacing: 0.05em;
-  margin: 0 0 1em;
-  transition: color .75s ease;
+  margin-bottom: 1em;
+  transition: color 0.75s ease;
 }
-achievement-card h4:hover{
-  padding-top: 2px;
-  font-size: 1rem;
-}
+
 .achievement-card p {
   opacity: 0;
   color: #ffffff;
-  font-size: .9rem;
+  font-size: 0.9rem;
   font-weight: 600;
   line-height: 1.6;
-  margin: 0 0 1em;
+  margin-bottom: 1em;
   transform: translateY(-1em);
-  transition: opacity .75s ease, transform .75s ease;
+  transition: opacity 0.75s ease, transform 0.75s ease;
 }
 
 .achievement-card .link-text {
-  opacity: 1;
   display: block;
   color: var(--accent-color);
   font-size: 1em;
   font-weight: 600;
-  line-height: 1.2;
   margin-top: auto;
-  transition: color .75s ease;
+  transition: color 0.75s ease, opacity 0.75s ease;
 }
 
+/* Hover Effects */
 .achievement-card:hover {
   background: var(--accent-color);
   transform: scale(1.02);
 }
 
-.achievement-card:hover h3 {
-  color: #FFFFFF;
-  border-bottom-color: #A754C4;
+.achievement-card:hover h3,
+.achievement-card:hover h4 {
+  color: #ffffff;
 }
 
-.achievement-card:hover h4 {
-  color: #FFFFFF;
+.achievement-card:hover h3 {
+  border-bottom-color: #a754c4;
 }
 
 .achievement-card:hover p {
@@ -1265,18 +1278,14 @@ achievement-card h4:hover{
   opacity: 0;
 }
 
-/* Responsive Design */
+/* Responsive Adjustments */
 @media (max-width: 1024px) {
-  .achievement-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .achievement-card {
     padding: 1.2em 1em;
   }
 
   .achievement-card h3 {
-    font-size: 1.8em;
+    font-size: 1.4em;
   }
 
   .achievement-card h4 {
@@ -1287,64 +1296,57 @@ achievement-card h4:hover{
     font-size: 0.85em;
   }
 }
-
-
-
-@media ((min-width: 577px) and (max-width: 990px)) {
-  .achievement-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
+@media (max-width:786px) {
   .achievement-card {
-    padding: 1.2em 1em;
+    height: auto;
+    padding: 1em;
+    background-color: var(--box-color);
   }
-
-  .achievement-card h3 {
-    font-size: 1.8em;
-  }
-
-  .achievement-card h4 {
-    font-size: 0.95em;
+   .achievement-card h4 {
+    font-size: 0.9em;
   }
 
   .achievement-card p {
-    font-size: 0.85em;
+    color: #000;
     opacity: 1 !important;
     transform: none !important;
-    color: #333 !important;
   }
-  .achievement-card .link-text {
-  opacity: 0;
-  }
+  .achievement-card:hover p {
+  color: white;
 }
 
-@media (max-width: 576px) {
-  .achievement-grid {
-    grid-template-columns: 1fr;
+  .achievement-card .link-text {
+    opacity: 0 !important;
   }
-
+}
+@media (max-width: 576px) {
   .achievement-card {
+    height: auto;
     padding: 1em;
+    background-color: var(--box-color);
   }
 
   .achievement-card h3 {
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
 
   .achievement-card h4 {
     font-size: 0.9em;
   }
-.achievement-card .link-text {
-  opacity: 0;
-}
+
   .achievement-card p {
-    font-size: 0.8em;
+    color: #000;
     opacity: 1 !important;
     transform: none !important;
-    color: #333 !important; /* or whatever your preferred visible color is */
   }
+  .achievement-card:hover p {
+  color: white;
 }
 
+  .achievement-card .link-text {
+    opacity: 0 !important;
+  }
+}
 
 /* achievement end  */
 
@@ -1388,7 +1390,8 @@ achievement-card h4:hover{
   box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* stronger shadow on hover */
 }
 .list-group-item:hover h5 {
-  color: #001d9f; /* your desired color */
+  /* color: #001d9f;  */
+  color: var(--link-hover-text);
 }
 
 
@@ -1483,13 +1486,8 @@ achievement-card h4:hover{
   color: #222;
 }
 
-/* Make whole card clickable */
-.pub-card-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  margin-bottom: 1.5rem;
-}
+
+
 
 .pub-card {
   background: var(--box-color);
@@ -1549,26 +1547,9 @@ achievement-card h4:hover{
 }
 
   
-         
-/* Cool button */
-/* .pub-btn {
-  display: inline-block;
-  padding: 8px 14px;
-  background: #0d6efd;
-  color: #fff;
-  font-size: 0.9rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 6px;
-  transition: all 0.3s ease;
+.pub-card-link {
+  text-decoration: none;  
 }
-.pub-btn:hover {
-  background: #084298;
-  transform: scale(1.05);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-} */
-
-
 
            .pub-btn {background-image: linear-gradient(to right, #9D50BB 0%, #6E48AA  51%, #9D50BB  100%)}
          .pub-btn {
@@ -1580,10 +1561,12 @@ achievement-card h4:hover{
             color: white;            
             box-shadow: 0 0 20px #eee;
             border-radius: 6px;
-            display: block;
+            /* display: block; */
             font-size: 0.9rem;
             font-weight: 600;
             border: none;
+            margin-top: 1rem;
+            margin-bottom: 1.2rem;
           }
 
           .pub-btn:hover {
@@ -1672,7 +1655,7 @@ achievement-card h4:hover{
       margin-bottom: 12px;
     }
     .school-title:hover{
-      color: var(--link-color);
+      color: var(--link-hover-text);
     }
 
     .school-location {
@@ -1914,12 +1897,12 @@ white-space: nowrap;     /* Forces single-line */
   position: relative;
   
 }
-@media (min-width:900px) {
-  .footer-container .footer-column .line {
+
+ .footer-container .footer-column .line {
   display: block;
-  width: 40px;
+  width: 30px;
   height: 4px;
-  background-color: #D25D5D !important;
+  background-color: #f50057 !important;
   border: none;                  /* <— very important */
   border-radius: 10px;
   margin: 0;
@@ -1929,8 +1912,7 @@ white-space: nowrap;     /* Forces single-line */
     
 }
 
-  
-}
+
 
 
 .footer-column ul {
@@ -1940,7 +1922,7 @@ white-space: nowrap;     /* Forces single-line */
 }
 
 .footer-column ul li {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .footer-column ul li a {
@@ -2013,33 +1995,16 @@ white-space: nowrap;     /* Forces single-line */
   box-shadow: 2px 3px 5px #ffffff;
 }
 
-.fa-facebook-f:hover ,.fa-facebook:hover,.fa-envelope:hover{
+.social-links a:hover .fa-facebook-f{
   color: #1877F2;
-  transform: scale(1.2);  /* 1.2 = 120% size */
-  transition: all 0.3s ease;  /* Smooth animation */
 }
 
-.fa-linkedin-in:hover ,.fa-square-linkedin:hover , .fa-linkedin:hover{
-  color: #0077b5;
-  transform: scale(1.2);  /* 1.2 = 120% size */
-  transition: all 0.3s ease;  /* Smooth animation */
-}
-.fa-orcid:hover{
-  color: #1aba04;
-  transform: scale(1.2);  /* 1.2 = 120% size */
-  transition: all 0.3s ease;  /* Smooth animation */
-}
-.fa-x-twitter:hover,.fa-threads:hover{
-  color:#000;
-  transform: scale(1.2);  /* 1.2 = 120% size */
-  transition: all 0.2s ease;  /* Smooth animation */
-}
-.fa-instagram:hover , .fa-youtube:hover{
+.social-links a:hover .fa-instagram,.social-links a:hover .fa-youtube{
 color :red;
-transform: scale(1.2);  /* 1.2 = 120% size */
-  transition: all 0.3s ease;  /* Smooth animation */
 }
-
+.social-links a:hover .fa-linkedin-in{
+  color: #0077b5;
+}
 .last-updated-section p{
   color: #ffffff93;
   font-size: .8rem;
@@ -2048,14 +2013,30 @@ transform: scale(1.2);  /* 1.2 = 120% size */
 
 @media (max-width: 768px) {
   .footer-container {
+    display: flex;
     flex-direction: column;
     text-align: center;
-    /* gap: 10px; */
+    gap: 10px;
   }
 
   .footer-column {
+    width: 100%;
+    flex: 1 1 auto;
+    min-height: auto;
     margin-bottom: 10px;
   }
+    .footer-container .footer-column .line {
+  width: 10%;
+  height: 2px;
+  background-color: #f50057 !important;
+  border: none;                  /* <— very important */
+  border-radius: 10px;
+  margin: 0 auto;
+
+  transform: translateY(-7px);
+  visibility: visible;
+
+}
   .social-links {
     flex-direction: row;
     justify-content: center; /* center horizontally */
@@ -2063,13 +2044,16 @@ transform: scale(1.2);  /* 1.2 = 120% size */
     gap: 10px;
     margin-bottom: 15px;
   }
-
+  .social-links {
+  margin-left: 0px;
+  }
   .social-links a {
     margin-bottom: 0; /* remove vertical gap */
     margin-right: 0;
   }
 
 }
+
 
 .last-updated-section {
   width: 100%;
@@ -2105,4 +2089,32 @@ transform: scale(1.2);  /* 1.2 = 120% size */
 }
 
 
-/* test  */
+/* icon hover color change  */
+
+.fa-facebook-f:hover ,.fa-facebook:hover,.fa-envelope:hover{
+  color: #1877F2;
+  transform: scale(1.2);  /* 1.2 = 120% size */
+  transition: all 0.3s ease;  /* Smooth animation */
+}
+
+.fa-linkedin-in:hover ,.fa-square-linkedin:hover , .fa-linkedin:hover{
+  color: #0077b5;
+  transform: scale(1.2);  /* 1.2 = 120% size */
+  transition: all 0.3s ease;  /* Smooth animation */
+}
+.fa-orcid:hover{
+  color: #1aba04;
+  transform: scale(1.2);  /* 1.2 = 120% size */
+  transition: all 0.3s ease;  /* Smooth animation */
+}
+.fa-x-twitter:hover,.fa-threads:hover{
+  color:#000;
+  transform: scale(1.2);  /* 1.2 = 120% size */
+  transition: all 0.2s ease;  /* Smooth animation */
+}
+.fa-instagram:hover , .fa-youtube:hover{
+color :red;
+transform: scale(1.2);  /* 1.2 = 120% size */
+  transition: all 0.3s ease;  /* Smooth animation */
+}
+
