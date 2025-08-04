@@ -9,27 +9,23 @@
 @font-face {
   font-family: 'Red Hat Display';
   src:
-       url('../fonts/Red_Hat_Display/RedHatDisplay-VariableFont_wght.ttf') format('truetype'),
-       url('../fonts/Red_Hat_Display/static/RedHatDisplay-Regular.ttf') format('truetype');
-  font-weight: normal;
+       url('../fonts/Red_Hat_Display/RedHatDisplay-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Cormorant';
   src:
-       url('../fonts/Cormorant/Cormorant-VariableFont_wght.ttf') format('truetype'),
-       url('../fonts/Cormorant/Cormorant-Regular.ttf') format('truetype');
-  font-weight: normal;
+       url('../fonts/Cormorant/Cormorant-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Mulish';
-  src:
-       url('../fonts/Mulish/Mulish-VariableFont_wght.ttf') format('truetype'),
-       url('../fonts/Mulish/Mulish-Regular.ttf') format('truetype');
-  font-weight: normal;
+  font-family: 'Mulish Variable';
+  src: url('../fonts/Mulish/Mulish-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
   font-style: normal;
 }
 
@@ -248,12 +244,12 @@ section:nth-of-type(odd) {
     .intro .details h1 {
       font-family: "Mulish", sans-serif !important;
       font-size: 2.5rem;
-      font-weight: 900 !important;
+      font-weight: 700 !important;
       color: var(--accent-color);
     }
     .intro h3 {
       margin: 0.5rem 0;
-      font-weight: normal;
+      font-weight: 600;
     }
     .intro .icons a {
       /* margin-right: 10px; */
