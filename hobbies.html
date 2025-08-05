@@ -18,14 +18,35 @@
 <body>
 <nav class="navbar fixed-top">
   <div class="container justify-content-center">
-    <ul class="navbar-nav d-flex flex-row">
-      
-      <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
-      <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-house-chimney" ></i></a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+    <ul class="navbar-nav d-flex flex-row magic-navbar">
+      <li style="--i:#a955ff;--j:#ea51ff">
+        <a class="nav-link" href="#">
+          <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+          <span class="title">Home</span>
+        </a>
+      </li>
+      <li style="--i:#56CCF2;--j:#2F80ED">
+        <a class="nav-link" href="#">
+          <span class="icon"><ion-icon name="images-outline"></ion-icon></span>
+          <span class="title">Photos</span>
+        </a>
+      </li>
+      <li style="--i:#FF9966;--j:#FF5E62">
+        <a class="nav-link" href="#">
+          <span class="icon"><ion-icon name="videocam-outline"></ion-icon></span>
+          <span class="title">Videos</span>
+        </a>
+      </li>
+      <li style="--i:#80FF72;--j:#7EE8FA">
+        <a class="nav-link" href="#">
+          <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+          <span class="title">Contact</span>
+        </a>
+      </li>
     </ul>
   </div>
 </nav>
+
 
 
 
@@ -61,6 +82,7 @@
     <i class="down-arrow fa-solid fa-angles-down fa-bounce fa-2xl " style="color: #ffffff;"></i>
 
     <section class ="galery">
+      <h1>section 1</h1>
 
       <!-- Gallery -->
   <div class="container my-5">
@@ -198,7 +220,7 @@
   </div>
 </div>
 
-    </section>
+   
     
       
 
@@ -236,8 +258,8 @@
       <div class="col-md-4">
         <h5 class="fw-bold mb-3">Contact</h5>
         <p><i class="fas fa-envelope me-2"></i> email@example.com</p>
-        <p><i class="fas fa-phone me-2"></i> +91 98765 43210</p>
-        <p><i class="fas fa-map-marker-alt me-2"></i> Kolkata, India</p>
+        <p><i class="fas fa-phone me-2"></i> 111111</p>
+        <p><i class="fas fa-map-marker-alt me-2"></i> aaaa</p>
         <div class="social-icons mt-3">
           <a href="https://www.facebook.com/share/1AqNsdXRFU/?mibextid=wwXIfr" target="_blank" class="footer-social"><i class="fab fa-facebook fa-lg"></i></a>
           <a href="https://instagram.com/shades_of_santu" target="_blank" class="footer-social"><i class="fab fa-instagram fa-lg"></i></a>
@@ -276,6 +298,19 @@
 
 
 
+<script>
+  window.addEventListener("scroll", function () {
+    const navbar = document.querySelector(".navbar");
+    navbar.classList.toggle("solid", window.scrollY > 50);
+  });
+</script>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+
+
 <!-- Masonry layout script -->
 <script>
   function resizeMasonryItems() {
@@ -298,6 +333,7 @@
     img.addEventListener('load', resizeMasonryItems);
   });
 </script>
+
 
 
   <!-- oepn image in fullscreen -->
