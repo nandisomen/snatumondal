@@ -64,14 +64,14 @@ section {
    Navbar link styles
 ------------------------------ */
 nav{
-  z-index: 1000;
+  z-index: 1000 !important;
 }
 .navbar-brand{
-  font-family: 'Red Hat Display', sans-serif;
-  font-weight: 900;
+  font-family: 'Red Hat Display', sans-serif !important;
+  font-weight: 600;
   letter-spacing: 1px;
   color: black;
-  -webkit-text-stroke: 0.5px black;
+
 
 }
 .nav-item{
@@ -90,14 +90,15 @@ nav{
 
   
 .navbar-nav .nav-link {
+  font-size: .9rem;
   text-decoration: none;
-  transition: 0.4s;
+  transition: 0.2s;
   border-radius: 5px;
 }
 
-.navbar-nav .nav-link:hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  background: white;
+.navbar-nav .nav-link:hover, #navbarScrollingDropdown:hover {
+  color: #0d6efd;
+  transform: scale(1.1);
 }
 
 
@@ -117,8 +118,14 @@ nav{
 
 .navbar .dropdown-menu {
   border-radius: 0.5rem;
-  margin-top: 0.1rem;
+  
+  padding: 0;
+  margin: 0;
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.dropdown-item{
+  font-size: .9rem;
 }
 
 /* show dropdown on hover (optional for large screens) */
@@ -128,14 +135,18 @@ nav{
   }
 }
 
+ .navbar .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
 .navbar .dropdown-menu .dropdown-item {
   transition: color 0.3s ease, background-color 0.3s ease;
 } 
 
 .navbar .dropdown-menu .dropdown-item:hover {
   background-color: #d3d3d3 ;  /* subtle hover background */
-  color: #ffffff;              /* accent color */
-  
+  color: #060606;              /* accent color */
+  border-radius: .2rem;
 }
 
 /* ------------------------------
@@ -156,11 +167,19 @@ nav{
 
 @media (min-width:991px) {
   .nav-link.active,.dropdown .nav-link.active{
-   color: #B22222  !important;
-   font-weight: bold;
+   color: #FF7F50  !important;
+   font-weight: 600;
   transform: scale(1.2);  /* 1.2 = 120% size */
   transition: all 0.3s ease; 
 }
+}
+@media (max-width: 990.98px) {
+  .nav-link.active,
+  .dropdown .nav-link.active {
+    color: #FF7F50 !important;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
 }
 /* nav bar end */
 
@@ -193,7 +212,7 @@ html {
 .section-title {
   /* padding-bottom: 1rem; */
    font-family: 'Red Hat Display', sans-serif;
-  font-weight: 700; 
+  font-weight: 500; 
     font-size: 2rem;
     margin: 10px 0 10px;
     letter-spacing: 0.5px;
@@ -248,7 +267,7 @@ section:nth-of-type(odd) {
     }
     .intro h3 {
       margin: 0.5rem 0;
-      font-weight: 600;
+      font-weight: normal;
     }
     .intro .icons a {
       /* margin-right: 10px; */
@@ -539,12 +558,10 @@ section:nth-of-type(odd) {
 
 
 /* end video card mobile */
-    /* start outreach  */
-      /* start video card  */
 
 
+    /* end  outreach  */
 
-/* end vido card */
  
 
 
@@ -1217,7 +1234,7 @@ input.wgh-slider-target {
   height: 290px;  
   border-radius: 0.5em;
   background: var(--box-color);
-  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  
   padding: 1.5em 1.2em;
   box-shadow: 0 1.5em 2.5em -0.5em rgba(0, 0, 0, 0.1);
   transition: transform 0.75s ease, background 0.5s ease;
@@ -1228,7 +1245,7 @@ input.wgh-slider-target {
   font-size: 1.5em;
   font-weight: 600;
   margin-bottom: 0.5em;
-  border-bottom: 2px solid var(--accent-color);
+  border-bottom: 2px solid #732C7B;
   transition: color 0.75s ease, border 0.75s ease;
 }
 
@@ -1254,7 +1271,7 @@ input.wgh-slider-target {
 
 .achievement-card .link-text {
   display: block;
-  color: var(--accent-color);
+  color: #732C7B;
   font-size: 1em;
   font-weight: 600;
   margin-top: auto;
@@ -1263,7 +1280,7 @@ input.wgh-slider-target {
 
 /* Hover Effects */
 .achievement-card:hover {
-  background: var(--accent-color);
+  background: #732C7B;
   transform: scale(1.02);
 }
 
@@ -1606,11 +1623,10 @@ input.wgh-slider-target {
       flex-direction: row;
       border-radius: 20px;
       overflow: hidden;
-      background: var(--box-color);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      height: 100%;
+      /* background: #eef1f5; */
+      background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
       width: 100%;
-      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
 
 .school-image {
@@ -1677,10 +1693,21 @@ input.wgh-slider-target {
    
 
 .school-card:hover {
-  backdrop-filter: blur(10px);
-  background: #fff3e0;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  background: #dbe3eaaa;
+  background-color: #DCD9D4;
+ background-image: linear-gradient(to bottom, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%), radial-gradient(at 50% 0%, rgba(255,255,255,0.10) 0%, rgba(0,0,0,0.50) 50%);
+ background-blend-mode: soft-light,screen;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
+
+
+
+/* Optional: add image zoom on hover */
+.school-card:hover .school-image img {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
 
     @media (max-width: 1199px) {
       .school-card {
@@ -1907,8 +1934,8 @@ white-space: nowrap;     /* Forces single-line */
 
  .footer-container .footer-column .line {
   display: block;
-  width: 30px;
-  height: 4px;
+  width: 43px;
+  height: 2px;
   background-color: #f50057 !important;
   border: none;                  /* <— very important */
   border-radius: 10px;
@@ -1968,54 +1995,85 @@ white-space: nowrap;     /* Forces single-line */
 }
 
 
-/* Base layout: stack vertically (for desktop) */
+/* Vertical Sidebar Social Icons */
 .social-links {
   margin-left: 40px;
-  /* margin-top: 15px; */
   display: flex;
-  flex-direction: column;  /* Default: vertical */
-  gap: 4px;
+  flex-direction: column;
+  gap: 6px;
 }
 
-/* Icons stay centered inside circles */
 .social-links a {
+  position: relative;
   display: flex;
-  /* flex-direction: column; */
   align-items: center;
   justify-content: center;
   height: 40px;
   width: 40px;
-  margin-bottom: 5px;
-  background: #333;
-  color: #fff;
+  background: #fff;
+  color: #333;
   border-radius: 50%;
-  margin-right: 0;
-  transition: all 0.3s ease;
   text-decoration: none;
+  overflow: hidden;
+  border: 2px solid #fff;
+  transition: all 0.3s ease;
+  z-index: 1;
 }
 
-
-
-.social-links a:hover {
-  /* background: #f50057; */
-  transform: translateY(-3px);
-  box-shadow: 2px 3px 5px #ffffff;
+/* Icon inside */
+.social-links a i {
+  position: relative;
+  font-size: 18px;
+  z-index: 3;
+  transition: 0.5s;
 }
 
-.social-links a:hover .fa-facebook-f{
-  color: #1877F2;
+/* Rotate icon and color change */
+.social-links a:hover i {
+  color: #fff;
+  transform: rotateY(360deg);
 }
 
-.social-links a:hover .fa-instagram,.social-links a:hover .fa-youtube{
-color :red;
+/* Hover background slide-in */
+.social-links a::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: red; /* fallback */
+  transition: 0.5s;
+  z-index: 2;
 }
-.social-links a:hover .fa-linkedin-in{
-  color: #0077b5;
+
+.social-links a:hover::before {
+  top: 0;
 }
-.last-updated-section p{
+
+/* Individual icon hover backgrounds */
+.social-links a:nth-child(1)::before {
+  background: #1877F2; /* Facebook */
+}
+
+.social-links a:nth-child(2)::before {
+  background: #e4405f; /* Instagram */
+}
+
+.social-links a:nth-child(3)::before {
+  background: #0077b5; /* LinkedIn */
+}
+
+.social-links a:nth-child(4)::before {
+  background: #ff0000; /* YouTube */
+}
+
+/* Optional - subtle text */
+.last-updated-section p {
   color: #ffffff93;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
+
 
 
 @media (max-width: 768px) {
@@ -2033,7 +2091,7 @@ color :red;
     margin-bottom: 10px;
   }
     .footer-container .footer-column .line {
-  width: 10%;
+  width: 10%; 
   height: 2px;
   background-color: #f50057 !important;
   border: none;                  /* <— very important */
