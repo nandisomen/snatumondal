@@ -170,7 +170,7 @@ nav{
    color: #FF7F50  !important;
    font-weight: 600;
   transform: scale(1.2);  /* 1.2 = 120% size */
-  transition: all 0.3s ease; 
+  transition: all 0.1s ease; 
 }
 }
 @media (max-width: 990.98px) {
