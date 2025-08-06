@@ -32,7 +32,23 @@
  
 </head>
 <body>
-  
+    <div id="preloader">
+
+    <div class="name-loader">
+      <span>S</span>
+      <span>A</span>
+      <span>N</span>
+      <span>T</span>
+      <span>U</span>
+      <span>&nbsp;</span>
+      <span>M</span>
+      <span>O</span>
+      <span>N</span>
+      <span>D</span>
+      <span>A</span>
+      <span>L</span>
+    </div>
+  </div>
 <!--NAV BAR -->
  <nav class=" navbar navbar-light navbar-expand-lg sticky-top ">
   <div class="container">
@@ -99,6 +115,7 @@
         <a href="https://www.webofscience.com/wos/author/record/GSE-1742-2022" class="d-flex align-items-center" onclick="return handleLinkClick(this)"><img src="Image/WOS-logo2_violet_4b0082.svg" alt="RID Lens Logo" class="wos-icon" style=" object-fit:contain; vertical-align:middle;"></a>
         <a href="https://www.linkedin.com/in/santu-mondal-cern/" class="fs-4" onclick="return handleLinkClick(this)"><i class="fab fa-linkedin"></i></a>
         <a href="https://www.youtube.com/@shadesofsantu" class="fs-4" onclick="return handleLinkClick(this)"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100063475536474" class="fs-4" onclick="return handleLinkClick(this)"><i class="fab fa-facebook"></i></a>
         <a href="https://www.instagram.com/shades_of_santu/" class="fs-4" onclick="return handleLinkClick(this)"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
@@ -1026,7 +1043,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="col-md-6 col-10 mx-auto">
               <div class="school-card">
                 <div class="school-image">
-                  <img src="https://res.cloudinary.com/muhammederdem/image/upload/v1537132203/news-slider/item-1.jpg" alt="School Image">
+                  <img src="Image/school/slac.jpg" alt="School Image">
                 </div>
                 <div class="school-content">
                   <p class="school-date">August 10 ‑ August 21, 2020</p>
@@ -1071,7 +1088,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- Big Image Section -->
 <div class="big-image-wrapper">
   <!-- default image (first one) -->
-  <img id="bigImage" src="Image/gallery/2.jpg" loading="lazy" alt="image">
+  <img id="bigImage" src="Image/gallery/1.jpg" loading="lazy" alt="image">
 </div>
 
     <!-- Caption Section -->
@@ -1083,13 +1100,13 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- Thumbnails -->
      <div class="carousel-thumbnails-wrapper mt-2">
       <div class="carousel-thumbnails d-flex justify-content-center" id="thumbnailsContainer">
-        <div class="thumb-item"><img src="Image/gallery/2.jpg" loading="lazy" alt="Slide 1" data-caption="My First Visit to CERN 2018"></div>
-        <div class="thumb-item"><img src="Image/gallery/6.jpg" loading="lazy" alt="Slide 3" data-caption="Presenting the Higgs Finding at the DPG Germany Conference"></div>
+        <div class="thumb-item"><img src="Image/gallery/1.jpg" loading="lazy" alt="Slide 1" data-caption="My First Visit to CERN 2018"></div>
+        <div class="thumb-item"><img src="Image/gallery/2.jpg" loading="lazy" alt="Slide 2" data-caption="Presenting the Higgs Finding at the DPG Germany Conference"></div>
         <div class="thumb-item"><img src="Image/gallery/3.jpg" loading="lazy" alt="Slide 3" data-caption="Deutsches Elektronen-Synchrotron DESY"></div>
         <div class="thumb-item"><img src="Image/gallery/4.jpg" loading="lazy" alt="Slide 4" data-caption="30 Years of ATLAS, Celebrated During ATLAS Week in Portugal"></div>
         <div class="thumb-item"><img src="Image/gallery/5.jpg" loading="lazy" alt="Slide 5" data-caption="Honoured to Deliver My Talk at the Universidade de Lisboa"></div>
-        
-        <div class="thumb-item"><img src="Image/gallery/1.jpg" loading="lazy" alt="Slide 2" data-caption="Conference : Diffraction and Low-x 2024, Sicily"></div>
+        <div class="thumb-item"><img src="Image/gallery/6.JPG" loading="lazy" alt="Slide 6" data-caption="CZ+SK HEP Workshop"></div>
+        <div class="thumb-item"><img src="Image/gallery/7.jpg" loading="lazy" alt="Slide 7" data-caption="Conference : Diffraction and Low-x 2024, Sicily"></div>
       </div>
     </div>
     
@@ -1422,7 +1439,18 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 </script>
 
-
+  <!-- Auto-Hide Script -->
+  <script>
+    window.addEventListener("load", function () {
+      const preloader = document.getElementById("preloader");
+      setTimeout(() => {
+        preloader.style.opacity = '0';
+        preloader.style.pointerEvents = 'none';
+        preloader.style.transition = 'opacity 0.8s ease';
+        setTimeout(() => preloader.remove(), 1000);
+      }, 2000); // Time delay before hiding
+    });
+  </script>
 
 <!-- end script for gallery  -->
 
