@@ -157,7 +157,7 @@ section:nth-of-type(odd) {
 .hero {
   background: 
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.566)), 
-    url('../Image/photography/galery-hero-cover.jpg') no-repeat center center;
+    url('../photography/galery-hero-cover.jpg') no-repeat center center;
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -307,7 +307,7 @@ position: relative;
   .hero {
       background: 
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.566)), 
-    url('../Image/photography/galery-hero-cover-mobile.jpg') no-repeat center center;
+    url('../photography/galery-hero-cover-mobile.jpg') no-repeat center center;
     height: 100vh;
     padding: 3rem 1rem;
     background-position: center top;
@@ -359,81 +359,64 @@ img {
 }
 
 /* Remove background of modal for cleaner full-view */
-.masonry-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  grid-auto-rows: 10px;
-  gap: 20px;
-}
-
-.masonry-gallery .image-container {
-  break-inside: avoid;
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
-  height: 100%; /* NEW: Ensure it doesn’t collapse */
-  grid-row-end: span 1;
-}
-
-.masonry-gallery img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-  will-change: transform; /* NEW: Optimize scaling */
-}
 
 
+/* full screen  */
+    .image-container {
+      position: relative;
+      display: inline-block;
+      
+      overflow: hidden;
+    }
 
-.image-container:hover img {
-  transform: scale(1.05);
-}
+    .image-container img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+    }
 
-.overlay {
-  height: auto;
+ .overlay {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.4);
-  opacity: 0;
+  left: 0;
+  width: 100%;  /* Match image width */
+  height: 100%; /* Match image height */
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-   align-items: flex-end; 
-  padding: 15px;  
+  align-items: flex-end;
+  padding: 10px;
+  opacity: 0;
   transition: opacity 0.3s ease;
-   z-index: 2;
+  z-index: 10;
+  pointer-events: none; /* Allows clicking through overlay */
 }
 
-.image-container:hover .overlay {
-  opacity: 1;
-}
+    .image-container:hover .overlay {
+      opacity: 1;
+    }
+    .image-container:hover img{
+      transform: scale(1.2);
+    }
+    .caption {
+      font-size: 1.4rem;
+      color: white;
+    }
 
-.caption {
+    .fullscreen-btn {
+      background: none;
+      border: none;
+      color: rgb(255, 255, 255);
+      font-size: 18px;
+      cursor: pointer;
+    }
 
-  color: #fff;
-  font-size: 1rem;
-  font-weight: 500;
-  margin: 0;
-  margin-bottom: 10px;
-}
-
-.fullscreen-btn {
-  align-self: flex-end;
-  background: #0000005e;
-  border: none;
-  font-size: 1.2rem;
-  padding: 5px 10px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.2s;
-}
 
 .fullscreen-btn:hover {
-  background: #0000008d;
+  font-size: 180px;
+  transform: scale(1.5% );
 }
 .modal-content {
   background-color: transparent;
@@ -442,7 +425,7 @@ body.modal-open {
   overflow: hidden;
 }
 .modal-content {
-  background-color: #0000009c;
+  background-color: #0000004c;
   border: none;
   border-radius: 0;
 }
@@ -475,32 +458,158 @@ body.modal-open {
     height: 100%;
   }
 }
-.nav-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2rem;
-  background: rgba(0,0,0,0.5);
-  color: #fff;
-  border: none;
-  padding: 10px 15px;
+
+/* section start */
+
+/* 1st section */
+.masonry-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-auto-rows: 10px;
+  gap: 20px;
+}
+
+.masonry-gallery .image-container {
+  break-inside: avoid;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  height: 100%; /* NEW: Ensure it doesn’t collapse */
+  grid-row-end: span 1;
+}
+
+.masonry-gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  will-change: transform; /* NEW: Optimize scaling */
+}
+
+/* videoo  */
+
+#netflix-gallery{
+  background: #000;
+}
+.youtube-video-section {
+  background: #141414;
+}
+
+.video-card {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 ratio = 9 / 16 = 0.5625 = 56.25% */
+  overflow: hidden;
+  border-radius: 10px;
   cursor: pointer;
-  z-index: 1060;
-  border-radius: 8px;
+  background: #000;
+  transition: transform 0.3s ease;
 }
 
-.prev-btn {
-  left: 10px;
+.video-card:hover {
+  transform: scale(1.05);
 }
 
-.next-btn {
-  right: 10px;
+
+
+
+.thumbnail-img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-.nav-btn:hover {
-  background: rgba(0,0,0,0.8);
+.play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent 40%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
+.video-card:hover .play-overlay {
+  opacity: 1;
+}
+
+.play-icon {
+  font-size: 40px;
+  color: #fff;
+  background: rgba(66, 63, 63, 0.8);
+  padding: 10px 18px;
+  border-radius: 50%;
+}
+.video-card img,
+.video-card iframe,
+.play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* short videos  */
+#youtube-shorts{
+  background: #000 ;
+}
+.shorts-video-section {
+  background: #000;
+}
+
+.shorts-card {
+  position: relative;
+  width: 100%;
+  padding-top: 177.77%; /* 9:16 aspect ratio = 16 / 9 = 1.7777 → 177.77% */
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.shorts-card:hover {
+  transform: scale(1.05);
+}
+
+.shorts-thumb,
+.shorts-card iframe,
+.shorts-play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.shorts-play-overlay {
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.shorts-card:hover .shorts-play-overlay {
+  opacity: 1;
+}
+
+.shorts-play-icon {
+  font-size: 32px;
+  color: #fff;
+  background: rgba(255, 0, 0, 0.8);
+  padding: 8px 14px;
+  border-radius: 50%;
+}
 
 
 /* footer  */
