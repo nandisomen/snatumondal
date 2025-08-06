@@ -254,10 +254,7 @@ section:nth-of-type(odd) {
     /* Intro */
  
     @media (min-width: 992px) {
-         .intro{
-          
-      min-height: 95lvh;
-    }
+    
      .intro-main-container{
       padding-top: 10px;
       padding-left: 70px;
