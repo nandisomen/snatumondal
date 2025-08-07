@@ -377,7 +377,12 @@ section{
 }
 
 
-
+/* Mobile-specific font size */
+@media (max-width: 768px) {
+  .section-title{
+    font-size: 3rem;
+  }
+}
 
 
 
@@ -1006,4 +1011,5 @@ color :#dc2743;
 transform: scale(1.2);  /* 1.2 = 120% size */
   transition: all 0.3s ease;  /* Smooth animation */
 }
+
 
