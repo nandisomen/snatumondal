@@ -1,6 +1,29 @@
 /* font for quotes  */
 @import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
 
+/* btn font  */
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+
+/* text change  */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+@font-face {
+  font-family: 'Mulish';
+  src: url('../fonts/Mulish/Mulish-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;  /* prevents horizontal scrollbars */
+}
+
 html {
   scroll-behavior: smooth;      /* optional for smooth scrolling */
   scroll-padding-top: 40px;     /* height of your navbar */
@@ -22,10 +45,10 @@ html {
 }
 
 .navbar .nav-link {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: white;
-  margin: 0 5px;  
+  margin: 0 6px;  
   transition: color 0.3s ease;
 }
 
@@ -56,8 +79,8 @@ html {
 .magic-navbar li {
   position: relative;
   list-style: none;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   /* background: white; */
   /* box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); */
   border-radius: 50px;
@@ -164,18 +187,64 @@ section:nth-of-type(even) {
 section {
   padding: 80px 20px;
   transition: background 0.5s ease;
+  
+}
+section{
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.section-title {
+  margin: 0 auto;
+  font-family: "Lavishly Yours", cursive;
+  text-align: center;
+  font-size: 5rem;
+  padding-bottom: 70px;
+  color: #fff;
+  text-shadow: 
+    0 0 5px #25F4EE,
+    0 0 10px #25F4EE,
+    0 0 20px #FE2C55,
+    0 0 40px #FE2C55;
+  animation: neonFlicker 1.6s infinite alternate;
 }
 
+@keyframes neonFlicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    text-shadow: 
+      0 0 5px #25F4EE,
+      0 0 10px #25F4EE,
+      0 0 20px #FE2C55,
+      0 0 40px #FE2C55;
+    opacity: 1;
+  }
+  20%, 24%, 55% {
+    text-shadow: none;
+    opacity: 0.8;
+  }
+}
+
+
+@media(max-width:786px){
+  .section-title{
+    padding-top: 50px;
+    font-size: 3rem;
+    padding-bottom: 50px;
+  }
+}
+ 
 
 
 /* start hero section */
 .hero {
-  background: 
-    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.566)), 
-    url('../photography/galery-hero-cover.jpg') no-repeat center center !important;
-  background-size: cover;
-  background-position: center;
   height: 100vh;
+  min-width: 98vw;
+
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.742), rgba(0, 0, 0, 0.781)), 
+    url('https://ik.imagekit.io/santumondal/photography/hcl.jpg?updatedAt=1754664966796') no-repeat center center !important;
+    background-size: 100% auto;
+  background-size: cover !important;
+  background-position: center !important;
    display: flex;
   justify-content: center;
   align-items: center;
@@ -192,27 +261,48 @@ section {
 
 .hero h1 {
   font-family: 'Playfair Display', serif;
+  letter-spacing: 2px ;
   font-size: 5rem; /* Bigger font */
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 1rem;
   color: #fff;
 }
 
 .tagline {
-   font-family: "Lavishly Yours", cursive;
-   /* letter-spacing: 2px; */
+  padding-bottom: 40px;
+  font-family: "Lavishly Yours", cursive;
   font-size: 4.2rem;
   font-weight: 400;
-  color: #ffffff;
+  background: linear-gradient(
+    90deg,
+    #fff9c4,  /* light yellow */
+    #ffe0b2,  /* soft peach */
+    #f8bbd0,  /* light pink */
+    #c5cae9,  /* lavender */
+    #b60bff   /* light aqua */
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-bottom: 1.5rem;
   letter-spacing: 3px;
+  animation: gradientMove 6s ease infinite;
 }
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+
 
 
 /* text animation  */
 
 .text-chanege {
-  
+  font-family: "Cinzel", serif;
   height: 50px;
  padding: 10px;
  border-radius: 8px;
@@ -220,16 +310,17 @@ section {
    /* align-items: center; */
   justify-content: center; 
  color: #ffffff;
- font-family: poppins, sans-serif;
 
  font-size: 2rem;
   font-weight: 600;
  box-sizing: content-box;
+ text-transform: unset !important;
 }
 .intro-text{
   margin-top: -2px;
 }
 .roles-container {
+  padding-left: 20px;
 overflow: hidden;
 position: relative;
 }
@@ -238,6 +329,7 @@ position: relative;
   padding-left: 6px;
   color: rgb(255, 200, 0);
   animation: role-change 5s  infinite;
+
 }
 @keyframes role-change {
   100% { transform: translateY(-102%); }
@@ -250,8 +342,7 @@ position: relative;
   85% { transform: translateY(-402%); }
   100% { transform: translateY(-400%); }
 }
-
-
+  
 
 /* Responsive Font Scaling */
 @media (max-width: 768px) {
@@ -269,7 +360,7 @@ position: relative;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
   .text-chanege {
     font-size: 1.2rem;
     height: 1.3rem;
@@ -318,11 +409,15 @@ position: relative;
   .hero {
       background: 
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.566)), 
-    url('../photography/galery-hero-cover-mobile.jpg') no-repeat center center !important;
+    url('https://ik.imagekit.io/santumondal/photography/hcm.jpg?updatedAt=1754664966345') no-repeat center center !important;
+      background-size: 100% auto;
+  background-size: cover !important;
+  background-position: center !important;
     height: 100vh;
     padding: 3rem 1rem;
     background-position: center top;
     flex-direction: column;
+
   }
 
   .hero h1 {
@@ -330,7 +425,7 @@ position: relative;
   }
 
   .tagline {
-    font-size: 1.25rem;
+    font-size: 2.5rem;
   }
 
   .quote {
@@ -358,47 +453,91 @@ position: relative;
 }
 
 
-
 /* end hero section */
 
 
-section{
-  padding-top: 50px;
-  padding-bottom: 50px;
+
+
+
+/* btn  */
+
+.btnnn {
+  padding-top: 80px !important;
+  padding-bottom: 60px !important;
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+  text-decoration: none !important;
 }
-.section-title{
+.btnnn a{
+  text-decoration: none !important;
+}
+
+/* From Uiverse.io by hamoode-taha-04 */ 
+.ui-btn {
   
-  font-family: "Lavishly Yours", cursive;
-  text-align: center;
-  font-size: 5rem;
+  cursor: pointer;
+  border-radius: 5px;
+  color: rgb(219, 218, 218);
+  border-style: solid;
+  background-color: transparent;
+  border-color: rgb(219, 218, 218);
+  width: 200px;
+  height: 50px;
+  transition: 0.2s ease;
+  /* text-transform: uppercase; */
+  border-width: 2px;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+.ui-btn:hover {
 
-  color: rgb(255, 255, 255);
-  padding-bottom: 40px;
+  background-color: rgb(42, 145, 73);
+  border-color: rgb(42, 145, 73);
+  text-shadow: 0 0 50px white, 0 0 20px white, 0 0 15px white;
+  box-shadow: 0 0 50px rgb(42, 145, 73), 0 0 30px rgb(42, 145, 73),
+    0 0 60px rgb(42, 145, 73), 0 0 120px rgb(42, 145, 73);
+  font-size: 20px;
+  transform: scale(1.2);
+  letter-spacing: 3px;
+}
+.ui-btn:active {
+  width: 115px;
+  height: 38px;
+  letter-spacing: 0px;
 }
 
 
-/* Mobile-specific font size */
-@media (max-width: 768px) {
-  .section-title{
-    font-size: 3rem;
-  }
+/* gallery  */
+
+
+.gallery {
+  column-count: 3;
+  column-gap: 1em;
+}
+@media (max-width: 1000px) {
+  .gallery { column-count: 2; }
+}
+@media (max-width: 600px) {
+  .gallery { column-count: 1; }
 }
 
-
-
-img {
-  object-fit: cover;
-  width: 100%;
-  height: auto;
-  display: block;
+/* Photo block */
+.photo {
+  position: relative;
+  margin-bottom: 1em;
+  break-inside: avoid;
+  overflow: hidden;
   cursor: pointer;
 }
-
-/* Remove background of modal for cleaner full-view */
-
-
+.photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
 /* full screen  */
-
     .image-container {
       position: relative;
       display: inline-block;
@@ -422,7 +561,7 @@ img {
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: flex-end;
   padding: 10px;
   opacity: 0;
@@ -431,31 +570,22 @@ img {
   pointer-events: none; /* Allows clicking through overlay */
 }
 
-    .image-container:hover .overlay {
+    .photo:hover .overlay {
       opacity: 1;
     }
-    .image-container:hover img{
+    .photo:hover img{
       transform: scale(1.2);
     }
-    .caption {
-      opacity: 0;
-      font-size: 1.4rem;
-      color: white;
-    }
 
-    .fullscreen-btn {
+    .photo .overlay i{
+      
       background: none;
       border: none;
-      color: rgb(255, 255, 255);
-      font-size: 18px;
+      color: rgb(226, 226, 226);
+      font-size: 30px;
       cursor: pointer;
     }
 
-
-.fullscreen-btn:hover {
-  font-size: 180px;
-  transform: scale(1.5% );
-}
 .modal-content {
   background-color: transparent;
 }
@@ -497,59 +627,19 @@ body.modal-open {
   }
 }
 
-
-/* section start */
-
-/* section color  */
-
-/* 1st section */
-
-/* 1st section */
-.masonry-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  grid-auto-rows: 10px;
-  gap: 20px;
-}
-
-.masonry-gallery .image-container {
-  break-inside: avoid;
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
-  height: 100%; /* NEW: Ensure it doesn’t collapse */
-  grid-row-end: span 1;
-}
-
-.masonry-gallery img {
-  width: 100%;
-  min-height: 100%;
-  height: auto;
-  display: block;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-  will-change: transform; /* NEW: Optimize scaling */
-}
-
-/* .btn */
-
-/* From Uiverse.io by SteveBloX */ 
-.gallery .btnnn button {
-  width: 250px;
-  height: 70px;
-  border: 3px solid #dc2743;
-  border-radius: 45px;
-  transition: all 0.3s;
-  cursor: pointer;
-  background: white;
-  font-size: 1.3em;
-  font-weight: 550;
-}
-
-.gallery .btnnn button:hover {
-   background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); /* Instagram */
-  color: white;
-  font-size: 1.7em;
+/* btn  */
+.photos  .ui-btn:hover {
+  color: rgb(247, 247, 247);
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+  border-color: transparent;
+  text-shadow: 0 0 50px white, 0 0 20px white, 0 0 15px white;
+  box-shadow: 0 0 50px rgba(221, 42, 123, 0.8), 
+              0 0 30px rgba(221, 42, 123, 0.6),
+              0 0 60px rgba(129, 52, 175, 0.7), 
+              0 0 120px rgba(245, 133, 41, 0.6) !important;
+  font-size: 20px;
+  transform: scale(1.2);
+  letter-spacing: 3px;
 }
 
 
@@ -589,6 +679,8 @@ body.modal-open {
   flex-wrap: wrap;
   margin-left: -8px;
   margin-right: -8px;
+  align-items: center;
+  justify-content: center;
 }
 .col-10, .col-md-4, .col-md-5 {
   padding-left: 8px;
@@ -598,85 +690,19 @@ body.modal-open {
 }
 
 
-/* From Uiverse.io by adeladel522 */ 
-.youtube-video-section/* From Uiverse.io by adeladel522 */ 
-.button {
-  position: relative;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-  padding-block: 0.5rem;
-  padding-inline: 1.25rem;
-  background-color: rgb(0 107 179);
-  border-radius: 9999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  color: #ffff;
-  gap: 10px;
-  font-weight: bold;
-  border: 3px solid #ffffff4d;
-  outline: none;
-  overflow: hidden;
-  font-size: 15px;
-}
-
-.icon {
-  width: 24px;
-  height: 24px;
-  transition: all 0.3s ease-in-out;
-}
-
-.button:hover {
-  transform: scale(1.05);
-  border-color: #fff9;
-}
-
-.button:hover .icon {
-  transform: translate(4px);
-}
-
-.button:hover::before {
-  animation: shine 1.5s ease-out infinite;
-}
-
-.button::before {
-  content: "";
-  position: absolute;
-  width: 100px;
-  height: 100%;
-  background-image: linear-gradient(
-    120deg,
-    rgba(255, 255, 255, 0) 30%,
-    rgba(255, 255, 255, 0.8),
-    rgba(255, 255, 255, 0) 70%
-  );
-  top: 0;
-  left: -100px;
-  opacity: 0.6;
-}
-.youtube-video-section .button:hover {
-  background-color: #ff0000;
-}
-@keyframes shine {
-  0% {
-    left: -100px;
-  }
-
-  60% {
-    left: 100%;
-  }
-
-  to {
-    left: 100%;
-  }
-}
- .youtube-video-section .row ,.btnnn {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* Center cards */
-  margin-left: -8px;
-  margin-right: -8px;
+/* btn  */
+.youtube-video-section .ui-btn:hover {
+  color: rgb(247, 247, 247);
+  background-color: #ff0000; /* YouTube Red */
+  border-color: #ff0000;
+  text-shadow: 0 0 50px white, 0 0 20px white, 0 0 15px white;
+  box-shadow: 0 0 50px rgba(255, 0, 0, 0.8),
+              0 0 30px rgba(255, 0, 0, 0.6),
+              0 0 60px rgba(255, 0, 0, 0.7),
+              0 0 120px rgba(255, 0, 0, 0.6);
+  font-size: 20px;
+  transform: scale(1.2);
+  letter-spacing: 3px;
 }
 
 /* short videos  */
@@ -783,9 +809,12 @@ body.modal-open {
   cursor: pointer;
  
 }
+.scroll-btn:hover{
+  background-color: #ffffff;
+  color: #ff0000;
+}
 .scroll-btn.left {
   left: 0;
-
 }
 .scroll-btn.right {
   right: 0;
@@ -818,74 +847,16 @@ body.modal-open {
 }
 
 /* btn  */
+.shorts-video-section .ui-btn:hover {
+  color: rgb(247, 247, 247);
+  background: linear-gradient(45deg, #ff0000, #ff4d4d, #ff0000);
+  border-color: transparent;
+  text-shadow: 0 0 50px white, 0 0 20px white, 0 0 15px white;
+  box-shadow: 0 0 50px rgba(255, 0, 0, 0.8),
+              0 0 30px rgba(255, 77, 77, 0.6),
+              0 0 60px rgba(255, 0, 0, 0.7),
+              0 0 120px rgba(255, 0, 0, 0.6);
 
-.btnnn {
-  padding-top: 50px;
-  padding-bottom: 40px;
-  display: flex;
-  justify-content: center; /* horizontal center */
-  align-items: center;     /* vertical center */
-  text-decoration: none;
-}
-.btnnn a{
-  text-decoration: none;
-}
-
-/* From Uiverse.io by Creatlydev */ 
-.shorts-video-section .button {
-  line-height: 1;
-  text-decoration: none;
-  display: inline-flex;
-  border: none;
-  cursor: pointer;
-  align-items: center;
-  gap: 0.75rem;
-  background-color: var(--clr);
-  color: #fff;
-  border-radius: 10rem;
-  font-weight: 600;
-  padding: 0.75rem 1.5rem;
-  padding-left: 20px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transition: background-color 0.3s;
-}
-
-.shorts-video-section .button__icon-wrapper {
-  flex-shrink: 0;
-  width: 25px;
-  height: 25px;
-  position: relative;
-  color: var(--clr);
-  background-color: #fff;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-}
-
-.shorts-video-section .button:hover {
-  background-color: #ff0000;
-}
-
-.shorts-video-section .button:hover .button__icon-wrapper {
-  color: #000;
-}
-
-.shorts-video-section .button__icon-svg--copy {
-  position: absolute;
-  transform: translate(-150%, 150%);
-}
-
-.shorts-video-section .button:hover .button__icon-svg:first-child {
-  transition: transform 0.3s ease-in-out;
-  transform: translate(150%, -150%);
-}
-
-.shorts-video-section  .button:hover .button__icon-svg--copy {
-  transition: transform 0.3s ease-in-out 0.1s;
-  transform: translate(0);
 }
 
 
@@ -895,7 +866,7 @@ footer{
   padding-bottom: 50px;
     background: 
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), 
-    url('../photography/background/foot.jpg') no-repeat center center;
+    url('https://ik.imagekit.io/santumondal/photography/foot.jpg?updatedAt=1754664971029') no-repeat center center;
   background-size: cover;
   background-position: center;
 
@@ -937,7 +908,7 @@ footer a{
 /* Icon inside */
 .social-links a i {
   position: relative;
-  font-size: 25px;
+  font-size: 32px;
   z-index: 3;
   transition: transform 0.5s, color 0.5s;
 }
@@ -1011,5 +982,4 @@ color :#dc2743;
 transform: scale(1.2);  /* 1.2 = 120% size */
   transition: all 0.3s ease;  /* Smooth animation */
 }
-
 
