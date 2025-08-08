@@ -26,7 +26,7 @@
    <!-- <link rel="stylesheet" href="/css/bootstrap.css"> -->
 
    <!-- font awesome offline  -->
-    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
  
 </head>
 <body>
@@ -65,7 +65,7 @@
         </li>
 
         <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
-        <li class="nav-item"><a class="nav-link" href="hobbies.html"> Lens & Life</a></li>
+        <li class="nav-item"><a class="nav-link" href="hobbies.html" target="_blank"> Lens & Life</a></li>
 
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
@@ -839,7 +839,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <p class="pub-authors">
               ATLAS Collaboration, <strong>Santu Mondal</strong>
             </p>
-            <p class="pub-date"> Published: 7 April 2025 · <strong class="journal-name"><em>Physical Review Letters (PRL)</em></strong></p>
+            <p class="pub-date"> Published: 7 April 2025 · <strong class="journal-name"><em>Physical Review Letters (PRL) </em>, <p class="text-muted">Editor's' Suggestion, Featured in Physics</p></strong></p>
           </div>
           <img src="Image/publication-2025.png" loading="lazy" alt="Publication image" class="pub-image">
           <div class="pub-card-body">
@@ -1139,15 +1139,28 @@ document.addEventListener('DOMContentLoaded', function() {
   <a href="https://www.linkedin.com/in/santu-mondal-cern/" onclick="return handleLinkClick(this)"><i class="icon fab fa-linkedin-in"></i></a>
   <a href="https://youtube.com/@shadesofsantu" onclick="return handleLinkClick(this)"><i class="icon fab fa-youtube"></i></a>
 </div>
+
+
+
+    
+     
+   
+    
   </div>
   
   </div>
+
      <div class=" last-updated-section text-center">
       <p id="last-updated"></p>
       <p>© <span id="year"></span> Santu Mondal. All rights reserved.</p>
       <!-- <a href="https://www.linkedin.com/in/somennandi19/" class="devloper-name" target="_blank"><p>Website by <strong>Somen Nandi</strong></p></a> -->
+
     </div>
+  
+
 </footer>
+
+
 
 <!-- Bootstrap JS -->
 <script src="js/bootstrap.bundle.min.js"></script>
@@ -1156,8 +1169,176 @@ document.addEventListener('DOMContentLoaded', function() {
 <!-- MathJax -->
 <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-<!-- Your new script file -->
-<script src="js/script.js"></script>
 
+
+<!-- // ========== GALLERY (Image Preview + Caption Update) ========== -->
+
+<!-- Add this just before the closing </body> tag -->
+<script>
+// ========== GLOBAL SETTINGS ==========
+
+
+// --- Last Modified Date (Footer) ---
+const lastModified = new Date(document.lastModified);
+const formattedDate = lastModified.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+document.getElementById("last-updated").innerText = "Last updated: " + formattedDate;
+
+// --- Footer Year ---
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// --- MathJax Config (LaTeX Rendering) ---
+window.MathJax = {
+  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+  svg: { fontCache: 'global' }
+};
+
+// --- Smart Link Open (New tab for desktop, same tab for mobile) ---
+function handleLinkClick(link) {
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  if (isMobile) {
+    window.location.href = link.href;
+  } else {
+    window.open(link.href, '_blank');
+  }
+  return false;
+}
+
+// ========== NAVIGATION ==========
+document.addEventListener("DOMContentLoaded", function () {
+
+  // --- Scroll to Section & Open Dropdown ---
+  const dropdownLink = document.querySelector('#navbarScrollingDropdown');
+  if (dropdownLink) {
+    dropdownLink.addEventListener('click', function () {
+      const talksSection = document.querySelector('#outreach');
+      if (talksSection) {
+        talksSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+
+  // --- Active Nav Highlighting on Scroll ---
+  const navLinks = document.querySelectorAll("a[href^='#']");
+  const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+  const sections = document.querySelectorAll("section[id]");
+  const offset = 300;
+
+  function activateNavLink() {
+    let scrollY = window.pageYOffset;
+    let activeSections = new Set();
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - offset;
+      const sectionHeight = section.offsetHeight;
+      const sectionId = section.getAttribute("id");
+
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        activeSections.add(sectionId);
+      }
+    });
+
+    navLinks.forEach(link => {
+      const dataTargets = link.getAttribute("data-targets");
+      const targetIds = dataTargets
+        ? dataTargets.split(",").map(s => s.trim().replace("#", ""))
+        : [link.getAttribute("href").replace("#", "")];
+
+      const isActive = targetIds.some(id => activeSections.has(id));
+
+      if (isActive) {
+        link.classList.add("active");
+        const dropdown = link.closest(".dropdown-menu");
+        if (dropdown) {
+          const toggle = dropdown.parentElement.querySelector(".dropdown-toggle");
+          if (toggle) toggle.classList.add("active");
+        }
+      } else {
+        link.classList.remove("active");
+      }
+    });
+
+    dropdownToggles.forEach(toggle => {
+      const menu = toggle.nextElementSibling;
+      const activeChild = menu && menu.querySelector(".active");
+      if (!activeChild) toggle.classList.remove("active");
+    });
+  }
+
+  let scrollTimeout;
+  window.addEventListener("scroll", () => {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(activateNavLink, 50);
+  });
+
+  activateNavLink();
+
+  // --- Navbar Dropdown on Hover ---
+  document.querySelectorAll('.navbar .dropdown').forEach(dropdown => {
+    dropdown.addEventListener('mouseenter', function () {
+      const toggle = dropdown.querySelector('[data-bs-toggle="dropdown"]');
+      const menu = new bootstrap.Dropdown(toggle);
+      menu.show();
+    });
+    dropdown.addEventListener('mouseleave', function () {
+      const toggle = dropdown.querySelector('[data-bs-toggle="dropdown"]');
+      const menu = bootstrap.Dropdown.getInstance(toggle);
+      menu.hide();
+    });
+  });
+
+  // --- Close Navbar on Link Click (Mobile) ---
+  document.querySelectorAll('.navbar-nav .nav-link, .navbar-nav .dropdown-item').forEach(link => {
+    link.addEventListener('click', function () {
+      const navbarCollapse = document.getElementById('navbarNav');
+      if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+        const bsCollapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
+        bsCollapse.hide();
+      }
+    });
+  });
+
+  // --- Close Navbar When Clicking Outside (Mobile) ---
+  document.addEventListener('click', function (event) {
+    const navbarCollapse = document.getElementById('navbarNav');
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    if (
+      navbarCollapse &&
+      navbarCollapse.classList.contains('show') &&
+      !navbarCollapse.contains(event.target) &&
+      !navbarToggler.contains(event.target)
+    ) {
+      const bsCollapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
+      bsCollapse.hide();
+    }
+  });
+
+});
+
+// ========== GALLERY (Image Preview + Caption Update) ==========
+document.addEventListener("DOMContentLoaded", function () {
+  const bigImage = document.getElementById('bigImage');
+  const bigCaption = document.getElementById('bigImageCaption');
+
+  document.querySelectorAll('.thumb-item img').forEach((thumb) => {
+    thumb.addEventListener('click', () => {
+      bigImage.src = thumb.src;
+      bigImage.alt = thumb.alt;
+
+      const captionText = thumb.dataset.caption || thumb.alt || '';
+      bigCaption.textContent = captionText;
+
+      document.querySelectorAll('.thumb-item img').forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+    });
+  });
+});
+</script>
+
+<!-- Your new script file -->
+ 
 </body>
 </html>
