@@ -18,16 +18,21 @@
   margin: 0;
   padding: 0;
 }
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;  /* prevents horizontal scrollbars */
-}
 
 html {
   scroll-behavior: smooth;      /* optional for smooth scrolling */
   scroll-padding-top: 40px;     /* height of your navbar */
 }
+
+
+/* star bg  */
+
+
+
+  
+
+
+
 /* nav bar  */
 
 /* === Your original navbar settings === */
@@ -201,8 +206,8 @@ section{
   padding-bottom: 70px;
   color: #fff;
   text-shadow: 
-    0 0 5px #25F4EE,
-    0 0 10px #25F4EE,
+    0 0 5px #ffffff,
+    0 0 10px #eef1f1,
     0 0 20px #FE2C55,
     0 0 40px #FE2C55;
   animation: neonFlicker 1.6s infinite alternate;
@@ -461,7 +466,7 @@ position: relative;
 
 /* btn  */
 
-.btnnn {
+.btn-div {
   padding-top: 80px !important;
   padding-bottom: 60px !important;
   display: flex;
@@ -469,8 +474,15 @@ position: relative;
   align-items: center;     /* vertical center */
   text-decoration: none !important;
 }
-.btnnn a{
+.btn-div a{
   text-decoration: none !important;
+}
+
+@media (max-width:576px) {
+  .btn-div{
+      padding-top: 50px !important;
+      padding-bottom: 40px !important;
+  }
 }
 
 /* From Uiverse.io by hamoode-taha-04 */ 
@@ -735,15 +747,16 @@ body.modal-open {
 }
 
 /* Each Card */
-.short-card {
+/* .short-card {
   flex: 0 0 auto;
   width: 200px;
   scroll-snap-align: start;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+} */
 @media (min-width:786px) {
   .shorts-card {
+    
   position: relative;
   overflow: hidden;
   transition: transform 0.3s ease;
@@ -786,11 +799,7 @@ body.modal-open {
   border: none;
   background: #000;
 }
-.caption {
-  margin-top: 8px;
-  font-size: 14px;
-  color: #555;
-}
+
 
 /* Scroll Buttons */
 
@@ -832,6 +841,17 @@ body.modal-open {
   transform: translateX(50px);
 }
 }
+@media (max-width:576px) {
+
+  .scroll-btn.left {
+  left: 0;
+  transform: translateX(-15px);
+}
+.scroll-btn.right {
+  right: 0;
+  transform: translateX(15px);
+}
+}
 .shorts-card {
   flex: 0 0 auto;
   width: 200px;
@@ -845,7 +865,11 @@ body.modal-open {
   height: 100%;
   border: none;
 }
-
+@media (max-width:576px) {
+  .shorts-card{
+    width: 240px;
+  }
+}
 /* btn  */
 .shorts-video-section .ui-btn:hover {
   color: rgb(247, 247, 247);
