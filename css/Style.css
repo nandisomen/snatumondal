@@ -242,6 +242,7 @@ html {
     padding-bottom: 20px;
   }
 }
+
 section:nth-of-type(odd) {
   background-color: #fefefe; /* light grey */
 }
@@ -250,11 +251,10 @@ section:nth-of-type(odd) {
   background-color: #f6f5f8	; /* white or light */
 }
 
-
     /* Intro */
  
     @media (min-width: 992px) {
-    
+ 
      .intro-main-container{
       padding-top: 10px;
       padding-left: 70px;
@@ -1087,16 +1087,16 @@ input.wgh-slider-target {
 .wgh-slider-item:nth-child(8) {
   left: 350%;
 }
-.wgh-slider-item__trigger {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 100;
-  cursor: pointer;
-}
+  .wgh-slider-item__trigger {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    cursor: pointer;
+  }
 .wgh-slider-target:nth-of-type(8):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(8) .wgh-slider-item__trigger, .wgh-slider-target:nth-of-type(7):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(7) .wgh-slider-item__trigger, .wgh-slider-target:nth-of-type(6):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(6) .wgh-slider-item__trigger, .wgh-slider-target:nth-of-type(5):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(5) .wgh-slider-item__trigger, .wgh-slider-target:nth-of-type(4):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(4) .wgh-slider-item__trigger, .wgh-slider-target:nth-of-type(3):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(3) .wgh-slider-item__trigger, .wgh-slider-target:nth-of-type(2):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(2) .wgh-slider-item__trigger, .wgh-slider-target:nth-of-type(1):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(1) .wgh-slider-item__trigger {
   display: none;
 }
@@ -1186,16 +1186,17 @@ input.wgh-slider-target {
   text-align: center;
 }
 .wgh-slider-item-figure__caption a {
+  font-family: 'Red Hat Display', sans-serif !important;
   display: inline-block;
   text-decoration: none;
   font-size: 1.4rem;
   line-height: 20px;
   font-weight: bold;
-  color: #fff;
+  color: #fff;  
   padding-bottom: 10px;
 }
 .wgh-slider-item-figure__caption a:hover{
-  color: #1f78ff;
+  color: #d3d3d3f1;
 }
 
 .wgh-slider-target:nth-of-type(8):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(8), .wgh-slider-target:nth-of-type(7):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(7), .wgh-slider-target:nth-of-type(6):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(6), .wgh-slider-target:nth-of-type(5):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(5), .wgh-slider-target:nth-of-type(4):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(4), .wgh-slider-target:nth-of-type(3):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(3), .wgh-slider-target:nth-of-type(2):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(2), .wgh-slider-target:nth-of-type(1):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(1) {
@@ -1551,12 +1552,16 @@ input.wgh-slider-target {
   font-size: 1rem;
   color: #555;
 }
+.journal-name span{
+  color: #171bff77;
+  font-size: .9rem;
+}
 .pub-image {
   width: 100%;
   height: auto;
   display: block;
   max-height: 300px; /* limit image height */
-  object-fit: contain; /* keep aspect ratio, crop if needed */
+  object-fit: scale-down; /* keep aspect ratio, crop if needed */
 }
 
 .pub-title {
@@ -1630,6 +1635,7 @@ input.wgh-slider-target {
       overflow: hidden;
       /* background: #eef1f5; */
       background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+      background-image: linear-gradient(-225deg,#FFE6FA   0%, #E3FDF5 100%);
       width: 100%;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
@@ -1698,10 +1704,9 @@ input.wgh-slider-target {
    
 
 .school-card:hover {
-  background: #dbe3eaaa;
-  background-color: #DCD9D4;
- background-image: linear-gradient(to bottom, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%), radial-gradient(at 50% 0%, rgba(255,255,255,0.10) 0%, rgba(0,0,0,0.50) 50%);
- background-blend-mode: soft-light,screen;
+
+ background-image: linear-gradient(-20deg,#e9defa   0%, #fbfcdb  100%);
+ 
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
