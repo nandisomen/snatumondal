@@ -165,15 +165,15 @@ nav{
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280,0,0,0.7%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-@media (min-width:991px) {
+@media (min-width:786px) {
   .nav-link.active,.dropdown .nav-link.active{
    color: #D25D5D   !important;
    font-weight: 600;
   transform: scale(1.2);  /* 1.2 = 120% size */
-  transition: all 0.3s ease; 
+  transition: all 0.5s ease; 
 }
 }
-@media (max-width: 990.98px) {
+@media (max-width: 785.98px) {
   .nav-link.active,
   .dropdown .nav-link.active {
     color: #D25D5D  !important;
@@ -1553,7 +1553,7 @@ input.wgh-slider-target {
   color: #555;
 }
 .journal-name span{
-  color: #171bff77;
+  color: #02036f87;
   font-size: .9rem;
 }
 .pub-image {
