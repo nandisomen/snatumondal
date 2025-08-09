@@ -24,9 +24,11 @@
   <!-- Bootstrap CSS (offline) -->
    <link rel="stylesheet" href="css/bootstrap.min.css">
    <!-- <link rel="stylesheet" href="/css/bootstrap.css"> -->
+<!-- Animate On Scroll Library -->
+   <link rel="stylesheet" href="css/aos.css">
 
    <!-- font awesome offline  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/all.min.css">
  
 </head>
 <body>
@@ -65,7 +67,7 @@
         </li>
 
         <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
-        <li class="nav-item"><a class="nav-link" href="hobbies.html" target="_blank"> Lens & Life</a></li>
+        <li class="nav-item"><a class="nav-link" href="hobbies.html"> Lens & Life</a></li>
 
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
@@ -160,7 +162,7 @@
     <section id="outreach" class="outreach" >
 
        <!-- for pc outreach section -->
-   <div class="container outreach-pc" >
+   <div class="container outreach-pc" data-aos="fade-up">
     <h1 class="section-title">Science Communication</h1>
     <h3 class="section-caption">Featured as the lead analyst in two exclusive outreach videos produced by CERN, highlighting the top quark observations in heavy-ion collisions.</h3>
     <div class="row justify-content-center outreach-video-mainDiv mt-2">
@@ -200,7 +202,7 @@
 
       <!-- for mobile outreach section -->
        
-  <div class="container outreach-mobile" >
+  <div class="container outreach-mobile" data-aos="fade-up">
     <h1 class="section-title">Science Communication</h1>
     <h3 class="section-caption">Featured as the lead analyst in two exclusive outreach videos produced by CERN, highlighting the top quark observations in heavy-ion collisions.</h3>
     <div class="row g-3 justify-content-center outreach-video-mainDiv mt-1">
@@ -231,7 +233,7 @@
       <!-- Video 2 -->
                <div class="col-10 col-md-5 d-flex justify-content-center">
         <div class="video-card">
-          <iframe class="video-player"  src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7275193978193428481?compact=1" frameborder="0" allowfullscreen="" title="Embedded post" ></iframe>
+          <iframe class="video-player" src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7275193978193428481?compact=1" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
 
           <div class="video-content">
             <h3 class="video-title text-center">ATLAS observes top quarks in lead-lead collisions</h3>
@@ -251,6 +253,17 @@
       </div>
     </div>
   </div>
+  <script>
+                      const video = document.getElementById('mobile-video-2');
+
+                      // Set your start time in seconds
+                      const startTime = 107;
+
+                      // Wait until metadata is loaded (so duration and seekable are available)
+                      video.addEventListener('loadedmetadata', () => {
+                        video.currentTime = startTime;
+                      });
+                    </script>
  
 </section>
 
@@ -258,11 +271,15 @@
 
 
 
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v23.0"></script>
+
+
+
 
     <!-- exprience -->
 
     <section class="experience" id=" experience" >
-      <div class="container" >
+      <div class="container" data-aos="fade-up">
         <h1 class="section-title">Research Employment</h1>
         <!-- satrt for new box copy and edit this -->
         <!-- 1st card -->
@@ -383,7 +400,7 @@
   <!-- Key Physics Analyses -->
 
 <section id="Analysis" class="projects-box" >
-  <div class="container">
+  <div class="container" data-aos="fade-up">
     <h1 class="section-title">Key Physics Analyses</h1>
   <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4 pt-3 px-lg-5">
     <!-- start for new box copy and edit this -->
@@ -415,14 +432,14 @@
           <button class="analysis-btn view-details">Read More</button>
           
           <p class="card-text d-none">
-            This ATLAS analysis achieved the first observation of top-quark pair (\( t\bar{t} \)) production in \( p+\text{Pb} \) collisions at \( \sqrt{s} = 8.16~\mathrm{TeV} \), reaching \( >5\sigma \) significance and 9% cross-section uncertainty—the most precise result in a heavy-ion environment. Top quarks, decaying before QGP formation, serve as clean probes of initial-state nPDFs, particularly high-\( Q^2 \) gluons.
+
+          This ATLAS analysis achieved the first observation of top-quark pair (\( t\bar{t} \)) production in \( p+\text{Pb} \) collisions at \( \sqrt{s} = 8.16~\mathrm{TeV} \), reaching \( >5\sigma \) significance and 9% cross-section uncertainty—the most precise result in a heavy-ion environment. Top quarks, decaying before QGP formation, serve as clean probes of initial-state nPDFs, particularly high-\( Q^2 \) gluons.
         <br>
           Applicant led the analysis, developing the profile-likelihood framework, background and systematic treatment, and optimising fit variables, while also contributing to pseudo-top reconstruction and sample validation. The framework was later applied to Pb+Pb analyses. Results were presented at 
           <a href="https://indico.cern.ch/event/1291157/contributions/5878747/" target="_blank">ICHEP 2024</a> and 
           <a href="https://indico.cern.ch/event/1354173/contributions/6103804/" target="_blank">Diffraction &amp; Low-x 2024</a> and published in 
           <a href="https://doi.org/10.1007/JHEP11(2024)101" target="_blank">JHEP 11 (2024) 101</a>, supported by the 
-          <a href="https://www.utef.cvut.cz/ieap" target="_blank">Czech Technical University in Prague</a>
-         
+          <a href="https://www.utef.cvut.cz/ieap" target="_blank">Czech Technical University in Prague</a>.
           </p>
         </div>
       </div>
@@ -521,7 +538,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   <!-- Briefings -->
  <section class="briefings-section" id="briefings"> 
-  <div class="container">
+  <div class="container" data-aos="fade-up">
     <h1 class="section-title">Briefings</h1>
     <h3 class="section-caption">The first observation of top quarks in heavy-ion collisions—an achievement formally recognised by CERN’s exclusive Physics Briefings for its significant impact.</h3>
 
@@ -567,7 +584,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
    <!-- start news section    -->
   <section class="news-section" id="news">
-    <div class="container">
+    <div class="container" data-aos="fade-up">
       <h1 class="section-title">Research in the News</h1>
 
       <div class="news-container">
@@ -582,40 +599,40 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="wgh-slider__container">
           <div class="wgh-slider-item">
             <div class="wgh-slider-item__inner">
-              <figure class="wgh-slider-item-figure"><img class="wgh-slider-item-figure__image " loading="lazy" src="https://ik.imagekit.io/santumondal/images/news/n1.png?updatedAt=1754678696865" alt="The 5th Exotic"/>
-                <figcaption class="wgh-slider-item-figure__caption"><a href="https://physics.aps.org/articles/v18/75">Physics APS</a></figcaption>
+              <figure class="wgh-slider-item-figure"><img class="wgh-slider-item-figure__image " loading="lazy" src="Image/news/img1.png" alt="The 5th Exotic"/>
+                <figcaption class="wgh-slider-item-figure__caption"><a href="">physicsworld</a></figcaption>
               </figure>
               <label class="wgh-slider-item__trigger" for="slide-1" title="physicsworld"></label>
             </div>
           </div>
           <div class="wgh-slider-item">
             <div class="wgh-slider-item__inner">
-              <figure class="wgh-slider-item-figure"><img class="wgh-slider-item-figure__image" loading="lazy" src="https://ik.imagekit.io/santumondal/images/news/n2.jpg?updatedAt=1754664978163" alt="The 5th Exotic"/>
-                <figcaption class="wgh-slider-item-figure__caption"><a href="https://physicsworld.com/a/quark-pairs-at-atlas-could-shed-light-on-the-early-universe/">physicsworld</a></figcaption>
+              <figure class="wgh-slider-item-figure"><img class="wgh-slider-item-figure__image" loading="lazy" src="Image/news/img2.jpg" alt="The 5th Exotic"/>
+                <figcaption class="wgh-slider-item-figure__caption"><a href="">phys.org</a></figcaption>
               </figure>
               <label class="wgh-slider-item__trigger" for="slide-2" title="phys.org"></label>
             </div>
           </div>
           <div class="wgh-slider-item">
             <div class="wgh-slider-item__inner">
-              <figure class="wgh-slider-item-figure"><img class="wgh-slider-item-figure__image" loading="lazy" src="https://ik.imagekit.io/santumondal/images/news/n3.jpg?updatedAt=1754664976748" alt="The 5th Exotic"/>
-                <figcaption class="wgh-slider-item-figure__caption"><a href="https://www.nature.com/articles/d41586-025-01075-2">Nature</a></figcaption>
+              <figure class="wgh-slider-item-figure"><img class="wgh-slider-item-figure__image" loading="lazy" src="Image/news/img3.jpg" alt="The 5th Exotic"/>
+                <figcaption class="wgh-slider-item-figure__caption"><a href="">Nature</a></figcaption>
               </figure>
               <label class="wgh-slider-item__trigger" for="slide-3" title="Nature"></label>
             </div>
           </div>
           <div class="wgh-slider-item">
             <div class="wgh-slider-item__inner">
-              <figure class="wgh-slider-item-figure"><img class="wgh-slider-item-figure__image" loading="lazy" src="https://ik.imagekit.io/santumondal/images/news/n4.jpg?updatedAt=1754664975535" alt="The 5th Exotic"/>
-                <figcaption class="wgh-slider-item-figure__caption"><a href="https://phys.org/news/2024-11-atlas-quarks-leadlead-collisions.html">Phys.org</a></figcaption>
+              <figure class="wgh-slider-item-figure"><img class="wgh-slider-item-figure__image" loading="lazy" src="Image/news/img4.jpg" alt="The 5th Exotic"/>
+                <figcaption class="wgh-slider-item-figure__caption"><a href="">physicsworld</a></figcaption>
               </figure>
               <label class="wgh-slider-item__trigger" for="slide-4" title="physicsworld"></label>
             </div>
           </div>
           <div class="wgh-slider-item">
             <div class="wgh-slider-item__inner">
-              <figure class="wgh-slider-item-figure"><img class="wgh-slider-item-figure__image" loading="lazy" src="https://ik.imagekit.io/santumondal/images/news/n5.jpg?updatedAt=1754664974446" alt="RYSY - Traveler LP"/>
-                <figcaption class="wgh-slider-item-figure__caption"><a href="https://home.cern/news/news/physics/atlas-observes-top-quarks-lead-lead-collisions">CERN</a></figcaption>
+              <figure class="wgh-slider-item-figure"><img class="wgh-slider-item-figure__image" loading="lazy" src="Image/news/img5.jpg" alt="RYSY - Traveler LP"/>
+                <figcaption class="wgh-slider-item-figure__caption"><a href="">physicsworld</a></figcaption>
               </figure>
               <label class="wgh-slider-item__trigger" for="slide-5" title="physicsworld"></label>
             </div>
@@ -641,7 +658,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- start Recent & Upcoming Talks -->
     <!-- start achievement section -->
 <section id="achievements">
-  <div class="container">
+  <div class="container" data-aos="fade-up">
     <h1 class="section-title">Academic Achievements</h1>
 
     <div class="row g-4 ps-lg-5 achievement-card-main pt-3">
@@ -699,7 +716,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
    <!-- start Recent & Upcoming Talks -->
     <section id="talks">
-      <div class="container">
+      <div class="container" data-aos="fade-up">
         <h1 class="section-title">Conference Talks</h1>
         <div class="mx-lg-5">
 
@@ -821,7 +838,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
    <!-- Featured Publications-->
     <section id="publications">
-      <div class=" container" >
+      <div class=" container" data-aos="fade-up">
         <h1 class=" section-title ">Featured Publications</h1>
         
   <div class="row" >
@@ -839,7 +856,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <p class="pub-authors">
               ATLAS Collaboration, <strong>Santu Mondal</strong>
             </p>
-            <p class="pub-date"> Published: 7 April 2025 · <strong class="journal-name"><em>Physical Review Letters (PRL) </em>, <p class="text-muted">Editor's Suggestion, Featured in Physics</p></strong></p>
+            <p class="pub-date"> Published: 7 April 2025 · <strong class="journal-name"><em>Physical Review Letters (PRL)</em></strong></p>
           </div>
           <img src="Image/publication-2025.png" loading="lazy" alt="Publication image" class="pub-image">
           <div class="pub-card-body">
@@ -906,7 +923,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- start Recent Publications -->
      <!-- /* recent publications card styling same as Recent & Upcoming Talks  */ -->
      <section id ="recent-publications">
-      <div class="container">
+      <div class="container" data-aos="fade-up">
 
   <h1 class=" section-title">Recent Publications</h1>
     <div class="mx-lg-5 pt-3">
@@ -972,7 +989,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             <!-- school 1  -->
   <section id="school">
-      <div class="container">
+      <div class="container" data-aos="fade-up">
         <h2 class=" section-title">CERN School Attended</h2>
         <div class="row g-4 mt-1">
 
@@ -980,7 +997,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="col-md-6 col-10 mx-auto ">
               <div class="school-card">
                 <div class="school-image">
-                  <img src="Image/school/1.jpg" loading="lazy" alt="School Image">
+                  <img src="Image/school/1.jpg" alt="School Image">
                 </div>
                 <div class="school-content">
                   <p class="school-date">September 25 ‑ October 8, 2024</p>
@@ -995,7 +1012,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="col-md-6 col-10 mx-auto">
               <div class="school-card">
                 <div class="school-image">
-                  <img src="Image/school/2.jpg" loading="lazy" alt="School Image">
+                  <img src="Image/school/2.jpg" alt="School Image">
                 </div>
                 <div class="school-content">
                   <p class="school-date">August 10 ‑ August 21, 2020</p>
@@ -1010,7 +1027,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="col-md-6 col-10 mx-auto">
               <div class="school-card">
                 <div class="school-image">
-                  <img src="Image/school/slac.jpg" loading="lazy" alt="School Image">
+                  <img src="Image/school/slac.jpg" alt="School Image">
                 </div>
                 <div class="school-content">
                   <p class="school-date">August 10 ‑ August 21, 2020</p>
@@ -1025,7 +1042,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="col-md-6 col-10 mx-auto">
               <div class="school-card">
                 <div class="school-image ratio-16x9">
-                  <img src="Image/school/3.jpg" loading="lazy" alt="School Image">
+                  <img src="Image/school/3.jpg" alt="School Image">
                 </div>
                 <div class="school-content">
                   <p class="school-date">September 9 ‑ September 15, 2018</p>
@@ -1046,7 +1063,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       <!-- start gallery -->
 <section id="gallery">
-      <div class="container">
+      <div class="container" data-aos="fade-up">
         
   <h1 class="section-title">Gallery</h1>
   
@@ -1072,7 +1089,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="thumb-item"><img src="Image/gallery/3.jpg" loading="lazy" alt="Slide 3" data-caption="Deutsches Elektronen-Synchrotron DESY"></div>
         <div class="thumb-item"><img src="Image/gallery/4.jpg" loading="lazy" alt="Slide 4" data-caption="30 Years of ATLAS, Celebrated During ATLAS Week in Portugal"></div>
         <div class="thumb-item"><img src="Image/gallery/5.jpg" loading="lazy" alt="Slide 5" data-caption="Honoured to Deliver My Talk at the Universidade de Lisboa"></div>
-        <div class="thumb-item"><img src="Image/gallery/6.jpg" loading="lazy" alt="Slide 6" data-caption="CZ+SK HEP Workshop"></div>
+        <div class="thumb-item"><img src="Image/gallery/6.JPG" loading="lazy" alt="Slide 6" data-caption="CZ+SK HEP Workshop"></div>
         <div class="thumb-item"><img src="Image/gallery/7.jpg" loading="lazy" alt="Slide 7" data-caption="Conference : Diffraction and Low-x 2024, Sicily"></div>
       </div>
     </div>
@@ -1162,73 +1179,94 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-<!-- Bootstrap JS -->
-<script src="js/bootstrap.bundle.min.js"></script>
 
 
-<!-- MathJax -->
-<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-
-
-<!-- // ========== GALLERY (Image Preview + Caption Update) ========== -->
-
-<!-- Add this just before the closing </body> tag -->
 <script>
-// ========== GLOBAL SETTINGS ==========
+  const lastModified = new Date(document.lastModified);
+  const formattedDate = lastModified.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+  document.getElementById("last-updated").innerText = "Last updated: " + formattedDate;
+</script>
 
 
-// --- Last Modified Date (Footer) ---
-const lastModified = new Date(document.lastModified);
-const formattedDate = lastModified.toLocaleDateString('en-US', {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric'
-});
-document.getElementById("last-updated").innerText = "Last updated: " + formattedDate;
+     
 
-// --- Footer Year ---
-document.getElementById('year').textContent = new Date().getFullYear();
 
-// --- MathJax Config (LaTeX Rendering) ---
-window.MathJax = {
-  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
-  svg: { fontCache: 'global' }
-};
+<!-- for footer -->
 
-// --- Smart Link Open (New tab for desktop, same tab for mobile) ---
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+
+ 
+
+  <!-- for bootstrap file offline link -->
+   <!-- Bootstrap JS (offline) -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+<script src="js/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 750,   // animation duration
+    once: true        // animation happens only once when scrolling
+  });
+</script>
+
+<!-- for link open  -->
+ <!-- in a new tab on laptops/desktops, and
+
+in the same tab on mobile devices, -->
+
+<!-- <a href="https://example.com" onclick="return handleLinkClick(this)">Visit Example</a> -->
+
+<script>
 function handleLinkClick(link) {
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   if (isMobile) {
+    // Open in same tab
     window.location.href = link.href;
   } else {
+    // Open in new tab
     window.open(link.href, '_blank');
   }
-  return false;
+  return false; // Prevent default behavior
 }
+</script>
 
-// ========== NAVIGATION ==========
+
+
+
+ <!-- for latex -->
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+      svg: { fontCache: 'global' }
+    };
+    </script>
+    <!-- <script async src="libs/MathJax-3.2.2/es5/tex-mml-chtml.js"></script> -->
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- latex end -->
+
+
+    <!-- nav section active shows  -->
+
+ 
+<script>
 document.addEventListener("DOMContentLoaded", function () {
-
-  // --- Scroll to Section & Open Dropdown ---
-  const dropdownLink = document.querySelector('#navbarScrollingDropdown');
-  if (dropdownLink) {
-    dropdownLink.addEventListener('click', function () {
-      const talksSection = document.querySelector('#outreach');
-      if (talksSection) {
-        talksSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  }
-
-  // --- Active Nav Highlighting on Scroll ---
   const navLinks = document.querySelectorAll("a[href^='#']");
   const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
   const sections = document.querySelectorAll("section[id]");
-  const offset = 300;
+  const offset = 300;  // Adjust if your navbar is fixed
+  
 
   function activateNavLink() {
     let scrollY = window.pageYOffset;
+
+    // Track matched links to re-activate them efficiently
     let activeSections = new Set();
 
     sections.forEach(section => {
@@ -1241,104 +1279,155 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
+    // Loop through all nav links
     navLinks.forEach(link => {
+      const href = link.getAttribute("href");
+      if (!href) return;
+
+      // const targetIds = href.split(",").map(s => s.trim().replace("#", ""));
       const dataTargets = link.getAttribute("data-targets");
-      const targetIds = dataTargets
-        ? dataTargets.split(",").map(s => s.trim().replace("#", ""))
-        : [link.getAttribute("href").replace("#", "")];
+const targetIds = dataTargets
+  ? dataTargets.split(",").map(s => s.trim().replace("#", ""))
+  : [link.getAttribute("href").replace("#", "")];
 
       const isActive = targetIds.some(id => activeSections.has(id));
+      
 
       if (isActive) {
-        link.classList.add("active");
+        if (!link.classList.contains("active")) {
+          link.classList.add("active");
+        }
+
+        // Check if inside a dropdown
         const dropdown = link.closest(".dropdown-menu");
         if (dropdown) {
           const toggle = dropdown.parentElement.querySelector(".dropdown-toggle");
-          if (toggle) toggle.classList.add("active");
+          if (toggle && !toggle.classList.contains("active")) {
+            toggle.classList.add("active");
+          }
         }
       } else {
-        link.classList.remove("active");
+        if (link.classList.contains("active")) {
+          link.classList.remove("active");
+        }
       }
     });
 
+    // Handle dropdown toggles separately (in case none of their children matched)
     dropdownToggles.forEach(toggle => {
       const menu = toggle.nextElementSibling;
       const activeChild = menu && menu.querySelector(".active");
-      if (!activeChild) toggle.classList.remove("active");
+      if (!activeChild && toggle.classList.contains("active")) {
+        toggle.classList.remove("active");
+      }
     });
   }
 
+  // Throttle scroll handler for performance
   let scrollTimeout;
   window.addEventListener("scroll", () => {
     clearTimeout(scrollTimeout);
     scrollTimeout = setTimeout(activateNavLink, 50);
   });
 
+  // Initial run
   activateNavLink();
+});
+</script>
 
-  // --- Navbar Dropdown on Hover ---
-  document.querySelectorAll('.navbar .dropdown').forEach(dropdown => {
-    dropdown.addEventListener('mouseenter', function () {
+
+
+
+
+    <!-- nav bar dropdown menu open & close -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Dropdown hover open/close
+  var dropdownElements = document.querySelectorAll('.navbar .dropdown');
+  dropdownElements.forEach(function(dropdown){
+    dropdown.addEventListener('mouseenter', function(){
       const toggle = dropdown.querySelector('[data-bs-toggle="dropdown"]');
       const menu = new bootstrap.Dropdown(toggle);
       menu.show();
     });
-    dropdown.addEventListener('mouseleave', function () {
+    dropdown.addEventListener('mouseleave', function(){
       const toggle = dropdown.querySelector('[data-bs-toggle="dropdown"]');
       const menu = bootstrap.Dropdown.getInstance(toggle);
       menu.hide();
     });
   });
 
-  // --- Close Navbar on Link Click (Mobile) ---
-  document.querySelectorAll('.navbar-nav .nav-link, .navbar-nav .dropdown-item').forEach(link => {
-    link.addEventListener('click', function () {
-      const navbarCollapse = document.getElementById('navbarNav');
+  // Close navbar on nav link click (mobile)
+  document.querySelectorAll('.navbar-nav .nav-link, .navbar-nav .dropdown-item').forEach(function(link) {
+    link.addEventListener('click', function() {
+      var navbarCollapse = document.getElementById('navbarNav');
       if (navbarCollapse && navbarCollapse.classList.contains('show')) {
-        const bsCollapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
+        var bsCollapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
         bsCollapse.hide();
       }
     });
   });
 
-  // --- Close Navbar When Clicking Outside (Mobile) ---
-  document.addEventListener('click', function (event) {
-    const navbarCollapse = document.getElementById('navbarNav');
-    const navbarToggler = document.querySelector('.navbar-toggler');
+  // Automatically close navbar when clicking outside navbar
+  document.addEventListener('click', function(event) {
+    var navbarCollapse = document.getElementById('navbarNav');
+    var navbarToggler = document.querySelector('.navbar-toggler');
     if (
       navbarCollapse &&
       navbarCollapse.classList.contains('show') &&
       !navbarCollapse.contains(event.target) &&
       !navbarToggler.contains(event.target)
     ) {
-      const bsCollapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
+      var bsCollapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
       bsCollapse.hide();
     }
   });
-
 });
 
-// ========== GALLERY (Image Preview + Caption Update) ==========
-document.addEventListener("DOMContentLoaded", function () {
+
+</script>
+<!-- nav bar dropdown menu open & close end -->
+
+<script>
+  // Scroll to #talks while still allowing dropdown
+  document.querySelector('#navbarScrollingDropdown').addEventListener('click', function (e) {
+    // Let dropdown open
+    // But also scroll to section
+    const talksSection = document.querySelector('#outreach');
+    if (talksSection) {
+      talksSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+</script>
+
+
+<!-- start script for gallery  -->
+<script>
   const bigImage = document.getElementById('bigImage');
   const bigCaption = document.getElementById('bigImageCaption');
 
-  document.querySelectorAll('.thumb-item img').forEach((thumb) => {
+  document.querySelectorAll('.thumb-item img').forEach((thumb, index) => {
     thumb.addEventListener('click', () => {
+      // Change main image
       bigImage.src = thumb.src;
       bigImage.alt = thumb.alt;
 
+      // Change caption
       const captionText = thumb.dataset.caption || thumb.alt || '';
       bigCaption.textContent = captionText;
 
+      // Active highlight
       document.querySelectorAll('.thumb-item img').forEach(t => t.classList.remove('active'));
       thumb.classList.add('active');
     });
   });
-});
 </script>
 
-<!-- Your new script file -->
- 
+
+
+<!-- end script for gallery  -->
+
+
+
 </body>
 </html>
