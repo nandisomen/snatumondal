@@ -854,7 +854,7 @@ body.modal-open {
 }
 .shorts-card {
   flex: 0 0 auto;
-  width: 200px;
+  width: 270px;
   aspect-ratio: 9/16;
   border-radius: 12px;
   background-color: #000;
@@ -1006,4 +1006,5 @@ color :#dc2743;
 transform: scale(1.2);  /* 1.2 = 120% size */
   transition: all 0.3s ease;  /* Smooth animation */
 }
+
 
