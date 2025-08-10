@@ -63,7 +63,7 @@ section{
   font-size: 5rem;
   text-align: center;
   padding-bottom: 70px;
-  color: #fff; /* pure white */
+  color: #E7E7E7; /* pure white */
   position: relative;
   user-select: none;
 }
@@ -1004,5 +1004,6 @@ color :#ff0026;
 transform: scale(1.2);  /* 1.2 = 120% size */
   transition: all 0.3s ease;  /* Smooth animation */
 }
+
 
 
