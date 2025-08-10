@@ -66,32 +66,6 @@ section{
   color: #fff; /* pure white */
   position: relative;
   user-select: none;
-  text-shadow:
-    0 0 8px #fff,
-    0 0 15px #ccc,
-    0 0 25px #bbb;
-  animation: glitchShift 2s infinite;
-}
-
-@keyframes glitchShift {
-  0%, 100% {
-    text-shadow:
-      2px 0 #fff,
-      -2px 0 #ccc,
-      0 0 15px #eee;
-    opacity: 1;
-  }
-  20%, 80% {
-    text-shadow:
-      -2px 0 #fff,
-      2px 0 #bbb,
-      0 0 10px #ccc;
-    opacity: 0.9;
-  }
-  40%, 60% {
-    text-shadow: none;
-    opacity: 0.7;
-  }
 }
 
 
@@ -1030,4 +1004,5 @@ color :#ff0026;
 transform: scale(1.2);  /* 1.2 = 120% size */
   transition: all 0.3s ease;  /* Smooth animation */
 }
+
 
