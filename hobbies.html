@@ -17,33 +17,7 @@
 
 </head>
 <body>
-  <div class="sky"></div>
 
-<script>
-const sky = document.querySelector('.sky');
-
-function createShootingStar() {
-  const star = document.createElement('div');
-  star.classList.add('shooting-star');
-
-  // Random speed between 2–4 seconds
-  star.style.animationDuration = (Math.random() * 2 + 2) + 's';
-
-  // Start in upper-right
-  star.style.top = Math.random() * window.innerHeight * 0.5 + 'px';
-  star.style.left = (window.innerWidth * 0.5 + Math.random() * window.innerWidth * 0.5) + 'px';
-
-  sky.appendChild(star);
-
-  // Remove after animation
-  setTimeout(() => star.remove(), parseFloat(star.style.animationDuration) * 1000);
-}
-
-// Spawn stars at random times
-setInterval(() => {
-  if (Math.random() > 0.7) createShootingStar();
-}, 500);
-</script>
 
  
 <nav class="navbar fixed-top">
@@ -401,7 +375,7 @@ setInterval(() => {
 
 
   <!-- oepn image in fullscreen -->
-<!-- Masonry layout script -->
+
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const photos = document.querySelectorAll(".photo");
@@ -538,28 +512,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-<script>
-  
-const starContainer = document.querySelector('.starfield');
-const numStars = 150;
 
-// Create regular stars
-for (let i = 0; i < numStars; i++) {
-  let star = document.createElement('div');
-  star.classList.add('star');
-
-  let size = Math.random() * 3 + 'px';
-  star.style.width = size;
-  star.style.height = size;
-
-  star.style.top = Math.random() * window.innerHeight + 'px';
-  star.style.left = Math.random() * window.innerWidth + 'px';
-
-  star.style.animationDuration = (Math.random() * 3 + 1) + 's';
-
-  starContainer.appendChild(star);
-}
-</script>
 
 
 </body>
