@@ -2,7 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
 
 /* btn font  */
-@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
 
 /* text change  */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
@@ -30,6 +32,12 @@ html {
 
 
   
+/* From Uiverse.io by SelfMadeSystem */ 
+/*
+More comprehensive version at shenanigans.shoghisimon.ca/collection/css-rain-bg/
+ */
+
+
 
 
 
@@ -45,9 +53,13 @@ html {
 }
 
 .navbar.solid {
-  background-color: #100e0e;
+  background: rgba(16, 14, 14, 0.299); /* semi-transparent */
+  backdrop-filter: blur(10px);       /* frosted glass blur */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* subtle edge */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+
 
 .navbar .nav-link {
   font-size: 1.1rem;
@@ -163,6 +175,7 @@ html {
 }
 
 .magic-navbar li a .title {
+  font-family: "Poppins", sans-serif;
   position: absolute;
   color: #fff;
   font-size: 1em;
@@ -178,7 +191,7 @@ html {
   transition-delay: 0.25s;
 }
 
-/* section color  */
+/* section color 
 section:nth-of-type(odd) {
   background: linear-gradient(180deg, #373737 0%, #2b2b2b 50%, #000000 100%);
   color: white;
@@ -187,9 +200,10 @@ section:nth-of-type(odd) {
 section:nth-of-type(even) {
   background: linear-gradient(180deg, #000000 0%, #2b2b2b 50%, #373737 100%);
   color: white;
-}
+} */
 
 section {
+  
   padding: 80px 20px;
   transition: background 0.5s ease;
   
@@ -206,15 +220,15 @@ section{
   padding-bottom: 70px;
   color: #fff;
   text-shadow: 
-    0 0 5px #ffffff,
-    0 0 10px #eef1f1,
+    0 0 5px #25F4EE,
+    0 0 10px #25F4EE,
     0 0 20px #FE2C55,
     0 0 40px #FE2C55;
-  animation: neonFlicker 1.6s infinite alternate;
+  animation: neonPulse 3s ease-in-out infinite;
 }
 
-@keyframes neonFlicker {
-  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+@keyframes neonPulse {
+  0% {
     text-shadow: 
       0 0 5px #25F4EE,
       0 0 10px #25F4EE,
@@ -222,11 +236,24 @@ section{
       0 0 40px #FE2C55;
     opacity: 1;
   }
-  20%, 24%, 55% {
-    text-shadow: none;
-    opacity: 0.8;
+  50% {
+    text-shadow: 
+      0 0 10px #25F4EE,
+      0 0 20px #25F4EE,
+      0 0 30px #FE2C55,
+      0 0 60px #FE2C55;
+    opacity: 0.9;
+  }
+  100% {
+    text-shadow: 
+      0 0 5px #25F4EE,
+      0 0 10px #25F4EE,
+      0 0 20px #FE2C55,
+      0 0 40px #FE2C55;
+    opacity: 1;
   }
 }
+
 
 
 @media(max-width:786px){
@@ -239,11 +266,93 @@ section{
  
 
 
+body {
+  /* background: #0f3460; */
+   background: radial-gradient(circle at center, #1b1b2f 0%, #000814 100%);
+}
+
+.starfield {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.star {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: twinkle 2s infinite ease-in-out alternate, starColor 5s infinite alternate;
+}
+
+/* Bright twinkle */
+@keyframes twinkle {
+  from { opacity: 0.3; transform: scale(0.8); }
+  to   { opacity: 1;   transform: scale(1.2); }
+}
+
+/* Smooth color shift */
+@keyframes starColor {
+  0%   { background: #ffffff; box-shadow: 0 0 6px #ffffff, 0 0 15px #ffffff; }
+  25%  { background: #d0b3ff ; box-shadow: 0 0 6px #ffcc88, 0 0 15px #ff9966; }
+  50%  { background: #ffe8a1; box-shadow: 0 0 6px #ffe8a1, 0 0 15px #44bbff; }
+  75%  { background: #cc88ff; box-shadow: 0 0 6px #cc88ff, 0 0 15px #aa66ff; }
+  100% { background: #ffffff; box-shadow: 0 0 6px #ffffff, 0 0 15px #ffffff; }
+}
+
+
+
+/* Container for shooting stars */
+.sky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Shooting star style */
+.shooting-star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 6px white;
+  animation: shoot 3s linear forwards; /* was 1s, now 3s */
+  z-index: -1;
+}
+.shooting-star::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 1px;
+  width: 150px;
+  background: linear-gradient(90deg, white, transparent);
+}
+
+/* Shooting motion */
+@keyframes shoot {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(315deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-1000px, 1000px) rotate(315deg);
+  }
+}
+
 /* start hero section */
 .hero {
   height: 100vh;
   min-width: 98vw;
-
   background: 
     linear-gradient(rgba(0, 0, 0, 0.742), rgba(0, 0, 0, 0.781)), 
     url('https://ik.imagekit.io/santumondal/photography/hcl.jpg?updatedAt=1754664966796') no-repeat center center !important;
@@ -315,7 +424,6 @@ section{
    /* align-items: center; */
   justify-content: center; 
  color: #ffffff;
-
  font-size: 2rem;
   font-weight: 600;
  box-sizing: content-box;
@@ -338,7 +446,6 @@ position: relative;
 }
 @keyframes role-change {
   100% { transform: translateY(-102%); }
-  
   25% { transform: translateY(-100%); }
   35% { transform: translateY(-202%); }
   50% { transform: translateY(-200%); }
@@ -358,6 +465,7 @@ position: relative;
 
   .roles-container {
     height: 1.8rem;
+    padding-left: 15px;
   }
 
   .intro-text {
@@ -378,6 +486,7 @@ position: relative;
 
   .roles-container {
     height: 1.9rem;
+    padding-left: 10px;
   }
 }
 
@@ -485,7 +594,7 @@ position: relative;
   }
 }
 
-/* From Uiverse.io by hamoode-taha-04 */ 
+
 .ui-btn {
   
   cursor: pointer;
@@ -497,6 +606,7 @@ position: relative;
   width: 200px;
   height: 50px;
   transition: 0.2s ease;
+  font-family: "Poppins", sans-serif;
   /* text-transform: uppercase; */
   border-width: 2px;
   font-weight: 500;
@@ -576,6 +686,7 @@ position: relative;
   justify-content: flex-end;
   align-items: flex-end;
   padding: 10px;
+  
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 10;
@@ -1006,5 +1117,4 @@ color :#dc2743;
 transform: scale(1.2);  /* 1.2 = 120% size */
   transition: all 0.3s ease;  /* Smooth animation */
 }
-
 
