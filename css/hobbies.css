@@ -32,10 +32,78 @@ html {
 
 
   
-/* From Uiverse.io by SelfMadeSystem */ 
-/*
-More comprehensive version at shenanigans.shoghisimon.ca/collection/css-rain-bg/
- */
+
+ 
+
+/* section color  */
+section:nth-of-type(odd) {
+  background: linear-gradient(90deg, #0d1b2a, #402844);
+  color: white;
+}
+
+section:nth-of-type(even) {
+  
+  background: linear-gradient( 90deg, #0a0f1f, #3a2947);
+
+  color: white;
+}
+
+section {
+  
+  padding: 80px 20px;
+  transition: background 0.5s ease;
+  
+}
+section{
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.section-title {
+  font-family: "Lavishly Yours", cursive;
+  font-size: 5rem;
+  text-align: center;
+  padding-bottom: 70px;
+  color: #fff; /* pure white */
+  position: relative;
+  user-select: none;
+  text-shadow:
+    0 0 8px #fff,
+    0 0 15px #ccc,
+    0 0 25px #bbb;
+  animation: glitchShift 2s infinite;
+}
+
+@keyframes glitchShift {
+  0%, 100% {
+    text-shadow:
+      2px 0 #fff,
+      -2px 0 #ccc,
+      0 0 15px #eee;
+    opacity: 1;
+  }
+  20%, 80% {
+    text-shadow:
+      -2px 0 #fff,
+      2px 0 #bbb,
+      0 0 10px #ccc;
+    opacity: 0.9;
+  }
+  40%, 60% {
+    text-shadow: none;
+    opacity: 0.7;
+  }
+}
+
+
+@media(max-width:786px){
+  .section-title{
+    padding-top: 50px;
+    font-size: 3rem;
+    padding-bottom: 50px;
+  }
+}
+ 
+
 
 
 
@@ -191,163 +259,8 @@ More comprehensive version at shenanigans.shoghisimon.ca/collection/css-rain-bg/
   transition-delay: 0.25s;
 }
 
-/* section color 
-section:nth-of-type(odd) {
-  background: linear-gradient(180deg, #373737 0%, #2b2b2b 50%, #000000 100%);
-  color: white;
-}
-
-section:nth-of-type(even) {
-  background: linear-gradient(180deg, #000000 0%, #2b2b2b 50%, #373737 100%);
-  color: white;
-} */
-
-section {
-  
-  padding: 80px 20px;
-  transition: background 0.5s ease;
-  
-}
-section{
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-.section-title {
-  margin: 0 auto;
-  font-family: "Lavishly Yours", cursive;
-  text-align: center;
-  font-size: 5rem;
-  padding-bottom: 70px;
-  color: #fff;
-  text-shadow: 
-    0 0 5px #25F4EE,
-    0 0 10px #25F4EE,
-    0 0 20px #FE2C55,
-    0 0 40px #FE2C55;
-  animation: neonPulse 3s ease-in-out infinite;
-}
-
-@keyframes neonPulse {
-  0% {
-    text-shadow: 
-      0 0 5px #25F4EE,
-      0 0 10px #25F4EE,
-      0 0 20px #FE2C55,
-      0 0 40px #FE2C55;
-    opacity: 1;
-  }
-  50% {
-    text-shadow: 
-      0 0 10px #25F4EE,
-      0 0 20px #25F4EE,
-      0 0 30px #FE2C55,
-      0 0 60px #FE2C55;
-    opacity: 0.9;
-  }
-  100% {
-    text-shadow: 
-      0 0 5px #25F4EE,
-      0 0 10px #25F4EE,
-      0 0 20px #FE2C55,
-      0 0 40px #FE2C55;
-    opacity: 1;
-  }
-}
 
 
-
-@media(max-width:786px){
-  .section-title{
-    padding-top: 50px;
-    font-size: 3rem;
-    padding-bottom: 50px;
-  }
-}
- 
-
-
-body {
-  /* background: #0f3460; */
-   background: radial-gradient(circle at center, #1b1b2f 0%, #000814 100%);
-}
-
-.starfield {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  pointer-events: none;
-  z-index: -1;
-}
-
-.star {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 0.8;
-  animation: twinkle 2s infinite ease-in-out alternate, starColor 5s infinite alternate;
-}
-
-/* Bright twinkle */
-@keyframes twinkle {
-  from { opacity: 0.3; transform: scale(0.8); }
-  to   { opacity: 1;   transform: scale(1.2); }
-}
-
-/* Smooth color shift */
-@keyframes starColor {
-  0%   { background: #ffffff; box-shadow: 0 0 6px #ffffff, 0 0 15px #ffffff; }
-  25%  { background: #d0b3ff ; box-shadow: 0 0 6px #ffcc88, 0 0 15px #ff9966; }
-  50%  { background: #ffe8a1; box-shadow: 0 0 6px #ffe8a1, 0 0 15px #44bbff; }
-  75%  { background: #cc88ff; box-shadow: 0 0 6px #cc88ff, 0 0 15px #aa66ff; }
-  100% { background: #ffffff; box-shadow: 0 0 6px #ffffff, 0 0 15px #ffffff; }
-}
-
-
-
-/* Container for shooting stars */
-.sky {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
-/* Shooting star style */
-.shooting-star {
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  background: white;
-  border-radius: 50%;
-  box-shadow: 0 0 6px white;
-  animation: shoot 3s linear forwards; /* was 1s, now 3s */
-  z-index: -1;
-}
-.shooting-star::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 1px;
-  width: 150px;
-  background: linear-gradient(90deg, white, transparent);
-}
-
-/* Shooting motion */
-@keyframes shoot {
-  0% {
-    opacity: 1;
-    transform: translate(0, 0) rotate(315deg);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-1000px, 1000px) rotate(315deg);
-  }
-}
 
 /* start hero section */
 .hero {
@@ -1113,7 +1026,7 @@ footer a{
   transition: all 0.2s ease;  /* Smooth animation */
 }
 .fa-instagram:hover , .fa-youtube:hover{
-color :#dc2743;
+color :#ff0026;
 transform: scale(1.2);  /* 1.2 = 120% size */
   transition: all 0.3s ease;  /* Smooth animation */
 }
