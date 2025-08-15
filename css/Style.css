@@ -1792,26 +1792,6 @@ input.wgh-slider-target {
   max-height: 100%;
   object-fit: contain;
 }
-.full-scn-btn {
-  display: none;
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background: rgba(0, 0, 0, 0.773);
-  border-radius: 6px;
-  padding: 6px 1px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  user-select: none;
-   font-size: 1.5rem;
-  color: #ffffff !important;
-}
 
 
 
@@ -1958,9 +1938,9 @@ white-space: nowrap;     /* Forces single-line */
 /* Wrapper for image and caption */
 #modalImageWrapper {
   position: relative;
-  max-width: 90%;
-  max-height: 80%;
-  overflow: hidden;
+  max-width: 100%;
+  max-height: 90%;
+  /* overflow: hidden; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1981,7 +1961,7 @@ white-space: nowrap;     /* Forces single-line */
 #modalCaption {
   color: #fff;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.2em;
   margin-top: 10px;
   /* transform: translateY(-50px); */
 }
@@ -2004,7 +1984,7 @@ white-space: nowrap;     /* Forces single-line */
 }
 
 
-#closeModal { top: 20px; right: 20px; }
+#closeModal { top: 20px; right: 20px; font-size: 1.5rem; }
 #zoomIn { bottom: 20px; right: 120px; }
 #zoomOut { bottom: 20px; right: 70px; }
 #prevImage { top: 50%; left: 20px; transform: translateY(-50%); }
@@ -2304,4 +2284,6 @@ color :#dc2743;
 transform: scale(1.2);  /* 1.2 = 120% size */
   transition: all 0.3s ease;  /* Smooth animation */
 }
+
+
 
