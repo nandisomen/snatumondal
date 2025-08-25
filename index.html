@@ -56,7 +56,26 @@
         </li>
 
         <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
-        <li class="nav-item"><a class="nav-link" href="hobbies.html" target="_blank"> Lens & Life</a></li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownLensLife" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Lens & Life
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownLensLife">
+                <li>
+                  <a class="dropdown-item" href="hobbies.html" target="_blank" rel="noopener noreferrer">
+                    Photography
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="map.html" target="_blank" rel="noopener noreferrer">
+                    Travelography
+                  </a>
+                </li>
+              </ul>
+          </li>
+
 
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
@@ -1099,7 +1118,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <h4>Contact</h4>
         <div class="line"></div>
         <p><strong>Santu Mondal</strong><br>
-        Charles University Faculty of Mathematics and Physics
+        Charles University Faculty of Mathematics and Physics, Czech Republic
         <br><a href="https://maps.app.goo.gl/iF3Vb6VhPDDKpCju9?g_st=ipc" class="footer-link" onclick="return handleLinkClick(this)"><i class="fas fa-map-marker-alt me-2"></i>Ke Karlovu 2027/3, 121 16  Nové Město, Prague, CZ </a>
         </p>
         <p><i class="fas fa-envelope me-2"></i><a href="mailto:santu.mondal@cern.ch" class="footer-link footer-mail">santu.mondal@cern.ch</a></p>
@@ -1350,6 +1369,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 </script>
+
+
+
 <!-- nav bar dropdown menu open & close end -->
 
 <script>
@@ -1365,33 +1387,11 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 
-<!-- start script for gallery  -->
-<!-- <script>
-  const bigImage = document.getElementById('bigImage');
-  const bigCaption = document.getElementById('bigImageCaption');
-
-  document.querySelectorAll('.thumb-item img').forEach((thumb, index) => {
-    thumb.addEventListener('click', () => {
-      // Change main image
-      bigImage.src = thumb.src;
-      bigImage.alt = thumb.alt;
-
-      // Change caption
-      const captionText = thumb.dataset.caption || thumb.alt || '';
-      bigCaption.textContent = captionText;
-
-      // Active highlight
-      document.querySelectorAll('.thumb-item img').forEach(t => t.classList.remove('active'));
-      thumb.classList.add('active');
-    });
-  });
-</script> -->
-
 
 <!-- full screnn galary img  -->
  
 <!-- Your new script file for gallery -->
-<script>
+<script>  
 document.addEventListener("DOMContentLoaded", function () {
   const thumbnails = document.querySelectorAll("#thumbnailsContainer img");
   const bigImage = document.getElementById("bigImage");
@@ -1403,15 +1403,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const modal = document.createElement("div");
   modal.id = "imageModal";
   modal.innerHTML = `
-    <button id="closeModal" class="modal-btn"><i class="fa-sharp fa-solid fa-circle-xmark"></i></button>
+    <button id="closeModal" class="modal-btn"><i class="fa-regular fa-circle-xmark"></i></button>
     <button id="prevImage" class="modal-btn">&#10094;</button>
     <div id="modalImageWrapper">
       <img id="modalImage" src="" alt="">
     </div>
     <div id="modalCaption"></div>
     <button id="nextImage" class="modal-btn">&#10095;</button>
-    <button id="zoomIn" class="modal-btn"><i class="fa-sharp-duotone fa-solid fa-magnifying-glass-plus"></i></button>
-    <button id="zoomOut" class="modal-btn"><i class="fa-sharp-duotone fa-solid fa-magnifying-glass-minus"></i></button>
+    <button id="zoomIn" class="modal-btn">+</button>
+    <button id="zoomOut" class="modal-btn">-</button>
   `;
   document.body.appendChild(modal);
 
@@ -1570,21 +1570,35 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Keyboard navigation
-  document.addEventListener("keydown", (e) => {
-    if (modal.style.display === "flex") {
-      if (e.key === "Escape") closeModal();
-      if (e.key === "ArrowRight") showImage(currentIndex + 1);
-      if (e.key === "ArrowLeft") showImage(currentIndex - 1);
-      if (e.key === "+") {
-        scale += 0.2;
-        modalImage.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
-      }
-      if (e.key === "-") {
-        scale = Math.max(0.4, scale - 0.2);
-        modalImage.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
-      }
+// Keyboard navigation
+// KEYBOARD navigation
+document.addEventListener("keydown", (e) => {
+  if (modal.style.display === "flex") {
+    if (e.key === "Escape" || e.key === "Esc") {
+      e.preventDefault();
+      closeModal(); // direct call, works same as close button
     }
-  });
+    if (e.key === "ArrowRight") showImage(currentIndex + 1);
+    if (e.key === "ArrowLeft") showImage(currentIndex - 1);
+    if (e.key === "+") {
+      scale += 0.2;
+      modalImage.style.transform =
+        `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+    }
+    if (e.key === "-") {
+      scale = Math.max(0.4, scale - 0.2);
+      modalImage.style.transform =
+        `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+    }
+  }
+});
+
+// FULLSCREEN fallback (when Esc exits fullscreen automatically)
+document.addEventListener("fullscreenchange", () => {
+  if (!document.fullscreenElement && modal.style.display === "flex") {
+    closeModal();
+  }
+});
 
   thumbnails[0].classList.add('active');
 });
