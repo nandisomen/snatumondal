@@ -99,12 +99,13 @@
             color: var(--accent);
             font-size: 20px;
         }
-
+        
         .nav-title {
             font-size: 18px;
             font-weight: 600;
             color: var(--text-primary);
             letter-spacing: -0.025em;
+            cursor: pointer;
         }
 
         .nav-stats {
@@ -118,6 +119,249 @@
             display: flex;
             align-items: center;
             gap: 6px;
+            position: relative;
+        }
+
+        .stat.countries-stat {
+            cursor: pointer;
+        }
+
+        .countries-tooltip {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--bg-popup);
+            backdrop-filter: blur(25px) saturate(150%);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            box-shadow: 0 8px 32px var(--shadow-medium);
+            padding: 16px;
+            margin-top: 8px;
+            min-width: 200px;
+            max-width: 300px;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            transform: translateX(-50%) translateY(-10px);
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .countries-tooltip.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .countries-tooltip::before {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 12px;
+            background: var(--bg-popup);
+            border: 1px solid var(--border-light);
+            border-bottom: none;
+            border-right: none;
+            transform: translateX(-50%) rotate(45deg);
+        }
+
+        .tooltip-header {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            text-align: center;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .countries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 8px;
+        }
+
+        .country-item {
+            padding: 8px 10px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-align: center;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .country-item:hover {
+            background: var(--accent-light);
+            color: var(--accent);
+            border-color: var(--accent);
+            transform: translateY(-1px);
+        }
+
+        /* Satellite mode tooltip styling */
+        .satellite-mode .countries-tooltip {
+            background: rgba(0, 0, 0, 0.9) !important;
+            backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .satellite-mode .countries-tooltip::before {
+            background: rgba(0, 0, 0, 0.9) !important;
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .satellite-mode .tooltip-header {
+            color: white !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        .satellite-mode .country-item {
+            background: rgba(255, 255, 255, 0.1) !important;
+            color: #e2e8f0 !important;
+            border-color: rgba(255, 255, 255, 0.2);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        .satellite-mode .country-item:hover {
+            background: rgba(96, 165, 250, 0.3) !important;
+            color: white !important;
+            border-color: rgba(96, 165, 250, 0.5);
+            box-shadow: 0 2px 6px rgba(96, 165, 250, 0.3);
+        }
+
+        /* Mobile countries tooltip */
+        .mobile-stat.countries-stat {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .mobile-countries-tooltip {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--bg-popup);
+            backdrop-filter: blur(25px) saturate(150%);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            box-shadow: 0 20px 50px var(--shadow-medium);
+            padding: 20px;
+            max-width: 90vw;
+            max-height: 70vh;
+            overflow-y: auto;
+            z-index: 3000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            transform: translate(-50%, -50%) scale(0.9);
+        }
+
+        .mobile-countries-tooltip.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .mobile-tooltip-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .mobile-tooltip-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .mobile-tooltip-close {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-light);
+            color: var(--text-secondary);
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .mobile-countries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 10px;
+        }
+
+        .mobile-country-item {
+            padding: 12px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-light);
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-align: center;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .mobile-country-item:hover {
+            background: var(--accent-light);
+            color: var(--accent);
+            border-color: var(--accent);
+            transform: translateY(-1px);
+        }
+
+        /* Satellite mode mobile tooltip */
+        .satellite-mode .mobile-countries-tooltip {
+            background: rgba(0, 0, 0, 0.95) !important;
+            backdrop-filter: blur(25px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+        }
+
+        .satellite-mode .mobile-tooltip-title {
+            color: white !important;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        .satellite-mode .mobile-tooltip-header {
+            border-bottom-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .satellite-mode .mobile-tooltip-close {
+            background: rgba(255, 255, 255, 0.1) !important;
+            color: #e2e8f0 !important;
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .satellite-mode .mobile-country-item {
+            background: rgba(255, 255, 255, 0.1) !important;
+            color: #e2e8f0 !important;
+            border-color: rgba(255, 255, 255, 0.2);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        .satellite-mode .mobile-country-item:hover {
+            background: rgba(96, 165, 250, 0.3) !important;
+            color: white !important;
+            border-color: rgba(96, 165, 250, 0.5);
+            box-shadow: 0 2px 6px rgba(96, 165, 250, 0.3);
         }
 
         .stat-number {
@@ -261,6 +505,51 @@
         .icon-btn.active::before {
             opacity: 1;
         }
+        
+        /* New Home button specific styles */
+        .home-link {
+            text-decoration: none;
+            color: var(--text-secondary);
+        }
+
+        /* Country Filter Pill */
+        .country-filter-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.25s ease;
+            white-space: nowrap;
+        }
+
+        .country-filter-pill:hover {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px var(--shadow-light);
+        }
+        
+        .country-filter-pill .close-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 12px;
+            cursor: pointer;
+            padding: 2px;
+            margin-right: -4px;
+            transition: color 0.2s ease;
+        }
+
+        .country-filter-pill .close-btn:hover {
+            color: var(--text-primary);
+        }
 
         /* Mobile Navigation Bar */
         .navbar-mobile {
@@ -290,6 +579,7 @@
             font-size: 16px;
             font-weight: 600;
             color: var(--text-primary);
+            cursor: pointer;
         }
 
         .mobile-header-right {
@@ -442,6 +732,46 @@
         .mobile-btn.active::before {
             opacity: 1;
         }
+        
+        /* Country filter pill for mobile */
+        .mobile-country-filter-pill {
+            display: none; /* Initially hidden */
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 14px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+            cursor: pointer;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 4px var(--shadow-light);
+            transition: all 0.2s ease;
+        }
+
+        .mobile-country-filter-pill:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px var(--shadow-light);
+        }
+
+        .mobile-country-filter-pill .close-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 13px;
+            cursor: pointer;
+            padding: 4px;
+            margin-right: -8px;
+            transition: color 0.2s ease;
+        }
+        
+        .mobile-country-filter-pill .close-btn:hover {
+            color: var(--text-primary);
+        }
+
 
         /* Map Container */
         .map-container {
@@ -464,7 +794,7 @@
 
         /* Satellite mode enhancements */
         .satellite-mode #map {
-            filter: brightness(1.0) contrast(1.0) saturate(1.1) !important;
+            filter: brightness(1.0) contrast(1.1) saturate(1.1) !important;
         }
 
         [data-theme="dark"].satellite-mode #map {
@@ -642,6 +972,22 @@
             color: white !important;
             box-shadow: 0 4px 12px rgba(96, 165, 250, 0.4);
         }
+        
+        .satellite-mode .country-filter-pill {
+            background: rgba(255, 255, 255, 0.1) !important;
+            border-color: rgba(255, 255, 255, 0.2);
+            color: #e2e8f0 !important;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+        }
+        
+        .satellite-mode .country-filter-pill:hover {
+            background: rgba(96, 165, 250, 0.3) !important;
+            box-shadow: 0 4px 8px rgba(96, 165, 250, 0.4);
+        }
+
+        .satellite-mode .country-filter-pill .close-btn {
+            color: #94a3b8 !important;
+        }
 
         /* Dark mode adjustments for map controls */
         [data-theme="dark"] .leaflet-control-layers,
@@ -788,7 +1134,7 @@
         <div class="nav-left">
             <div class="nav-logo">
                 <i class="fas fa-map-marked-alt"></i>
-                <span class="nav-title">Santu's travel journey</span>
+                <span class="nav-title" id="desktopTitle">Santu's travel journey</span>
             </div>
             
             <div class="nav-stats">
@@ -796,13 +1142,21 @@
                     <span class="stat-number" id="placesCount">56</span>
                     <span class="stat-label">places</span>
                 </div>
-                <div class="stat">
+                <div class="stat countries-stat">
                     <span class="stat-number" id="countriesCount">17</span>
                     <span class="stat-label">countries</span>
+                    <div class="countries-tooltip" id="countriesTooltip">
+                        <div class="tooltip-header" id="tooltipHeader">Countries Visited</div>
+                        <div class="countries-grid" id="countriesGrid"></div>
+                    </div>
                 </div>
-                <div class="stat">
+                <div class="stat" id="regionStat">
                     <span class="stat-number" id="continentName">Global</span>
                     <span class="stat-label">region</span>
+                </div>
+                <div class="country-filter-pill" id="countryFilterPill" style="display: none;">
+                    <span id="countryPillName"></span>
+                    <button class="close-btn" id="countryPillCloseBtn"><i class="fas fa-times"></i></button>
                 </div>
             </div>
         </div>
@@ -810,7 +1164,7 @@
         <div class="nav-center">
             <div class="filter-group">
                 <span class="filter-label">Region:</span>
-                <div class="btn-group">
+                <div class="btn-group" id="continentFilterGroup">
                     <button class="btn active" data-continent="All">All</button>
                     <button class="btn" data-continent="Europe">Europe</button>
                     <button class="btn" data-continent="Asia">Asia</button>
@@ -827,13 +1181,15 @@
         </div>
 
         <div class="nav-right">
-            <a href="map.html"><button class="icon-btn reset-btn" id="resetViewBtn" title="Reset Map View">
-                <i class="fas fa-home"></i>
-            </button></a>
-            
+            <button class="icon-btn reset-btn" id="resetViewBtn" title="Reset Map View">
+                <i class="fas fa-globe"></i>
+            </button>
             <button class="icon-btn" id="themeToggle" title="Toggle Dark Mode">
                 <i class="fas fa-moon"></i>
             </button>
+            <a href="map.html" class="icon-btn home-link" id="homeLinkBtn" title="Go to Home">
+                <i class="fas fa-home"></i>
+            </a>
         </div>
     </nav>
 
@@ -841,15 +1197,18 @@
         <div class="mobile-header">
             <div class="nav-logo">
                 <i class="fas fa-map-marked-alt"></i>
-                <span class="mobile-title">My travel Journey</span>
+                <span class="mobile-title" id="mobileTitle">Santu's travel journey</span>
             </div>
             <div class="mobile-header-right">
                 <button class="mobile-icon-btn reset-btn" id="mobileResetViewBtn" title="Reset View">
-                    <i class="fas fa-home"></i>
+                    <i class="fas fa-globe"></i>
                 </button>
                 <button class="mobile-icon-btn" id="mobileThemeToggle" title="Dark Mode">
                     <i class="fas fa-moon"></i>
                 </button>
+                <a href="map.html" class="mobile-icon-btn home-link" id="mobileHomeLinkBtn" title="Go to Home">
+                    <i class="fas fa-home"></i>
+                </a>
                 <button class="mobile-menu-btn" id="mobileMenuBtn">
                     <i class="fas fa-bars"></i>
                 </button>
@@ -862,7 +1221,7 @@
                     <span class="mobile-stat-number" id="mobileplacesCount">56</span>
                     <span class="mobile-stat-label">Places</span>
                 </div>
-                <div class="mobile-stat">
+                <div class="mobile-stat countries-stat">
                     <span class="mobile-stat-number" id="mobilecountriesCount">17</span>
                     <span class="mobile-stat-label">Countries</span>
                 </div>
@@ -872,10 +1231,15 @@
                 </div>
             </div>
 
+            <div class="mobile-country-filter-pill" id="mobileCountryFilterPill">
+                <span id="mobileCountryPillName"></span>
+                <button class="close-btn" id="mobileCountryPillCloseBtn"><i class="fas fa-times"></i></button>
+            </div>
+
             <div class="mobile-filters">
                 <div class="mobile-filter-group">
                     <span class="mobile-filter-label">Region</span>
-                    <div class="mobile-btn-group">
+                    <div class="mobile-btn-group" id="mobileContinentFilterGroup">
                         <button class="mobile-btn active" data-continent="All">All</button>
                         <button class="mobile-btn" data-continent="Europe">Europe</button>
                         <button class="mobile-btn" data-continent="Asia">Asia</button>
@@ -897,6 +1261,16 @@
         <div id="map"></div>
     </div>
 
+    <div class="mobile-countries-tooltip" id="mobileCountriesTooltip">
+        <div class="mobile-tooltip-header">
+            <div class="mobile-tooltip-title" id="mobileTooltipTitle">Countries Visited</div>
+            <button class="mobile-tooltip-close" id="mobileTooltipClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="mobile-countries-grid" id="mobileCountriesGrid"></div>
+    </div>
+
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
         crossorigin=""></script>
@@ -908,7 +1282,7 @@
         // Initialize the map
         const map = L.map('map', {
             zoomControl: false,
-            attributionControl: false, // Disable default attribution
+            attributionControl: false,
             touchZoom: true,
             doubleClickZoom: true,
             scrollWheelZoom: true,
@@ -1002,15 +1376,17 @@
             { name: "Belfast", country: "Northern Ireland", continent: "Europe", coords: [54.5973, -5.9301] },
             { name: "Budapest", country: "Hungary", continent: "Europe", coords: [47.4979, 19.0402] },
             { name: "Paris", country: "France", continent: "Europe", coords: [48.8566, 2.3522] },
+            { name: "Saint-Genis-Pouilly", country: "France", continent: "Europe", coords: [46.2428, 6.0396] },
             { name: "Zurich", country: "Switzerland", continent: "Europe", coords: [47.3769, 8.5417] },
             { name: "Qatar", country: "Qatar", continent: "Asia", coords: [25.2854, 51.5310] },
             { name: "New Delhi", country: "India", continent: "Asia", coords: [28.7041, 77.1025] },
             { name: "Chennai", country: "India", continent: "Asia", coords: [13.08, 80.27] },
-            { name: "Uttarakhand", country: "India", continent: "Asia", coords: [30.0668, 79.02] },
+            { name: "Dehradun", country: "India", continent: "Asia", coords: [30.0668, 79.02] },
             { name: "Mumbai", country: "India", continent: "Asia", coords: [19.076, 72.8777] },
             { name: "Kolkata", country: "India", continent: "Asia", coords: [22.5726, 88.3639] },
             { name: "Pune", country: "India", continent: "Asia", coords: [18.5204, 73.8567] },
-            { name: "Jharkhand", country: "India", continent: "Asia", coords: [23.35, 85.33] },
+            { name: "Patna", country: "India", continent: "Asia", coords: [23.35, 85.33] },
+            { name: "Istanbul", country: "Turkey", continent: "Asia", coords: [41.01, 28.98] },
             { name: "Asansol", country: "India", continent: "Asia", coords: [23.68, 86.99], hometown: true }
         ];
 
@@ -1026,7 +1402,6 @@
             const themeToggle = document.getElementById('themeToggle');
             const mobileThemeToggle = document.getElementById('mobileThemeToggle');
             
-            // Add animation class
             themeToggle.classList.add('theme-toggle-animation');
             mobileThemeToggle.classList.add('theme-toggle-animation');
             
@@ -1037,7 +1412,6 @@
             updateThemeIcons();
             updateMapForTheme();
             
-            // Remove animation class after animation completes
             setTimeout(() => {
                 themeToggle.classList.remove('theme-toggle-animation');
                 mobileThemeToggle.classList.remove('theme-toggle-animation');
@@ -1058,7 +1432,6 @@
         }
 
         function updateMapForTheme() {
-            // Update map tiles if we're using default map style
             if (currentMapStyle === 'default') {
                 setMapStyle('default');
             }
@@ -1081,7 +1454,6 @@
                 mobileMenuBtn.innerHTML = '<i class="fas fa-times"></i>';
             }
             
-            // Add a small delay for smoother transition
             setTimeout(() => {
                 map.invalidateSize();
             }, 300);
@@ -1092,7 +1464,6 @@
                 currentTileLayer.remove();
             }
 
-            // Remove/add satellite mode class
             document.body.classList.remove('satellite-mode');
             
             if (style === 'default') {
@@ -1119,7 +1490,6 @@
                 document.getElementById('mobileDefaultMapBtn')?.classList.remove('active');
             }
 
-            // Add smooth transition effect
             map.getContainer().style.opacity = '0';
             setTimeout(() => {
                 map.getContainer().style.opacity = '1';
@@ -1127,138 +1497,233 @@
         }
 
         function updateStats(filteredPlaces, continent) {
-            const uniqueCountries = [...new Set(filteredPlaces.map(place => place.country))];
+            const allPlaces = places.length;
+            const allCountries = [...new Set(places.map(p => p.country))].length;
             const continentName = continent === 'All' ? 'Global' : continent;
             
-            // Update desktop stats
-            document.getElementById('placesCount').textContent = filteredPlaces.length;
-            document.getElementById('countriesCount').textContent = uniqueCountries.length;
+            document.getElementById('placesCount').textContent = allPlaces;
+            document.getElementById('countriesCount').textContent = allCountries;
             document.getElementById('continentName').textContent = continentName;
             
-            // Update mobile stats
-            document.getElementById('mobileplacesCount').textContent = filteredPlaces.length;
-            document.getElementById('mobilecountriesCount').textContent = uniqueCountries.length;
+            document.getElementById('mobileplacesCount').textContent = allPlaces;
+            document.getElementById('mobilecountriesCount').textContent = allCountries;
             document.getElementById('mobilecontinentName').textContent = continentName;
+
+            updateCountriesTooltip([...new Set(places.map(p => p.country))], 'Global');
         }
 
-        function addMarkers(continent, initialLoad = false) {
-            currentMarkers.clearLayers();
-            currentContinent = continent;
-            const filteredPlaces = continent === 'All' ? places : places.filter(place => place.continent === continent);
+        function updateCountriesTooltip(countries, regionName) {
+            const desktopGrid = document.getElementById('countriesGrid');
+            const mobileGrid = document.getElementById('mobileCountriesGrid');
+            const desktopHeader = document.getElementById('tooltipHeader');
+            const mobileHeader = document.getElementById('mobileTooltipTitle');
 
+            const headerText = regionName === 'Global' ? 'Countries Visited' : `Countries in ${regionName}`;
+            desktopHeader.textContent = headerText;
+            mobileHeader.textContent = headerText;
+
+            const sortedCountries = countries.sort();
+
+            desktopGrid.innerHTML = '';
+            mobileGrid.innerHTML = '';
+
+            sortedCountries.forEach(country => {
+                const desktopItem = document.createElement('a');
+                desktopItem.className = 'country-item';
+                desktopItem.textContent = country;
+                desktopItem.href = '#';
+                desktopItem.dataset.country = country;
+                desktopGrid.appendChild(desktopItem);
+
+                const mobileItem = document.createElement('a');
+                mobileItem.className = 'mobile-country-item';
+                mobileItem.textContent = country;
+                mobileItem.href = '#';
+                mobileItem.dataset.country = country;
+                mobileGrid.appendChild(mobileItem);
+            });
+            
+            document.querySelectorAll('.country-item, .mobile-country-item').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const country = e.target.dataset.country;
+                    filterAndDisplayMarkers('Country', country);
+                    
+                    document.getElementById('countriesTooltip').classList.remove('show');
+                    document.getElementById('mobileCountriesTooltip').classList.remove('show');
+                });
+            });
+        }
+
+        function initializeCountriesTooltip() {
+            const desktopCountriesStat = document.querySelector('.navbar-desktop .countries-stat');
+            const mobileCountriesStat = document.querySelector('.mobile-stats .countries-stat');
+            const desktopTooltip = document.getElementById('countriesTooltip');
+            const mobileTooltip = document.getElementById('mobileCountriesTooltip');
+            const mobileTooltipClose = document.getElementById('mobileTooltipClose');
+
+            let desktopHoverTimeout;
+
+            if (desktopCountriesStat && desktopTooltip) {
+                desktopCountriesStat.addEventListener('mouseenter', () => {
+                    clearTimeout(desktopHoverTimeout);
+                    desktopTooltip.classList.add('show');
+                });
+
+                desktopCountriesStat.addEventListener('mouseleave', () => {
+                    desktopHoverTimeout = setTimeout(() => {
+                        desktopTooltip.classList.remove('show');
+                    }, 300);
+                });
+
+                desktopTooltip.addEventListener('mouseenter', () => {
+                    clearTimeout(desktopHoverTimeout);
+                });
+
+                desktopTooltip.addEventListener('mouseleave', () => {
+                    desktopTooltip.classList.remove('show');
+                });
+            }
+
+            if (mobileCountriesStat && mobileTooltip) {
+                mobileCountriesStat.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    mobileTooltip.classList.add('show');
+                });
+            }
+
+            if (mobileTooltipClose) {
+                mobileTooltipClose.addEventListener('click', () => {
+                    mobileTooltip.classList.remove('show');
+                });
+            }
+
+            document.addEventListener('click', (e) => {
+                if (mobileTooltip && !mobileTooltip.contains(e.target) && !e.target.closest('.countries-stat')) {
+                    mobileTooltip.classList.remove('show');
+                }
+            });
+
+            map.on('click', () => {
+                if (mobileTooltip) {
+                    mobileTooltip.classList.remove('show');
+                }
+            });
+        }
+
+        function filterAndDisplayMarkers(filterType, filterValue) {
+            currentMarkers.clearLayers();
+            let filteredPlaces = [];
+
+            if (filterType === 'Continent') {
+                currentContinent = filterValue;
+                filteredPlaces = filterValue === 'All' ? places : places.filter(place => place.continent === filterValue);
+
+                document.getElementById('countryFilterPill').style.display = 'none';
+                document.getElementById('mobileCountryFilterPill').style.display = 'none';
+
+                document.getElementById('regionStat').style.display = 'flex';
+                document.getElementById('continentFilterGroup').style.display = 'flex';
+                document.getElementById('mobileContinentFilterGroup').style.display = 'flex';
+
+                document.querySelectorAll('.btn[data-continent], .mobile-btn[data-continent]').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                document.querySelectorAll(`[data-continent="${filterValue}"]`).forEach(btn => btn.classList.add('active'));
+
+            } else if (filterType === 'Country') {
+                filteredPlaces = places.filter(place => place.country === filterValue);
+
+                document.getElementById('countryPillName').textContent = filterValue;
+                document.getElementById('countryFilterPill').style.display = 'flex';
+
+                document.getElementById('mobileCountryPillName').textContent = filterValue;
+                document.getElementById('mobileCountryFilterPill').style.display = 'flex';
+
+                document.getElementById('regionStat').style.display = 'none';
+                document.getElementById('continentFilterGroup').style.display = 'none';
+                document.getElementById('mobileContinentFilterGroup').style.display = 'none';
+            }
+            
             filteredPlaces.forEach(place => {
                 const isHometown = place.hometown === true;
                 const icon = isHometown ? hometownIcon : customIcon;
-                let popupContent = '';
-
-                if (isHometown) {
-                    popupContent = `
-                        <div class="popup-title">Santu's Hometown</div>
-                        <div class="popup-country">${place.name}, ${place.country}</div>
-                        <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place.name + ', ' + place.country)}" target="_blank" class="popup-link">
-                            <i class="fas fa-external-link-alt"></i>
-                            View on Google Maps
-                        </a>
-                    `;
-                } else {
-                    popupContent = `
-                        <div class="popup-title">${place.name}</div>
-                        <div class="popup-country">${place.country}</div>
-                        <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place.name + ', ' + place.country)}" target="_blank" class="popup-link">
-                            <i class="fas fa-external-link-alt"></i>
-                            View on Google Maps
-                        </a>
-                    `;
-                }
+                const popupContent = `
+                    <div class="popup-title">${isHometown ? 'Santu\'s Hometown' : place.name}</div>
+                    <div class="popup-country">${place.country}</div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place.name + ', ' + place.country)}" target="_blank" class="popup-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        View on Google Maps
+                    </a>
+                `;
                 
                 L.marker(place.coords, {icon: icon})
                     .bindPopup(popupContent)
                     .addTo(currentMarkers);
             });
 
-            // Only fit bounds on the initial load or when changing continents
-            if (initialLoad || continent !== 'All') {
-                if (filteredPlaces.length > 0) {
-                    const latLngs = filteredPlaces.map(place => place.coords);
-                    const bounds = L.latLngBounds(latLngs);
-                    map.fitBounds(bounds, { padding: [50, 50] });
-                }
+            if (filteredPlaces.length > 0) {
+                const latLngs = filteredPlaces.map(place => place.coords);
+                const bounds = L.latLngBounds(latLngs);
+                map.fitBounds(bounds, { padding: [50, 50], maxZoom: 8 });
             }
 
-            updateStats(filteredPlaces, continent);
+            updateStats(places, currentContinent);
         }
 
         function resetMapView() {
             const resetBtns = document.querySelectorAll('.reset-btn');
             
-            // Add active animation
             resetBtns.forEach(btn => {
                 btn.classList.add('active');
                 setTimeout(() => btn.classList.remove('active'), 200);
             });
+            
+            filterAndDisplayMarkers('Continent', 'All');
+        }
 
-            // Reset to show all places with proper padding
-            if (currentContinent === 'All') {
-                // Show all places with global view
-                const allLatLngs = places.map(place => place.coords);
-                const bounds = L.latLngBounds(allLatLngs);
-                map.fitBounds(bounds, { 
-                    padding: [80, 80],
-                    maxZoom: 6 // Prevent zooming in too much
-                });
-            } else {
-                // Fit bounds to current continent with better padding
-                const filteredPlaces = places.filter(place => place.continent === currentContinent);
-                if (filteredPlaces.length > 0) {
-                    const latLngs = filteredPlaces.map(place => place.coords);
-                    const bounds = L.latLngBounds(latLngs);
-                    map.fitBounds(bounds, { 
-                        padding: [60, 60],
-                        maxZoom: 8
-                    });
-                }
-            }
+        function resetCountryFilter() {
+            filterAndDisplayMarkers('Continent', 'All');
         }
 
         // Event listeners
         initializeTheme();
         setMapStyle('default');
 
-        // Theme toggle events
+        document.getElementById('desktopTitle')?.addEventListener('click', resetMapView);
+        document.getElementById('mobileTitle')?.addEventListener('click', resetMapView);
+
         document.getElementById('themeToggle').addEventListener('click', toggleTheme);
         document.getElementById('mobileThemeToggle').addEventListener('click', toggleTheme);
 
-        // Reset view events
         document.getElementById('resetViewBtn').addEventListener('click', resetMapView);
         document.getElementById('mobileResetViewBtn').addEventListener('click', resetMapView);
+        document.getElementById('countryPillCloseBtn').addEventListener('click', resetCountryFilter);
+        document.getElementById('mobileCountryPillCloseBtn').addEventListener('click', resetCountryFilter);
 
-        // Desktop map style buttons
+
         document.getElementById('defaultMapBtn')?.addEventListener('click', () => setMapStyle('default'));
         document.getElementById('satelliteMapBtn')?.addEventListener('click', () => setMapStyle('satellite'));
 
-        // Mobile map style buttons
         document.getElementById('mobileDefaultMapBtn')?.addEventListener('click', () => setMapStyle('default'));
         document.getElementById('mobileSatelliteMapBtn')?.addEventListener('click', () => setMapStyle('satellite'));
 
-        // Desktop continent filters
         document.querySelectorAll('.btn[data-continent]').forEach(button => {
             button.addEventListener('click', () => {
                 document.querySelectorAll('.btn[data-continent]').forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
-                addMarkers(button.dataset.continent);
+                filterAndDisplayMarkers('Continent', button.dataset.continent);
             });
         });
 
-        // Mobile continent filters
         document.querySelectorAll('.mobile-btn[data-continent]').forEach(button => {
             button.addEventListener('click', () => {
                 document.querySelectorAll('.mobile-btn[data-continent]').forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
-                addMarkers(button.dataset.continent);
+                filterAndDisplayMarkers('Continent', button.dataset.continent);
             });
         });
 
-        // Close mobile menu when map is touched
         map.on('click', () => {
             if (mobileControls.classList.contains('show')) {
                 mobileControls.classList.remove('show');
@@ -1267,17 +1732,15 @@
             }
         });
 
-        // Initialize
-        addMarkers('All', true); // Pass true to fit bounds on initial load
+        filterAndDisplayMarkers('Continent', 'All');
+        initializeCountriesTooltip();
 
-        // Handle screen orientation changes
         window.addEventListener('orientationchange', () => {
             setTimeout(() => {
                 map.invalidateSize();
             }, 100);
         });
 
-        // Handle system theme changes
         if (window.matchMedia) {
             const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
             mediaQuery.addEventListener('change', (e) => {
