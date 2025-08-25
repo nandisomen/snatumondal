@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journey - My Portfolio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;600&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Deep Slate, Deep Purple, Teal Palette */
+            --primary-bg: #1A1D23; /* Darker slate for better contrast */
+            --accent-1: #5F2C82; /* Deep Purple */
+            --accent-2: #49A09D; /* Teal */
+            --text-color: #F4F5F6;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Exo', sans-serif;
+            color: var(--text-color);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        body {
+            background: linear-gradient(135deg, 
+                var(--primary-bg) 0%, 
+                #252934 25%, 
+                #2A2D34 50%, 
+                #1F2329 75%, 
+                var(--primary-bg) 100%);
+            background-attachment: fixed;
+        }
+
+
+
+        .content {
+            z-index: 10;
+            padding: 3rem 4rem;
+            background: var(--glass-bg);
+            border-radius: 25px;
+            backdrop-filter: blur(15px);
+            box-shadow: 
+                0 8px 30px rgba(0, 0, 0, 0.4),
+                0 0 0 1px var(--glass-border),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            animation: fadeIn 1.5s ease-out;
+            position: relative;
+            border: 1px solid var(--glass-border);
+        }
+
+        .content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(95, 44, 130, 0.05) 0%, 
+                rgba(73, 160, 157, 0.05) 100%);
+            border-radius: 25px;
+            z-index: -1;
+        }
+        
+        .content h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            margin: 0 0 1rem;
+            text-transform: none;
+            letter-spacing: 3px;
+            background: linear-gradient(135deg, var(--text-color), var(--accent-2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: glowPulse 3s ease-in-out infinite alternate;
+            transition: transform 0.3s ease;
+        }
+
+        .content h1:hover {
+            transform: scale(1.02);
+        }
+
+        .content p {
+            font-size: clamp(1rem, 2vw, 1.4rem);
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            max-width: 500px;
+            opacity: 0.9;
+            animation: slideInFromBottom 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s backwards;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        /* Punchy Navigation Buttons */
+        .nav-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, 
+                rgba(73, 160, 157, 0.15) 0%, 
+                rgba(95, 44, 130, 0.15) 100%);
+            backdrop-filter: blur(15px);
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1.15rem;
+            font-weight: 600;
+            padding: 1.3rem 3rem;
+            border-radius: 18px;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 
+                0 6px 25px rgba(73, 160, 157, 0.2),
+                0 2px 8px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            position: relative;
+            border: 1px solid rgba(73, 160, 157, 0.25);
+            letter-spacing: 0.8px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(73, 160, 157, 0.4) 0%, 
+                rgba(95, 44, 130, 0.35) 100%);
+            border-radius: 18px;
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            z-index: -1;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 
+                0 12px 40px rgba(73, 160, 157, 0.35),
+                0 6px 20px rgba(95, 44, 130, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.25);
+            border-color: rgba(73, 160, 157, 0.5);
+            background: linear-gradient(135deg, 
+                rgba(73, 160, 157, 0.25) 0%, 
+                rgba(95, 44, 130, 0.25) 100%);
+        }
+
+        .nav-button:hover::before {
+            opacity: 1;
+        }
+
+        .nav-button:active {
+            transform: translateY(0) scale(1.02);
+            transition: transform 0.1s ease;
+        }
+
+        /* Enhanced Social Media Footer */
+        .footer {
+            position: fixed;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            z-index: 99;
+        }
+
+        .footer a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            color: rgba(244, 245, 246, 0.8);
+            font-size: 1.5rem;
+            text-decoration: none;
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.12) 0%, 
+                rgba(255, 255, 255, 0.08) 100%);
+            backdrop-filter: blur(15px);
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 4px 15px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .footer a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.2) 0%, 
+                rgba(255, 255, 255, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer a:hover::before {
+            opacity: 1;
+        }
+
+        .footer a:hover {
+            transform: translateY(-5px) scale(1.08);
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.2) 0%, 
+                rgba(255, 255, 255, 0.15) 100%);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 
+                0 10px 35px rgba(0, 0, 0, 0.25),
+                0 6px 20px rgba(255, 255, 255, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .footer a.instagram:hover {
+            color: #E1306C;
+            background: linear-gradient(135deg, 
+                rgba(225, 48, 108, 0.25) 0%, 
+                rgba(225, 48, 108, 0.15) 100%);
+            border-color: rgba(225, 48, 108, 0.4);
+            box-shadow: 
+                0 10px 35px rgba(225, 48, 108, 0.3),
+                0 6px 20px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .footer a.facebook:hover {
+            color: #1877F2;
+            background: linear-gradient(135deg, 
+                rgba(24, 119, 242, 0.25) 0%, 
+                rgba(24, 119, 242, 0.15) 100%);
+            border-color: rgba(24, 119, 242, 0.4);
+            box-shadow: 
+                0 10px 35px rgba(24, 119, 242, 0.3),
+                0 6px 20px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .footer a.youtube:hover {
+            color: #FF0000;
+            background: linear-gradient(135deg, 
+                rgba(255, 0, 0, 0.25) 0%, 
+                rgba(255, 0, 0, 0.15) 100%);
+            border-color: rgba(255, 0, 0, 0.4);
+            box-shadow: 
+                0 10px 35px rgba(255, 0, 0, 0.3),
+                0 6px 20px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        /* Keyframe animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInFromBottom {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 0.9; }
+        }
+
+        @keyframes glowPulse {
+            from { 
+                filter: drop-shadow(0 0 5px rgba(73, 160, 157, 0.3)); 
+            }
+            to { 
+                filter: drop-shadow(0 0 15px rgba(95, 44, 130, 0.5)); 
+            }
+        }
+
+        @keyframes floatingOrbs {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(10px, -10px) rotate(90deg); }
+            50% { transform: translate(-5px, 10px) rotate(180deg); }
+            75% { transform: translate(-10px, -5px) rotate(270deg); }
+        }
+
+        @keyframes backgroundShift {
+            0% { background-position: 0 0, 0 30px, 30px -30px, -30px 0px; }
+            100% { background-position: 60px 60px, 60px 90px, 90px 30px, 30px 60px; }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .content {
+                padding: 2rem 2.5rem;
+                margin: 1rem;
+            }
+            
+            .nav-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .nav-button {
+                width: 200px;
+            }
+
+            .footer {
+                gap: 1rem;
+            }
+
+            .footer a {
+                width: 52px;
+                height: 52px;
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-container"></div>
+
+    <div class="content">
+        <h1>Santu's<br>JOURNEY</h1>
+        <p>A new perspective on travel and adventure.</p>
+        <div class="nav-buttons">
+            <a href="travel.html" class="nav-button">Travel Map</a>
+            <a href="flights.html" class="nav-button">Sky Map</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <a href="https://www.instagram.com/shades_of_santu/" target="_blank" class="instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/santu.mondal.326052/" target="_blank" class="facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.youtube.com/@shadesofsantu" target="_blank" class="youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
+</body>
+</html>

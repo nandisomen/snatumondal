@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>My Santu's travel journey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin="" />
+
+    <style>
+        :root {
+            --bg-primary: #fafbfc;
+            --bg-secondary: #ffffff;
+            --bg-tertiary: #f4f6f8;
+            --bg-popup: rgba(255, 255, 255, 0.98);
+            --text-primary: #1a202c;
+            --text-secondary: #4a5568;
+            --text-muted: #718096;
+            --border-light: rgba(0, 0, 0, 0.06);
+            --border-medium: rgba(0, 0, 0, 0.12);
+            --shadow-light: rgba(0, 0, 0, 0.08);
+            --shadow-medium: rgba(0, 0, 0, 0.12);
+            --accent: #4f7df3;
+            --accent-hover: #3b82f6;
+            --accent-light: #f0f4ff;
+            --accent-lighter: #e6edff;
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #0a0e1a;
+            --bg-secondary: #151b2e;
+            --bg-tertiary: #1f2937;
+            --bg-popup: rgba(21, 27, 46, 0.95);
+            --text-primary: #f1f5f9;
+            --text-secondary: #e2e8f0;
+            --text-muted: #94a3b8;
+            --border-light: rgba(148, 163, 184, 0.15);
+            --border-medium: rgba(148, 163, 184, 0.25);
+            --shadow-light: rgba(0, 0, 0, 0.4);
+            --shadow-medium: rgba(0, 0, 0, 0.6);
+            --accent: #60a5fa;
+            --accent-hover: #93c5fd;
+            --accent-light: rgba(96, 165, 250, 0.15);
+            --accent-lighter: rgba(96, 165, 250, 0.25);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            background: var(--bg-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Desktop Navigation Bar */
+        .navbar-desktop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: var(--bg-popup);
+            backdrop-filter: blur(25px) saturate(150%);
+            border-bottom: 1px solid var(--border-light);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+            transition: all 0.3s ease;
+            box-shadow: 0 1px 3px var(--shadow-light);
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-logo i {
+            color: var(--accent);
+            font-size: 20px;
+        }
+
+        .nav-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: -0.025em;
+        }
+
+        .nav-stats {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-left: 32px;
+        }
+
+        .stat {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .stat-number {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .nav-center {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .filter-label {
+            font-size: 13px;
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-right: 4px;
+        }
+
+        .btn-group {
+            display: flex;
+            background: var(--bg-tertiary);
+            border-radius: 10px;
+            padding: 3px;
+            transition: background-color 0.3s ease;
+            border: 1px solid var(--border-light);
+            box-shadow: 0 1px 2px var(--shadow-light);
+        }
+
+        .btn {
+            padding: 8px 14px;
+            font-size: 13px;
+            font-weight: 500;
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            border-radius: 7px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-lighter) 100%);
+            border-radius: 7px;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+            z-index: -1;
+        }
+
+        .btn.active {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            box-shadow: 0 2px 4px var(--shadow-light), 0 1px 0px rgba(255, 255, 255, 0.8) inset;
+            border: 1px solid var(--border-light);
+            transform: translateY(-0.5px);
+        }
+
+        .btn:hover:not(.active) {
+            color: var(--text-primary);
+            transform: translateY(-0.5px);
+        }
+
+        .btn:hover:not(.active)::before {
+            opacity: 0.5;
+        }
+
+        .icon-btn {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-light);
+            color: var(--text-secondary);
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            font-size: 14px;
+            box-shadow: 0 1px 2px var(--shadow-light);
+            position: relative;
+        }
+
+        .icon-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+            border-radius: 10px;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+            z-index: -1;
+        }
+
+        .icon-btn:hover {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px var(--shadow-light);
+            border-color: var(--border-medium);
+        }
+
+        .icon-btn.active {
+            background: var(--accent);
+            color: white;
+            box-shadow: 0 2px 8px rgba(79, 125, 243, 0.3);
+            border-color: var(--accent);
+        }
+
+        .icon-btn.active::before {
+            opacity: 1;
+        }
+
+        /* Mobile Navigation Bar */
+        .navbar-mobile {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--bg-popup);
+            backdrop-filter: blur(25px) saturate(150%);
+            border-bottom: 1px solid var(--border-light);
+            z-index: 1000;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            box-shadow: 0 1px 3px var(--shadow-light);
+        }
+
+        .mobile-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
+            height: 52px;
+        }
+
+        .mobile-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .mobile-header-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .mobile-icon-btn {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-light);
+            color: var(--text-secondary);
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            font-size: 13px;
+            box-shadow: 0 1px 2px var(--shadow-light);
+        }
+
+        .mobile-icon-btn:hover {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            transform: translateY(-0.5px);
+            box-shadow: 0 2px 4px var(--shadow-light);
+        }
+
+        .mobile-menu-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 18px;
+            cursor: pointer;
+            padding: 4px;
+            transition: color 0.2s ease;
+        }
+
+        .mobile-controls {
+            display: none;
+            padding: 12px 16px;
+            background: var(--bg-primary);
+            border-top: 1px solid var(--border-light);
+        }
+
+        .mobile-controls.show {
+            display: block;
+        }
+
+        .mobile-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 16px;
+            padding: 14px 12px;
+            background: var(--bg-secondary);
+            border-radius: 14px;
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px var(--shadow-light);
+        }
+
+        .mobile-stat {
+            text-align: center;
+        }
+
+        .mobile-stat-number {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+            display: block;
+        }
+
+        .mobile-stat-label {
+            font-size: 11px;
+            color: var(--text-secondary);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 2px;
+        }
+
+        .mobile-filters {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .mobile-filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .mobile-filter-label {
+            font-size: 12px;
+            color: var(--text-secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .mobile-btn-group {
+            display: flex;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 4px;
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px var(--shadow-light);
+        }
+
+        .mobile-btn {
+            flex: 1;
+            padding: 12px 16px;
+            font-size: 14px;
+            font-weight: 500;
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            position: relative;
+        }
+
+        .mobile-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+            border-radius: 8px;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+            z-index: -1;
+        }
+
+        .mobile-btn.active {
+            background: var(--accent);
+            color: white;
+            box-shadow: 0 2px 6px rgba(79, 125, 243, 0.3);
+            transform: translateY(-0.5px);
+        }
+
+        .mobile-btn.active::before {
+            opacity: 1;
+        }
+
+        /* Map Container */
+        .map-container {
+            position: absolute;
+            top: 60px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        #map {
+            height: 100%;
+            width: 100%;
+            transition: filter 0.3s ease;
+        }
+
+        [data-theme="dark"] #map {
+            filter: brightness(1.0) contrast(1.0) saturate(0.8);
+        }
+
+        /* Satellite mode enhancements */
+        .satellite-mode #map {
+            filter: brightness(1.0) contrast(1.0) saturate(1.1) !important;
+        }
+
+        [data-theme="dark"].satellite-mode #map {
+            filter: brightness(1.0) contrast(1.1) saturate(1.1) !important;
+        }
+
+        /* Custom Leaflet Styling */
+        .leaflet-popup-content-wrapper {
+            border-radius: 18px;
+            box-shadow: 0 15px 35px var(--shadow-medium);
+            border: 3px solid var(--border-light);
+            background: var(--bg-secondary) !important;
+            transition: all 0.3s ease;
+        }
+
+        [data-theme="dark"] .leaflet-popup-content-wrapper {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Enhanced satellite mode popups */
+        .satellite-mode .leaflet-popup-content-wrapper {
+            background: rgba(0, 0, 0, 0.85) !important;
+            backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .satellite-mode .popup-title {
+            color: #ffffff;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        .satellite-mode .popup-country {
+            color: #e2e8f0;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        .satellite-mode .popup-link {
+            background: rgba(96, 165, 250, 0.9);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            text-shadow: none;
+            backdrop-filter: blur(10px);
+        }
+
+        .satellite-mode .popup-link:hover {
+            background: rgba(147, 197, 253, 0.9);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(96, 165, 250, 0.4);
+        }
+
+        .leaflet-popup-content {
+            font-family: 'Inter', sans-serif;
+            margin: 16px;
+            line-height: 1.5;
+            min-width: 200px;
+        }
+
+        .popup-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .popup-country {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .popup-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 12px;
+            background: var(--accent-light);
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .popup-link:hover {
+            background: var(--accent-lighter);
+            color: var(--accent-hover);
+        }
+
+        .leaflet-popup-tip {
+            background: var(--bg-secondary) !important;
+            border: 1px solid var(--border-light) !important;
+        }
+
+        /* Touch-friendly markers on mobile */
+        .leaflet-marker-icon {
+            transition: transform 0.2s ease;
+        }
+
+        /* Enhanced marker interactions */
+        .satellite-mode .leaflet-marker-icon {
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8)) brightness(1.1);
+            transition: all 0.2s ease;
+        }
+
+        .satellite-mode .leaflet-marker-icon:hover {
+            transform: scale(1.1);
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.9)) brightness(1.2);
+        }
+
+        /* Satellite mode UI enhancements */
+        .satellite-mode .navbar-desktop,
+        .satellite-mode .navbar-mobile {
+            background: rgba(0, 0, 0, 0.7) !important;
+            backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .satellite-mode .mobile-controls {
+            background: rgba(0, 0, 0, 0.8) !important;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .satellite-mode .nav-title,
+        .satellite-mode .mobile-title,
+        .satellite-mode .stat-number,
+        .satellite-mode .mobile-stat-number {
+            color: white !important;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        .satellite-mode .stat-label,
+        .satellite-mode .mobile-stat-label,
+        .satellite-mode .filter-label,
+        .satellite-mode .mobile-filter-label {
+            color: #e2e8f0 !important;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        .satellite-mode .btn,
+        .satellite-mode .mobile-btn {
+            color: #e2e8f0 !important;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        .satellite-mode .btn.active,
+        .satellite-mode .mobile-btn.active {
+            background: rgba(96, 165, 250, 0.9) !important;
+            color: white !important;
+            box-shadow: 0 2px 8px rgba(96, 165, 250, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .satellite-mode .btn-group,
+        .satellite-mode .mobile-btn-group,
+        .satellite-mode .mobile-stats {
+            background: rgba(0, 0, 0, 0.6) !important;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .satellite-mode .icon-btn,
+        .satellite-mode .mobile-icon-btn {
+            background: rgba(0, 0, 0, 0.6) !important;
+            color: #e2e8f0 !important;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .satellite-mode .icon-btn:hover,
+        .satellite-mode .mobile-icon-btn:hover {
+            background: rgba(96, 165, 250, 0.8) !important;
+            color: white !important;
+            box-shadow: 0 4px 12px rgba(96, 165, 250, 0.4);
+        }
+
+        /* Dark mode adjustments for map controls */
+        [data-theme="dark"] .leaflet-control-layers,
+        [data-theme="dark"] .leaflet-control-zoom {
+            background: var(--bg-secondary) !important;
+            border: 1px solid var(--border-light) !important;
+            box-shadow: 0 4px 12px var(--shadow-light) !important;
+        }
+
+        [data-theme="dark"] .leaflet-control-zoom a,
+        [data-theme="dark"] .leaflet-control-layers-toggle {
+            background: var(--bg-secondary) !important;
+            color: var(--text-primary) !important;
+            border-bottom: 1px solid var(--border-light) !important;
+        }
+
+        [data-theme="dark"] .leaflet-control-attribution {
+            background: var(--bg-secondary) !important;
+            color: var(--text-secondary) !important;
+            border: 1px solid var(--border-light) !important;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar-desktop {
+                display: none;
+            }
+            
+            .navbar-mobile {
+                display: flex;
+            }
+            
+            .map-container {
+                top: 52px;
+            }
+
+            /* Ensure map fills mobile screen properly */
+            .map-container.menu-open {
+                top: 180px;
+            }
+
+            /* Better touch targets for mobile */
+            .leaflet-control-layers,
+            .leaflet-control-zoom {
+                display: none !important;
+            }
+
+            /* Improve popup on mobile */
+            .leaflet-popup-content {
+                margin: 12px;
+                min-width: 250px;
+            }
+
+            .popup-title {
+                font-size: 18px;
+            }
+
+            .popup-country {
+                font-size: 15px;
+            }
+
+            .popup-link {
+                padding: 12px 16px;
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .mobile-header {
+                padding: 10px 12px;
+            }
+
+            .mobile-controls {
+                padding: 12px;
+            }
+
+            .mobile-stats {
+                padding: 8px;
+            }
+
+            .mobile-stat-number {
+                font-size: 16px;
+            }
+
+            .mobile-btn {
+                padding: 8px 12px;
+                font-size: 13px;
+            }
+
+            /* Compact layout for very small screens */
+            .nav-title {
+                font-size: 16px;
+            }
+        }
+
+        /* Landscape mode adjustments for mobile */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .map-container {
+                top: 52px;
+            }
+            
+            .map-container.menu-open {
+                top: 140px;
+            }
+
+            .mobile-stats {
+                margin-bottom: 8px;
+                padding: 8px;
+            }
+        }
+
+        /* High DPI displays */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .leaflet-marker-icon {
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: crisp-edges;
+            }
+        }
+
+        /* Animation for theme toggle */
+        .theme-toggle-animation {
+            animation: themeSwitch 0.3s ease-in-out;
+        }
+
+        @keyframes themeSwitch {
+            0% { transform: rotate(0deg); }
+            50% { transform: rotate(180deg) scale(0.9); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Reset button specific styles */
+        .reset-btn {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reset-btn:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar-desktop">
+        <div class="nav-left">
+            <div class="nav-logo">
+                <i class="fas fa-map-marked-alt"></i>
+                <span class="nav-title">Santu's travel journey</span>
+            </div>
+            
+            <div class="nav-stats">
+                <div class="stat">
+                    <span class="stat-number" id="placesCount">56</span>
+                    <span class="stat-label">places</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="countriesCount">17</span>
+                    <span class="stat-label">countries</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="continentName">Global</span>
+                    <span class="stat-label">region</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-center">
+            <div class="filter-group">
+                <span class="filter-label">Region:</span>
+                <div class="btn-group">
+                    <button class="btn active" data-continent="All">All</button>
+                    <button class="btn" data-continent="Europe">Europe</button>
+                    <button class="btn" data-continent="Asia">Asia</button>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <span class="filter-label">View:</span>
+                <div class="btn-group">
+                    <button class="btn active" id="defaultMapBtn">Map</button>
+                    <button class="btn" id="satelliteMapBtn">Satellite</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-right">
+            <a href="map.html"><button class="icon-btn reset-btn" id="resetViewBtn" title="Reset Map View">
+                <i class="fas fa-home"></i>
+            </button></a>
+            
+            <button class="icon-btn" id="themeToggle" title="Toggle Dark Mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <nav class="navbar-mobile">
+        <div class="mobile-header">
+            <div class="nav-logo">
+                <i class="fas fa-map-marked-alt"></i>
+                <span class="mobile-title">My travel Journey</span>
+            </div>
+            <div class="mobile-header-right">
+                <button class="mobile-icon-btn reset-btn" id="mobileResetViewBtn" title="Reset View">
+                    <i class="fas fa-home"></i>
+                </button>
+                <button class="mobile-icon-btn" id="mobileThemeToggle" title="Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="mobile-controls" id="mobileControls">
+            <div class="mobile-stats">
+                <div class="mobile-stat">
+                    <span class="mobile-stat-number" id="mobileplacesCount">56</span>
+                    <span class="mobile-stat-label">Places</span>
+                </div>
+                <div class="mobile-stat">
+                    <span class="mobile-stat-number" id="mobilecountriesCount">17</span>
+                    <span class="mobile-stat-label">Countries</span>
+                </div>
+                <div class="mobile-stat">
+                    <span class="mobile-stat-number" id="mobilecontinentName">Global</span>
+                    <span class="mobile-stat-label">Region</span>
+                </div>
+            </div>
+
+            <div class="mobile-filters">
+                <div class="mobile-filter-group">
+                    <span class="mobile-filter-label">Region</span>
+                    <div class="mobile-btn-group">
+                        <button class="mobile-btn active" data-continent="All">All</button>
+                        <button class="mobile-btn" data-continent="Europe">Europe</button>
+                        <button class="mobile-btn" data-continent="Asia">Asia</button>
+                    </div>
+                </div>
+
+                <div class="mobile-filter-group">
+                    <span class="mobile-filter-label">Map View</span>
+                    <div class="mobile-btn-group">
+                        <button class="mobile-btn active" id="mobileDefaultMapBtn">Standard</button>
+                        <button class="mobile-btn" id="mobileSatelliteMapBtn">Satellite</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="map-container" id="mapContainer">
+        <div id="map"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
+
+    <script>
+        // Initialize theme
+        let currentTheme = 'light';
+        
+        // Initialize the map
+        const map = L.map('map', {
+            zoomControl: false,
+            attributionControl: false, // Disable default attribution
+            touchZoom: true,
+            doubleClickZoom: true,
+            scrollWheelZoom: true,
+            boxZoom: false,
+            keyboard: false
+        }).setView([49.8175, 15.4749], 6);
+
+        let currentMarkers = L.layerGroup().addTo(map);
+        let currentTileLayer = null;
+        let initialView = { center: [40.0, 20.0], zoom: 3 };
+        let currentMapStyle = 'default';
+        let currentContinent = 'All';
+
+        // Map styles
+        const defaultMap = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            attribution: ''
+        });
+
+        const defaultMapDark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: ''
+        });
+
+        const satelliteMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: ''
+        });
+
+        // Custom marker icons
+        const customIcon = L.icon({
+            iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+            iconSize: [22, 36],
+            iconAnchor: [11, 36],
+            popupAnchor: [0, -36],
+            shadowSize: [36, 36]
+        });
+
+        const hometownIcon = L.icon({
+            iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+            iconSize: [22, 36],
+            iconAnchor: [11, 36],
+            popupAnchor: [0, -36],
+            shadowSize: [36, 36]
+        });
+
+        // Places data
+        const places = [
+            { name: "Prague", country: "Czech Republic", continent: "Europe", coords: [50.0755, 14.4378] },
+            { name: "Olomouc", country: "Czech Republic", continent: "Europe", coords: [49.5938, 17.2509] },
+            { name: "Opava", country: "Czech Republic", continent: "Europe", coords: [49.939, 17.902] },
+            { name: "Ostrava", country: "Czech Republic", continent: "Europe", coords: [49.8209, 18.2625] },
+            { name: "Bohemian Switzerland", country: "Czech Republic", continent: "Europe", coords: [50.884, 14.417] },
+            { name: "Kutná Hora", country: "Czech Republic", continent: "Europe", coords: [49.9486, 15.2755] },
+            { name: "Radkov", country: "Czech Republic", continent: "Europe", coords: [49.803, 17.652] },
+            { name: "Jevany", country: "Czech Republic", continent: "Europe", coords: [49.957, 14.805] },
+            { name: "Roudnice nad Labem", country: "Czech Republic", continent: "Europe", coords: [50.428, 14.26] },
+            { name: "Tábor", country: "Czech Republic", continent: "Europe", coords: [49.414, 14.659] },
+            { name: "Jindřichův Hradec", country: "Czech Republic", continent: "Europe", coords: [49.143, 15.006] },
+            { name: "Červená Lhota", country: "Czech Republic", continent: "Europe", coords: [49.309, 14.885] },
+            { name: "Příbram", country: "Czech Republic", continent: "Europe", coords: [49.686, 14.004] },
+            { name: "Karlovy Vary", country: "Czech Republic", continent: "Europe", coords: [50.231, 12.871] },
+            { name: "Plzeň", country: "Czech Republic", continent: "Europe", coords: [49.747, 13.377] },
+            { name: "Geneva", country: "Switzerland", continent: "Europe", coords: [46.2044, 6.1432] },
+            { name: "Zuberec", country: "Slovakia", continent: "Europe", coords: [49.255, 19.643] },
+            { name: "Bratislava", country: "Slovakia", continent: "Europe", coords: [48.1486, 17.1077] },
+            { name: "Brussels", country: "Belgium", continent: "Europe", coords: [50.8503, 4.3517] },
+            { name: "Bruges", country: "Belgium", continent: "Europe", coords: [51.2093, 3.2247] },
+            { name: "Amsterdam", country: "Netherlands", continent: "Europe", coords: [52.3676, 4.9041] },
+            { name: "Berlin", country: "Germany", continent: "Europe", coords: [52.5200, 13.4050] },
+            { name: "Hamburg", country: "Germany", continent: "Europe", coords: [53.5511, 9.9937] },
+            { name: "Aachen", country: "Germany", continent: "Europe", coords: [50.7753, 6.0839] },
+            { name: "Frankfurt", country: "Germany", continent: "Europe", coords: [50.1109, 8.6821] },
+            { name: "Munich", country: "Germany", continent: "Europe", coords: [48.1351, 11.5820] },
+            { name: "Bergamo", country: "Italy", continent: "Europe", coords: [45.6983, 9.6775] },
+            { name: "Milan", country: "Italy", continent: "Europe", coords: [45.4642, 9.1900] },
+            { name: "Venice", country: "Italy", continent: "Europe", coords: [45.4408, 12.3155] },
+            { name: "Palermo", country: "Italy", continent: "Europe", coords: [38.1157, 13.3615] },
+            { name: "Valencia", country: "Spain", continent: "Europe", coords: [39.4699, -0.3763] },
+            { name: "Madrid", country: "Spain", continent: "Europe", coords: [40.4168, -3.7038] },
+            { name: "London", country: "United Kingdom", continent: "Europe", coords: [51.5074, -0.1278] },
+            { name: "Durham", country: "United Kingdom", continent: "Europe", coords: [54.7766, -1.5758] },
+            { name: "Edinburgh", country: "United Kingdom", continent: "Europe", coords: [55.9533, -3.1883] },
+            { name: "Inverness", country: "United Kingdom", continent: "Europe", coords: [57.4778, -4.2247] },
+            { name: "Portree", country: "United Kingdom", continent: "Europe", coords: [57.4109, -6.1956] },
+            { name: "Isle of Skye", country: "United Kingdom", continent: "Europe", coords: [57.3822, -6.3117] },
+            { name: "Peebles", country: "United Kingdom", continent: "Europe", coords: [55.654, -3.194] },
+            { name: "Krakow", country: "Poland", continent: "Europe", coords: [50.0647, 19.9450] },
+            { name: "Auschwitz-Birkenau", country: "Poland", continent: "Europe", coords: [50.0343, 19.2093] },
+            { name: "Lisbon", country: "Portugal", continent: "Europe", coords: [38.7223, -9.1393] },
+            { name: "Vienna", country: "Austria", continent: "Europe", coords: [48.2082, 16.3738] },
+            { name: "Belfast", country: "Northern Ireland", continent: "Europe", coords: [54.5973, -5.9301] },
+            { name: "Budapest", country: "Hungary", continent: "Europe", coords: [47.4979, 19.0402] },
+            { name: "Paris", country: "France", continent: "Europe", coords: [48.8566, 2.3522] },
+            { name: "Zurich", country: "Switzerland", continent: "Europe", coords: [47.3769, 8.5417] },
+            { name: "Qatar", country: "Qatar", continent: "Asia", coords: [25.2854, 51.5310] },
+            { name: "New Delhi", country: "India", continent: "Asia", coords: [28.7041, 77.1025] },
+            { name: "Chennai", country: "India", continent: "Asia", coords: [13.08, 80.27] },
+            { name: "Uttarakhand", country: "India", continent: "Asia", coords: [30.0668, 79.02] },
+            { name: "Mumbai", country: "India", continent: "Asia", coords: [19.076, 72.8777] },
+            { name: "Kolkata", country: "India", continent: "Asia", coords: [22.5726, 88.3639] },
+            { name: "Pune", country: "India", continent: "Asia", coords: [18.5204, 73.8567] },
+            { name: "Jharkhand", country: "India", continent: "Asia", coords: [23.35, 85.33] },
+            { name: "Asansol", country: "India", continent: "Asia", coords: [23.68, 86.99], hometown: true }
+        ];
+
+        // Theme management
+        function initializeTheme() {
+            const savedTheme = localStorage.getItem('mapTheme') || 'light';
+            currentTheme = savedTheme;
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            updateThemeIcons();
+        }
+
+        function toggleTheme() {
+            const themeToggle = document.getElementById('themeToggle');
+            const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+            
+            // Add animation class
+            themeToggle.classList.add('theme-toggle-animation');
+            mobileThemeToggle.classList.add('theme-toggle-animation');
+            
+            currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            localStorage.setItem('mapTheme', currentTheme);
+            
+            updateThemeIcons();
+            updateMapForTheme();
+            
+            // Remove animation class after animation completes
+            setTimeout(() => {
+                themeToggle.classList.remove('theme-toggle-animation');
+                mobileThemeToggle.classList.remove('theme-toggle-animation');
+            }, 300);
+        }
+
+        function updateThemeIcons() {
+            const desktopIcon = document.querySelector('#themeToggle i');
+            const mobileIcon = document.querySelector('#mobileThemeToggle i');
+            
+            if (currentTheme === 'dark') {
+                desktopIcon.className = 'fas fa-sun';
+                mobileIcon.className = 'fas fa-sun';
+            } else {
+                desktopIcon.className = 'fas fa-moon';
+                mobileIcon.className = 'fas fa-moon';
+            }
+        }
+
+        function updateMapForTheme() {
+            // Update map tiles if we're using default map style
+            if (currentMapStyle === 'default') {
+                setMapStyle('default');
+            }
+        }
+
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileControls = document.getElementById('mobileControls');
+        const mapContainer = document.getElementById('mapContainer');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isOpen = mobileControls.classList.contains('show');
+            if (isOpen) {
+                mobileControls.classList.remove('show');
+                mapContainer.classList.remove('menu-open');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            } else {
+                mobileControls.classList.add('show');
+                mapContainer.classList.add('menu-open');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-times"></i>';
+            }
+            
+            // Add a small delay for smoother transition
+            setTimeout(() => {
+                map.invalidateSize();
+            }, 300);
+        });
+
+        function setMapStyle(style) {
+            if (currentTileLayer) {
+                currentTileLayer.remove();
+            }
+
+            // Remove/add satellite mode class
+            document.body.classList.remove('satellite-mode');
+            
+            if (style === 'default') {
+                currentMapStyle = 'default';
+                if (currentTheme === 'dark') {
+                    defaultMapDark.addTo(map);
+                    currentTileLayer = defaultMapDark;
+                } else {
+                    defaultMap.addTo(map);
+                    currentTileLayer = defaultMap;
+                }
+                document.getElementById('defaultMapBtn')?.classList.add('active');
+                document.getElementById('satelliteMapBtn')?.classList.remove('active');
+                document.getElementById('mobileDefaultMapBtn')?.classList.add('active');
+                document.getElementById('mobileSatelliteMapBtn')?.classList.remove('active');
+            } else {
+                currentMapStyle = 'satellite';
+                document.body.classList.add('satellite-mode');
+                satelliteMap.addTo(map);
+                currentTileLayer = satelliteMap;
+                document.getElementById('satelliteMapBtn')?.classList.add('active');
+                document.getElementById('defaultMapBtn')?.classList.remove('active');
+                document.getElementById('mobileSatelliteMapBtn')?.classList.add('active');
+                document.getElementById('mobileDefaultMapBtn')?.classList.remove('active');
+            }
+
+            // Add smooth transition effect
+            map.getContainer().style.opacity = '0';
+            setTimeout(() => {
+                map.getContainer().style.opacity = '1';
+            }, 150);
+        }
+
+        function updateStats(filteredPlaces, continent) {
+            const uniqueCountries = [...new Set(filteredPlaces.map(place => place.country))];
+            const continentName = continent === 'All' ? 'Global' : continent;
+            
+            // Update desktop stats
+            document.getElementById('placesCount').textContent = filteredPlaces.length;
+            document.getElementById('countriesCount').textContent = uniqueCountries.length;
+            document.getElementById('continentName').textContent = continentName;
+            
+            // Update mobile stats
+            document.getElementById('mobileplacesCount').textContent = filteredPlaces.length;
+            document.getElementById('mobilecountriesCount').textContent = uniqueCountries.length;
+            document.getElementById('mobilecontinentName').textContent = continentName;
+        }
+
+        function addMarkers(continent, initialLoad = false) {
+            currentMarkers.clearLayers();
+            currentContinent = continent;
+            const filteredPlaces = continent === 'All' ? places : places.filter(place => place.continent === continent);
+
+            filteredPlaces.forEach(place => {
+                const isHometown = place.hometown === true;
+                const icon = isHometown ? hometownIcon : customIcon;
+                let popupContent = '';
+
+                if (isHometown) {
+                    popupContent = `
+                        <div class="popup-title">Santu's Hometown</div>
+                        <div class="popup-country">${place.name}, ${place.country}</div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place.name + ', ' + place.country)}" target="_blank" class="popup-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            View on Google Maps
+                        </a>
+                    `;
+                } else {
+                    popupContent = `
+                        <div class="popup-title">${place.name}</div>
+                        <div class="popup-country">${place.country}</div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place.name + ', ' + place.country)}" target="_blank" class="popup-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            View on Google Maps
+                        </a>
+                    `;
+                }
+                
+                L.marker(place.coords, {icon: icon})
+                    .bindPopup(popupContent)
+                    .addTo(currentMarkers);
+            });
+
+            // Only fit bounds on the initial load or when changing continents
+            if (initialLoad || continent !== 'All') {
+                if (filteredPlaces.length > 0) {
+                    const latLngs = filteredPlaces.map(place => place.coords);
+                    const bounds = L.latLngBounds(latLngs);
+                    map.fitBounds(bounds, { padding: [50, 50] });
+                }
+            }
+
+            updateStats(filteredPlaces, continent);
+        }
+
+        function resetMapView() {
+            const resetBtns = document.querySelectorAll('.reset-btn');
+            
+            // Add active animation
+            resetBtns.forEach(btn => {
+                btn.classList.add('active');
+                setTimeout(() => btn.classList.remove('active'), 200);
+            });
+
+            // Reset to show all places with proper padding
+            if (currentContinent === 'All') {
+                // Show all places with global view
+                const allLatLngs = places.map(place => place.coords);
+                const bounds = L.latLngBounds(allLatLngs);
+                map.fitBounds(bounds, { 
+                    padding: [80, 80],
+                    maxZoom: 6 // Prevent zooming in too much
+                });
+            } else {
+                // Fit bounds to current continent with better padding
+                const filteredPlaces = places.filter(place => place.continent === currentContinent);
+                if (filteredPlaces.length > 0) {
+                    const latLngs = filteredPlaces.map(place => place.coords);
+                    const bounds = L.latLngBounds(latLngs);
+                    map.fitBounds(bounds, { 
+                        padding: [60, 60],
+                        maxZoom: 8
+                    });
+                }
+            }
+        }
+
+        // Event listeners
+        initializeTheme();
+        setMapStyle('default');
+
+        // Theme toggle events
+        document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+        document.getElementById('mobileThemeToggle').addEventListener('click', toggleTheme);
+
+        // Reset view events
+        document.getElementById('resetViewBtn').addEventListener('click', resetMapView);
+        document.getElementById('mobileResetViewBtn').addEventListener('click', resetMapView);
+
+        // Desktop map style buttons
+        document.getElementById('defaultMapBtn')?.addEventListener('click', () => setMapStyle('default'));
+        document.getElementById('satelliteMapBtn')?.addEventListener('click', () => setMapStyle('satellite'));
+
+        // Mobile map style buttons
+        document.getElementById('mobileDefaultMapBtn')?.addEventListener('click', () => setMapStyle('default'));
+        document.getElementById('mobileSatelliteMapBtn')?.addEventListener('click', () => setMapStyle('satellite'));
+
+        // Desktop continent filters
+        document.querySelectorAll('.btn[data-continent]').forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelectorAll('.btn[data-continent]').forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                addMarkers(button.dataset.continent);
+            });
+        });
+
+        // Mobile continent filters
+        document.querySelectorAll('.mobile-btn[data-continent]').forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelectorAll('.mobile-btn[data-continent]').forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                addMarkers(button.dataset.continent);
+            });
+        });
+
+        // Close mobile menu when map is touched
+        map.on('click', () => {
+            if (mobileControls.classList.contains('show')) {
+                mobileControls.classList.remove('show');
+                mapContainer.classList.remove('menu-open');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+
+        // Initialize
+        addMarkers('All', true); // Pass true to fit bounds on initial load
+
+        // Handle screen orientation changes
+        window.addEventListener('orientationchange', () => {
+            setTimeout(() => {
+                map.invalidateSize();
+            }, 100);
+        });
+
+        // Handle system theme changes
+        if (window.matchMedia) {
+            const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+            mediaQuery.addEventListener('change', (e) => {
+                if (!localStorage.getItem('mapTheme')) {
+                    currentTheme = e.matches ? 'dark' : 'light';
+                    document.documentElement.setAttribute('data-theme', currentTheme);
+                    updateThemeIcons();
+                    updateMapForTheme();
+                }
+            });
+        }
+    </script>
+</body>
+</html>
