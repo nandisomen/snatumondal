@@ -47,6 +47,39 @@
             --black-alpha: rgba(255, 255, 255, 0.3);
         }
 
+        /* Additional Light theme styles for better readability */
+        .light-theme .airport-item {
+            border-bottom-color: rgba(30, 41, 59, 0.08);
+        }
+
+        .light-theme .airport-name {
+            color: var(--text-color);
+        }
+
+        .light-theme .airport-country {
+            color: var(--secondary-color);
+        }
+
+        .light-theme .flight-count b {
+            color: var(--text-color);
+        }
+
+        .light-theme .search-box {
+            background: rgba(30, 41, 59, 0.04);
+            border-color: rgba(30, 41, 59, 0.1);
+            color: var(--text-color);
+        }
+
+        .light-theme .search-box:focus {
+            border-color: var(--primary-color);
+            background: var(--primary-bg-alpha);
+        }
+
+        .light-theme .table-header {
+            background: rgba(0, 0, 0, 0.05);
+            border-bottom-color: rgba(30, 41, 59, 0.1);
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -129,6 +162,9 @@
             color: var(--text-color);
             letter-spacing: -0.025em;
             flex-shrink: 0;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
         }
 
         .logo i {
@@ -250,7 +286,7 @@
         .btn i {
             font-size: 12px;
         }
-
+        
         /* Mobile Icon Buttons */
         .mobile-btn-icon {
             background: var(--light-bg-alpha);
@@ -287,7 +323,13 @@
             border-color: rgba(20, 184, 166, 0.3);
             color: #0d9488;
         }
-
+        
+        .mobile-btn-icon.home-btn {
+            background: var(--light-bg-alpha);
+            border: 1px solid var(--light-border-alpha);
+            color: var(--text-color);
+        }
+        
         /* Mobile Menu Dropdown */
         .mobile-menu {
             position: absolute;
@@ -368,7 +410,7 @@
             top: 70px;
             right: -100%;
             width: 100%;
-            max-width: 350px;
+            max-width: 300px;
             height: calc(100vh - 70px);
             background: var(--dark-bg-alpha);
             backdrop-filter: blur(16px);
@@ -813,7 +855,7 @@
 
     <nav class="navbar">
         <div class="navbar-container">
-            <div class="logo">
+            <div class="logo" role="button" onclick="resetView()">
                 <i class="fas fa-plane"></i>
                 Santu's Sky World
             </div>
@@ -850,26 +892,30 @@
                     <i class="fas fa-list"></i>
                     Airport List
                 </button>
+                <button class="btn btn-secondary" onclick="resetView()" title="Reset View">
+                    <i class="fas fa-sync-alt"></i>
+                </button>
                 <button class="btn day-night" onclick="toggleDayNight()">
                     <i class="fas fa-moon" id="dayNightIcon"></i>
                 </button>
-                <button class="btn btn-secondary" onclick="resetView()">
+                <a class="btn" href="map.html" title="Home">
                     <i class="fas fa-home"></i>
-                </button>
+                </a>
             </div>
 
-            <!-- Mobile navigation controls - icons only -->
             <div class="mobile-nav-controls">
                 <button class="mobile-btn-icon" onclick="toggleTable()" title="Airport List">
                     <i class="fas fa-list"></i>
                 </button>
+                <button class="mobile-btn-icon" onclick="resetView()" title="Reset View">
+                    <i class="fas fa-sync-alt"></i>
+                </button>
                 <button class="mobile-btn-icon day-night" onclick="toggleDayNight()" title="Day/Night Mode">
                     <i class="fas fa-moon" id="mobileDayNightIcon"></i>
                 </button>
-                <a href="map.html"><button class="mobile-btn-icon" onclick="resetView()" title="Reset View">
+                <a class="mobile-btn-icon home-btn" href="map.html" title="Home">
                     <i class="fas fa-home"></i>
-                </button></a>
-                
+                </a>
                 <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
                     <i class="fas fa-bars" id="mobileMenuIcon"></i>
                 </button>
@@ -1105,8 +1151,8 @@
                     to = allData.airportCoords[f.to];
                 if (from && to) {
                     const pathPoints = getCurvedPath(f.from, f.to);
-                    const lineColor = isDayMode ? '#1f2937' : '#22c55e';
-                    const animatedLineColor = isDayMode ? '#374151' : '#f8fafc';
+                    const lineColor = isDayMode ? '#e2e8f0' : '#22c55e';
+                    const animatedLineColor = isDayMode ? '#64748b' : '#f8fafc';
                     
                     const line = L.polyline(pathPoints, {
                         color: lineColor,
