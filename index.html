@@ -58,23 +58,24 @@
         <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
 
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdownLensLife" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                Lens & Life
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="dropdownLensLife">
-                <li>
-                  <a class="dropdown-item" href="hobbies.html" target="_blank" rel="noopener noreferrer">
-                    Photography
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="map.html" target="_blank" rel="noopener noreferrer">
-                    Travelography
-                  </a>
-                </li>
-              </ul>
-          </li>
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownLensLife" role="button"
+                      data-bs-toggle="dropdown" aria-expanded="false">
+                      Lens & Life
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownLensLife">
+                      <li>
+                        <a class="dropdown-item" href="hobbies.html" target="_blank" rel="noopener noreferrer">
+                          Photography
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="tour.html" target="_blank" rel="noopener noreferrer">
+                          Travelography
+                        </a>
+                      </li>
+                    </ul>
+              </li>
+
 
 
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
@@ -1324,67 +1325,92 @@ const targetIds = dataTargets
 
     <!-- nav bar dropdown menu open & close -->
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-  // Dropdown hover open/close
-  var dropdownElements = document.querySelectorAll('.navbar .dropdown');
-  dropdownElements.forEach(function(dropdown){
-    dropdown.addEventListener('mouseenter', function(){
-      const toggle = dropdown.querySelector('[data-bs-toggle="dropdown"]');
-      const menu = new bootstrap.Dropdown(toggle);
-      menu.show();
+document.addEventListener("DOMContentLoaded", function () {
+  const collapseEl = document.getElementById("navbarNav");
+  const dropdowns = document.querySelectorAll(".navbar .dropdown");
+
+  // Desktop = devices that actually support hover + have width ≥ 992
+  function isDesktopHover() {
+    return window.matchMedia("(hover: hover) and (pointer: fine)").matches && window.innerWidth >= 992;
+  }
+
+  // Hover show/hide (runs on every enter/leave but only acts on desktop)
+  dropdowns.forEach((dropdown) => {
+    const toggle = dropdown.querySelector('[data-bs-toggle="dropdown"]');
+
+    dropdown.addEventListener("mouseenter", () => {
+      if (!isDesktopHover()) return;
+      bootstrap.Dropdown.getOrCreateInstance(toggle).show();
     });
-    dropdown.addEventListener('mouseleave', function(){
-      const toggle = dropdown.querySelector('[data-bs-toggle="dropdown"]');
-      const menu = bootstrap.Dropdown.getInstance(toggle);
-      menu.hide();
+
+    dropdown.addEventListener("mouseleave", () => {
+      if (!isDesktopHover()) return;
+      const inst = bootstrap.Dropdown.getInstance(toggle);
+      if (inst) inst.hide();
     });
   });
 
-  // Close navbar on nav link click (mobile)
-  document.querySelectorAll('.navbar-nav .nav-link, .navbar-nav .dropdown-item').forEach(function(link) {
-    link.addEventListener('click', function() {
-      var navbarCollapse = document.getElementById('navbarNav');
-      if (navbarCollapse && navbarCollapse.classList.contains('show')) {
-        var bsCollapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
-        bsCollapse.hide();
+  // When switching modes, close any open dropdowns to avoid stuck states
+  window.addEventListener("resize", () => {
+    if (!isDesktopHover()) {
+      document.querySelectorAll(".dropdown-menu.show").forEach((menu) => {
+        const toggle = menu.closest(".dropdown")?.querySelector('[data-bs-toggle="dropdown"]');
+        if (toggle) {
+          const inst = bootstrap.Dropdown.getInstance(toggle);
+          if (inst) inst.hide();
+        }
+      });
+    }
+  });
+
+  // Collapse navbar after clicking a real nav link (NOT the dropdown toggle)
+  document.querySelectorAll(".navbar-nav .nav-link, .navbar-nav .dropdown-item").forEach((link) => {
+    link.addEventListener("click", function (e) {
+      const isToggle = this.classList.contains("dropdown-toggle");
+
+      // If it's the dropdown toggle, don't collapse the navbar; let Bootstrap handle open/close
+      if (isToggle) return;
+
+      if (collapseEl && collapseEl.classList.contains("show")) {
+        bootstrap.Collapse.getOrCreateInstance(collapseEl).hide();
       }
     });
   });
 
-  // Automatically close navbar when clicking outside navbar
-  document.addEventListener('click', function(event) {
-    var navbarCollapse = document.getElementById('navbarNav');
-    var navbarToggler = document.querySelector('.navbar-toggler');
+  // Close navbar when clicking outside it
+  document.addEventListener("click", function (event) {
+    if (!collapseEl) return;
+    const toggler = document.querySelector(".navbar-toggler");
     if (
-      navbarCollapse &&
-      navbarCollapse.classList.contains('show') &&
-      !navbarCollapse.contains(event.target) &&
-      !navbarToggler.contains(event.target)
+      collapseEl.classList.contains("show") &&
+      !collapseEl.contains(event.target) &&
+      !(toggler && toggler.contains(event.target))
     ) {
-      var bsCollapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
-      bsCollapse.hide();
+      bootstrap.Collapse.getOrCreateInstance(collapseEl).hide();
     }
   });
+
+  // OPTIONAL: If you have a "Talks" dropdown toggle that should scroll to #outreach on desktop only:
+  const talksToggle = document.querySelector("#navbarScrollingDropdown");
+  if (talksToggle) {
+    talksToggle.addEventListener("click", function (e) {
+      if (isDesktopHover()) {
+        e.preventDefault(); // keep dropdown open; perform smooth scroll
+        const target = document.querySelector("#outreach");
+        if (target) target.scrollIntoView({ behavior: "smooth" });
+      }
+      // On mobile, default Bootstrap tap behavior is preserved
+    });
+  }
 });
-
-
 </script>
+
 
 
 
 <!-- nav bar dropdown menu open & close end -->
 
-<script>
-  // Scroll to #talks while still allowing dropdown
-  document.querySelector('#navbarScrollingDropdown').addEventListener('click', function (e) {
-    // Let dropdown open
-    // But also scroll to section
-    const talksSection = document.querySelector('#outreach');
-    if (talksSection) {
-      talksSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
-</script>
+
 
 
 
