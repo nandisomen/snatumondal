@@ -1961,7 +1961,7 @@ white-space: nowrap;     /* Forces single-line */
   position: relative;
   max-width: 90%;
   max-height: 80%;
-  overflow: hidden;
+  /* overflow: hidden; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1980,10 +1980,14 @@ white-space: nowrap;     /* Forces single-line */
 
 /* Caption */
 #modalCaption {
+  background-color: #0000005f;
+  z-index: 10;
   color: #fff;
   text-align: center;
-  font-size: 1.5em;
+  padding: 5px 15px;
+  font-size: clamp(1rem, 2vw, 1.5em);
   margin-top: 10px;
+  border-radius: 5px;
   /* transform: translateY(-50px); */
 }
 
@@ -2016,7 +2020,7 @@ white-space: nowrap;     /* Forces single-line */
   background: rgba(255,255,255,0.2);
 }
 #closeModal:hover{
-  transform: scale(2);
+  transform: scale(1.2);
   background: transparent;
   color: red;
 }
