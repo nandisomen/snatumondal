@@ -698,7 +698,21 @@ body.modal-open {
   margin-bottom: 20px;
   box-sizing: border-box;
 }
+/* When active on mobile → full width */
+@media (max-width: 767px) {
+  .video-card.active {
+    width: 100vw !important;
+    margin-left: calc(-50vw + 50%); /* center full-width */
+    border-radius: 0; /* edge-to-edge look */
+    z-index: 1000;
+  }
 
+  /* make sure the column doesn't restrict it */
+  .row .col-10 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
 
 /* btn  */
 .youtube-video-section .ui-btn:hover {
