@@ -131,25 +131,26 @@ document.addEventListener("DOMContentLoaded", () => {
   // ✅ Put all your image URLs in this array (easy to add/remove)
   const imageUrls = [
     "https://ik.imagekit.io/santumondal/photography/img-kedarnath.jpg",
-    "https://ik.imagekit.io/santumondal/photography/img1.jpg",
     "https://ik.imagekit.io/santumondal/photography/img2.jpeg",
     "https://ik.imagekit.io/santumondal/photography/img4.jpg",
     "https://ik.imagekit.io/santumondal/photography/img9.jpg",
     "https://ik.imagekit.io/santumondal/photography/img17.jpg",
-    "https://ik.imagekit.io/santumondal/photography/img24.jpg",
+    
+     "https://ik.imagekit.io/santumondal/photography/img24.jpg",
     "https://ik.imagekit.io/santumondal/photography/img15.jpg",
     "https://ik.imagekit.io/santumondal/photography/img8.jpg",
-     "https://ik.imagekit.io/santumondal/photography/img19.jpg",
-    "https://ik.imagekit.io/santumondal/photography/img5.jpeg",
-    "https://ik.imagekit.io/santumondal/photography/img18.jpg",
+    "https://ik.imagekit.io/santumondal/photography/img10.jpg?updatedAt=1756229901306",
+    
    "https://ik.imagekit.io/santumondal/photography/img10.jpg",
+   "https://ik.imagekit.io/santumondal/photography/img12.jpg?updatedAt=1756229622341",
     "https://ik.imagekit.io/santumondal/photography/img6.jpg",
-    "https://ik.imagekit.io/santumondal/photography/img22.jpg",
-    "https://ik.imagekit.io/santumondal/photography/img21.jpg",
-    "https://ik.imagekit.io/santumondal/photography/img20.jpg",
-    "https://ik.imagekit.io/santumondal/photography/img7.jpg",
+    "https://ik.imagekit.io/santumondal/photography/img22.jpg?updatedAt=1756230557996",
+    "https://ik.imagekit.io/santumondal/photography/img21.jpg?updatedAt=1756229338015",
+    "https://ik.imagekit.io/santumondal/photography/img20.jpg?updatedAt=1756230384462",
     "https://ik.imagekit.io/santumondal/photography/img13.jpg",
     "https://ik.imagekit.io/santumondal/photography/img14",
+    "https://ik.imagekit.io/santumondal/photography/img1.jpg?updatedAt=1756230223707",
+   
   ];
 
   // ✅ Generate gallery items automatically
@@ -456,15 +457,21 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 </script>
 
+<!-- paly one video at a time -->
+ 
+
 
 
 <!-- youtube-shorts  -->
+<script src="https://www.youtube.com/iframe_api"></script>
 <script>
-  // Embed YouTube Shorts
+  let players = [];
+
+  // Embed YouTube Shorts (your code unchanged)
   document.querySelectorAll('.shorts-card').forEach(card => {
     const videoId = card.getAttribute('data-video-id');
     const iframe = document.createElement('iframe');
-    iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=0&mute=1`);
+    iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?enablejsapi=1&autoplay=0&rel=0`);
     iframe.setAttribute('frameborder', '0');
     iframe.setAttribute('allowfullscreen', '');
     iframe.setAttribute('allow', 'autoplay; encrypted-media');
@@ -473,7 +480,30 @@ document.addEventListener('DOMContentLoaded', () => {
     card.appendChild(iframe);
   });
 
-  // Scroll Button Function
+  // Wait until API ready
+  function onYouTubeIframeAPIReady() {
+    document.querySelectorAll('.shorts-card iframe').forEach((iframe, index) => {
+      const player = new YT.Player(iframe, {
+        events: {
+          onStateChange: onPlayerStateChange
+        }
+      });
+      players.push(player);
+    });
+  }
+
+  // Pause others when one starts playing
+  function onPlayerStateChange(event) {
+    if (event.data === YT.PlayerState.PLAYING) {
+      players.forEach(p => {
+        if (p !== event.target) {
+          p.pauseVideo();
+        }
+      });
+    }
+  }
+
+  // Scroll Button Function (unchanged)
   function scrollShorts(direction) {
     const container = document.getElementById("shorts-scroll");
     const scrollAmount = 250;
@@ -483,6 +513,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 </script>
+
 
 
 
