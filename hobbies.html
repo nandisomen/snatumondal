@@ -97,7 +97,6 @@
 
 
 
-
 <section class="photos" id="photos">
   <h1 class="section-title">frozen moments</h1>
 
@@ -111,8 +110,8 @@
     </a>
   </div>
 
-  <!-- Modal -->
-  <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+  <!-- Bootstrap Modal -->
+  <div class="modal" id="imageModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-fullscreen">
       <div class="modal-content bg-black position-relative">
         <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"></button>
@@ -127,50 +126,113 @@
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const gallery = document.getElementById("gallery");
+  const modalImage = document.getElementById("modalImage");
+  const imageModalEl = document.getElementById("imageModal");
+  const bsModal = new bootstrap.Modal(imageModalEl);
 
-  // ✅ Put all your image URLs in this array (easy to add/remove)
-  const imageUrls = [
+  // List your images here
+  const urls = [
     "https://ik.imagekit.io/santumondal/photography/img-kedarnath.jpg",
     "https://ik.imagekit.io/santumondal/photography/img2.jpeg",
     "https://ik.imagekit.io/santumondal/photography/img4.jpg",
     "https://ik.imagekit.io/santumondal/photography/img9.jpg",
     "https://ik.imagekit.io/santumondal/photography/img17.jpg",
-    
-     "https://ik.imagekit.io/santumondal/photography/img24.jpg",
+    "https://ik.imagekit.io/santumondal/photography/img24.jpg",
     "https://ik.imagekit.io/santumondal/photography/img15.jpg",
     "https://ik.imagekit.io/santumondal/photography/img8.jpg",
     "https://ik.imagekit.io/santumondal/photography/img10.jpg?updatedAt=1756229901306",
-    
-   "https://ik.imagekit.io/santumondal/photography/img10.jpg",
-   "https://ik.imagekit.io/santumondal/photography/img12.jpg?updatedAt=1756229622341",
+    "https://ik.imagekit.io/santumondal/photography/img10.jpg",
+    "https://ik.imagekit.io/santumondal/photography/img12.jpg?updatedAt=1756229622341",
     "https://ik.imagekit.io/santumondal/photography/img6.jpg",
     "https://ik.imagekit.io/santumondal/photography/img22.jpg?updatedAt=1756230557996",
     "https://ik.imagekit.io/santumondal/photography/img21.jpg?updatedAt=1756229338015",
     "https://ik.imagekit.io/santumondal/photography/img20.jpg?updatedAt=1756230384462",
     "https://ik.imagekit.io/santumondal/photography/img13.jpg",
     "https://ik.imagekit.io/santumondal/photography/img14",
-    "https://ik.imagekit.io/santumondal/photography/img1.jpg?updatedAt=1756230223707",
-   
+    "https://ik.imagekit.io/santumondal/photography/img1.jpg?updatedAt=1756390041033",
   ];
 
-  // ✅ Generate gallery items automatically
-  imageUrls.forEach(url => {
-    const photoDiv = document.createElement("div");
-    photoDiv.classList.add("photo");
-    photoDiv.innerHTML = `
-      <img src="${url}?tr=w-600,q-80" alt="Gallery Image">
+  // Helper to append ImageKit transform correctly
+  const withTr = (url, tr) => url.includes("?") ? `${url}&tr=${tr}` : `${url}?tr=${tr}`;
+
+  // Build data model with thumb + modal versions
+  const items = urls.map(u => ({
+    thumb: withTr(u, "w-600,q-80"),
+    modal: withTr(u, "w-1600,q-90"), // fast & sharp fullscreen
+  }));
+
+  // Build gallery (use a fragment for performance)
+  const frag = document.createDocumentFragment();
+  items.forEach((item, i) => {
+    const div = document.createElement("div");
+    div.className = "photo";
+    div.dataset.index = i;
+    div.innerHTML = `
+      <img src="${item.thumb}" alt="Gallery Image" loading="lazy">
       <div class="overlay"><i class="fa-solid fa-expand"></i></div>
     `;
-    gallery.appendChild(photoDiv);
+    frag.appendChild(div);
 
-    // Modal click event
-    photoDiv.addEventListener("click", () => {
-      document.getElementById("modalImage").src = url;
-      new bootstrap.Modal(document.getElementById("imageModal")).show();
+    // Preload fullscreen image in background
+    const pre = new Image();
+    pre.src = item.modal;
+  });
+  gallery.appendChild(frag);
+
+  let currentIndex = 0;
+
+  function showImage(i) {
+    if (i < 0) i = items.length - 1;
+    if (i >= items.length) i = 0;
+    currentIndex = i;
+
+    // Show thumb instantly to avoid flicker, then swap to modal image
+    const thumbSrc = items[currentIndex].thumb;
+    const modalSrc = items[currentIndex].modal;
+
+    modalImage.src = thumbSrc;
+    // next frame to avoid race conditions with rapid clicks
+    requestAnimationFrame(() => {
+      modalImage.src = modalSrc;
     });
+  }
+
+  // OPEN: event delegation so index always matches the clicked card
+  gallery.addEventListener("click", (e) => {
+    const card = e.target.closest(".photo");
+    if (!card) return;
+    const idx = Number(card.dataset.index);
+    showImage(idx);
+    bsModal.show();
+  });
+
+  // KEYBOARD: only when modal open
+  document.addEventListener("keydown", (e) => {
+    if (!imageModalEl.classList.contains("show")) return;
+    if (e.key === "ArrowRight") showImage(currentIndex + 1);
+    else if (e.key === "ArrowLeft") showImage(currentIndex - 1);
+  });
+
+  // TOUCH swipe (modal area, not just the image)
+  let startX = 0;
+  imageModalEl.addEventListener("touchstart", (e) => {
+    if (!e.touches || !e.touches.length) return;
+    startX = e.touches[0].clientX;
+  }, { passive: true });
+
+  imageModalEl.addEventListener("touchend", (e) => {
+    if (!e.changedTouches || !e.changedTouches.length) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 50) {
+      showImage(currentIndex + (dx < 0 ? 1 : -1));
+    }
   });
 });
 </script>
+
+
+
+
 
 
 
@@ -349,31 +411,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  <!-- oepn image in fullscreen -->
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const photos = document.querySelectorAll(".photo");
-
-    photos.forEach(photo => {
-      const img = photo.querySelector("img");
-      const overlay = photo.querySelector(".overlay");
-      const caption = photo.querySelector(".hover-caption");
-
-      const openModal = () => {
-        const modalImage = document.getElementById("modalImage");
-        modalImage.src = img.src;
-        const modal = new bootstrap.Modal(document.getElementById("imageModal"));
-        modal.show();
-      };
-
-      // Enable click on image, overlay, or caption to open modal
-      img.addEventListener("click", openModal);
-      overlay.addEventListener("click", openModal);
-      if (caption) caption.addEventListener("click", openModal);
-    });
-  });
-</script>
 
 
 
@@ -398,42 +436,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
-</script>
-
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const modal = document.getElementById('modal');
-  const modalImg = document.getElementById('modal-img');
-  const closeBtn = modal.querySelector('.close');
-
-  // Open modal on image click
-  document.querySelectorAll('.photo img').forEach(img => {
-    img.addEventListener('click', () => {
-      modal.style.display = 'block';
-      modalImg.src = img.src;
-    });
-  });
-
-  // Close on X button
-  closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-  });
-
-  // Close on ESC key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      modal.style.display = 'none';
-    }
-  });
-
-  // Close on outside click
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.style.display = 'none';
-    }
-  });
-});
 </script>
 
 
