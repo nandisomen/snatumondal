@@ -97,6 +97,7 @@
 
 
 
+
 <section class="photos" id="photos">
   <h1 class="section-title">frozen moments</h1>
 
@@ -141,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "https://ik.imagekit.io/santumondal/photography/img15.jpg",
     "https://ik.imagekit.io/santumondal/photography/img8.jpg",
     "https://ik.imagekit.io/santumondal/photography/img10.jpg?updatedAt=1756229901306",
-    "https://ik.imagekit.io/santumondal/photography/img10.jpg",
+    "https://ik.imagekit.io/santumondal/photography/img11.jpg?updatedAt=1756392691776",
     "https://ik.imagekit.io/santumondal/photography/img12.jpg?updatedAt=1756229622341",
     "https://ik.imagekit.io/santumondal/photography/img6.jpg",
     "https://ik.imagekit.io/santumondal/photography/img22.jpg?updatedAt=1756230557996",
@@ -149,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "https://ik.imagekit.io/santumondal/photography/img20.jpg?updatedAt=1756230384462",
     "https://ik.imagekit.io/santumondal/photography/img13.jpg",
     "https://ik.imagekit.io/santumondal/photography/img14",
-    "https://ik.imagekit.io/santumondal/photography/img1.jpg?updatedAt=1756390041033",
+    "https://ik.imagekit.io/santumondal/photography/img1.jpg?updatedAt=1756393375449"
   ];
 
   // Helper to append ImageKit transform correctly
@@ -186,18 +187,25 @@ document.addEventListener("DOMContentLoaded", () => {
     if (i >= items.length) i = 0;
     currentIndex = i;
 
-    // Show thumb instantly to avoid flicker, then swap to modal image
     const thumbSrc = items[currentIndex].thumb;
     const modalSrc = items[currentIndex].modal;
 
+    // Show thumb immediately as placeholder
+    modalImage.style.opacity = "0"; // hide before change
     modalImage.src = thumbSrc;
-    // next frame to avoid race conditions with rapid clicks
-    requestAnimationFrame(() => {
-      modalImage.src = modalSrc;
-    });
+
+    // Preload full image first
+    const fullImg = new Image();
+    fullImg.src = modalSrc;
+    fullImg.onload = () => {
+      if (currentIndex === i) { // avoid race condition
+        modalImage.src = fullImg.src;
+        modalImage.style.opacity = "1"; // fade in
+      }
+    };
   }
 
-  // OPEN: event delegation so index always matches the clicked card
+  // OPEN: event delegation
   gallery.addEventListener("click", (e) => {
     const card = e.target.closest(".photo");
     if (!card) return;
@@ -206,14 +214,14 @@ document.addEventListener("DOMContentLoaded", () => {
     bsModal.show();
   });
 
-  // KEYBOARD: only when modal open
+  // KEYBOARD navigation
   document.addEventListener("keydown", (e) => {
     if (!imageModalEl.classList.contains("show")) return;
     if (e.key === "ArrowRight") showImage(currentIndex + 1);
     else if (e.key === "ArrowLeft") showImage(currentIndex - 1);
   });
 
-  // TOUCH swipe (modal area, not just the image)
+  // TOUCH swipe
   let startX = 0;
   imageModalEl.addEventListener("touchstart", (e) => {
     if (!e.touches || !e.touches.length) return;
